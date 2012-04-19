@@ -1,0 +1,80 @@
+#!/bin/sh
+
+#
+# <#filename#>
+# ceasyxml
+# http://code.google.com/p/ceasyxml/
+#
+# Copyright (c) 2012 Henri Verroken
+#
+# Permission is hereby granted, free of charge, to any person obtaining
+# a copy of this software and associated documentation files (the
+# "Software"), to deal in the Software without restriction, including
+# without limitation the rights to use, copy, modify, merge, publish,
+# distribute, sublicense, and/or sell copies of the Software, and to
+# permit persons to whom the Software is furnished to do so, subject to
+# the following
+# The above copyright notice and this permission notice shall be
+# ice shall be included in all copies or substantial portions of the
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+# WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+# LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+# OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+# WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+
+
+cd "`dirname "$0"`"
+
+# Check files
+if [ ! -f ./template.h ]; then
+	echo "./template.h: file missing"
+	exit 1
+fi
+
+if [ ! -f ./template.m ]; then
+	echo "./template.m: file missing"
+	exit 1
+fi
+
+if [ ! -d ./Classes ]; then
+	echo "./Classes: directory missing"
+	exit 1
+fi
+
+if [ ! -d ./TestApp ]; then
+	echo "./TestApp: directory missing"
+	exit 1
+fi
+
+
+# Get options
+printf "Test class (T) or library class (L/default)? [T/L] "
+read classType
+classDir=Classes
+if [ "$classType" = "T" -o "$classType" = "t" ]; then
+	classDir=TestApp
+	
+elif [ -n "$classType" ]; then
+	echo "Invalid class type"
+	exit 1
+fi
+
+printf "Class name? "
+read className
+if [ -z "$className" ]; then
+	echo "Empty string"
+	exit 1
+fi
+
+# Write files
+
+cat template.h | sed "s/<#filename#>/$className.h/" | \
+    sed "s/<#class#>/$className/" > "$classDir/$className.h"
+cat template.m | sed "s/<#filename#>/$className.m/" | \
+    sed "s/<#class#>/$className/" > "$classDir/$className.m"
+	
+open "$classDir"
