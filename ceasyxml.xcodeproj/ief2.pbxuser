@@ -5,7 +5,7 @@
 		activeExecutable = 92F82AA8154078500009E770 /* TestApp */;
 		activeTarget = D2AAC07D0554694100DB518D /* ceasyxml */;
 		addToTargets = (
-			92F82AA6154078500009E770 /* TestApp */,
+			D2AAC07D0554694100DB518D /* ceasyxml */,
 		);
 		codeSenseManager = 92F82A8E154075440009E770 /* Code sense */;
 		executables = (
@@ -28,6 +28,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
 			sepNavSelRange = "{1711, 0}";
 			sepNavVisRange = "{0, 1718}";
+			sepNavWindowFrame = "{{918, 56}, {647, 984}}";
 		};
 	};
 	9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */ = {

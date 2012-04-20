@@ -1,5 +1,5 @@
 /*
- *  CSXNodeLayout.m
+ *  CSXElementLayout.h
  *  ceasyxml
  *  http://code.google.com/p/ceasyxml/
  *
@@ -26,17 +26,19 @@
  *
  */
 
+
+#import <Foundation/Foundation.h>
+
 #import "CSXNodeLayout.h"
 
-
-/* =========================================================================== 
- MARK: -
- MARK: Public Implementation
- =========================================================================== */
-@implementation CSXNodeLayout
-
+@interface CSXElementLayout : CSXNodeLayout {
+	
+}
 /* MARK: Properties */
-@synthesize name, contentType, getter, setter, customClass;
+@property (nonatomic, assign) BOOL required;
+@property (nonatomic, assign) BOOL empty;
+@property (nonatomic, assign) BOOL unique;
+@property (nonatomic, retain) NSArray *attributes;
+@property (nonatomic, retain) NSArray *subelements;
 @end
-
 

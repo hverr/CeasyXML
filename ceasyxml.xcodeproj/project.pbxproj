@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9227B9411541E73900FA9EA6 /* CSXNodeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */; };
+		9227B94C1541E8C500FA9EA6 /* CSXElementLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */; };
+		9227B94F1541E8E000FA9EA6 /* CSXNodeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */; };
 		92F82AAB154078540009E770 /* libceasyxml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libceasyxml.a */; };
 		92F82AC6154078C10009E770 /* TMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F82AC5154078C10009E770 /* TMain.m */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,8 @@
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeLayout.h; sourceTree = "<group>"; };
 		9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXNodeLayout.m; sourceTree = "<group>"; };
+		9227B9491541E8C500FA9EA6 /* CSXElementLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXElementLayout.h; sourceTree = "<group>"; };
+		9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXElementLayout.m; sourceTree = "<group>"; };
 		92F82A9B154075960009E770 /* newcopy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = newcopy; sourceTree = "<group>"; };
 		92F82A9D154076170009E770 /* template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = template.h; sourceTree = "<group>"; };
 		92F82A9E154076170009E770 /* template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = template.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 			children = (
 				9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */,
 				9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */,
+				9227B9491541E8C500FA9EA6 /* CSXElementLayout.h */,
+				9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -188,7 +193,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92F82AC6154078C10009E770 /* TMain.m in Sources */,
-				9227B9411541E73900FA9EA6 /* CSXNodeLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9227B94C1541E8C500FA9EA6 /* CSXElementLayout.m in Sources */,
+				9227B94F1541E8E000FA9EA6 /* CSXNodeLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

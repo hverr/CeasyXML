@@ -1,5 +1,5 @@
 /*
- *  CSXNodeLayout.m
+ *  CSXElementLayout.m
  *  ceasyxml
  *  http://code.google.com/p/ceasyxml/
  *
@@ -26,17 +26,15 @@
  *
  */
 
-#import "CSXNodeLayout.h"
+#import "CSXElementLayout.h"
 
 
 /* =========================================================================== 
  MARK: -
  MARK: Public Implementation
  =========================================================================== */
-@implementation CSXNodeLayout
-
+@implementation CSXElementLayout
 /* MARK: Properties */
-@synthesize name, contentType, getter, setter, customClass;
+@synthesize required, empty, unique, attributes, subelements;
 @end
-
 
