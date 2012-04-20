@@ -1,5 +1,5 @@
 /*
- *  CSXHelloWorld.m
+ *  CSXNodeLayout.h
  *  ceasyxml
  *  http://code.google.com/p/ceasyxml/
  *
@@ -11,43 +11,39 @@
  *  without limitation the rights to use, copy, modify, merge, publish,
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
- *  the following
+ *  the following conditions:
+ *
  *  The above copyright notice and this permission notice shall be
- *  ice shall be included in all copies or substantial portions of the
+ *  included in all copies or substantial portions of the Software.
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
  *  WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
  *  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
  *  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  *  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
+ *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
 
-#import "CSXHelloWorld.h"
 
-/* =========================================================================== 
- MARK: -
- MARK: Private Interface
- =========================================================================== */
-@interface CSXHelloWorld (Private)
-@end
+#import <Foundation/Foundation.h>
 
-/* =========================================================================== 
- MARK: -
- MARK: Public Implementation
- =========================================================================== */
-@implementation CSXHelloWorld
-+ (void)print {
-	NSLog(@"Hello from %s", __PRETTY_FUNCTION__);
+typedef enum {
+	CSXNodeContentTypeString,
+	CSXNodeContentTypeNumber,
+	CSXNodeContentTypeList,
+	CSXNodeContentTypeCustom
+} CSXNodeContentType;
+
+@interface CSXNodeLayout : NSObject {
 }
+
+/* MARK: Properties */
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, assign) CSXNodeContentType contentType;
+@property (nonatomic, assign) SEL setter;
+@property (nonatomic, assign) SEL getter;
+@property (nonatomic, assign) Class customClass;
 @end
 
-
-/* =========================================================================== 
- MARK: -
- MARK: Private Implementation
- =========================================================================== */
-@implementation CSXHelloWorld (Private)
-@end

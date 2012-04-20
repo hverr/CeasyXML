@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9227B9411541E73900FA9EA6 /* CSXNodeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */; };
 		92F82AAB154078540009E770 /* libceasyxml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libceasyxml.a */; };
-		92F82ABF1540789B0009E770 /* CSXHelloWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = 92F82ABD1540789B0009E770 /* CSXHelloWorld.h */; };
-		92F82AC01540789B0009E770 /* CSXHelloWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F82ABE1540789B0009E770 /* CSXHelloWorld.m */; };
 		92F82AC6154078C10009E770 /* TMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F82AC5154078C10009E770 /* TMain.m */; };
 /* End PBXBuildFile section */
 
@@ -18,19 +17,19 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* ceasyxml */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = ceasyxml;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeLayout.h; sourceTree = "<group>"; };
+		9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXNodeLayout.m; sourceTree = "<group>"; };
 		92F82A9B154075960009E770 /* newcopy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = newcopy; sourceTree = "<group>"; };
 		92F82A9D154076170009E770 /* template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = template.h; sourceTree = "<group>"; };
 		92F82A9E154076170009E770 /* template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = template.m; sourceTree = "<group>"; };
 		92F82AA7154078500009E770 /* TestApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestApp; sourceTree = BUILT_PRODUCTS_DIR; };
-		92F82ABD1540789B0009E770 /* CSXHelloWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXHelloWorld.h; sourceTree = "<group>"; };
-		92F82ABE1540789B0009E770 /* CSXHelloWorld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXHelloWorld.m; sourceTree = "<group>"; };
 		92F82AC5154078C10009E770 /* TMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMain.m; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libceasyxml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libceasyxml.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,8 +85,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				92F82ABD1540789B0009E770 /* CSXHelloWorld.h */,
-				92F82ABE1540789B0009E770 /* CSXHelloWorld.m */,
+				9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */,
+				9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -117,7 +116,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F82ABF1540789B0009E770 /* CSXHelloWorld.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92F82AC6154078C10009E770 /* TMain.m in Sources */,
+				9227B9411541E73900FA9EA6 /* CSXNodeLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +196,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F82AC01540789B0009E770 /* CSXHelloWorld.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
