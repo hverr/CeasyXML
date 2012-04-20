@@ -34,6 +34,12 @@
  MARK: Public Implementation
  =========================================================================== */
 @implementation CSXNodeLayout
+/* MARK: Init and Dealloc */
+- (void)dealloc {
+	self.name = nil;
+	
+	[super dealloc];
+}
 
 /* MARK: Properties */
 @synthesize name, contentType, getter, setter, customClass;

@@ -33,6 +33,13 @@
  MARK: Public Implementation
  =========================================================================== */
 @implementation CSXDocumentLayout
+- (void)dealloc {
+	self.name = nil;
+	self.attributes = nil;
+	
+	[super dealloc];
+}
+
 /* MARK: Properties */
 @synthesize name, attributes, documentClass;
 @end
