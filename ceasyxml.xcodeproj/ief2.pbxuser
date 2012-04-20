@@ -34,8 +34,23 @@
 	9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
-			sepNavSelRange = "{1741, 0}";
-			sepNavVisRange = "{0, 2053}";
+			sepNavSelRange = "{1574, 0}";
+			sepNavVisRange = "{0, 1575}";
+			sepNavWindowFrame = "{{15, 69}, {647, 984}}";
+		};
+	};
+	9227B9491541E8C500FA9EA6 /* CSXElementLayout.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
+			sepNavSelRange = "{1605, 1}";
+			sepNavVisRange = "{0, 1606}";
+		};
+	};
+	9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
+			sepNavSelRange = "{1261, 0}";
+			sepNavVisRange = "{0, 1584}";
 		};
 	};
 	92F82A8D154075440009E770 /* Source Control */ = {
