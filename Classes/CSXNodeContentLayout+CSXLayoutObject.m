@@ -29,12 +29,12 @@
 #import "CSXNodeContentLayout+CSXLayoutObject.h"
 
 
-static NSString * const CSXNodeLayoutTypeAttributeName = @"type";
-static NSString * const CSXNodeLayoutContentElementName = @"content";
+static NSString * const CSXNodeContentLayoutTypeAttributeName = @"type";
+static NSString * const CSXNodeContentLayoutContentElementName = @"content";
 
-static NSString * const CSXNodeLayoutSetterElementName = @"setter";
-static NSString * const CSXNodeLayoutGetterElementName = @"getter";
-static NSString * const CSXNodeLayoutClassElementName = @"class";
+static NSString * const CSXNodeContentLayoutSetterElementName = @"setter";
+static NSString * const CSXNodeContentLayoutGetterElementName = @"getter";
+static NSString * const CSXNodeContentLayoutClassElementName = @"class";
 
 @implementation CSXNodeContentLayout (CSXLayoutObject)
 /* MARK: Various Attributes */
@@ -45,7 +45,7 @@ static NSString * const CSXNodeLayoutClassElementName = @"class";
 	layout = [CSXNodeLayout new];
 	content = [CSXNodeContentLayout new];
 	
-	layout.name = CSXNodeLayoutTypeAttributeName;
+	layout.name = CSXNodeContentLayoutTypeAttributeName;
 	layout.required = YES;
 	
 	content.contentType = CSXNodeContentTypeString;
@@ -66,7 +66,7 @@ static NSString * const CSXNodeLayoutClassElementName = @"class";
 	layout = [CSXElementLayout new];
 	content = [CSXNodeContentLayout new];
 	
-	layout.name = CSXNodeLayoutGetterElementName;
+	layout.name = CSXNodeContentLayoutGetterElementName;
 	layout.required = NO;
 	layout.unique = YES;
 	layout.empty = NO;
@@ -88,7 +88,7 @@ static NSString * const CSXNodeLayoutClassElementName = @"class";
 	layout = [CSXElementLayout new];
 	content = [CSXNodeContentLayout new];
 	
-	layout.name = CSXNodeLayoutSetterElementName;
+	layout.name = CSXNodeContentLayoutSetterElementName;
 	layout.required = NO;
 	layout.unique = YES;
 	layout.empty = NO;
@@ -110,7 +110,7 @@ static NSString * const CSXNodeLayoutClassElementName = @"class";
 	layout = [CSXElementLayout new];
 	content = [CSXNodeContentLayout new];
 	
-	layout.name = CSXNodeLayoutClassElementName;
+	layout.name = CSXNodeContentLayoutClassElementName;
 	layout.required = NO;
 	layout.unique = YES;
 	layout.empty = NO;
@@ -131,7 +131,7 @@ static NSString * const CSXNodeLayoutClassElementName = @"class";
 	
 	layout = [CSXElementLayout new];
 	
-	layout.name = CSXNodeLayoutContentElementName;
+	layout.name = CSXNodeContentLayoutContentElementName;
 	layout.required = YES;
 	layout.unique = YES;
 	layout.empty = NO;

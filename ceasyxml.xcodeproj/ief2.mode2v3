@@ -202,25 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>925FE9491542FAAC00AA875E</string>
+				<string>925FE95F1542FAF000AA875E</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>CSXNodeContentLayout.m</string>
+				<string>CSXNodeContentLayout+CSXLayoutObject.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>925FE94A1542FAAC00AA875E</string>
+						<string>925FE9601542FAF000AA875E</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>CSXNodeContentLayout.m</string>
+						<string>CSXNodeContentLayout+CSXLayoutObject.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE94D1542FAAC00AA875E</string>
+						<string>925FE9611542FAF000AA875E</string>
 						<key>history</key>
 						<array>
-							<string>925FE94B1542FAAC00AA875E</string>
-							<string>925FE94C1542FAAC00AA875E</string>
+							<string>925FE95E1542FACD00AA875E</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -236,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>38 104 647 928 0 0 1920 1058 </string>
+				<string>15 125 647 928 0 0 1920 1058 </string>
 			</dict>
 		</dict>
 		<dict>
@@ -257,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE9521542FAAC00AA875E</string>
+						<string>925FE9621542FAF000AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE9501542FAAC00AA875E</string>
@@ -298,7 +297,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE9571542FAAC00AA875E</string>
+						<string>925FE9631542FAF000AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE9551542FAAC00AA875E</string>
@@ -339,7 +338,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE9581542FAAC00AA875E</string>
+						<string>925FE9641542FAF000AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE8FF1542F66F00AA875E</string>
@@ -380,7 +379,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE9591542FAAC00AA875E</string>
+						<string>925FE9651542FAF000AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE9021542F66F00AA875E</string>
@@ -421,7 +420,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE95A1542FAAC00AA875E</string>
+						<string>925FE9661542FAF000AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE8B11542E84200AA875E</string>
@@ -461,7 +460,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE95B1542FAAC00AA875E</string>
+						<string>925FE9671542FAF000AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE8DB1542F05900AA875E</string>
@@ -502,7 +501,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE95C1542FAAC00AA875E</string>
+						<string>925FE9681542FAF000AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE89E1542E78400AA875E</string>
@@ -543,7 +542,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE95D1542FAAC00AA875E</string>
+						<string>925FE9691542FAF000AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE8A31542E78400AA875E</string>
@@ -644,7 +643,8 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>10</integer>
+											<integer>5</integer>
+											<integer>3</integer>
 											<integer>2</integer>
 											<integer>1</integer>
 											<integer>0</integer>
@@ -861,7 +861,7 @@
 		<string>925FE9531542FAAC00AA875E</string>
 		<string>925FE94E1542FAAC00AA875E</string>
 		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
-		<string>925FE9491542FAAC00AA875E</string>
+		<string>925FE95F1542FAF000AA875E</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 603 446 419 0 0 1920 1058 </string>
