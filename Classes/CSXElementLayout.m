@@ -36,10 +36,10 @@
 @implementation CSXElementLayout
 /* MARK: Init and Dealloc */
 - (void)dealloc {
-	self.attributes = nil;
-	self.subelements = nil;
-	
-	[super dealloc];
+    self.attributes = nil;
+    self.subelements = nil;
+    
+    [super dealloc];
 }
 
 /* MARK: Properties */

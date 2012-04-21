@@ -36,10 +36,10 @@
 @implementation CSXNodeLayout
 /* MARK: Init and Dealloc */
 - (void)dealloc {
-	self.name = nil;
-	self.contentLayout = nil;
-	
-	[super dealloc];
+    self.name = nil;
+    self.contentLayout = nil;
+    
+    [super dealloc];
 }
 
 /* MARK: Properties */

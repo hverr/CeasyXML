@@ -35,70 +35,70 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
 @implementation CSXElementLayout (CSXLayoutObject)
 /* MARK: Layout Objects */
 + (CSXElementLayout *)uniqueElementLayout {
-	CSXNodeLayout *layout;
-	CSXNodeContentLayout *content;
-	
-	layout = [CSXNodeLayout new];
-	content = [CSXNodeContentLayout new];
-	
-	layout.name = CSXElementLayoutUniqueElementName;
-	layout.required = YES;
-	
-	content.contentType = CSXNodeContentTypeBoolean;
-	content.getter = @selector(unique);
-	content.setter = @selector(setUnique:);
-	
-	layout.contentLayout = content;
-	[content release];
-	
-	return [layout autorelease];
+    CSXNodeLayout *layout;
+    CSXNodeContentLayout *content;
+    
+    layout = [CSXNodeLayout new];
+    content = [CSXNodeContentLayout new];
+    
+    layout.name = CSXElementLayoutUniqueElementName;
+    layout.required = YES;
+    
+    content.contentType = CSXNodeContentTypeBoolean;
+    content.getter = @selector(unique);
+    content.setter = @selector(setUnique:);
+    
+    layout.contentLayout = content;
+    [content release];
+    
+    return [layout autorelease];
 }
 
 + (CSXElementLayout *)emptyElementLayout {
-	CSXNodeLayout *layout;
-	CSXNodeContentLayout *content;
-	
-	layout = [CSXNodeLayout new];
-	content = [CSXNodeContentLayout new];
-	
-	layout.name = CSXElementLayoutEmptyElementName;
-	layout.required = YES;
-	
-	content.contentType = CSXNodeContentTypeBoolean;
-	content.getter = @selector(empty);
-	content.setter = @selector(setEmpty:);
-	
-	layout.contentLayout = content;
-	[content release];
-	
-	return [layout autorelease];
+    CSXNodeLayout *layout;
+    CSXNodeContentLayout *content;
+    
+    layout = [CSXNodeLayout new];
+    content = [CSXNodeContentLayout new];
+    
+    layout.name = CSXElementLayoutEmptyElementName;
+    layout.required = YES;
+    
+    content.contentType = CSXNodeContentTypeBoolean;
+    content.getter = @selector(empty);
+    content.setter = @selector(setEmpty:);
+    
+    layout.contentLayout = content;
+    [content release];
+    
+    return [layout autorelease];
 }
 
 + (CSXElementLayout *)elementElementLayout {
-	CSXElementLayout *layout;
-	CSXNodeContentLayout *content;
-	
-	layout = [CSXNodeLayout new];
-	content = [CSXNodeContentLayout new];
-	
-	layout.name = CSXElementLayoutEmptyElementName;
-	layout.required = NO;
-	
-	content.contentType = CSXNodeContentTypeCustom;
-	content.customClass = [CSXElementLayout class];
-	
-	layout.contentLayout = content;
-	[content release];
-	
-	layout.attributes = [NSArray arrayWithObjects:
-						 [self nameAttributeLayout],
-						 nil];
-	
-	layout.subelements = [NSArray arrayWithObjects:
-						  [self attributeElementLayout],
-						  //TODO: [self elementElementLayout] endless recursive
-						  [CSXNodeContentLayout contentElementLayout],
-						  nil];
-	return [layout autorelease];
+    CSXElementLayout *layout;
+    CSXNodeContentLayout *content;
+    
+    layout = [CSXNodeLayout new];
+    content = [CSXNodeContentLayout new];
+    
+    layout.name = CSXElementLayoutEmptyElementName;
+    layout.required = NO;
+    
+    content.contentType = CSXNodeContentTypeCustom;
+    content.customClass = [CSXElementLayout class];
+    
+    layout.contentLayout = content;
+    [content release];
+    
+    layout.attributes = [NSArray arrayWithObjects:
+                         [self nameAttributeLayout],
+                         nil];
+    
+    layout.subelements = [NSArray arrayWithObjects:
+                          [self attributeElementLayout],
+                          //TODO: [self elementElementLayout] endless recursive
+                          [CSXNodeContentLayout contentElementLayout],
+                          nil];
+    return [layout autorelease];
 }
 @end

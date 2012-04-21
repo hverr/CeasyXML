@@ -32,7 +32,7 @@
 #import "CSXNodeLayout.h"
 
 @interface CSXElementLayout : CSXNodeLayout {
-	
+    
 }
 /* MARK: Properties */
 @property (nonatomic, assign) BOOL empty;

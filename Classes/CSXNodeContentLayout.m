@@ -30,11 +30,11 @@
 
 
 NSString * const CSXNodeLayoutInvalidContentTypeIdentifierException =
-	@"CSXNodeLayoutInvalidContentTypeIdentifierException";
+    @"CSXNodeLayoutInvalidContentTypeIdentifierException";
 NSString * const CSXNodeLayoutClassNotFoundException = 
-	@"CSXNodeLayoutClassNotFoundException";
+    @"CSXNodeLayoutClassNotFoundException";
 NSString * const CSXNodeLayoutSelectorNotFoundException = 
-	@"CSXNodeLayoutSelectorNotFoundException";
+    @"CSXNodeLayoutSelectorNotFoundException";
 
 
 NSString * const CSXNodeContentTypeStringIdentifier = @"string";
@@ -53,152 +53,152 @@ NSString * const CSXNodeContentTypeCustomIdentifier = @"custom";
 
 
 - (void)setContentTypeIdentifier:(NSString *)s {
-	if([s isEqualToString:CSXNodeContentTypeStringIdentifier]) {
-		self.contentType = CSXNodeContentTypeString;
-		
-	} else if([s isEqualToString:CSXNodeContentTypeNumberIdentifier]) {
-		self.contentType = CSXNodeContentTypeNumber;
-		
-	} else if([s isEqualToString:CSXNodeContentTypeBooleanIdentifier]) {
-		self.contentType = CSXNodeContentTypeBoolean;
-		
-	} else if([s isEqualToString:CSXNodeContentTypeListIdentifier]) {
-		self.contentType = CSXNodeContentTypeList;
-		
-	} else if([s isEqualToString:CSXNodeContentTypeCustomIdentifier]) {
-		self.contentType = CSXNodeContentTypeCustom;
-		
-	} else {
-		NSException *exc;
-		NSString *excName, *excReason;
-		
-		excName = CSXNodeLayoutInvalidContentTypeIdentifierException;
-		excReason = [NSString stringWithFormat:
-					 @"Invalid type identifier: %@", s];
-		exc = [NSException exceptionWithName:excName 
-									  reason:excReason 
-									userInfo:nil];
-		[exc raise];
-	}
+    if([s isEqualToString:CSXNodeContentTypeStringIdentifier]) {
+        self.contentType = CSXNodeContentTypeString;
+        
+    } else if([s isEqualToString:CSXNodeContentTypeNumberIdentifier]) {
+        self.contentType = CSXNodeContentTypeNumber;
+        
+    } else if([s isEqualToString:CSXNodeContentTypeBooleanIdentifier]) {
+        self.contentType = CSXNodeContentTypeBoolean;
+        
+    } else if([s isEqualToString:CSXNodeContentTypeListIdentifier]) {
+        self.contentType = CSXNodeContentTypeList;
+        
+    } else if([s isEqualToString:CSXNodeContentTypeCustomIdentifier]) {
+        self.contentType = CSXNodeContentTypeCustom;
+        
+    } else {
+        NSException *exc;
+        NSString *excName, *excReason;
+        
+        excName = CSXNodeLayoutInvalidContentTypeIdentifierException;
+        excReason = [NSString stringWithFormat:
+                     @"Invalid type identifier: %@", s];
+        exc = [NSException exceptionWithName:excName 
+                                      reason:excReason 
+                                    userInfo:nil];
+        [exc raise];
+    }
 }
 
 - (NSString *)contentTypeIdentifier {
-	NSString *value;
-	
-	switch(self.contentType) {
-		case CSXNodeContentTypeString:
-			value = CSXNodeContentTypeStringIdentifier;
-			break;
-			
-		case CSXNodeContentTypeNumber:
-			value = CSXNodeContentTypeNumberIdentifier;
-			break;
-			
-		case CSXNodeContentTypeBoolean:
-			value = CSXNodeContentTypeBooleanIdentifier;
-			break;
-			
-		case CSXNodeContentTypeList:
-			value = CSXNodeContentTypeListIdentifier;
-			break;
-			
-		case CSXNodeContentTypeCustom:
-			value = CSXNodeContentTypeCustomIdentifier;
-			break;
-			
-		default:
-			value = nil;
-			break;
-	}
-	
-	return value;
+    NSString *value;
+    
+    switch(self.contentType) {
+        case CSXNodeContentTypeString:
+            value = CSXNodeContentTypeStringIdentifier;
+            break;
+            
+        case CSXNodeContentTypeNumber:
+            value = CSXNodeContentTypeNumberIdentifier;
+            break;
+            
+        case CSXNodeContentTypeBoolean:
+            value = CSXNodeContentTypeBooleanIdentifier;
+            break;
+            
+        case CSXNodeContentTypeList:
+            value = CSXNodeContentTypeListIdentifier;
+            break;
+            
+        case CSXNodeContentTypeCustom:
+            value = CSXNodeContentTypeCustomIdentifier;
+            break;
+            
+        default:
+            value = nil;
+            break;
+    }
+    
+    return value;
 }
 
 - (void)setCustomClassString:(NSString *)s {
-	Class myClass;
-	
-	myClass = objc_getClass([s UTF8String]);
-	
-	if(myClass == NULL) {
-		NSException *exc;
-		NSString *excName, *excReason;
-		
-		excName = CSXNodeLayoutClassNotFoundException;
-		excReason = [NSString stringWithFormat:
-					 @"Class not found: %@", s];
-		exc = [NSException exceptionWithName:excName 
-									  reason:excReason 
-									userInfo:nil];
-		[exc raise];
-		return;
-	}
-	
-	self.customClass = myClass;
+    Class myClass;
+    
+    myClass = objc_getClass([s UTF8String]);
+    
+    if(myClass == NULL) {
+        NSException *exc;
+        NSString *excName, *excReason;
+        
+        excName = CSXNodeLayoutClassNotFoundException;
+        excReason = [NSString stringWithFormat:
+                     @"Class not found: %@", s];
+        exc = [NSException exceptionWithName:excName 
+                                      reason:excReason 
+                                    userInfo:nil];
+        [exc raise];
+        return;
+    }
+    
+    self.customClass = myClass;
 }
 
 - (NSString *)customClassString {
-	if(self.customClass == NULL) {
-		return nil;
-	}
-	return NSStringFromClass(self.customClass);
+    if(self.customClass == NULL) {
+        return nil;
+    }
+    return NSStringFromClass(self.customClass);
 }
 
 - (void)setSetterString:(NSString *)s {
-	SEL mySelector;
-	
-	mySelector = NSSelectorFromString(s);
-	if(mySelector == NULL) {
-		NSException *exc;
-		NSString *excName, *excReason;
-		
-		excName = CSXNodeLayoutSelectorNotFoundException;
-		excReason = [NSString stringWithFormat:
-					 @"Selector not found: %@", s];
-		exc = [NSException exceptionWithName:excName 
-									  reason:excReason 
-									userInfo:nil];
-		[exc raise];
-		return;
-	}
-	
-	self.setter = mySelector;
+    SEL mySelector;
+    
+    mySelector = NSSelectorFromString(s);
+    if(mySelector == NULL) {
+        NSException *exc;
+        NSString *excName, *excReason;
+        
+        excName = CSXNodeLayoutSelectorNotFoundException;
+        excReason = [NSString stringWithFormat:
+                     @"Selector not found: %@", s];
+        exc = [NSException exceptionWithName:excName 
+                                      reason:excReason 
+                                    userInfo:nil];
+        [exc raise];
+        return;
+    }
+    
+    self.setter = mySelector;
 }
 
 - (NSString *)setterString {
-	if(self.setter == NULL) {
-		return nil;
-	}
-	
-	return NSStringFromSelector(self.setter);
+    if(self.setter == NULL) {
+        return nil;
+    }
+    
+    return NSStringFromSelector(self.setter);
 }
 
 - (void)setGetterString:(NSString *)s {
-	SEL mySelector;
-	
-	mySelector = NSSelectorFromString(s);
-	if(mySelector == NULL) {
-		NSException *exc;
-		NSString *excName, *excReason;
-		
-		excName = CSXNodeLayoutSelectorNotFoundException;
-		excReason = [NSString stringWithFormat:
-					 @"Selector not found: %@", s];
-		exc = [NSException exceptionWithName:excName 
-									  reason:excReason 
-									userInfo:nil];
-		[exc raise];
-		return;
-	}
-	
-	self.getter = mySelector;
+    SEL mySelector;
+    
+    mySelector = NSSelectorFromString(s);
+    if(mySelector == NULL) {
+        NSException *exc;
+        NSString *excName, *excReason;
+        
+        excName = CSXNodeLayoutSelectorNotFoundException;
+        excReason = [NSString stringWithFormat:
+                     @"Selector not found: %@", s];
+        exc = [NSException exceptionWithName:excName 
+                                      reason:excReason 
+                                    userInfo:nil];
+        [exc raise];
+        return;
+    }
+    
+    self.getter = mySelector;
 }
 
 - (NSString *)getterString {
-	if(self.getter == NULL) {
-		return nil;
-	}
-	
-	return NSStringFromSelector(self.getter);
+    if(self.getter == NULL) {
+        return nil;
+    }
+    
+    return NSStringFromSelector(self.getter);
 }
 
 @end

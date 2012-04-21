@@ -40,11 +40,11 @@ extern NSString * const CSXNodeContentTypeListIdentifier;
 extern NSString * const CSXNodeContentTypeCustomIdentifier;
 
 typedef enum {
-	CSXNodeContentTypeString,
-	CSXNodeContentTypeNumber,
-	CSXNodeContentTypeBoolean,
-	CSXNodeContentTypeList,
-	CSXNodeContentTypeCustom
+    CSXNodeContentTypeString,
+    CSXNodeContentTypeNumber,
+    CSXNodeContentTypeBoolean,
+    CSXNodeContentTypeList,
+    CSXNodeContentTypeCustom
 } CSXNodeContentType;
 
 @interface CSXNodeContentLayout : NSObject {

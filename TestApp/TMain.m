@@ -29,10 +29,10 @@
 #import <CSXHelloWorld.h>
 
 int main(int argc, const char **argv) {
-	NSAutoreleasePool *pool = [NSAutoreleasePool new];
-	
-	[CSXHelloWorld print];
-	
-	[pool release];
-	return 0;
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
+    
+    [CSXHelloWorld print];
+    
+    [pool release];
+    return 0;
 }

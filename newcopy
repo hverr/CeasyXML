@@ -32,23 +32,23 @@ cd "`dirname "$0"`"
 
 # Check files
 if [ ! -f ./template.h ]; then
-	echo "./template.h: file missing"
-	exit 1
+    echo "./template.h: file missing"
+    exit 1
 fi
 
 if [ ! -f ./template.m ]; then
-	echo "./template.m: file missing"
-	exit 1
+    echo "./template.m: file missing"
+    exit 1
 fi
 
 if [ ! -d ./Classes ]; then
-	echo "./Classes: directory missing"
-	exit 1
+    echo "./Classes: directory missing"
+    exit 1
 fi
 
 if [ ! -d ./TestApp ]; then
-	echo "./TestApp: directory missing"
-	exit 1
+    echo "./TestApp: directory missing"
+    exit 1
 fi
 
 
@@ -57,18 +57,18 @@ printf "Test class (T) or library class (L/default)? [T/L] "
 read classType
 classDir=Classes
 if [ "$classType" = "T" -o "$classType" = "t" ]; then
-	classDir=TestApp
-	
+    classDir=TestApp
+    
 elif [ -n "$classType" ]; then
-	echo "Invalid class type"
-	exit 1
+    echo "Invalid class type"
+    exit 1
 fi
 
 printf "Class name? "
 read className
 if [ -z "$className" ]; then
-	echo "Empty string"
-	exit 1
+    echo "Empty string"
+    exit 1
 fi
 
 # Write files
@@ -77,5 +77,5 @@ cat template.h | sed "s/<#filename#>/$className.h/" | \
     sed "s/<#class#>/$className/" > "$classDir/$className.h"
 cat template.m | sed "s/<#filename#>/$className.m/" | \
     sed "s/<#class#>/$className/" > "$classDir/$className.m"
-	
+    
 open "$classDir"

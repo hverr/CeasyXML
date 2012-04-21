@@ -34,10 +34,10 @@
  =========================================================================== */
 @implementation CSXDocumentLayout
 - (void)dealloc {
-	self.name = nil;
-	self.attributes = nil;
-	
-	[super dealloc];
+    self.name = nil;
+    self.attributes = nil;
+    
+    [super dealloc];
 }
 
 /* MARK: Properties */

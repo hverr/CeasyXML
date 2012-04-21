@@ -35,9 +35,9 @@
 @implementation CSXDocument
 /* MARK: Init and Dealloc */
 - (void)dealloc {
-	self.layouts = nil;
-	
-	[super dealloc];
+    self.layouts = nil;
+    
+    [super dealloc];
 }
 
 /* MARK: Properties */
