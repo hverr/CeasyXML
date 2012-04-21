@@ -39,6 +39,7 @@ NSString * const CSXNodeLayoutSelectorNotFoundException =
 
 NSString * const CSXNodeContentTypeStringIdentifier = @"string";
 NSString * const CSXNodeContentTypeNumberIdentifier = @"number";
+NSString * const CSXNodeContentTypeBooleanIdentifier = @"boolean";
 NSString * const CSXNodeContentTypeListIdentifier = @"list";
 NSString * const CSXNodeContentTypeCustomIdentifier = @"custom";
 
@@ -57,6 +58,9 @@ NSString * const CSXNodeContentTypeCustomIdentifier = @"custom";
 		
 	} else if([s isEqualToString:CSXNodeContentTypeNumberIdentifier]) {
 		self.contentType = CSXNodeContentTypeNumber;
+		
+	} else if([s isEqualToString:CSXNodeContentTypeBooleanIdentifier]) {
+		self.contentType = CSXNodeContentTypeBoolean;
 		
 	} else if([s isEqualToString:CSXNodeContentTypeListIdentifier]) {
 		self.contentType = CSXNodeContentTypeList;
@@ -88,6 +92,10 @@ NSString * const CSXNodeContentTypeCustomIdentifier = @"custom";
 			
 		case CSXNodeContentTypeNumber:
 			value = CSXNodeContentTypeNumberIdentifier;
+			break;
+			
+		case CSXNodeContentTypeBoolean:
+			value = CSXNodeContentTypeBooleanIdentifier;
 			break;
 			
 		case CSXNodeContentTypeList:

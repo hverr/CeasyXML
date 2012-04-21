@@ -19,6 +19,8 @@
 		925FE8E41542F13200AA875E /* CSXNodeContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE8E21542F13200AA875E /* CSXNodeContentLayout.m */; };
 		925FE9181542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 925FE9161542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h */; };
 		925FE9191542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */; };
+		925FE9431542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 925FE9411542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h */; };
+		925FE9441542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */; };
 		92F82AAB154078540009E770 /* libceasyxml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libceasyxml.a */; };
 		92F82AC6154078C10009E770 /* TMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F82AC5154078C10009E770 /* TMain.m */; };
 /* End PBXBuildFile section */
@@ -49,6 +51,8 @@
 		925FE8E21542F13200AA875E /* CSXNodeContentLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXNodeContentLayout.m; sourceTree = "<group>"; };
 		925FE9161542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXNodeContentLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
 		925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXNodeContentLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
+		925FE9411542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXElementLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
+		925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXElementLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
 		92F82A9B154075960009E770 /* newcopy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = newcopy; sourceTree = "<group>"; };
 		92F82A9D154076170009E770 /* template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = template.h; sourceTree = "<group>"; };
 		92F82A9E154076170009E770 /* template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = template.m; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */,
 				925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */,
 				925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */,
+				925FE9411542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h */,
+				925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */,
 			);
 			name = "Layout Objects";
 			sourceTree = "<group>";
@@ -172,6 +178,7 @@
 				925FE8A81542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h in Headers */,
 				925FE8E31542F13200AA875E /* CSXNodeContentLayout.h in Headers */,
 				925FE9181542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h in Headers */,
+				925FE9431542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +265,7 @@
 				925FE8A91542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m in Sources */,
 				925FE8E41542F13200AA875E /* CSXNodeContentLayout.m in Sources */,
 				925FE9191542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m in Sources */,
+				925FE9441542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
