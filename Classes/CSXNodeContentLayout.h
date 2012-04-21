@@ -1,5 +1,5 @@
 /*
- *  CSXNodeLayout.m
+ *  CSXNodeContentLayout.h
  *  ceasyxml
  *  http://code.google.com/p/ceasyxml/
  *
@@ -26,24 +26,36 @@
  *
  */
 
-#import "CSXNodeLayout.h"
 
+#import <Foundation/Foundation.h>
 
-/* =========================================================================== 
- MARK: -
- MARK: Public Implementation
- =========================================================================== */
-@implementation CSXNodeLayout
-/* MARK: Init and Dealloc */
-- (void)dealloc {
-	self.name = nil;
-	self.contentLayout = nil;
-	
-	[super dealloc];
+extern NSString * const CSXNodeLayoutInvalidContentTypeIdentifierException;
+extern NSString * const CSXNodeLayoutClassNotFoundException;
+extern NSString * const CSXNodeLayoutSelectorNotFoundException;
+
+extern NSString * const CSXNodeContentTypeStringIdentifier;
+extern NSString * const CSXNodeContentTypeNumberIdentifier;
+extern NSString * const CSXNodeContentTypeListIdentifier;
+extern NSString * const CSXNodeContentTypeCustomIdentifier;
+
+typedef enum {
+	CSXNodeContentTypeString,
+	CSXNodeContentTypeNumber,
+	CSXNodeContentTypeList,
+	CSXNodeContentTypeCustom
+} CSXNodeContentType;
+
+@interface CSXNodeContentLayout : NSObject {
 }
-
 /* MARK: Properties */
-@synthesize name, required, contentLayout;
-@end
+@property (nonatomic, assign) CSXNodeContentType contentType;
+@property (nonatomic, assign) SEL setter;
+@property (nonatomic, assign) SEL getter;
+@property (nonatomic, assign) Class customClass;
 
+@property (nonatomic, retain) NSString *contentTypeIdentifier;
+@property (nonatomic, retain) NSString *customClassString;
+@property (nonatomic, retain) NSString *setterString;
+@property (nonatomic, retain) NSString *getterString;
+@end
 

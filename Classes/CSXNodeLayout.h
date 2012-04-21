@@ -28,13 +28,9 @@
 
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
 
-typedef enum {
-	CSXNodeContentTypeString,
-	CSXNodeContentTypeNumber,
-	CSXNodeContentTypeList,
-	CSXNodeContentTypeCustom
-} CSXNodeContentType;
+#import "CSXNodeContentLayout.h"
 
 @interface CSXNodeLayout : NSObject {
 }
@@ -42,9 +38,6 @@ typedef enum {
 /* MARK: Properties */
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, assign) BOOL required;
-@property (nonatomic, assign) CSXNodeContentType contentType;
-@property (nonatomic, assign) SEL setter;
-@property (nonatomic, assign) SEL getter;
-@property (nonatomic, assign) Class customClass;
+@property (nonatomic, retain) CSXNodeContentLayout *contentLayout;
 @end
 
