@@ -35,7 +35,6 @@
 	
 }
 /* MARK: Properties */
-@property (nonatomic, assign) BOOL required;
 @property (nonatomic, assign) BOOL empty;
 @property (nonatomic, assign) BOOL unique;
 @property (nonatomic, retain) NSArray *attributes;

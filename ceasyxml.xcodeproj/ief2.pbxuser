@@ -12,18 +12,8 @@
 			92F82AA8154078500009E770 /* TestApp */,
 		);
 		perUserDictionary = {
-			PBXPerProjectTemplateStateSaveDate = 356639823;
-			PBXWorkspaceStateSaveDate = 356639823;
-		};
-		perUserProjectItems = {
-			9227B96B1541ECC400FA9EA6 /* PBXTextBookmark */ = 9227B96B1541ECC400FA9EA6 /* PBXTextBookmark */;
-			9227B96C1541ECC400FA9EA6 /* PBXTextBookmark */ = 9227B96C1541ECC400FA9EA6 /* PBXTextBookmark */;
-			9227B96D1541ECC400FA9EA6 /* PBXTextBookmark */ = 9227B96D1541ECC400FA9EA6 /* PBXTextBookmark */;
-			9227B9701541ECC400FA9EA6 /* PBXTextBookmark */ = 9227B9701541ECC400FA9EA6 /* PBXTextBookmark */;
-			9227B9711541ECC400FA9EA6 /* PBXTextBookmark */ = 9227B9711541ECC400FA9EA6 /* PBXTextBookmark */;
-			9227B9721541ECC400FA9EA6 /* PBXTextBookmark */ = 9227B9721541ECC400FA9EA6 /* PBXTextBookmark */;
-			92F82AB51540786C0009E770 = 92F82AB51540786C0009E770 /* PBXTextBookmark */;
-			92F82ADF154079390009E770 = 92F82ADF154079390009E770 /* PBXTextBookmark */;
+			PBXPerProjectTemplateStateSaveDate = 356704925;
+			PBXWorkspaceStateSaveDate = 356704925;
 		};
 		sourceControlManager = 92F82A8D154075440009E770 /* Source Control */;
 		userBuildSettings = {
@@ -76,65 +66,20 @@
 			sepNavWindowFrame = "{{949, 35}, {647, 984}}";
 		};
 	};
-	9227B96B1541ECC400FA9EA6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */;
-		name = "CSXDocumentLayout.h: 37";
-		rLen = 0;
-		rLoc = 1482;
-		rType = 0;
-		vrLen = 1489;
-		vrLoc = 0;
+	9227B9621541ECBA00FA9EA6 /* CSXDocument.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
+			sepNavSelRange = "{1261, 0}";
+			sepNavVisRange = "{0, 1377}";
+		};
 	};
-	9227B96C1541ECC400FA9EA6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */;
-		name = "CSXDocumentLayout.m: 37";
-		rLen = 0;
-		rLoc = 1645;
-		rType = 0;
-		vrLen = 1569;
-		vrLoc = 0;
-	};
-	9227B96D1541ECC400FA9EA6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */;
-		name = "CSXDocumentLayout.m: 42";
-		rLen = 0;
-		rLoc = 1577;
-		rType = 0;
-		vrLen = 1652;
-		vrLoc = 0;
-	};
-	9227B9701541ECC400FA9EA6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */;
-		name = "CSXElementLayout.m: 31";
-		rLen = 0;
-		rLoc = 1261;
-		rType = 0;
-		vrLen = 1584;
-		vrLoc = 0;
-	};
-	9227B9711541ECC400FA9EA6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 9227B9491541E8C500FA9EA6 /* CSXElementLayout.h */;
-		name = "CSXElementLayout.h: 44";
-		rLen = 1;
-		rLoc = 1605;
-		rType = 0;
-		vrLen = 1606;
-		vrLoc = 0;
-	};
-	9227B9721541ECC400FA9EA6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 9227B9491541E8C500FA9EA6 /* CSXElementLayout.h */;
-		name = "CSXElementLayout.h: 45";
-		rLen = 0;
-		rLoc = 1606;
-		rType = 0;
-		vrLen = 1606;
-		vrLoc = 0;
+	9227B9631541ECBA00FA9EA6 /* CSXDocument.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
+			sepNavSelRange = "{1364, 0}";
+			sepNavVisRange = "{0, 1619}";
+			sepNavWindowFrame = "{{1001, 18}, {647, 984}}";
+		};
 	};
 	92F82A8D154075440009E770 /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -213,16 +158,6 @@
 		sourceDirectories = (
 		);
 	};
-	92F82AB51540786C0009E770 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 92F82A9E154076170009E770 /* template.m */;
-		name = "template.m: 29";
-		rLen = 0;
-		rLoc = 1939;
-		rType = 0;
-		vrLen = 1215;
-		vrLoc = 0;
-	};
 	92F82AC5154078C10009E770 /* TMain.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
@@ -230,16 +165,6 @@
 			sepNavVisRange = "{0, 1420}";
 			sepNavWindowFrame = "{{38, 48}, {647, 984}}";
 		};
-	};
-	92F82ADF154079390009E770 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 92F82A9E154076170009E770 /* template.m */;
-		name = "template.m: 1";
-		rLen = 1212;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 1939;
-		vrLoc = 0;
 	};
 	D2AAC07D0554694100DB518D /* ceasyxml */ = {
 		activeExec = 0;

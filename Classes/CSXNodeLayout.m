@@ -42,7 +42,7 @@
 }
 
 /* MARK: Properties */
-@synthesize name, contentType, getter, setter, customClass;
+@synthesize name, required, contentType, getter, setter, customClass;
 @end
 
 

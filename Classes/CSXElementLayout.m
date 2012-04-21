@@ -43,6 +43,6 @@
 }
 
 /* MARK: Properties */
-@synthesize required, empty, unique, attributes, subelements;
+@synthesize empty, unique, attributes, subelements;
 @end
 

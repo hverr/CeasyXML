@@ -41,6 +41,7 @@ typedef enum {
 
 /* MARK: Properties */
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, assign) BOOL required;
 @property (nonatomic, assign) CSXNodeContentType contentType;
 @property (nonatomic, assign) SEL setter;
 @property (nonatomic, assign) SEL getter;
