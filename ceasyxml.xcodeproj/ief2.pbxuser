@@ -176,7 +176,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
 			sepNavSelRange = "{1294, 46}";
 			sepNavVisRange = "{0, 1561}";
-			sepNavWindowFrame = "{{997, -5}, {647, 984}}";
+			sepNavWindowFrame = "{{1352, 24}, {647, 984}}";
 		};
 	};
 	9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */ = {
@@ -311,9 +311,10 @@
 	};
 	925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 1443}}";
-			sepNavSelRange = "{2557, 0}";
-			sepNavVisRange = "{1821, 1513}";
+			sepNavIntBoundsRect = "{{0, 0}, {502, 1482}}";
+			sepNavSelRange = "{3256, 0}";
+			sepNavVisRange = "{3286, 48}";
+			sepNavWindowFrame = "{{1218, 68}, {647, 984}}";
 		};
 	};
 	925FE8B11542E84200AA875E /* PBXBookmark */ = {
@@ -1257,9 +1258,9 @@
 	};
 	925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
-			sepNavSelRange = "{1912, 4}";
-			sepNavVisRange = "{0, 2139}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 1313}}";
+			sepNavSelRange = "{3106, 0}";
+			sepNavVisRange = "{1506, 1603}";
 		};
 	};
 	925FE94B1542FAAC00AA875E /* PBXTextBookmark */ = {
@@ -1334,7 +1335,7 @@
 		fRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */;
 		name = "CSXElementLayout+CSXLayoutObject.m: 32";
 		rLen = 0;
-		rLoc = 2133;
+		rLoc = 3270;
 		rType = 0;
 		vrLen = 1350;
 		vrLoc = 0;
@@ -1343,8 +1344,8 @@
 		isa = PBXTextBookmark;
 		fRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */;
 		name = "CSXElementLayout+CSXLayoutObject.m: 48";
-		rLen = 4;
-		rLoc = 1912;
+		rLen = 6;
+		rLoc = 1913;
 		rType = 0;
 		vrLen = 2139;
 		vrLoc = 0;
@@ -1437,8 +1438,8 @@
 		isa = PBXTextBookmark;
 		fRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */;
 		name = "CSXElementLayout+CSXLayoutObject.m: 48";
-		rLen = 4;
-		rLoc = 1912;
+		rLen = 6;
+		rLoc = 1913;
 		rType = 0;
 		vrLen = 2139;
 		vrLoc = 0;
@@ -1527,8 +1528,8 @@
 		isa = PBXTextBookmark;
 		fRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */;
 		name = "CSXElementLayout+CSXLayoutObject.m: 48";
-		rLen = 4;
-		rLoc = 1912;
+		rLen = 6;
+		rLoc = 1913;
 		rType = 0;
 		vrLen = 2139;
 		vrLoc = 0;
