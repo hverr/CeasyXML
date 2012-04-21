@@ -1,0 +1,157 @@
+/*
+ *  CSXNodeContentLayout+CSXLayoutObject.m
+ *  ceasyxml
+ *  http://code.google.com/p/ceasyxml/
+ *
+ *  Copyright (c) 2012 Henri Verroken
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining
+ *  a copy of this software and associated documentation files (the
+ *  "Software"), to deal in the Software without restriction, including
+ *  without limitation the rights to use, copy, modify, merge, publish,
+ *  distribute, sublicense, and/or sell copies of the Software, and to
+ *  permit persons to whom the Software is furnished to do so, subject to
+ *  the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be
+ *  included in all copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *  ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ *  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ *  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
+
+#import "CSXNodeContentLayout+CSXLayoutObject.h"
+
+
+static NSString * const CSXNodeLayoutTypeAttributeName = @"type";
+static NSString * const CSXNodeLayoutContentElementName = @"content";
+
+static NSString * const CSXNodeLayoutSetterElementName = @"setter";
+static NSString * const CSXNodeLayoutGetterElementName = @"getter";
+static NSString * const CSXNodeLayoutClassElementName = @"class";
+
+@implementation CSXNodeContentLayout (CSXLayoutObject)
+/* MARK: Various Attributes */
++ (CSXNodeLayout *)typeAttributeLayout {
+	CSXNodeLayout *layout;
+	CSXNodeContentLayout *content;
+	
+	layout = [CSXNodeLayout new];
+	content = [CSXNodeContentLayout new];
+	
+	layout.name = CSXNodeLayoutTypeAttributeName;
+	layout.required = YES;
+	
+	content.contentType = CSXNodeContentTypeString;
+	content.getter = @selector(contentTypeIdentifier);
+	content.setter = @selector(setContentTypeIdentifier:);
+	
+	layout.contentLayout = content;
+	[content release];
+	
+	return [layout autorelease];
+}
+
+/* MARK: Content Element */
++ (CSXElementLayout *)getterElementLayout {
+	CSXElementLayout *layout;
+	CSXNodeContentLayout *content;
+	
+	layout = [CSXElementLayout new];
+	content = [CSXNodeContentLayout new];
+	
+	layout.name = CSXNodeLayoutGetterElementName;
+	layout.required = NO;
+	layout.unique = YES;
+	layout.empty = NO;
+	
+	content.contentType = CSXNodeContentTypeString;
+	content.getter = @selector(getterString);
+	content.setter = @selector(setGetterString:);
+	
+	layout.contentLayout = content;
+	[content release];
+	
+	return [layout autorelease];
+}
+
++ (CSXElementLayout *)setterElementLayout {
+	CSXElementLayout *layout;
+	CSXNodeContentLayout *content;
+	
+	layout = [CSXElementLayout new];
+	content = [CSXNodeContentLayout new];
+	
+	layout.name = CSXNodeLayoutSetterElementName;
+	layout.required = NO;
+	layout.unique = YES;
+	layout.empty = NO;
+	
+	content.contentType = CSXNodeContentTypeString;
+	content.getter = @selector(setterString);
+	content.setter = @selector(setSetterString:);
+	
+	layout.contentLayout = content;
+	[content release];
+	
+	return [layout autorelease];
+}
+
++ (CSXElementLayout *)classElementLayout {
+	CSXElementLayout *layout;
+	CSXNodeContentLayout *content;
+	
+	layout = [CSXElementLayout new];
+	content = [CSXNodeContentLayout new];
+	
+	layout.name = CSXNodeLayoutClassElementName;
+	layout.required = NO;
+	layout.unique = YES;
+	layout.empty = NO;
+	
+	content.contentType = CSXNodeContentTypeString;
+	content.getter = @selector(customClassString);
+	content.setter = @selector(setCustomClassString:);
+	
+	layout.contentLayout = content;
+	[content release];
+	
+	return [layout autorelease];
+}
+
++ (CSXElementLayout *)contentElementLayout {
+	CSXElementLayout *layout;
+	CSXNodeContentLayout *content;
+	
+	layout = [CSXElementLayout new];
+	
+	layout.name = CSXNodeLayoutContentElementName;
+	layout.required = YES;
+	layout.unique = YES;
+	layout.empty = NO;
+	
+	content.contentType = CSXNodeContentTypeCustom;
+	content.customClass = [CSXNodeContentLayout class];
+	
+	layout.contentLayout = content;
+	[content release];
+	
+	layout.attributes = [NSArray arrayWithObjects:
+						 [self typeAttributeLayout],
+						 nil];
+	layout.subelements = [NSArray arrayWithObjects:
+						  [self getterElementLayout],
+						  [self setterElementLayout],
+						  [self classElementLayout],
+						  nil];
+	
+	return [layout autorelease];
+}
+@end
+

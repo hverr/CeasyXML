@@ -202,6 +202,88 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>925FE8C01542ED9B00AA875E</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>CSXNodeLayout+CSXLayoutObject.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>925FE8C11542ED9B00AA875E</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>CSXNodeLayout+CSXLayoutObject.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>925FE9311542F91200AA875E</string>
+						<key>history</key>
+						<array>
+							<string>925FE9211542F90100AA875E</string>
+							<string>925FE9221542F90100AA875E</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {647, 887}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>607 62 647 928 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>925FE9241542F90100AA875E</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>CSXNodeContentLayout+CSXLayoutObject.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>925FE9251542F90100AA875E</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>CSXNodeContentLayout+CSXLayoutObject.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>925FE9321542F91200AA875E</string>
+						<key>history</key>
+						<array>
+							<string>925FE9261542F90100AA875E</string>
+							<string>925FE9271542F90100AA875E</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {647, 887}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>61 83 647 928 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>925FE8ED1542F21E00AA875E</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>CSXNodeContentLayout.m</string>
@@ -216,11 +298,11 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE8F11542F21E00AA875E</string>
+						<string>925FE9331542F91200AA875E</string>
 						<key>history</key>
 						<array>
-							<string>925FE8EF1542F21E00AA875E</string>
-							<string>925FE8F01542F21E00AA875E</string>
+							<string>925FE8FF1542F66F00AA875E</string>
+							<string>925FE9001542F66F00AA875E</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -257,11 +339,11 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE8F41542F21E00AA875E</string>
+						<string>925FE9341542F91200AA875E</string>
 						<key>history</key>
 						<array>
-							<string>925FE8F21542F21E00AA875E</string>
-							<string>925FE8F31542F21E00AA875E</string>
+							<string>925FE9021542F66F00AA875E</string>
+							<string>925FE9031542F66F00AA875E</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -284,47 +366,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>925FE8C01542ED9B00AA875E</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>CSXNodeLayout+CSXLayoutObject.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>925FE8C11542ED9B00AA875E</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>CSXNodeLayout+CSXLayoutObject.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>925FE8F51542F21E00AA875E</string>
-						<key>history</key>
-						<array>
-							<string>925FE8C21542ED9B00AA875E</string>
-							<string>925FE8C31542ED9B00AA875E</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {647, 887}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>607 62 647 928 0 0 1920 1058 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>925FE8CC1542ED9B00AA875E</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>CSXElementLayout.h</string>
@@ -339,7 +380,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE8F61542F21E00AA875E</string>
+						<string>925FE9351542F91200AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE8B11542E84200AA875E</string>
@@ -379,7 +420,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE8F71542F21E00AA875E</string>
+						<string>925FE9361542F91200AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE8DB1542F05900AA875E</string>
@@ -420,7 +461,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE8F81542F21E00AA875E</string>
+						<string>925FE9371542F91200AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE89E1542E78400AA875E</string>
@@ -461,7 +502,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>925FE8F91542F21E00AA875E</string>
+						<string>925FE9381542F91200AA875E</string>
 						<key>history</key>
 						<array>
 							<string>925FE8A31542E78400AA875E</string>
@@ -562,7 +603,8 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>8</integer>
+											<integer>4</integer>
+											<integer>3</integer>
 											<integer>2</integer>
 											<integer>1</integer>
 											<integer>0</integer>
@@ -769,15 +811,16 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>925FE8A11542E78400AA875E</string>
 		<string>925FE89C1542E78400AA875E</string>
 		<string>925FE8C51542ED9B00AA875E</string>
 		<string>925FE8CC1542ED9B00AA875E</string>
-		<string>925FE8C01542ED9B00AA875E</string>
-		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
 		<string>925FE8971542E78400AA875E</string>
 		<string>925FE8ED1542F21E00AA875E</string>
+		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
+		<string>925FE9241542F90100AA875E</string>
+		<string>925FE8C01542ED9B00AA875E</string>
+		<string>1C530D52069F1CE1000CFCEE</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 603 446 419 0 0 1920 1058 </string>
@@ -933,6 +976,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -955,8 +1000,6 @@
 							<string>118pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1009,7 +1052,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D52069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
