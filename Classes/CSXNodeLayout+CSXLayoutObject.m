@@ -57,14 +57,22 @@ static NSString * const CSXNodeLayoutRequiredElementName = @"required";
 /* MARK: Node/Attribute Element */
 + (CSXElementLayout *)requiredElementLayout {
 	CSXElementLayout *layout;
+	CSXNodeContentLayout *content;
 	
 	layout = [CSXElementLayout new];
+	content = [CSXNodeContentLayout new];
 	
 	layout.name = CSXNodeLayoutRequiredElementName;
 	layout.empty = YES;
 	layout.unique = YES;
 	layout.required = NO;
 	
+	content.contentType = CSXNodeContentTypeBoolean;
+	content.getter = @selector(required);
+	content.setter = @selector(setRequired:);
+	
+	layout.contentLayout = content;
+	[content release];
 	
 	return [layout autorelease];
 }
