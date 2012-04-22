@@ -202,6 +202,47 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>922CDB341544707C003B1B6F</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>CSXXMLParser.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>922CDB351544707C003B1B6F</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>CSXXMLParser.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>922CDB381544707C003B1B6F</string>
+						<key>history</key>
+						<array>
+							<string>922CDB361544707C003B1B6F</string>
+							<string>922CDB371544707C003B1B6F</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {647, 887}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>687 120 647 928 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>922CDB1615446C09003B1B6F</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>CSXDocumentLayout.h</string>
@@ -216,7 +257,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>922CDB2615446CC2003B1B6F</string>
+						<string>922CDB391544707C003B1B6F</string>
 						<key>history</key>
 						<array>
 							<string>922CDB1815446C09003B1B6F</string>
@@ -308,6 +349,7 @@
 										<string>0867D691FE84028FC02AAC07</string>
 										<string>08FB77AEFE84172EC02AAC07</string>
 										<string>9227B9661541ECBD00FA9EA6</string>
+										<string>922CDB2515446CBA003B1B6F</string>
 										<string>32C88DFF0371C24200C91783</string>
 										<string>0867D69AFE84028FC02AAC07</string>
 										<string>034768DFFF38A50411DB9C8B</string>
@@ -316,13 +358,13 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>14</integer>
-											<integer>1</integer>
+											<integer>22</integer>
+											<integer>21</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 0}, {429, 333}}</string>
+									<string>{{0, 157}, {429, 333}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -524,6 +566,7 @@
 	<array>
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>922CDB1615446C09003B1B6F</string>
+		<string>922CDB341544707C003B1B6F</string>
 		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
