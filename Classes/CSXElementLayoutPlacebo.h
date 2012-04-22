@@ -33,7 +33,7 @@
 #import "CSXElementLayout+CSXLayoutObject.h"
 
 @interface CSXElementLayoutPlacebo : CSXElementLayout {
-	BOOL _setup;
+    BOOL _setup;
 }
 /* MARK: Init */
 - (id)init;

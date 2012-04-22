@@ -47,64 +47,64 @@
 @implementation CSXElementLayoutPlacebo
 /* MARK: Init */
 - (id)init {
-	self = [super init];
-	return self;
+    self = [super init];
+    return self;
 }
 
 + (id)placebo {
-	id inst;
-	inst = [[self alloc] init];
-	return [inst autorelease];
+    id inst;
+    inst = [[self alloc] init];
+    return [inst autorelease];
 }
 
 /* MARK: Properties */
 - (NSString *)name {
-	if(self.setup == NO) {
-		[self setupPlacebo];
-	}
-	return self.name;
+    if(self.setup == NO) {
+        [self setupPlacebo];
+    }
+    return self.name;
 }
 
 - (BOOL)required {
-	if(self.setup == NO) {
-		[self setupPlacebo];
-	}
-	return self.required;
+    if(self.setup == NO) {
+        [self setupPlacebo];
+    }
+    return self.required;
 }
 
 - (CSXNodeContentLayout *)contentLayout {
-	if(self.setup == NO) {
-		[self setupPlacebo];
-	}
-	return self.contentLayout;
+    if(self.setup == NO) {
+        [self setupPlacebo];
+    }
+    return self.contentLayout;
 }
 
 - (BOOL)empty {
-	if(self.setup == NO) {
-		[self setupPlacebo];
-	}
-	return self.empty;
+    if(self.setup == NO) {
+        [self setupPlacebo];
+    }
+    return self.empty;
 }
 
 - (BOOL)unique {
-	if(self.setup == NO) {
-		[self setupPlacebo];
-	}
-	return self.unique;
+    if(self.setup == NO) {
+        [self setupPlacebo];
+    }
+    return self.unique;
 }
 
 - (NSArray *)attributes {
-	if(self.setup == NO) {
-		[self setupPlacebo];
-	}
-	return self.attributes;
+    if(self.setup == NO) {
+        [self setupPlacebo];
+    }
+    return self.attributes;
 }
 
 - (NSArray *)subelements {
-	if(self.setup == NO) {
-		[self setupPlacebo];
-	}
-	return self.subelements;
+    if(self.setup == NO) {
+        [self setupPlacebo];
+    }
+    return self.subelements;
 }
 @end
 
@@ -116,28 +116,28 @@
 @implementation CSXElementLayoutPlacebo (Private)
 /* MARK: Private Properties */
 - (BOOL)isSetup {
-	return _setup;
+    return _setup;
 }
 
 - (void)setSetup:(BOOL)f {
-	_setup = f;
+    _setup = f;
 }
 
 /* MARK: Setup */
 - (void)setupPlacebo {
-	CSXElementLayout *base;
-	
-	base = [CSXElementLayout elementElementLayout];
-	
-	self.name = base.name;
-	self.required = base.required;
-	self.contentLayout = base.contentLayout;
-	
-	self.empty = base.empty;
-	self.unique = base.unique;
-	self.attributes = base.attributes;
-	self.subelements = base.subelements;
-	
-	self.setup = YES;
+    CSXElementLayout *base;
+    
+    base = [CSXElementLayout elementElementLayout];
+    
+    self.name = base.name;
+    self.required = base.required;
+    self.contentLayout = base.contentLayout;
+    
+    self.empty = base.empty;
+    self.unique = base.unique;
+    self.attributes = base.attributes;
+    self.subelements = base.subelements;
+    
+    self.setup = YES;
 }
 @end
