@@ -216,11 +216,11 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>922CDB381544707C003B1B6F</string>
+						<string>92A68221154483180049F586</string>
 						<key>history</key>
 						<array>
-							<string>922CDB361544707C003B1B6F</string>
-							<string>922CDB371544707C003B1B6F</string>
+							<string>92A6821F154483180049F586</string>
+							<string>92A68220154483180049F586</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -257,11 +257,11 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>922CDB391544707C003B1B6F</string>
+						<string>92A68222154483180049F586</string>
 						<key>history</key>
 						<array>
 							<string>922CDB1815446C09003B1B6F</string>
-							<string>922CDB2315446CAC003B1B6F</string>
+							<string>922CDB4B154475A0003B1B6F</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -358,13 +358,14 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>22</integer>
-											<integer>21</integer>
+											<integer>11</integer>
+											<integer>2</integer>
+											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 157}, {429, 333}}</string>
+									<string>{{0, 0}, {429, 333}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -422,11 +423,13 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 									<array>
 										<string>1C37FBAC04509CD000000102</string>
+										<string>92A681F3154475A90049F586</string>
+										<string>92A68203154476510049F586</string>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>2</integer>
+											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
@@ -526,8 +529,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>922CDB1415446C09003B1B6F</string>
-				<string>922CDB1515446C09003B1B6F</string>
+				<string>92A681FC154475B20049F586</string>
+				<string>92A681FD154475B20049F586</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -566,8 +569,8 @@
 	<array>
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>922CDB1615446C09003B1B6F</string>
-		<string>922CDB341544707C003B1B6F</string>
 		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
+		<string>922CDB341544707C003B1B6F</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 603 446 419 0 0 1920 1058 </string>
@@ -784,7 +787,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>922CDB1B15446C09003B1B6F</string>
+				<string>92A68200154475B20049F586</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

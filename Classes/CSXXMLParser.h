@@ -28,10 +28,14 @@
 
 
 #import <Foundation/Foundation.h>
+#import <libxml/parser.h>
 
 #import "CSXDocumentLayout.h"
 
 @interface CSXXMLParser : NSObject {
+    NSError *_parseError;
+    NSArray *_warnings;
+    id _result;
 }
 /* MARK: Init */
 - (id)initWithDocumentLayout:(CSXDocumentLayout *)docLayout;
@@ -39,5 +43,11 @@
 
 /* MARK: Properties */
 @property (nonatomic, retain) CSXDocumentLayout *documentLayout;
+@property (nonatomic, retain) NSString *file;
+@property (nonatomic, retain) NSData *data;
+
+@property (nonatomic, retain, readonly) NSError *error;
+@property (nonatomic, retain, readonly) NSArray *warnings;
+@property (nonatomic, retain, readonly) id result;
 @end
 
