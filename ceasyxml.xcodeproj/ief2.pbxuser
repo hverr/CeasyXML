@@ -38,6 +38,12 @@
 			PBXWorkspaceStateSaveDate = 356805031;
 		};
 		perUserProjectItems = {
+			922CDB1815446C09003B1B6F /* PBXTextBookmark */ = 922CDB1815446C09003B1B6F /* PBXTextBookmark */;
+			922CDB1915446C09003B1B6F /* PBXTextBookmark */ = 922CDB1915446C09003B1B6F /* PBXTextBookmark */;
+			922CDB1A15446C09003B1B6F /* PBXTextBookmark */ = 922CDB1A15446C09003B1B6F /* PBXTextBookmark */;
+			922CDB2315446CAC003B1B6F /* PBXTextBookmark */ = 922CDB2315446CAC003B1B6F /* PBXTextBookmark */;
+			922CDB2415446CAC003B1B6F /* PBXTextBookmark */ = 922CDB2415446CAC003B1B6F /* PBXTextBookmark */;
+			922CDB2615446CC2003B1B6F /* PBXTextBookmark */ = 922CDB2615446CC2003B1B6F /* PBXTextBookmark */;
 			92FBB7D11543F03300366B07 = 92FBB7D11543F03300366B07 /* PBXTextBookmark */;
 			92FBB7D21543F03300366B07 = 92FBB7D21543F03300366B07 /* PBXTextBookmark */;
 			92FBB7D31543F03300366B07 = 92FBB7D31543F03300366B07 /* PBXTextBookmark */;
@@ -84,18 +90,75 @@
 	9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
-			sepNavSelRange = "{1432, 49}";
+			sepNavSelRange = "{1376, 0}";
 			sepNavVisRange = "{0, 1665}";
 			sepNavWindowFrame = "{{949, 35}, {647, 984}}";
 		};
 	};
 	9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 705}}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 936}}";
 			sepNavSelRange = "{1588, 0}";
-			sepNavVisRange = "{860, 804}";
+			sepNavVisRange = "{0, 2288}";
 			sepNavWindowFrame = "{{949, 35}, {647, 984}}";
 		};
+	};
+	922CDB1815446C09003B1B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */;
+		name = "CSXDocumentLayout.m: 38";
+		rLen = 0;
+		rLoc = 1588;
+		rType = 0;
+		vrLen = 2288;
+		vrLoc = 0;
+	};
+	922CDB1915446C09003B1B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	922CDB1A15446C09003B1B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */;
+		name = "CSXDocumentLayout.h: 37";
+		rLen = 49;
+		rLoc = 1432;
+		rType = 0;
+		vrLen = 1665;
+		vrLoc = 0;
+	};
+	922CDB2315446CAC003B1B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */;
+		name = "CSXDocumentLayout.h: 37";
+		rLen = 49;
+		rLoc = 1432;
+		rType = 0;
+		vrLen = 1665;
+		vrLoc = 0;
+	};
+	922CDB2415446CAC003B1B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */;
+		name = "CSXDocumentLayout.h: 35";
+		rLen = 0;
+		rLoc = 1376;
+		rType = 0;
+		vrLen = 1665;
+		vrLoc = 0;
+	};
+	922CDB2615446CC2003B1B6F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */;
+		name = "CSXDocumentLayout.h: 35";
+		rLen = 0;
+		rLoc = 1376;
+		rType = 0;
+		vrLen = 1665;
+		vrLoc = 0;
 	};
 	925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */ = {
 		uiCtxt = {
