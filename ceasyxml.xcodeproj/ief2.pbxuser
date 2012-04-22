@@ -83,9 +83,9 @@
 	};
 	9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 615}}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
 			sepNavSelRange = "{1432, 49}";
-			sepNavVisRange = "{554, 984}";
+			sepNavVisRange = "{0, 1665}";
 			sepNavWindowFrame = "{{949, 35}, {647, 984}}";
 		};
 	};
@@ -95,22 +95,6 @@
 			sepNavSelRange = "{1588, 0}";
 			sepNavVisRange = "{860, 804}";
 			sepNavWindowFrame = "{{949, 35}, {647, 984}}";
-		};
-	};
-	9227B9621541ECBA00FA9EA6 /* CSXDocument.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
-			sepNavSelRange = "{0, 1377}";
-			sepNavVisRange = "{0, 1377}";
-			sepNavWindowFrame = "{{489, 44}, {647, 984}}";
-		};
-	};
-	9227B9631541ECBA00FA9EA6 /* CSXDocument.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
-			sepNavSelRange = "{1561, 0}";
-			sepNavVisRange = "{0, 1628}";
-			sepNavWindowFrame = "{{1001, 18}, {647, 984}}";
 		};
 	};
 	925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */ = {
@@ -123,9 +107,9 @@
 	};
 	925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {502, 1521}}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 1443}}";
 			sepNavSelRange = "{3595, 0}";
-			sepNavVisRange = "{3286, 217}";
+			sepNavVisRange = "{1845, 1750}";
 			sepNavWindowFrame = "{{1218, 68}, {647, 984}}";
 		};
 	};
@@ -171,9 +155,9 @@
 	};
 	925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 1590}}";
-			sepNavSelRange = "{3450, 0}";
-			sepNavVisRange = "{0, 1246}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 1456}}";
+			sepNavSelRange = "{3119, 0}";
+			sepNavVisRange = "{1933, 1818}";
 			sepNavWindowFrame = "{{589, 74}, {647, 984}}";
 		};
 	};
@@ -311,7 +295,7 @@
 		fRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */;
 		name = "CSXElementLayout+CSXLayoutObject.m: 100";
 		rLen = 0;
-		rLoc = 3450;
+		rLoc = 3607;
 		rType = 0;
 		vrLen = 1246;
 		vrLoc = 0;
@@ -335,6 +319,22 @@
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 554;
+	};
+	92FBB7E41544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1824}";
+			sepNavWindowFrame = "{{38, 48}, {647, 984}}";
+		};
+	};
+	92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {588, 1911}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{2181, 2014}";
+			sepNavWindowFrame = "{{15, 69}, {647, 984}}";
+		};
 	};
 	D2AAC07D0554694100DB518D /* ceasyxml */ = {
 		activeExec = 0;
