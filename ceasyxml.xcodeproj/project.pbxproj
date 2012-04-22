@@ -25,6 +25,8 @@
 		92F82AC6154078C10009E770 /* TMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F82AC5154078C10009E770 /* TMain.m */; };
 		92FBB7C11543E9E800366B07 /* CSXElementLayoutPlacebo.h in Headers */ = {isa = PBXBuildFile; fileRef = 92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */; };
 		92FBB7C21543E9E800366B07 /* CSXElementLayoutPlacebo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */; };
+		92FBB7E61544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 92FBB7E41544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h */; };
+		92FBB7E71544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		92F82AC5154078C10009E770 /* TMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMain.m; sourceTree = "<group>"; };
 		92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXElementLayoutPlacebo.h; sourceTree = "<group>"; };
 		92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXElementLayoutPlacebo.m; sourceTree = "<group>"; };
+		92FBB7E41544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXDocumentLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
+		92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXDocumentLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libceasyxml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libceasyxml.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,6 +164,8 @@
 				925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */,
 				925FE9411542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h */,
 				925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */,
+				92FBB7E41544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h */,
+				92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */,
 			);
 			name = "Layout Objects";
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 				925FE9181542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h in Headers */,
 				925FE9431542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h in Headers */,
 				92FBB7C11543E9E800366B07 /* CSXElementLayoutPlacebo.h in Headers */,
+				92FBB7E61544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +281,7 @@
 				925FE9191542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m in Sources */,
 				925FE9441542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m in Sources */,
 				92FBB7C21543E9E800366B07 /* CSXElementLayoutPlacebo.m in Sources */,
+				92FBB7E71544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
