@@ -36,14 +36,16 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
 @implementation CSXElementLayout (CSXLayoutObject)
 /* MARK: Layout Objects */
 + (CSXElementLayout *)uniqueElementLayout {
-    CSXNodeLayout *layout;
+    CSXElementLayout *layout;
     CSXNodeContentLayout *content;
     
-    layout = [CSXNodeLayout new];
+    layout = [CSXElementLayout new];
     content = [CSXNodeContentLayout new];
     
     layout.name = CSXElementLayoutUniqueElementName;
     layout.required = YES;
+    layout.empty = YES;
+    layout.unique = YES;
     
     content.contentType = CSXNodeContentTypeBoolean;
     content.getter = @selector(unique);
@@ -56,14 +58,16 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
 }
 
 + (CSXElementLayout *)emptyElementLayout {
-    CSXNodeLayout *layout;
+    CSXElementLayout *layout;
     CSXNodeContentLayout *content;
     
-    layout = [CSXNodeLayout new];
+    layout = [CSXElementLayout new];
     content = [CSXNodeContentLayout new];
     
     layout.name = CSXElementLayoutEmptyElementName;
     layout.required = YES;
+    layout.empty = YES;
+    layout.unique = YES;
     
     content.contentType = CSXNodeContentTypeBoolean;
     content.getter = @selector(empty);
@@ -84,6 +88,8 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
     
     layout.name = CSXElementLayoutEmptyElementName;
     layout.required = NO;
+    layout.empty = NO;
+    layout.unique = NO;
     
     content.contentType = CSXNodeContentTypeCustom;
     content.customClass = [CSXElementLayout class];
