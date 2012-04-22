@@ -29,11 +29,16 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const CSXDocumentLayoutInvalidClassException;
+
 @interface CSXDocumentLayout : NSObject {
 }
 /* MARK: Properties */
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSArray *attributes;
+@property (nonatomic, retain) NSArray *elements;
 @property (nonatomic, assign) Class documentClass;
+
+@property (nonatomic, retain) NSString *documentClassString;
 @end
 

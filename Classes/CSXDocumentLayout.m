@@ -28,6 +28,9 @@
 
 #import "CSXDocumentLayout.h"
 
+NSString * const CSXDocumentLayoutInvalidClassException =
+    @"CSXDocumentLayoutInvalidClassException";
+
 /* =========================================================================== 
  MARK: -
  MARK: Public Implementation
@@ -36,11 +39,37 @@
 - (void)dealloc {
     self.name = nil;
     self.attributes = nil;
+    self.elements = nil;
     
     [super dealloc];
 }
 
 /* MARK: Properties */
-@synthesize name, attributes, documentClass;
+@synthesize name, attributes, elements, documentClass;
+
+- (NSString *)documentClassString {
+    if(self.documentClass == NULL) {
+        return nil;
+    }
+    return NSStringFromClass(self.documentClass);
+}
+
+- (void)setDocumentClassString:(NSString *)s {
+    Class myClass;
+    
+    myClass = NSClassFromString(s);
+    if(myClass == NULL) {
+        NSString *excName, *excReason;
+        
+        excName = CSXDocumentLayoutInvalidClassException;
+        excReason = [NSString stringWithFormat:
+                     @"Class not found: %s", s];
+        [[NSException exceptionWithName:excName reason:excReason userInfo:nil]
+         raise];
+        return;
+    }
+    
+    self.documentClass = myClass;
+}
 @end
 
