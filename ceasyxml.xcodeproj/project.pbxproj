@@ -23,6 +23,8 @@
 		925FE9441542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */; };
 		92F82AAB154078540009E770 /* libceasyxml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libceasyxml.a */; };
 		92F82AC6154078C10009E770 /* TMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F82AC5154078C10009E770 /* TMain.m */; };
+		92FBB7C11543E9E800366B07 /* CSXElementLayoutPlacebo.h in Headers */ = {isa = PBXBuildFile; fileRef = 92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */; };
+		92FBB7C21543E9E800366B07 /* CSXElementLayoutPlacebo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		92F82A9E154076170009E770 /* template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = template.m; sourceTree = "<group>"; };
 		92F82AA7154078500009E770 /* TestApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestApp; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F82AC5154078C10009E770 /* TMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMain.m; sourceTree = "<group>"; };
+		92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXElementLayoutPlacebo.h; sourceTree = "<group>"; };
+		92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXElementLayoutPlacebo.m; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libceasyxml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libceasyxml.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,6 +143,8 @@
 				9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */,
 				9227B9491541E8C500FA9EA6 /* CSXElementLayout.h */,
 				9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */,
+				92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */,
+				92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */,
 				9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */,
 				9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */,
 			);
@@ -179,6 +185,7 @@
 				925FE8E31542F13200AA875E /* CSXNodeContentLayout.h in Headers */,
 				925FE9181542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h in Headers */,
 				925FE9431542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h in Headers */,
+				92FBB7C11543E9E800366B07 /* CSXElementLayoutPlacebo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +273,7 @@
 				925FE8E41542F13200AA875E /* CSXNodeContentLayout.m in Sources */,
 				925FE9191542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m in Sources */,
 				925FE9441542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m in Sources */,
+				92FBB7C21543E9E800366B07 /* CSXElementLayoutPlacebo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,7 @@
  */
 
 #import "CSXElementLayout+CSXLayoutObject.h"
+#import "CSXElementLayoutPlacebo.h" // here to avoid import conflicts
 
 static NSString * const CSXElementLayoutUniqueElementName = @"unique";
 static NSString * const CSXElementLayoutEmptyElementName = @"empty";
@@ -96,7 +97,7 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
     
     layout.subelements = [NSArray arrayWithObjects:
                           [self attributeElementLayout],
-                          //TODO: [self elementElementLayout] endless recursive
+                          [CSXElementLayoutPlacebo placebo],
                           [CSXNodeContentLayout contentElementLayout],
                           nil];
     return [layout autorelease];
