@@ -28,6 +28,15 @@
 
 #import "CSXXMLParser.h"
 
+NSString * const CSXXMLParserErrorDomain = @"CSXXMLParserErrorDomain";
+NSString * const CSXXMLLibXMLErrorDomain = @"CSXXMLLibXMLErrorDomain";
+
+NSString * const CSXXMLParserDocumentClassNullException = 
+    @"CSXXMLParserDocumentClassNullException";
+
+NSString * const CSXXMLParserElementNameStackKey =
+    @"CSXXMLParserElementNameStackKey";
+
 /* =========================================================================== 
  MARK: -
  MARK: Private Interface
@@ -48,6 +57,14 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name);
 void CSXXMLParserCharacters(void *ctx, const xmlChar *ch, int len);
 void CSXXMLParserWarning(void *ctx, const char *msg, ...);
 void CSXXMLParserError(void *ctx, const char *msg, ...);
+
+- (void)initializeState;
+- (void)emptyState;
+- (void)pushStateElement:(const xmlChar *)name layout:(id)l instance:(id)inst;
+
+/* MARK: XML Processing Methods */
+- (CSXDocumentLayout *)documentLayoutForType:(const xmlChar *)docElem;
+- (id)instanceOfDocumentClass:(CSXDocumentLayout *)layout;
 
 /* MARK: LibXML Function Stucture */
 static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
@@ -80,6 +97,9 @@ static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
     NULL, /* externalSubset */
     0 /* initialized */ 
 };
+
+/* MARK: Errors */
+- (NSError *)unkownDocumentTypeError:(const xmlChar *)docElem;
 @end
 
 /* =========================================================================== 
@@ -88,22 +108,22 @@ static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
  =========================================================================== */
 @implementation CSXXMLParser
 /* MARK: Init */
-- (id)initWithDocumentLayout:(CSXDocumentLayout *)docLayout {
+- (id)initWithDocumentLayouts:(NSArray *)docLayouts {
     self = [super init];
     if(self != nil) {
-        self.documentLayout = docLayout;
+        self.documentLayouts = docLayouts;
     }
     return self;
 }
 
-+ (id)XMLParserWithDocumentLayout:(CSXDocumentLayout *)docLayout {
++ (id)XMLParserWithDocumentLayouts:(NSArray *)docLayouts {
     id inst;
-    inst = [[self alloc] initWithDocumentLayout:docLayout];
+    inst = [[self alloc] initWithDocumentLayouts:docLayouts];
     return [inst autorelease];
 }
 
 - (void)dealloc {
-    self.documentLayout = nil;
+    self.documentLayouts = nil;
     self.file = nil;
     self.data = nil;
     
@@ -115,7 +135,7 @@ static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
 }
 
 /* MARK: Properties */
-@synthesize documentLayout, file, data;
+@synthesize documentLayouts, file, data;
 @synthesize error=_parseError, warnings=_warnings, result=_result;
 @end
 
@@ -145,18 +165,52 @@ static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
 
 /* MARK: LibXLM Functions */
 void CSXXMLParserStartDocument(void *ctx) {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    CSXXMLParser *parser;
+    
+    parser = (CSXXMLParser *)ctx;
+    [parser initializeState];
 }
 
 void CSXXMLParserEndDocument(void *ctx) {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    CSXXMLParser *parser;
+    
+    parser = (CSXXMLParser *)ctx;
+    [parser emptyState];
 }
 
 void CSXXMLParserStartElement(void *ctx, 
                               const xmlChar *name, 
                               const xmlChar **atts)
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    CSXXMLParser *parser;
+    
+    parser = (CSXXMLParser *)ctx;
+    
+    if(parser->_state.parsingDocument == NO) {
+        CSXDocumentLayout *layout;
+        id documentInstance;
+        
+        /* get document layout to use */
+        layout = [parser documentLayoutForType:name];
+        if(layout == nil) {
+            parser.error = [parser unkownDocumentTypeError:name];
+            parser->_state.errorOccurred = YES;
+            return;
+        }
+        
+        /* create instance of class */
+        @try {
+            documentInstance = [parser instanceOfDocumentClass:layout];
+        }
+        @catch (NSException * e) {
+            parser->_state.errorOccurred = YES;
+            [e raise];
+        }
+        @finally {}
+        
+        [parser pushStateElement:name layout:layout instance:documentInstance];
+        
+    }
 }
 
 void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
@@ -173,5 +227,95 @@ void CSXXMLParserWarning(void *ctx, const char *msg, ...) {
 
 void CSXXMLParserError(void *ctx, const char *msg, ...) {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)initializeState {
+    memset(&_state, 0, sizeof(_state));
+    
+    _state.parsing = YES;
+    
+    _state.elementNameStack = [NSMutableArray new];
+    _state.elementLayoutStack = [NSMutableArray new];
+    _state.elementInstanceStack = [NSMutableArray new];
+}
+
+- (void)emptyState {
+    [_state.elementNameStack release];
+    [_state.elementLayoutStack release];
+    [_state.elementInstanceStack release];
+    
+    memset(&_state, 0, sizeof(_state));
+}
+
+- (void)pushStateElement:(const xmlChar *)name layout:(id)l instance:(id)inst {
+    [_state.elementNameStack addObject:
+     [NSString stringWithUTF8String:(const char *)name]];
+    
+    [_state.elementLayoutStack addObject:l];
+    
+    [_state.elementInstanceStack addObject:inst];
+}
+         
+
+/* MARK: XML Processing Methods */
+- (CSXDocumentLayout *)documentLayoutForType:(const xmlChar *)docElem {
+    CSXDocumentLayout *aLayout;
+    xmlChar *layoutName;
+    
+    for(aLayout in self.documentLayouts) {
+        layoutName = xmlCharStrdup([aLayout.name UTF8String]);
+        if(xmlStrcmp(docElem, layoutName) == 0) {
+            free(layoutName);
+            return aLayout;
+        }
+        free(layoutName);
+    }
+    
+    return nil;
+}
+
+- (id)instanceOfDocumentClass:(CSXDocumentLayout *)layout {
+    id inst;
+    
+    if(layout.documentClass == NULL) {
+        NSString *name, *reason;
+        
+        name = CSXXMLParserDocumentClassNullException;
+        reason = [NSString stringWithFormat:
+                  @"Document class of the layout %@ with name %@ is NULL",
+                  [layout description], layout.name];
+        [[NSException exceptionWithName:name reason:reason userInfo:nil] raise];
+        return nil;
+    }
+    
+    inst = [[layout.documentClass alloc] init];
+    return [inst autorelease];
+}
+
+/* MARK: Errors */
+- (NSError *)unkownDocumentTypeError:(const xmlChar *)docElem {
+    NSString *descr, *reco;
+    NSArray *stack;
+    NSDictionary *userInfo;
+    NSError *err;
+    
+    descr = [NSString stringWithFormat:
+             @"Unkown document type while parsing XML document."];
+    reco = [NSString stringWithFormat:
+            @"Could not find a matching layout for the document with "
+            @"root element '%s'", (const char *)docElem];
+    stack = [_state.elementNameStack copy];
+    
+    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                descr, NSLocalizedDescriptionKey,
+                reco, NSLocalizedRecoverySuggestionErrorKey,
+                stack, CSXXMLParserElementNameStackKey,
+                nil];
+    [stack release];
+    
+    err = [NSError errorWithDomain:CSXXMLParserErrorDomain 
+                              code:kCSXXMLParserUnkownDocumentTypeError 
+                          userInfo:userInfo];
+    return err;
 }
 @end

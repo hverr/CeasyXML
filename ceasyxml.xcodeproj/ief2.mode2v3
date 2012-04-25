@@ -202,7 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>922CDB341544707C003B1B6F</string>
+				<string>920A40C1154853D200DA6BE6</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>CSXXMLParser.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -210,17 +210,17 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>922CDB351544707C003B1B6F</string>
+						<string>920A40C2154853D200DA6BE6</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>CSXXMLParser.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>92A68221154483180049F586</string>
+						<string>920A40C5154853D200DA6BE6</string>
 						<key>history</key>
 						<array>
-							<string>92A6821F154483180049F586</string>
-							<string>92A68220154483180049F586</string>
+							<string>920A40C3154853D200DA6BE6</string>
+							<string>920A40C4154853D200DA6BE6</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -243,25 +243,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>922CDB1615446C09003B1B6F</string>
+				<string>920A40C6154853D200DA6BE6</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>CSXDocumentLayout.h</string>
+				<string>CSXDocumentLayout.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>922CDB1715446C09003B1B6F</string>
+						<string>920A40C7154853D200DA6BE6</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>CSXDocumentLayout.h</string>
+						<string>CSXDocumentLayout.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>92A68222154483180049F586</string>
+						<string>920A40C8154853D200DA6BE6</string>
 						<key>history</key>
 						<array>
-							<string>922CDB1815446C09003B1B6F</string>
-							<string>922CDB4B154475A0003B1B6F</string>
+							<string>920A40AB154852FC00DA6BE6</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -278,6 +277,47 @@
 				<false/>
 				<key>RubberWindowFrame</key>
 				<string>949 91 647 928 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>920A40C9154853D200DA6BE6</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>CSXDocumentLayout.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>920A40CA154853D200DA6BE6</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>CSXDocumentLayout.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>920A40CD154853D200DA6BE6</string>
+						<key>history</key>
+						<array>
+							<string>920A40CB154853D200DA6BE6</string>
+							<string>920A40CC154853D200DA6BE6</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {647, 887}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>1370 104 647 928 0 0 1920 1058 </string>
 			</dict>
 		</dict>
 	</array>
@@ -358,8 +398,8 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>11</integer>
-											<integer>2</integer>
+											<integer>16</integer>
+											<integer>14</integer>
 											<integer>1</integer>
 											<integer>0</integer>
 										</array>
@@ -423,8 +463,6 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 									<array>
 										<string>1C37FBAC04509CD000000102</string>
-										<string>92A681F3154475A90049F586</string>
-										<string>92A68203154476510049F586</string>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
@@ -529,8 +567,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>92A681FC154475B20049F586</string>
-				<string>92A681FD154475B20049F586</string>
+				<string>920A40BF154853D200DA6BE6</string>
+				<string>920A40C0154853D200DA6BE6</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -567,10 +605,11 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>922CDB1615446C09003B1B6F</string>
+		<string>920A40C9154853D200DA6BE6</string>
+		<string>920A40C6154853D200DA6BE6</string>
 		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
-		<string>922CDB341544707C003B1B6F</string>
+		<string>1C530D52069F1CE1000CFCEE</string>
+		<string>920A40C1154853D200DA6BE6</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 603 446 419 0 0 1920 1058 </string>
@@ -726,12 +765,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>CSXXMLParser.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -787,7 +828,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>92A68200154475B20049F586</string>
+				<string>920A40B21548531900DA6BE6</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -800,7 +841,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D52069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

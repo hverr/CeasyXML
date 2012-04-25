@@ -32,17 +32,43 @@
 
 #import "CSXDocumentLayout.h"
 
+extern NSString * const CSXXMLParserErrorDomain;
+extern NSString * const CSXXMLLibXMLErrorDomain;
+
+extern NSString * const CSXXMLParserDocumentClassNullException;
+
+extern NSString * const CSXXMLParserElementNameStackKey;
+
+enum {
+    kCSXXMLParserUnkownDocumentTypeError = 1
+};
+
 @interface CSXXMLParser : NSObject {
     NSError *_parseError;
     NSArray *_warnings;
     id _result;
+    
+    struct {
+        BOOL errorOccurred;
+        BOOL parsing;
+        BOOL parsingDocument;
+        
+        /* this array contains the path to the current element */
+        NSMutableArray *elementNameStack;
+        /* this array contains the layouts of the elements in the path to 
+         the current element or +[NSNull null] */
+        NSMutableArray *elementLayoutStack;
+        /* this array contains the instances of the elements in the the path to 
+         the current element or + [NSNull null] */
+        NSMutableArray *elementInstanceStack;
+    } _state;
 }
 /* MARK: Init */
-- (id)initWithDocumentLayout:(CSXDocumentLayout *)docLayout;
-+ (id)XMLParserWithDocumentLayout:(CSXDocumentLayout *)docLayout;
+- (id)initWithDocumentLayouts:(NSArray *)docLayouts;
++ (id)XMLParserWithDocumentLayouts:(NSArray *)docLayouts;
 
 /* MARK: Properties */
-@property (nonatomic, retain) CSXDocumentLayout *documentLayout;
+@property (nonatomic, retain) NSArray *documentLayouts;
 @property (nonatomic, retain) NSString *file;
 @property (nonatomic, retain) NSData *data;
 
