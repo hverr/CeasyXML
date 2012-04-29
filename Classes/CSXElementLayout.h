@@ -39,5 +39,7 @@
 @property (nonatomic, assign) BOOL unique;
 @property (nonatomic, retain) NSArray *attributes;
 @property (nonatomic, retain) NSArray *subelements;
+
+- (CSXElementLayout *)subelementWithName:(NSString *)nam;
 @end
 

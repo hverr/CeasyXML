@@ -44,5 +44,16 @@
 
 /* MARK: Properties */
 @synthesize empty, unique, attributes, subelements;
+
+- (CSXElementLayout *)subelementWithName:(NSString *)nam {
+    CSXElementLayout *layout;
+    
+    for(layout in self.subelements) {
+        if(layout.name == nam) {
+            return layout;
+        }
+    }
+    return nil;
+}
 @end
 
