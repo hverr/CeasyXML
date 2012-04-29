@@ -31,11 +31,14 @@
 #import <libxml/parser.h>
 
 #import "CSXDocumentLayout.h"
+#import "CSXElementLayout.h"
+#import "CSXElementList.h"
 
 extern NSString * const CSXXMLParserErrorDomain;
 extern NSString * const CSXXMLLibXMLErrorDomain;
 
 extern NSString * const CSXXMLParserDocumentClassNullException;
+extern NSString * const CSXXMLParserElementClassNullException;
 
 extern NSString * const CSXXMLParserElementNameStackKey;
 

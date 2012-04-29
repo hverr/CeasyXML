@@ -33,6 +33,8 @@ NSString * const CSXXMLLibXMLErrorDomain = @"CSXXMLLibXMLErrorDomain";
 
 NSString * const CSXXMLParserDocumentClassNullException = 
     @"CSXXMLParserDocumentClassNullException";
+NSString * const CSXXMLParserElementClassNullException =
+    @"CSXXMLParserElementClassNullException";
 
 NSString * const CSXXMLParserElementNameStackKey =
     @"CSXXMLParserElementNameStackKey";
@@ -65,6 +67,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...);
 /* MARK: XML Processing Methods */
 - (CSXDocumentLayout *)documentLayoutForType:(const xmlChar *)docElem;
 - (id)instanceOfDocumentClass:(CSXDocumentLayout *)layout;
+- (id)instanceOfElementClass:(CSXElementLayout *)layout;
 
 /* MARK: LibXML Function Stucture */
 static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
@@ -209,7 +212,46 @@ void CSXXMLParserStartElement(void *ctx,
         @finally {}
         
         [parser pushStateElement:name layout:layout instance:documentInstance];
+        parser->_state.parsingDocument = YES;
+    
+    } else if(parser->_state.parsingDocument) {
+        CSXElementLayout *parentLayout;
+        CSXElementLayout *subelement;
+        NSString *elementName;
         
+        /* the element can also be a CSXDocumentLayout, but the classes share
+         the needed methods, so their will be no problem */
+        parentLayout = [parser->_state.elementLayoutStack lastObject];
+        if((NSNull *)parentLayout == [NSNull null]) {
+            [parser pushStateElement:name 
+                              layout:[NSNull null] 
+                            instance:[NSNull null]];
+            return;
+        }
+        
+        elementName = [NSString stringWithUTF8String:(const char *)name];
+        subelement  = [parentLayout subelementWithName:elementName];
+        if(subelement == nil) {
+            [parser pushStateElement:name 
+                              layout:[NSNull null] 
+                            instance:[NSNull null]];
+            
+        } else {
+            id elementInstance;
+            
+            @try {
+                elementInstance = [parser instanceOfElementClass:subelement];
+            }
+            @catch (NSException * e) {
+                parser->_state.errorOccurred = YES;
+                [e raise];
+            }
+            @finally {}
+            
+            [parser pushStateElement:name 
+                              layout:subelement 
+                            instance:elementInstance];
+        }
     }
 }
 
@@ -290,6 +332,59 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     
     inst = [[layout.documentClass alloc] init];
     return [inst autorelease];
+}
+
+- (id)instanceOfElementClass:(CSXElementLayout *)layout {
+    /* Returns +[NSNull null] if content type is string, number or boolean. If
+     the type is custom, an instance of the setup class is returned. If the 
+     type is or the element is non-unique list an instance of the 
+     CSXElementList class is returned. */
+    
+    id inst;
+    
+    NSString *name, *reason;
+    
+    if(layout.unique == NO) {
+        return [CSXElementList elementList];
+    }
+    
+    switch(layout.contentLayout.contentType) {
+        case CSXNodeContentTypeString: /* fallthrough */
+        case CSXNodeContentTypeNumber: /* fallthrough */
+        case CSXNodeContentTypeBoolean:
+            inst = [NSNull null];
+            break;
+            
+        case CSXNodeContentTypeCustom:
+            if(layout.contentLayout.customClass == NULL) {
+                name = CSXXMLParserElementClassNullException;
+                reason = [NSString stringWithFormat:
+                          @"Element class of the layout %@ with name %@ "
+                          @"is NULL",
+                          [layout description], layout.name];
+                [[NSException exceptionWithName:name 
+                                         reason:reason 
+                                       userInfo:nil]
+                 raise];
+                return nil;
+            }
+            
+            inst = [[layout.contentLayout.customClass alloc] init];
+            [inst autorelease];
+            break;
+            
+        case CSXNodeContentTypeList:
+            inst = [CSXElementList elementList];
+            break;
+            
+        default:
+            inst = nil;
+            break;
+    }
+    
+    assert(inst != nil);
+    
+    return inst;
 }
 
 /* MARK: Errors */
