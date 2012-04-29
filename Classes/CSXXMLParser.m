@@ -337,15 +337,15 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
 - (id)instanceOfElementClass:(CSXElementLayout *)layout {
     /* Returns +[NSNull null] if content type is string, number or boolean. If
      the type is custom, an instance of the setup class is returned. If the 
-     type is or the element is non-unique list an instance of the 
-     CSXElementList class is returned. */
+     element is non-unique an NSMutableArray is returned. If the type is a 
+     list an instance of the CSXElementList class is returned. */
     
     id inst;
     
     NSString *name, *reason;
     
     if(layout.unique == NO) {
-        return [CSXElementList elementList];
+        return [NSMutableArray array];
     }
     
     switch(layout.contentLayout.contentType) {

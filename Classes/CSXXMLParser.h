@@ -64,6 +64,8 @@ enum {
         /* this array contains the instances of the elements in the the path to 
          the current element or + [NSNull null] */
         NSMutableArray *elementInstanceStack;
+        
+        NSMutableString *stringContent;
     } _state;
 }
 /* MARK: Init */
