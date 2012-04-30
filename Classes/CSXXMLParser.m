@@ -219,6 +219,10 @@ void CSXXMLParserStartElement(void *ctx,
         CSXElementLayout *subelement;
         NSString *elementName;
         
+        if(parser->_state.errorOccurred == YES) {
+            return;
+        }
+        
         /* the element can also be a CSXDocumentLayout, but the classes share
          the needed methods, so their will be no problem */
         parentLayout = [parser->_state.elementLayoutStack lastObject];
@@ -251,6 +255,12 @@ void CSXXMLParserStartElement(void *ctx,
             [parser pushStateElement:name 
                               layout:subelement 
                             instance:elementInstance];
+            
+            /* create string of the type is string */
+            if(subelement.contentLayout.contentType == CSXNodeContentTypeString)
+            {
+                parser->_state.stringContent = [NSMutableString new];
+            }
         }
     }
 }
@@ -260,7 +270,19 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
 }
 
 void CSXXMLParserCharacters(void *ctx, const xmlChar *ch, int len) {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    CSXXMLParser *parser;
+    NSString *str;
+    
+    parser = (CSXXMLParser *)ctx;
+    if(parser->_state.errorOccurred == YES) {
+        return;
+    }
+    
+    str = [[NSString alloc] initWithBytes:(const char *)ch 
+                                   length:len 
+                                 encoding:NSUTF8StringEncoding];
+    [parser->_state.stringContent appendString:str];
+    [str release];
 }
 
 void CSXXMLParserWarning(void *ctx, const char *msg, ...) {
