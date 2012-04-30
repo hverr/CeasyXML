@@ -257,9 +257,16 @@ void CSXXMLParserStartElement(void *ctx,
                             instance:elementInstance];
             
             /* create string of the type is string */
-            if(subelement.contentLayout.contentType == CSXNodeContentTypeString)
-            {
-                parser->_state.stringContent = [NSMutableString new];
+            switch(subelement.contentLayout.contentType) {
+                case CSXNodeContentTypeString: /* fallthrough */
+                case CSXNodeContentTypeNumber: /* fallthrough */
+                case CSXNodeContentTypeBoolean: 
+                    parser->_state.stringContent = [NSMutableString new];
+                    break;
+                    
+                default:
+                    parser->_state.stringContent = nil;
+                    break;
             }
         }
     }

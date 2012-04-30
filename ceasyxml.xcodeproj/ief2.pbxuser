@@ -65,6 +65,8 @@
 			923CCC8D154E96870054919F /* PBXTextBookmark */ = 923CCC8D154E96870054919F /* PBXTextBookmark */;
 			923CCC90154E96D50054919F /* PBXTextBookmark */ = 923CCC90154E96D50054919F /* PBXTextBookmark */;
 			923CCC91154E96D50054919F /* PBXTextBookmark */ = 923CCC91154E96D50054919F /* PBXTextBookmark */;
+			923CCC92154E97700054919F /* PBXTextBookmark */ = 923CCC92154E97700054919F /* PBXTextBookmark */;
+			923CCC93154E97700054919F /* PBXTextBookmark */ = 923CCC93154E97700054919F /* PBXTextBookmark */;
 		};
 		sourceControlManager = 92F82A8D154075440009E770 /* Source Control */;
 		userBuildSettings = {
@@ -139,7 +141,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 258";
 		rLen = 0;
-		rLoc = 8725;
+		rLoc = 9028;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 7904;
@@ -209,7 +211,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 296";
 		rLen = 0;
-		rLoc = 10144;
+		rLoc = 10447;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 8864;
@@ -281,9 +283,9 @@
 	};
 	922CDB2815446CD1003B1B6F /* CSXXMLParser.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {644, 6360}}";
+			sepNavIntBoundsRect = "{{0, 0}, {644, 6510}}";
 			sepNavSelRange = "{1604, 0}";
-			sepNavVisRange = "{260, 1743}";
+			sepNavVisRange = "{260, 1792}";
 			sepNavWindowFrame = "{{687, 64}, {647, 984}}";
 		};
 	};
@@ -292,7 +294,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 296";
 		rLen = 0;
-		rLoc = 10144;
+		rLoc = 10447;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 8864;
@@ -322,7 +324,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 258";
 		rLen = 0;
-		rLoc = 8665;
+		rLoc = 8968;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 7467;
@@ -332,7 +334,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 281";
 		rLen = 0;
-		rLoc = 9259;
+		rLoc = 9562;
 		rType = 0;
 		vrLen = 1111;
 		vrLoc = 8273;
@@ -352,7 +354,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 281";
 		rLen = 0;
-		rLoc = 9259;
+		rLoc = 9562;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 8316;
@@ -362,7 +364,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 281";
 		rLen = 0;
-		rLoc = 9259;
+		rLoc = 9562;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 8316;
@@ -382,7 +384,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 286";
 		rLen = 0;
-		rLoc = 9259;
+		rLoc = 9562;
 		rType = 0;
 		vrLen = 1148;
 		vrLoc = 8316;
@@ -395,6 +397,26 @@
 		rLoc = 1604;
 		rType = 0;
 		vrLen = 1743;
+		vrLoc = 260;
+	};
+	923CCC92154E97700054919F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
+		name = "CSXXMLParser.m: 269";
+		rLen = 0;
+		rLoc = 8954;
+		rType = 0;
+		vrLen = 1279;
+		vrLoc = 7813;
+	};
+	923CCC93154E97700054919F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
+		name = "CSXXMLParser.m: 37";
+		rLen = 0;
+		rLoc = 1604;
+		rType = 0;
+		vrLen = 1792;
 		vrLoc = 260;
 	};
 	925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */ = {
