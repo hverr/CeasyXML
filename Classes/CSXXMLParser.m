@@ -63,11 +63,29 @@ void CSXXMLParserError(void *ctx, const char *msg, ...);
 - (void)initializeState;
 - (void)emptyState;
 - (void)pushStateElement:(const xmlChar *)name layout:(id)l instance:(id)inst;
+- (void)popStateElement:(NSString **)name layout:(id *)l instance:(id *)inst;
 
 /* MARK: XML Processing Methods */
 - (CSXDocumentLayout *)documentLayoutForType:(const xmlChar *)docElem;
 - (id)instanceOfDocumentClass:(CSXDocumentLayout *)layout;
 - (id)instanceOfElementClass:(CSXElementLayout *)layout;
+
+/* MARK: Setting Properties */
+- (NSError *)setNumber:(NSString *)s 
+                layout:(CSXElementLayout *)l 
+              instance:(id)i;
+- (NSError *)setString:(NSString *)s
+                layout:(CSXElementLayout *)l
+              instance:(id)i;
+- (NSError *)setBoolean:(NSString *)s
+                 layout:(CSXElementLayout *)l
+               instance:(id)i;
+- (NSError *)setUniqueInstance:(id)obj
+                        layout:(CSXElementLayout *)l
+                      instance:(id)i;
+- (NSString *)setNonUniqueInstance:(id)obj
+                            layout:(CSXElementLayout *)l
+                          instance:(id)i;
 
 /* MARK: LibXML Function Stucture */
 static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
@@ -103,6 +121,10 @@ static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
 
 /* MARK: Errors */
 - (NSError *)unkownDocumentTypeError:(const xmlChar *)docElem;
+- (NSError *)elementValueNoNumberError:(NSString *)val 
+                                layout:(CSXElementLayout *)l;
+- (NSError *)elementValueNoBooleanError:(NSString *)val
+                                 layout:(CSXElementLayout *)l;
 @end
 
 /* =========================================================================== 
@@ -273,7 +295,76 @@ void CSXXMLParserStartElement(void *ctx,
 }
 
 void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    CSXXMLParser *parser;
+    NSString *elementName;
+    CSXElementLayout *layout;
+    id instance;
+    id parentInstance;
+    NSError *err;
+    
+    parser = (CSXXMLParser *)ctx;
+    if(parser->_state.errorOccurred == YES) {
+        return;
+    }
+    
+    [parser popStateElement:&elementName 
+                     layout:(id *)&layout 
+                   instance:&instance];
+    assert([[NSString stringWithUTF8String:(const char *)name]
+            isEqualToString:elementName]);
+    
+    /* if their is no layout element, we are not interested in this element */
+    if(layout == nil) {
+        return;
+    }
+    
+    /* get the parent element, we have to set its properties */
+    parentInstance = [parser->_state.elementInstanceStack lastObject];
+    
+    if(layout.unique == NO) {
+        // TODO: non unique
+        return;
+    }
+    
+    switch(layout.contentLayout.contentType) {
+        case CSXNodeContentTypeString:
+            err = [parser setString:parser->_state.stringContent 
+                       layout:layout 
+                     instance:parentInstance];
+            break;
+            
+        case CSXNodeContentTypeNumber:
+            err = [parser setNumber:parser->_state.stringContent 
+                       layout:layout 
+                     instance:parentInstance];
+            break;
+            
+        case CSXNodeContentTypeBoolean:
+            err = [parser setBoolean:parser->_state.stringContent 
+                        layout:layout 
+                      instance:parentInstance];
+            break;
+            
+        case CSXNodeContentTypeCustom:
+            err = [parser setUniqueInstance:instance 
+                               layout:layout 
+                             instance:parentInstance];
+            break;
+            
+        case CSXNodeContentTypeList:
+            [((CSXElementList *)parentInstance).elements addObject:instance];
+            err = nil;
+            break;
+            
+        default:
+            err = nil;
+            break;
+    }
+    
+    if(err != nil) {
+        parser.error = err;
+        parser->_state.errorOccurred = YES;
+    }
 }
 
 void CSXXMLParserCharacters(void *ctx, const xmlChar *ch, int len) {
@@ -327,6 +418,30 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     [_state.elementInstanceStack addObject:inst];
 }
          
+- (void)popStateElement:(NSString **)nameptr 
+                 layout:(id *)lptr 
+               instance:(id *)instptr 
+{
+    NSString *name;
+    id layout, inst;
+    
+    assert(nameptr != NULL);
+    assert(lptr != NULL);
+    assert(instptr != NULL);
+    
+    name = [[_state.elementNameStack lastObject] retain];
+    [_state.elementNameStack removeLastObject];
+    
+    layout = [[_state.elementLayoutStack lastObject] retain];
+    [_state.elementLayoutStack removeLastObject];
+    
+    inst = [[_state.elementInstanceStack lastObject] retain];
+    [_state.elementInstanceStack removeLastObject];
+    
+    *nameptr = [name autorelease];
+    *lptr = [layout autorelease];
+    *instptr = [layout autorelease];
+}
 
 /* MARK: XML Processing Methods */
 - (CSXDocumentLayout *)documentLayoutForType:(const xmlChar *)docElem {
@@ -416,6 +531,89 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     return inst;
 }
 
+/* MARK: Setting Properties */
+- (NSError *)setNumber:(NSString *)s 
+                layout:(CSXElementLayout *)l 
+              instance:(id)i 
+{
+    NSScanner *scanner;
+    NSInteger intVal;
+    BOOL status;
+    
+    scanner = [NSScanner scannerWithString:s];
+    status = [scanner scanInteger:&intVal];
+    if(status == NO) {
+        return [self elementValueNoNumberError:s layout:l];
+    }
+    
+    objc_msgSend(i, l.contentLayout.setter, intVal);
+    
+    return nil;
+}
+
+- (NSError *)setString:(NSString *)s
+                layout:(CSXElementLayout *)l
+              instance:(id)i 
+{
+    objc_msgSend(i, l.contentLayout.setter, s);
+    return nil;
+}
+
+- (NSError *)setBoolean:(NSString *)s
+                 layout:(CSXElementLayout *)l
+               instance:(id)i
+{
+    BOOL boolVal;
+    
+    if([s caseInsensitiveCompare:@"YES"]) {
+        boolVal = YES;
+        
+    } else if([s caseInsensitiveCompare:@"NO"]) {
+        boolVal = NO;
+        
+    } else if([s caseInsensitiveCompare:@"TRUE"]) {
+        boolVal = YES;
+        
+    } else if([s caseInsensitiveCompare:@"FALSE"]) {
+        boolVal = NO;
+        
+    } else if([s caseInsensitiveCompare:@"1"]) {
+        boolVal = YES;
+    
+    } else if([s caseInsensitiveCompare:@"0"]) {
+        boolVal = NO;
+    
+    } else {
+        return [self elementValueNoBooleanError:s layout:l];
+    }
+    
+    objc_msgSend(i, l.contentLayout.setter, boolVal);
+    
+    return nil;
+}
+    
+- (NSError *)setUniqueInstance:(id)obj
+                        layout:(CSXElementLayout *)l
+                      instance:(id)i
+{
+    objc_msgSend(i, l.contentLayout.setter, obj);
+    return nil;
+}
+
+- (NSString *)setNonUniqueInstance:(id)obj
+                            layout:(CSXElementLayout *)l
+                          instance:(id)i
+{
+    NSMutableArray *list;
+    
+    list = (NSMutableArray *)objc_msgSend(i, l.contentLayout.getter);
+    assert([list isKindOfClass:[NSMutableArray class]]);
+    
+    [list addObject:obj];
+    
+    return nil;
+}
+
 /* MARK: Errors */
 - (NSError *)unkownDocumentTypeError:(const xmlChar *)docElem {
     NSString *descr, *reco;
@@ -439,6 +637,60 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     
     err = [NSError errorWithDomain:CSXXMLParserErrorDomain 
                               code:kCSXXMLParserUnkownDocumentTypeError 
+                          userInfo:userInfo];
+    return err;
+}
+
+- (NSError *)elementValueNoNumberError:(NSString *)val 
+                                layout:(CSXElementLayout *)l 
+{
+    NSString *descr, *reco;
+    NSArray *stack;
+    NSDictionary *userInfo;
+    NSError *err;
+    
+    descr = [NSString stringWithFormat:
+             @"The element value is not a number."];
+    reco = [NSString stringWithFormat:
+            @"The element value of element %@ is not a valid number.",
+            l.name];
+    stack = [_state.elementNameStack copy];
+    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                descr, NSLocalizedDescriptionKey,
+                reco, NSLocalizedRecoverySuggestionErrorKey,
+                stack, CSXXMLParserElementNameStackKey,
+                nil];
+    [stack release];
+    
+    err = [NSError errorWithDomain:CSXXMLParserErrorDomain 
+                              code:kCSXXMLParserElementValueNoNumberError 
+                          userInfo:userInfo];
+    return err;
+}
+
+- (NSError *)elementValueNoBooleanError:(NSString *)val
+                                 layout:(CSXElementLayout *)l
+{
+    NSString *descr, *reco;
+    NSArray *stack;
+    NSDictionary *userInfo;
+    NSError *err;
+    
+    descr = [NSString stringWithFormat:
+             @"The element value is not a boolean."];
+    reco = [NSString stringWithFormat:
+            @"The element value of element %@ is not a valid boolean.",
+            l.name];
+    stack = [_state.elementNameStack copy];
+    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                descr, NSLocalizedDescriptionKey,
+                reco, NSLocalizedRecoverySuggestionErrorKey,
+                stack, CSXXMLParserElementNameStackKey,
+                nil];
+    [stack release];
+    
+    err = [NSError errorWithDomain:CSXXMLParserErrorDomain 
+                              code:kCSXXMLParserElementValueNoBooleanError 
                           userInfo:userInfo];
     return err;
 }

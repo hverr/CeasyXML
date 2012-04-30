@@ -28,6 +28,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
 #import <libxml/parser.h>
 
 #import "CSXDocumentLayout.h"
@@ -43,7 +44,9 @@ extern NSString * const CSXXMLParserElementClassNullException;
 extern NSString * const CSXXMLParserElementNameStackKey;
 
 enum {
-    kCSXXMLParserUnkownDocumentTypeError = 1
+    kCSXXMLParserUnkownDocumentTypeError = 1,
+    kCSXXMLParserElementValueNoNumberError,
+    kCSXXMLParserElementValueNoBooleanError
 };
 
 @interface CSXXMLParser : NSObject {
