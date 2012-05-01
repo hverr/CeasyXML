@@ -41,6 +41,8 @@ extern NSString * const CSXXMLLibXMLErrorDomain;
 extern NSString * const CSXXMLParserDocumentClassNullException;
 extern NSString * const CSXXMLParserElementClassNullException;
 
+extern NSString * const CSXXMLParserNoDataException;
+
 extern NSString * const CSXXMLParserElementNameStackKey;
 
 enum {
@@ -88,5 +90,8 @@ enum {
 @property (nonatomic, retain, readonly) NSError *error;
 @property (nonatomic, retain, readonly) NSArray *warnings;
 @property (nonatomic, retain, readonly) id result;
+
+/* MARK: Parsing */
+- (BOOL)parse;
 @end
 

@@ -36,6 +36,9 @@ NSString * const CSXXMLParserDocumentClassNullException =
 NSString * const CSXXMLParserElementClassNullException =
     @"CSXXMLParserElementClassNullException";
 
+NSString * const CSXXMLParserNoDataException = @"CSXXMLParserNoDataException";
+
+
 NSString * const CSXXMLParserElementNameStackKey =
     @"CSXXMLParserElementNameStackKey";
 
@@ -88,7 +91,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...);
                           instance:(id)i;
 
 /* MARK: LibXML Function Stucture */
-static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
+static xmlSAXHandler CSXXMLParserSAXHandler = {
     NULL, /* internalSubset */
     NULL, /* isStandalone */
     NULL, /* hasInternalSubset */
@@ -167,6 +170,34 @@ static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
         _warnings = [NSMutableArray new];
     }
     return _warnings;
+}
+/* MARK: Parsing */
+- (BOOL)parse {
+    int status;
+    
+    if(self.file == nil && self.data == nil) {
+        NSString *name, *reason;
+        
+        name = CSXXMLParserNoDataException;
+        reason = [NSString stringWithFormat:
+                  @"%@: No file or data set, unable to parse.",
+                  [self description]];
+        [[NSException exceptionWithName:name reason:reason userInfo:nil] raise];
+        return NO;
+    }
+    
+    /* Parse file if set */
+    if(self.file != nil) {
+        status = xmlSAXUserParseFile(&CSXXMLParserSAXHandler, 
+                                     self, [self.file UTF8String]);
+        
+    } else {
+        status = xmlSAXUserParseMemory(&CSXXMLParserSAXHandler, 
+                                       self, [self.data bytes], 
+                                       [self.data length]);
+    }
+    
+    return (status == 0);
 }
 @end
 
