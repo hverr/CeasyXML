@@ -49,9 +49,14 @@ enum {
     kCSXXMLParserElementValueNoBooleanError
 };
 
+enum {
+    CSXXMLLibXMLWarning = 1,
+    CSXXMLLibXMLError
+};
+
 @interface CSXXMLParser : NSObject {
     NSError *_parseError;
-    NSArray *_warnings;
+    NSMutableArray *_warnings;
     id _result;
     
     struct {

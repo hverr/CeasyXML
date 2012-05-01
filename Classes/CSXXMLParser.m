@@ -46,7 +46,7 @@ NSString * const CSXXMLParserElementNameStackKey =
 @interface CSXXMLParser (Private)
 /* MARK: Private Properties */
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic, retain) NSArray *warnings;
+@property (nonatomic, retain) NSMutableArray *warnings;
 @property (nonatomic, retain) id result;
 
 /* MARK: LibXLM Functions */
@@ -162,6 +162,12 @@ static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
 /* MARK: Properties */
 @synthesize documentLayouts, file, data;
 @synthesize error=_parseError, warnings=_warnings, result=_result;
+- (NSArray *)warnings {
+    if(_warnings == nil) {
+        _warnings = [NSMutableArray new];
+    }
+    return _warnings;
+}
 @end
 
 
@@ -176,7 +182,7 @@ static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
     _parseError = e;
 }
 
-- (void)setWarnings:(NSArray *)a {
+- (void)setWarnings:(NSMutableArray *)a {
     [a retain];
     [_warnings release];
     _warnings = a;
@@ -416,11 +422,75 @@ void CSXXMLParserCharacters(void *ctx, const xmlChar *ch, int len) {
 }
 
 void CSXXMLParserWarning(void *ctx, const char *msg, ...) {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSError *err;
+    NSString *descr, *reco, *format;
+    NSDictionary *userInfo;
+    va_list argList;
+    CSXXMLParser *parser;
+    NSArray *stack;
+    
+    parser = (CSXXMLParser *)ctx;
+    
+    va_start(argList, msg);
+    
+    descr = [NSString stringWithFormat:
+             @"Warning while parsing the XML document."];
+    
+    format = [NSString stringWithUTF8String:msg];
+    reco = [[NSString alloc] initWithFormat:format arguments:argList];
+    
+    stack = [parser->_state.elementNameStack copy];
+    
+    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                descr, NSLocalizedDescriptionKey,
+                reco, NSLocalizedRecoverySuggestionErrorKey,
+                stack, CSXXMLParserElementNameStackKey,
+                nil];
+    [stack release];
+    [reco release];
+    
+    err = [NSError errorWithDomain:CSXXMLLibXMLErrorDomain 
+                              code:CSXXMLLibXMLWarning 
+                          userInfo:userInfo];
+    
+    [(NSMutableArray *)parser.warnings addObject:err];
+                
 }
 
 void CSXXMLParserError(void *ctx, const char *msg, ...) {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSError *err;
+    NSString *descr, *reco, *format;
+    NSDictionary *userInfo;
+    va_list argList;
+    CSXXMLParser *parser;
+    NSArray *stack;
+    
+    parser = (CSXXMLParser *)ctx;
+    
+    va_start(argList, msg);
+    
+    descr = [NSString stringWithFormat:
+             @"Error while parsing the XML document."];
+    
+    format = [NSString stringWithUTF8String:msg];
+    reco = [[NSString alloc] initWithFormat:format arguments:argList];
+    
+    stack = [parser->_state.elementNameStack copy];
+    
+    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                descr, NSLocalizedDescriptionKey,
+                reco, NSLocalizedRecoverySuggestionErrorKey,
+                stack, CSXXMLParserElementNameStackKey,
+                nil];
+    [stack release];
+    [reco release];
+    
+    err = [NSError errorWithDomain:CSXXMLLibXMLErrorDomain 
+                              code:CSXXMLLibXMLError
+                          userInfo:userInfo];
+    
+    parser.error = err;
+    parser->_state.errorOccurred = YES;
 }
 
 - (void)initializeState {
