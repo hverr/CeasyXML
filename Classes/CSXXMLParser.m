@@ -240,6 +240,7 @@ void CSXXMLParserStartElement(void *ctx,
         CSXElementLayout *parentLayout;
         CSXElementLayout *subelement;
         NSString *elementName;
+        id parentInstance;
         
         if(parser->_state.errorOccurred == YES) {
             return;
@@ -248,6 +249,7 @@ void CSXXMLParserStartElement(void *ctx,
         /* the element can also be a CSXDocumentLayout, but the classes share
          the needed methods, so their will be no problem */
         parentLayout = [parser->_state.elementLayoutStack lastObject];
+        parentInstance = [parser->_state.elementInstanceStack lastObject];
         if((NSNull *)parentLayout == [NSNull null]) {
             [parser pushStateElement:name 
                               layout:[NSNull null] 
@@ -278,12 +280,33 @@ void CSXXMLParserStartElement(void *ctx,
                               layout:subelement 
                             instance:elementInstance];
             
-            /* create string of the type is string */
+            /* set array if it was not already set and if we have a non-unique 
+             element type */
+            if(subelement.unique == NO) {
+                id currentList;
+                currentList = objc_msgSend(parentInstance, 
+                                           subelement.contentLayout.getter);
+                if(currentList == nil) {
+                    objc_msgSend(parentInstance,
+                                 subelement.contentLayout.setter,
+                                 [NSMutableArray array]);
+                }
+            }
+            
+            /* create string of the type is string, or set the instance
+             property if we have a list or a non-unique element type */
             switch(subelement.contentLayout.contentType) {
                 case CSXNodeContentTypeString: /* fallthrough */
                 case CSXNodeContentTypeNumber: /* fallthrough */
                 case CSXNodeContentTypeBoolean: 
                     parser->_state.stringContent = [NSMutableString new];
+                    break;
+                    
+                case CSXNodeContentTypeList:
+                    objc_msgSend(parentInstance, 
+                                 subelement.contentLayout.setter,
+                                 elementInstance);
+                    parser->_state.stringContent = nil;
                     break;
                     
                 default:
@@ -313,6 +336,12 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     assert([[NSString stringWithUTF8String:(const char *)name]
             isEqualToString:elementName]);
     
+    if((NSNull *)instance == [NSNull null]) {
+        assert(parser->_state.stringContent != nil);
+        instance = [parser->_state.stringContent autorelease];
+        parser->_state.stringContent = nil;
+    }
+    
     /* if their is no layout element, we are not interested in this element */
     if(layout == nil) {
         return;
@@ -322,25 +351,28 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     parentInstance = [parser->_state.elementInstanceStack lastObject];
     
     if(layout.unique == NO) {
-        // TODO: non unique
+        NSMutableArray *arr;
+        arr = objc_msgSend(parentInstance, layout.contentLayout.getter);
+        assert(arr != nil);
+        [arr addObject:instance];
         return;
     }
     
     switch(layout.contentLayout.contentType) {
         case CSXNodeContentTypeString:
-            err = [parser setString:parser->_state.stringContent 
+            err = [parser setString:instance
                        layout:layout 
                      instance:parentInstance];
             break;
             
         case CSXNodeContentTypeNumber:
-            err = [parser setNumber:parser->_state.stringContent 
+            err = [parser setNumber:instance 
                        layout:layout 
                      instance:parentInstance];
             break;
             
         case CSXNodeContentTypeBoolean:
-            err = [parser setBoolean:parser->_state.stringContent 
+            err = [parser setBoolean:instance 
                         layout:layout 
                       instance:parentInstance];
             break;
@@ -487,10 +519,6 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     id inst;
     
     NSString *name, *reason;
-    
-    if(layout.unique == NO) {
-        return [NSMutableArray array];
-    }
     
     switch(layout.contentLayout.contentType) {
         case CSXNodeContentTypeString: /* fallthrough */
