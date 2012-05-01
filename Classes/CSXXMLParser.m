@@ -196,23 +196,30 @@ static xmlSAXHandlerV1 CSXXMLParserSAXHandler = {
 
 /* MARK: LibXLM Functions */
 void CSXXMLParserStartDocument(void *ctx) {
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
     CSXXMLParser *parser;
     
     parser = (CSXXMLParser *)ctx;
     [parser initializeState];
+    
+    [pool release];
 }
 
 void CSXXMLParserEndDocument(void *ctx) {
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
     CSXXMLParser *parser;
     
     parser = (CSXXMLParser *)ctx;
     [parser emptyState];
+    
+    [pool release];
 }
 
 void CSXXMLParserStartElement(void *ctx, 
                               const xmlChar *name, 
                               const xmlChar **atts)
 {
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
     CSXXMLParser *parser;
     
     parser = (CSXXMLParser *)ctx;
@@ -226,7 +233,7 @@ void CSXXMLParserStartElement(void *ctx,
         if(layout == nil) {
             parser.error = [parser unkownDocumentTypeError:name];
             parser->_state.errorOccurred = YES;
-            return;
+            goto drainAndReturn;
         }
         
         /* create instance of class */
@@ -249,7 +256,7 @@ void CSXXMLParserStartElement(void *ctx,
         id parentInstance;
         
         if(parser->_state.errorOccurred == YES) {
-            return;
+            goto drainAndReturn;
         }
         
         /* the element can also be a CSXDocumentLayout, but the classes share
@@ -260,7 +267,7 @@ void CSXXMLParserStartElement(void *ctx,
             [parser pushStateElement:name 
                               layout:[NSNull null] 
                             instance:[NSNull null]];
-            return;
+            goto drainAndReturn;
         }
         
         elementName = [NSString stringWithUTF8String:(const char *)name];
@@ -321,9 +328,13 @@ void CSXXMLParserStartElement(void *ctx,
             }
         }
     }
+    
+drainAndReturn:
+    [pool release];
 }
 
 void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
     CSXXMLParser *parser;
     NSString *elementName;
     CSXElementLayout *layout;
@@ -333,7 +344,7 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     
     parser = (CSXXMLParser *)ctx;
     if(parser->_state.errorOccurred == YES) {
-        return;
+        goto drainAndReturn;
     }
     
     [parser popStateElement:&elementName 
@@ -350,7 +361,7 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     
     /* if their is no layout element, we are not interested in this element */
     if(layout == nil) {
-        return;
+        goto drainAndReturn;
     }
     
     /* get the parent element, we have to set its properties */
@@ -361,7 +372,7 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
         arr = objc_msgSend(parentInstance, layout.contentLayout.getter);
         assert(arr != nil);
         [arr addObject:instance];
-        return;
+        goto drainAndReturn;
     }
     
     switch(layout.contentLayout.contentType) {
@@ -403,15 +414,19 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
         parser.error = err;
         parser->_state.errorOccurred = YES;
     }
+    
+drainAndReturn:
+    [pool release];
 }
 
 void CSXXMLParserCharacters(void *ctx, const xmlChar *ch, int len) {
+    NSAutoreleasePool *pool;
     CSXXMLParser *parser;
     NSString *str;
     
     parser = (CSXXMLParser *)ctx;
     if(parser->_state.errorOccurred == YES) {
-        return;
+        goto drainAndReturn;
     }
     
     str = [[NSString alloc] initWithBytes:(const char *)ch 
@@ -419,9 +434,13 @@ void CSXXMLParserCharacters(void *ctx, const xmlChar *ch, int len) {
                                  encoding:NSUTF8StringEncoding];
     [parser->_state.stringContent appendString:str];
     [str release];
+    
+drainAndReturn:
+    [pool release];
 }
 
 void CSXXMLParserWarning(void *ctx, const char *msg, ...) {
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
     NSError *err;
     NSString *descr, *reco, *format;
     NSDictionary *userInfo;
@@ -454,10 +473,11 @@ void CSXXMLParserWarning(void *ctx, const char *msg, ...) {
                           userInfo:userInfo];
     
     [(NSMutableArray *)parser.warnings addObject:err];
-                
+    [pool release];
 }
 
 void CSXXMLParserError(void *ctx, const char *msg, ...) {
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
     NSError *err;
     NSString *descr, *reco, *format;
     NSDictionary *userInfo;
@@ -491,6 +511,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     
     parser.error = err;
     parser->_state.errorOccurred = YES;
+    [pool release];
 }
 
 - (void)initializeState {
