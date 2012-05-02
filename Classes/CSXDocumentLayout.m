@@ -28,14 +28,54 @@
 
 #import "CSXDocumentLayout.h"
 
+#import "CSXXMLParser.h"
+#import "CSXDocumentLayout+CSXLayoutObject.h"
+
 NSString * const CSXDocumentLayoutInvalidClassException =
     @"CSXDocumentLayoutInvalidClassException";
+
+/* =========================================================================== 
+ MARK: -
+ MARK: Private Interface
+ =========================================================================== */
+@interface CSXDocumentLayout (Private)
+/* MARK: Reading in Layouts */
+- (NSError *)readLayoutDocument:(NSString *)fpath;
+@end
 
 /* =========================================================================== 
  MARK: -
  MARK: Public Implementation
  =========================================================================== */
 @implementation CSXDocumentLayout
+/* MARK: Init */
+- (id)initWithLayoutDocument:(NSString *)doc error:(NSError **)errptr {
+    self = [super init];
+    
+    if(self != nil) {
+        NSError *err;
+        
+        err = [self readLayoutDocument:doc];
+        if(err != nil) {
+            if(errptr) *errptr = err;
+            
+            [self release];
+            return nil;
+        }
+    }
+    return self;
+}
+
++ (id)documentLayoutWithLayoutDocument:(NSString *)doc error:(NSError **)err {
+    id inst;
+    inst = [[self alloc] initWithLayoutDocument:doc error:err];
+    return [self autorelease];
+}
+
++ (NSArray *)documentLayoutsWithDocumentDocument:(NSString *)doc {
+    return nil;
+}
+
 - (void)dealloc {
     self.name = nil;
     self.attributes = nil;
@@ -73,3 +113,28 @@ NSString * const CSXDocumentLayoutInvalidClassException =
 }
 @end
 
+/* =========================================================================== 
+ MARK: -
+ MARK: Private Implementation
+ =========================================================================== */
+@implementation CSXDocumentLayout (Private)
+/* MARK: Reading in Layouts */
+- (NSError *)readLayoutDocument:(NSString *)fpath {
+    CSXDocumentLayout *layout;
+    CSXXMLParser *parser;
+    BOOL state;
+    
+    layout = [CSXDocumentLayout layoutDocumentLayout];
+    
+    parser = [[CSXXMLParser alloc] initWithDocumentLayouts:
+              [NSArray arrayWithObject:layout]];
+    parser.file = fpath;
+    
+    state = [parser parse];
+    
+    if(state == NO || parser.error != nil) {
+        return parser.error;
+    }
+    return nil;
+}
+@end
