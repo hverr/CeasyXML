@@ -26,12 +26,28 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <CSXHelloWorld.h>
+#import <CeasyXML.h>
 
 int main(int argc, const char **argv) {
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
     
-    [CSXHelloWorld print];
+    NSString *file;
+    
+    file = [NSString stringWithUTF8String:__FILE__];
+    file = [file stringByDeletingLastPathComponent];
+    file = [file stringByAppendingPathComponent:@"Layout.xml"];
+    
+    CSXDocumentLayout *layout;
+    NSError *error;
+    
+    layout = [[CSXDocumentLayout alloc] initWithLayoutDocument:file 
+                                                         error:&error];
+    if(layout == nil) {
+        NSLog(@"Could not create layout: %@", error);
+        exit(0);
+    }
+    
+    NSLog(@"Layout:\n%@", layout);
     
     [pool release];
     return 0;

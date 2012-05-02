@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<document>
+    <layout name="library" class="TLibrary">
+        <!-- library: elements -->
+        <element name="entry">
+            <!-- entry: content -->
+            <content type="custom">
+                <getter>entries</getter>
+                <setter>setEntries:</setter>
+                <class>TEntry</class>
+            </content>
+            
+            <!-- entry: attributes -->
+            <attribute name="type">
+                <requierd />
+                <content type="string">
+                    <getter>type</getter>
+                    <setter>setType:</setter>
+                </content>
+            </attribute><!-- type -->
+            
+            <!-- entry: elements -->
+            <element name="title">
+                <requierd />
+                <unique />
+                <content type="string">
+                    <getter>title</getter>
+                    <setter>setTitle:</setter>
+                </content>
+            </element><!-- title -->
+            
+            <element name="creator">
+                <requierd />
+                <unique />
+                <content type="string">
+                    <getter>creator</getter>
+                    <setter>setCreator:</setter>
+                </content>
+            </element><!-- creator -->
+            
+            <element name="year">
+                <requierd />
+                <unique />
+                <content type="number">
+                    <getter>year</getter>
+                    <setter>setYear:</getter>
+                </content>
+            </element><!-- year -->
+            
+        </element><!-- entry -->
+    </layout><!-- library -->
+</document>

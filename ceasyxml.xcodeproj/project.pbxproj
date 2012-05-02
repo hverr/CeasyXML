@@ -17,6 +17,7 @@
 		922CDB2A15446CD1003B1B6F /* CSXXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */; };
 		922CDB3215447054003B1B6F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 922CDB3115447054003B1B6F /* libxml2.dylib */; };
 		922CDB3315447075003B1B6F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 922CDB3115447054003B1B6F /* libxml2.dylib */; };
+		92305FF51551784F00A60884 /* CeasyXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 92305FF41551784F00A60884 /* CeasyXML.h */; };
 		925FE8A81542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */; };
 		925FE8A91542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */; };
 		925FE8E31542F13200AA875E /* CSXNodeContentLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 925FE8E11542F13200AA875E /* CSXNodeContentLayout.h */; };
@@ -57,6 +58,7 @@
 		922CDB2815446CD1003B1B6F /* CSXXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXXMLParser.m; sourceTree = "<group>"; };
 		922CDB3115447054003B1B6F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		92305FCF1551716800A60884 /* Layout.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Layout.xml; sourceTree = "<group>"; };
+		92305FF41551784F00A60884 /* CeasyXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CeasyXML.h; sourceTree = "<group>"; };
 		925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXNodeLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
 		925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXNodeLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
 		925FE8E11542F13200AA875E /* CSXNodeContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeContentLayout.h; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				92305FF41551784F00A60884 /* CeasyXML.h */,
 				920EB981154D94850007D7DA /* Containers */,
 				9227B9661541ECBD00FA9EA6 /* Layout */,
 				922CDB2515446CBA003B1B6F /* Parsing and Writing */,
@@ -232,6 +235,7 @@
 				92FBB7E61544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h in Headers */,
 				922CDB2915446CD1003B1B6F /* CSXXMLParser.h in Headers */,
 				920EB98B154D94C50007D7DA /* CSXElementList.h in Headers */,
+				92305FF51551784F00A60884 /* CeasyXML.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +407,10 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				HEADER_SEARCH_PATHS = Classes;
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					Classes,
+				);
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -424,7 +431,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
-				HEADER_SEARCH_PATHS = Classes;
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					Classes,
+				);
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_LDFLAGS = (
 					"-framework",
