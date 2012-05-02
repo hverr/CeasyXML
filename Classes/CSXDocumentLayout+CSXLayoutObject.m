@@ -34,7 +34,7 @@ static NSString * const CSXDocumentLayoutClassAttributeName = @"class";
 static NSString * const CSXDocumentLayoutLayoutElementName = @"layout";
 static NSString * const CSXDocumentLayoutDocumentElementName = @"document";
 
-@implementation CSXDocumentLayout (SXLayoutObject)
+@implementation CSXDocumentLayout (CSXLayoutObject)
 /* MARK: Various Attributes */
 + (CSXNodeLayout *)nameAttributeLayout {
     CSXNodeLayout *layout;
