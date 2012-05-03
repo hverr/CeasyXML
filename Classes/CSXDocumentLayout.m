@@ -111,6 +111,18 @@ NSString * const CSXDocumentLayoutInvalidClassException =
     
     self.documentClass = myClass;
 }
+
+
+- (CSXElementLayout *)subelementWithName:(NSString *)nam {
+    CSXElementLayout *layout;
+    
+    for(layout in self.elements) {
+        if(layout.name == nam) {
+            return layout;
+        }
+    }
+    return nil;
+}
 @end
 
 /* =========================================================================== 

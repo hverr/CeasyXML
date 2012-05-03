@@ -28,6 +28,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import "CSXElementLayout.h"
 
 extern NSString * const CSXDocumentLayoutInvalidClassException;
 
@@ -46,5 +47,7 @@ extern NSString * const CSXDocumentLayoutInvalidClassException;
 @property (nonatomic, assign) Class documentClass;
 
 @property (nonatomic, retain) NSString *documentClassString;
+
+- (CSXElementLayout *)subelementWithName:(NSString *)nam;
 @end
 
