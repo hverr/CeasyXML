@@ -451,7 +451,7 @@ drainAndReturn:
 }
 
 void CSXXMLParserCharacters(void *ctx, const xmlChar *ch, int len) {
-    NSAutoreleasePool *pool;
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
     CSXXMLParser *parser;
     NSString *str;
     

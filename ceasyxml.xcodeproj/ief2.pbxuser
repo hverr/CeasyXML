@@ -144,9 +144,9 @@
 	};
 	922CDB2815446CD1003B1B6F /* CSXXMLParser.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 11024}}";
-			sepNavSelRange = "{1684, 0}";
-			sepNavVisRange = "{0, 2713}";
+			sepNavIntBoundsRect = "{{0, 0}, {853, 11141}}";
+			sepNavSelRange = "{15173, 0}";
+			sepNavVisRange = "{14480, 1212}";
 			sepNavWindowFrame = "{{687, 64}, {647, 984}}";
 		};
 	};
@@ -474,7 +474,7 @@
 	925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 2067}}";
-			sepNavSelRange = "{4302, 0}";
+			sepNavSelRange = "{4131, 20}";
 			sepNavVisRange = "{3233, 1816}";
 			sepNavWindowFrame = "{{466, 19}, {647, 984}}";
 		};
@@ -491,7 +491,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 1456}}";
 			sepNavSelRange = "{3658, 0}";
-			sepNavVisRange = "{1957, 1797}";
+			sepNavVisRange = "{1933, 1821}";
 			sepNavWindowFrame = "{{589, 74}, {647, 984}}";
 		};
 	};
