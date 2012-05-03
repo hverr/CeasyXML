@@ -138,6 +138,8 @@ static NSString * const CSXNodeContentLayoutClassElementName = @"class";
     layout.empty = NO;
     
     content.contentType = CSXNodeContentTypeCustom;
+    content.getter = @selector(contentLayout);
+    content.setter = @selector(setContentLayout:);
     content.customClass = [CSXNodeContentLayout class];
     
     layout.contentLayout = content;

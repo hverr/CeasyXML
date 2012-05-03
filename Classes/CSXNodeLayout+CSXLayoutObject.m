@@ -90,6 +90,8 @@ static NSString * const CSXNodeLayoutRequiredElementName = @"required";
     layout.required = NO;
     
     content.contentType = CSXNodeContentTypeCustom;
+    content.getter = @selector(attributes);
+    content.setter = @selector(setAttributes:);
     content.customClass = [CSXNodeLayout class];
     
     layout.contentLayout = content;

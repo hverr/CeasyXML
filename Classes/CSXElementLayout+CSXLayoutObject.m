@@ -92,6 +92,8 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
     layout.unique = NO;
     
     content.contentType = CSXNodeContentTypeCustom;
+    content.getter = @selector(subelements);
+    content.setter = @selector(setSubelements:);
     content.customClass = [CSXElementLayout class];
     
     layout.contentLayout = content;
