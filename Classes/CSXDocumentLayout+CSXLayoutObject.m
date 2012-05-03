@@ -121,7 +121,7 @@ static NSString * const CSXDocumentLayoutDocumentElementName = @"document";
                          [self classAttributeLayout],
                          nil];
     
-    layout.elements = [NSArray arrayWithObjects:
+    layout.subelements = [NSArray arrayWithObjects:
                        [CSXNodeLayout attributeElementLayout],
                        [CSXElementLayout elementElementLayout],
                        nil];
@@ -137,7 +137,7 @@ static NSString * const CSXDocumentLayoutDocumentElementName = @"document";
     layout.name = CSXDocumentLayoutDocumentElementName;
     layout.documentClass = [CSXDocumentLayout class];
     
-    layout.elements = [NSArray arrayWithObjects:
+    layout.subelements = [NSArray arrayWithObjects:
                        [self layoutElementLayout],
                        nil];
     

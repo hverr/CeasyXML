@@ -79,13 +79,13 @@ NSString * const CSXDocumentLayoutInvalidClassException =
 - (void)dealloc {
     self.name = nil;
     self.attributes = nil;
-    self.elements = nil;
+    self.subelements = nil;
     
     [super dealloc];
 }
 
 /* MARK: Properties */
-@synthesize name, attributes, elements, documentClass;
+@synthesize name, attributes, subelements, documentClass;
 
 - (NSString *)documentClassString {
     if(self.documentClass == NULL) {
@@ -116,7 +116,7 @@ NSString * const CSXDocumentLayoutInvalidClassException =
 - (CSXElementLayout *)subelementWithName:(NSString *)nam {
     CSXElementLayout *layout;
     
-    for(layout in self.elements) {
+    for(layout in self.subelements) {
         if([layout.name isEqualToString:nam]) {
             return layout;
         }
