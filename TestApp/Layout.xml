@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<document>
+<!--<document>-->
     <layout name="library" class="TLibrary">
         <!-- library: elements -->
         <element name="entry">
@@ -50,4 +50,5 @@
             
         </element><!-- entry -->
     </layout><!-- library -->
-</document>
+<!--</document>-->
+
