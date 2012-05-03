@@ -62,49 +62,49 @@
     if(self.setup == NO) {
         [self setupPlacebo];
     }
-    return self.name;
+    return super.name;
 }
 
 - (BOOL)required {
     if(self.setup == NO) {
         [self setupPlacebo];
     }
-    return self.required;
+    return super.required;
 }
 
 - (CSXNodeContentLayout *)contentLayout {
     if(self.setup == NO) {
         [self setupPlacebo];
     }
-    return self.contentLayout;
+    return super.contentLayout;
 }
 
 - (BOOL)empty {
     if(self.setup == NO) {
         [self setupPlacebo];
     }
-    return self.empty;
+    return super.empty;
 }
 
 - (BOOL)unique {
     if(self.setup == NO) {
         [self setupPlacebo];
     }
-    return self.unique;
+    return super.unique;
 }
 
 - (NSArray *)attributes {
     if(self.setup == NO) {
         [self setupPlacebo];
     }
-    return self.attributes;
+    return super.attributes;
 }
 
 - (NSArray *)subelements {
     if(self.setup == NO) {
         [self setupPlacebo];
     }
-    return self.subelements;
+    return super.subelements;
 }
 @end
 

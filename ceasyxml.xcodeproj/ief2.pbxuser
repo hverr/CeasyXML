@@ -12,6 +12,7 @@
 			920BA8C31553118A003276D0 /* CSXXMLParser.m:367 */,
 			920BA8C515531191003276D0 /* CSXXMLParser.m:249 */,
 			920BA8C71553119B003276D0 /* CSXXMLParser.m:453 */,
+			920BA92F15531C6F003276D0 /* CSXElementLayoutPlacebo.m:127 */,
 		);
 		codeSenseManager = 92F82A8E154075440009E770 /* Code sense */;
 		executables = (
@@ -77,7 +78,7 @@
 		ignoreCount = 0;
 		lineNumber = 367;
 		location = TestApp;
-		modificationTime = 357766894.00832;
+		modificationTime = 357768455.397795;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -90,11 +91,11 @@
 		countType = 0;
 		delayBeforeContinue = 0;
 		fileReference = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
-		hitCount = 2;
+		hitCount = 3;
 		ignoreCount = 0;
 		lineNumber = 249;
 		location = TestApp;
-		modificationTime = 357766913.208275;
+		modificationTime = 357768471.515302;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -107,11 +108,11 @@
 		countType = 0;
 		delayBeforeContinue = 0;
 		fileReference = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
-		hitCount = 2;
+		hitCount = 4;
 		ignoreCount = 0;
 		lineNumber = 453;
 		location = TestApp;
-		modificationTime = 357766912.611648;
+		modificationTime = 357768470.9231;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -140,7 +141,7 @@
 		fRef = 92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */;
 		name = "CSXDocumentLayout+CSXLayoutObject.m: 126";
 		rLen = 20;
-		rLoc = 4300;
+		rLoc = 4303;
 		rType = 0;
 		vrLen = 764;
 		vrLoc = 3712;
@@ -250,7 +251,7 @@
 		fRef = 9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */;
 		name = "CSXDocumentLayout.m: 147";
 		rLen = 0;
-		rLoc = 4353;
+		rLoc = 4362;
 		rType = 0;
 		vrLen = 814;
 		vrLoc = 3738;
@@ -264,6 +265,24 @@
 		rType = 0;
 		vrLen = 596;
 		vrLoc = 1351;
+	};
+	920BA92F15531C6F003276D0 /* CSXElementLayoutPlacebo.m:127 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */;
+		functionName = "-setupPlacebo";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 127;
+		location = TestApp;
+		modificationTime = 357768472.46853;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
 	};
 	920EB989154D94C50007D7DA /* CSXElementList.h */ = {
 		uiCtxt = {
@@ -306,24 +325,24 @@
 	9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {868, 900}}";
-			sepNavSelRange = "{1699, 0}";
-			sepNavVisRange = "{1351, 596}";
+			sepNavSelRange = "{1646, 0}";
+			sepNavVisRange = "{1342, 604}";
 			sepNavWindowFrame = "{{561, 35}, {647, 984}}";
 		};
 	};
 	9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {868, 810}}";
-			sepNavSelRange = "{1295, 0}";
-			sepNavVisRange = "{1232, 752}";
+			sepNavSelRange = "{1799, 0}";
+			sepNavVisRange = "{1232, 754}";
 			sepNavWindowFrame = "{{1075, 72}, {647, 984}}";
 		};
 	};
 	9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {636, 2550}}";
-			sepNavSelRange = "{3645, 0}";
-			sepNavVisRange = "{3497, 240}";
+			sepNavIntBoundsRect = "{{0, 0}, {868, 2640}}";
+			sepNavSelRange = "{3625, 0}";
+			sepNavVisRange = "{4047, 650}";
 			sepNavWindowFrame = "{{949, 35}, {647, 984}}";
 		};
 	};
@@ -337,9 +356,9 @@
 	};
 	922CDB2815446CD1003B1B6F /* CSXXMLParser.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {644, 12405}}";
-			sepNavSelRange = "{10837, 0}";
-			sepNavVisRange = "{10561, 441}";
+			sepNavIntBoundsRect = "{{0, 0}, {633, 12960}}";
+			sepNavSelRange = "{15119, 0}";
+			sepNavVisRange = "{8085, 321}";
 			sepNavWindowFrame = "{{687, 64}, {647, 984}}";
 		};
 	};
@@ -369,9 +388,9 @@
 	};
 	925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 1443}}";
-			sepNavSelRange = "{3105, 0}";
-			sepNavVisRange = "{1818, 1777}";
+			sepNavIntBoundsRect = "{{0, 0}, {868, 1680}}";
+			sepNavSelRange = "{3184, 11}";
+			sepNavVisRange = "{2693, 701}";
 			sepNavWindowFrame = "{{1218, 68}, {647, 984}}";
 		};
 	};
@@ -401,9 +420,9 @@
 	};
 	925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 2067}}";
-			sepNavSelRange = "{4131, 20}";
-			sepNavVisRange = "{3233, 1816}";
+			sepNavIntBoundsRect = "{{0, 0}, {868, 2580}}";
+			sepNavSelRange = "{4608, 11}";
+			sepNavVisRange = "{4224, 877}";
 			sepNavWindowFrame = "{{466, 19}, {647, 984}}";
 		};
 	};
@@ -417,9 +436,9 @@
 	};
 	925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {633, 1770}}";
-			sepNavSelRange = "{3033, 6}";
-			sepNavVisRange = "{2799, 326}";
+			sepNavIntBoundsRect = "{{0, 0}, {868, 1740}}";
+			sepNavSelRange = "{3288, 11}";
+			sepNavVisRange = "{2799, 738}";
 			sepNavWindowFrame = "{{589, 74}, {647, 984}}";
 		};
 	};
@@ -477,7 +496,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -512,16 +531,16 @@
 	};
 	92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {604, 645}}";
-			sepNavSelRange = "{1273, 0}";
-			sepNavVisRange = "{85, 1389}";
+			sepNavIntBoundsRect = "{{0, 0}, {633, 690}}";
+			sepNavSelRange = "{1421, 0}";
+			sepNavVisRange = "{1239, 234}";
 		};
 	};
 	92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {868, 2070}}";
-			sepNavSelRange = "{1513, 0}";
-			sepNavVisRange = "{2558, 584}";
+			sepNavIntBoundsRect = "{{0, 0}, {644, 2295}}";
+			sepNavSelRange = "{3340, 0}";
+			sepNavVisRange = "{3247, 212}";
 			sepNavWindowFrame = "{{84, 6}, {647, 984}}";
 		};
 	};
@@ -535,9 +554,9 @@
 	};
 	92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {633, 2190}}";
-			sepNavSelRange = "{4300, 20}";
-			sepNavVisRange = "{3953, 437}";
+			sepNavIntBoundsRect = "{{0, 0}, {516, 2250}}";
+			sepNavSelRange = "{4651, 0}";
+			sepNavVisRange = "{4479, 330}";
 			sepNavWindowFrame = "{{656, 25}, {647, 984}}";
 		};
 	};
