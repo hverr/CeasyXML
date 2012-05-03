@@ -130,6 +130,7 @@ static NSString * const CSXNodeContentLayoutClassElementName = @"class";
     CSXNodeContentLayout *content;
     
     layout = [CSXElementLayout new];
+    content = [CSXNodeContentLayout new];
     
     layout.name = CSXNodeContentLayoutContentElementName;
     layout.required = YES;

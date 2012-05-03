@@ -65,6 +65,8 @@
 			9240D5381552A7F300331366 /* PBXTextBookmark */ = 9240D5381552A7F300331366 /* PBXTextBookmark */;
 			9240D53B1552A7F300331366 /* PBXTextBookmark */ = 9240D53B1552A7F300331366 /* PBXTextBookmark */;
 			9240D53C1552A7F300331366 /* PBXTextBookmark */ = 9240D53C1552A7F300331366 /* PBXTextBookmark */;
+			9240D5401552A8BE00331366 /* PBXTextBookmark */ = 9240D5401552A8BE00331366 /* PBXTextBookmark */;
+			9240D5411552A8BE00331366 /* PBXTextBookmark */ = 9240D5411552A8BE00331366 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 92F82A8D154075440009E770 /* Source Control */;
 		userBuildSettings = {
@@ -409,6 +411,26 @@
 		vrLen = 1774;
 		vrLoc = 3233;
 	};
+	9240D5401552A8BE00331366 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */;
+		name = "CSXNodeContentLayout+CSXLayoutObject.m: 133";
+		rLen = 0;
+		rLoc = 4302;
+		rType = 0;
+		vrLen = 1816;
+		vrLoc = 3233;
+	};
+	9240D5411552A8BE00331366 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */;
+		name = "CSXElementLayout+CSXLayoutObject.m: 107";
+		rLen = 0;
+		rLoc = 3658;
+		rType = 0;
+		vrLen = 1797;
+		vrLoc = 1957;
+	};
 	925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 833}}";
@@ -451,9 +473,9 @@
 	};
 	925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 2054}}";
-			sepNavSelRange = "{4109, 42}";
-			sepNavVisRange = "{3233, 1774}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 2067}}";
+			sepNavSelRange = "{4302, 0}";
+			sepNavVisRange = "{3233, 1816}";
 			sepNavWindowFrame = "{{466, 19}, {647, 984}}";
 		};
 	};

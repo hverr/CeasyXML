@@ -202,46 +202,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>9240D5321552A79800331366</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>CSXElementLayout+CSXLayoutObject.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>9240D5331552A79800331366</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>CSXElementLayout+CSXLayoutObject.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>9240D5381552A7F300331366</string>
-						<key>history</key>
-						<array>
-							<string>9240D52F1552A78C00331366</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {647, 887}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>589 130 647 928 0 0 1920 1058 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>9240D5391552A7F300331366</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>CSXNodeContentLayout+CSXLayoutObject.m</string>
@@ -256,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9240D53C1552A7F300331366</string>
+						<string>9240D5401552A8BE00331366</string>
 						<key>history</key>
 						<array>
 							<string>9240D53B1552A7F300331366</string>
@@ -276,6 +236,46 @@
 				<false/>
 				<key>RubberWindowFrame</key>
 				<string>466 75 647 928 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>9240D5321552A79800331366</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>CSXElementLayout+CSXLayoutObject.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>9240D5331552A79800331366</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>CSXElementLayout+CSXLayoutObject.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>9240D5411552A8BE00331366</string>
+						<key>history</key>
+						<array>
+							<string>9240D52F1552A78C00331366</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {647, 887}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>589 130 647 928 0 0 1920 1058 </string>
 			</dict>
 		</dict>
 	</array>
@@ -358,7 +358,7 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>11</integer>
+											<integer>7</integer>
 											<integer>5</integer>
 											<integer>4</integer>
 											<integer>1</integer>
@@ -573,8 +573,8 @@
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
 		<string>1C530D5B069F1CE1000CFCEE</string>
-		<string>9240D5391552A7F300331366</string>
 		<string>9240D5321552A79800331366</string>
+		<string>9240D5391552A7F300331366</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 505 372 517 0 0 1920 1058 </string>
