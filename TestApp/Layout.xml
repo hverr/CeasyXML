@@ -44,7 +44,7 @@
                 <unique />
                 <content type="number">
                     <getter>year</getter>
-                    <setter>setYear:</getter>
+                    <setter>setYear:</setter>
                 </content>
             </element><!-- year -->
             
