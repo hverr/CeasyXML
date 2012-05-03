@@ -83,7 +83,7 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
     CSXElementLayout *layout;
     CSXNodeContentLayout *content;
     
-    layout = [CSXNodeLayout new];
+    layout = [CSXElementLayout new];
     content = [CSXNodeContentLayout new];
     
     layout.name = CSXElementLayoutEmptyElementName;
