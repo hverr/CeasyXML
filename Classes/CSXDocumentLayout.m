@@ -123,6 +123,14 @@ NSString * const CSXDocumentLayoutInvalidClassException =
     }
     return nil;
 }
+
+/* MARK: Description */
+- (NSString *)description {
+    return [NSString stringWithFormat:
+            @"%@: %@ (class %@)",
+            [super description], self.name, 
+            self.documentClass];
+}
 @end
 
 /* =========================================================================== 

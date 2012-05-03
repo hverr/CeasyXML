@@ -201,5 +201,11 @@ NSString * const CSXNodeContentTypeCustomIdentifier = @"custom";
     return NSStringFromSelector(self.getter);
 }
 
+/* MARK: Description */
+- (NSString *)description {
+    return [NSString stringWithFormat:
+            @"%@: %@", [super description], 
+            self.contentTypeIdentifier];
+}
 @end
 

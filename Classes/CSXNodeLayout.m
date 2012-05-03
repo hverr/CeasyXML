@@ -44,6 +44,15 @@
 
 /* MARK: Properties */
 @synthesize name, required, contentLayout;
+
+/* MARK: Description */
+- (NSString *)description {
+    return [NSString stringWithFormat:
+            @"%@: %@ (%@, %@)",
+            [super description],
+            self.name, self.contentLayout.contentTypeIdentifier,
+            self.required ? @"required" : @"optional"];
+}
 @end
 
 
