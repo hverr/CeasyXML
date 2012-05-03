@@ -49,7 +49,7 @@
     CSXElementLayout *layout;
     
     for(layout in self.subelements) {
-        if(layout.name == nam) {
+        if([layout.name isEqualToString:nam]) {
             return layout;
         }
     }

@@ -117,7 +117,7 @@ NSString * const CSXDocumentLayoutInvalidClassException =
     CSXElementLayout *layout;
     
     for(layout in self.elements) {
-        if(layout.name == nam) {
+        if([layout.name isEqualToString:nam]) {
             return layout;
         }
     }
