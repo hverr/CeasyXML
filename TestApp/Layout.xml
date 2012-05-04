@@ -13,7 +13,7 @@
             
             <!-- entry: attributes -->
             <attribute name="type">
-                <requierd />
+                <required />
                 <content type="string">
                     <getter>type</getter>
                     <setter>setType:</setter>
@@ -22,7 +22,7 @@
             
             <!-- entry: elements -->
             <element name="title">
-                <requierd />
+                <required />
                 <unique />
                 <content type="string">
                     <getter>title</getter>
@@ -31,7 +31,7 @@
             </element><!-- title -->
             
             <element name="creator">
-                <requierd />
+                <required />
                 <unique />
                 <content type="string">
                     <getter>creator</getter>
@@ -40,7 +40,7 @@
             </element><!-- creator -->
             
             <element name="year">
-                <requierd />
+                <required />
                 <unique />
                 <content type="number">
                     <getter>year</getter>
