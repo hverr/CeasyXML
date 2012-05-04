@@ -384,6 +384,12 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     assert([[NSString stringWithUTF8String:(const char *)name]
             isEqualToString:elementName]);
     
+    /* if this is the last element, the document is ended */
+    if([parser->_state.elementNameStack count] == 0) {
+        parser.result = instance;
+        goto drainAndReturn;
+    }
+    
     /* if their is no layout element, we are not interested in this element */
     if((NSNull *)layout == [NSNull null]) {
         goto drainAndReturn;

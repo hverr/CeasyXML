@@ -202,6 +202,46 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>9202EEBF15542A4400EF6DE6</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Layout.xml</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>9202EEC015542A4400EF6DE6</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Layout.xml</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>9202EEC515542A8F00EF6DE6</string>
+						<key>history</key>
+						<array>
+							<string>9202EEC415542A8F00EF6DE6</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {647, 887}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>987 73 647 928 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>9202EEB715542A4400EF6DE6</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>CSXXMLParser.m</string>
@@ -216,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9202EEB915542A4400EF6DE6</string>
+						<string>9202EEC615542A8F00EF6DE6</string>
 						<key>history</key>
 						<array>
 							<string>9202EEB615542A1000EF6DE6</string>
@@ -256,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9202EEBE15542A4400EF6DE6</string>
+						<string>9202EEC715542A8F00EF6DE6</string>
 						<key>history</key>
 						<array>
 							<string>9202EEBC15542A4400EF6DE6</string>
@@ -277,46 +317,6 @@
 				<false/>
 				<key>RubberWindowFrame</key>
 				<string>345 130 647 928 0 0 1920 1058 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>9202EEBF15542A4400EF6DE6</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>Layout.xml</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>9202EEC015542A4400EF6DE6</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>Layout.xml</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>9202EEC115542A4400EF6DE6</string>
-						<key>history</key>
-						<array>
-							<string>9202EEA4155428CD00EF6DE6</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {647, 887}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>987 73 647 928 0 0 1920 1058 </string>
 			</dict>
 		</dict>
 	</array>
@@ -399,14 +399,14 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>26</integer>
-											<integer>24</integer>
-											<integer>1</integer>
+											<integer>39</integer>
+											<integer>38</integer>
+											<integer>37</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 200}, {355, 431}}</string>
+									<string>{{0, 334}, {355, 431}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -611,11 +611,11 @@
 		<string>9202EEA01554282200EF6DE6</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>1C530D54069F1CE1000CFCEE</string>
-		<string>9202EEBF15542A4400EF6DE6</string>
-		<string>1C530D5B069F1CE1000CFCEE</string>
 		<string>9202EEBA15542A4400EF6DE6</string>
-		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
 		<string>9202EEB715542A4400EF6DE6</string>
+		<string>1C530D5B069F1CE1000CFCEE</string>
+		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
+		<string>9202EEBF15542A4400EF6DE6</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 505 372 517 0 0 1920 1058 </string>

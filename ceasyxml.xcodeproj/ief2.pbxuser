@@ -50,6 +50,10 @@
 			9202EEBD15542A4400EF6DE6 /* PBXTextBookmark */ = 9202EEBD15542A4400EF6DE6 /* PBXTextBookmark */;
 			9202EEBE15542A4400EF6DE6 /* PBXTextBookmark */ = 9202EEBE15542A4400EF6DE6 /* PBXTextBookmark */;
 			9202EEC115542A4400EF6DE6 /* PBXTextBookmark */ = 9202EEC115542A4400EF6DE6 /* PBXTextBookmark */;
+			9202EEC415542A8F00EF6DE6 /* PBXTextBookmark */ = 9202EEC415542A8F00EF6DE6 /* PBXTextBookmark */;
+			9202EEC515542A8F00EF6DE6 /* PBXTextBookmark */ = 9202EEC515542A8F00EF6DE6 /* PBXTextBookmark */;
+			9202EEC615542A8F00EF6DE6 /* PBXTextBookmark */ = 9202EEC615542A8F00EF6DE6 /* PBXTextBookmark */;
+			9202EEC715542A8F00EF6DE6 /* PBXTextBookmark */ = 9202EEC715542A8F00EF6DE6 /* PBXTextBookmark */;
 			920BA8DE155315E9003276D0 = 920BA8DE155315E9003276D0 /* PBXTextBookmark */;
 			920BA8DF155315E9003276D0 = 920BA8DF155315E9003276D0 /* PBXTextBookmark */;
 			920BA8E0155315E9003276D0 = 920BA8E0155315E9003276D0 /* PBXTextBookmark */;
@@ -130,7 +134,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 386";
 		rLen = 0;
-		rLoc = 13050;
+		rLoc = 13240;
 		rType = 0;
 		vrLen = 1976;
 		vrLoc = 12275;
@@ -172,6 +176,46 @@
 		vrLen = 1730;
 		vrLoc = 0;
 	};
+	9202EEC415542A8F00EF6DE6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 92305FCF1551716800A60884 /* Layout.xml */;
+		name = "Layout.xml: 16";
+		rLen = 8;
+		rLoc = 494;
+		rType = 0;
+		vrLen = 1730;
+		vrLoc = 0;
+	};
+	9202EEC515542A8F00EF6DE6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 92305FCF1551716800A60884 /* Layout.xml */;
+		name = "Layout.xml: 43";
+		rLen = 0;
+		rLoc = 1412;
+		rType = 0;
+		vrLen = 1730;
+		vrLoc = 0;
+	};
+	9202EEC615542A8F00EF6DE6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
+		name = "CSXXMLParser.m: 386";
+		rLen = 0;
+		rLoc = 13240;
+		rType = 0;
+		vrLen = 2056;
+		vrLoc = 12388;
+	};
+	9202EEC715542A8F00EF6DE6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9202EEA8155428F300EF6DE6 /* TEntry.m */;
+		name = "TEntry.m: 37";
+		rLen = 0;
+		rLoc = 1502;
+		rType = 0;
+		vrLen = 1509;
+		vrLoc = 0;
+	};
 	920BA8C31553118A003276D0 /* CSXXMLParser.m:367 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
@@ -194,7 +238,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 388";
 		rLen = 0;
-		rLoc = 13312;
+		rLoc = 13502;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 8406;
@@ -403,17 +447,17 @@
 	};
 	922CDB2715446CD1003B1B6F /* CSXXMLParser.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {572, 1326}}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 1274}}";
 			sepNavSelRange = "{1287, 26}";
-			sepNavVisRange = "{1227, 146}";
+			sepNavVisRange = "{1313, 1878}";
 			sepNavWindowFrame = "{{38, 48}, {647, 984}}";
 		};
 	};
 	922CDB2815446CD1003B1B6F /* CSXXMLParser.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 10764}}";
-			sepNavSelRange = "{13050, 0}";
-			sepNavVisRange = "{12275, 1976}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 10842}}";
+			sepNavSelRange = "{13181, 0}";
+			sepNavVisRange = "{12393, 2048}";
 			sepNavWindowFrame = "{{687, 64}, {647, 984}}";
 		};
 	};
