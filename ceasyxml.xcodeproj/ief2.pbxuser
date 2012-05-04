@@ -585,9 +585,9 @@
 	};
 	9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {853, 2132}}";
-			sepNavSelRange = "{2797, 0}";
-			sepNavVisRange = "{2531, 716}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 2301}}";
+			sepNavSelRange = "{4943, 0}";
+			sepNavVisRange = "{3462, 1505}";
 			sepNavWindowFrame = "{{949, 35}, {647, 984}}";
 		};
 	};

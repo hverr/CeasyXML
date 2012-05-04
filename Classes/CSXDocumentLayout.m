@@ -151,7 +151,7 @@ NSString * const CSXDocumentLayoutInvalidClassException =
 @implementation CSXDocumentLayout (Private)
 /* MARK: Reading in Layouts */
 - (NSError *)readLayoutDocument:(NSString *)fpath {
-    CSXDocumentLayout *layout;
+    CSXDocumentLayout *layout, *result;
     CSXXMLParser *parser;
     BOOL state;
     
@@ -164,8 +164,20 @@ NSString * const CSXDocumentLayoutInvalidClassException =
     state = [parser parse];
     
     if(state == NO || parser.error != nil) {
-        return parser.error;
+        NSError *err;
+        err = [parser.error retain];
+        [parser release];
+        return [err autorelease];
     }
+    
+    result = (CSXDocumentLayout *)parser.result;
+    
+    self.name = result.name;
+    self.attributes = result.attributes;
+    self.subelements = result.subelements;
+    self.documentClass = result.documentClass;
+    
+    [parser release];
     return nil;
 }
 @end
