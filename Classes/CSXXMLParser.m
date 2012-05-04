@@ -384,17 +384,17 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     assert([[NSString stringWithUTF8String:(const char *)name]
             isEqualToString:elementName]);
     
+    /* if their is no layout element, we are not interested in this element */
+    if((NSNull *)layout == [NSNull null]) {
+        goto drainAndReturn;
+    }
+    
     if((NSNull *)instance == [NSNull null]) {
         assert(parser->_state.stringContent != nil);
         instance = [parser->_state.stringContent autorelease];
         parser->_state.stringContent = nil;
     }
-    
-    /* if their is no layout element, we are not interested in this element */
-    if(layout == nil) {
-        goto drainAndReturn;
-    }
-    
+
     /* get the parent element, we have to set its properties */
     parentInstance = [parser->_state.elementInstanceStack lastObject];
     
