@@ -594,7 +594,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     
     *nameptr = [name autorelease];
     *lptr = [layout autorelease];
-    *instptr = [layout autorelease];
+    *instptr = [inst autorelease];
 }
 
 /* MARK: XML Processing Methods */
