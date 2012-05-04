@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9202EF8815543D3600EF6DE6</string>
+						<string>9202EF9115543DAB00EF6DE6</string>
 						<key>history</key>
 						<array>
 							<string>9202EF8715543D3600EF6DE6</string>
@@ -242,6 +242,46 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>9202EF6D15543BAE00EF6DE6</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Layout.xml</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>9202EF6E15543BAE00EF6DE6</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Layout.xml</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>9202EF9215543DAB00EF6DE6</string>
+						<key>history</key>
+						<array>
+							<string>9202EF6415543A1A00EF6DE6</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {647, 887}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>987 73 647 928 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>9202EF8915543D3600EF6DE6</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>CSXElementLayout+CSXLayoutObject.m</string>
@@ -256,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9202EF8D15543D3600EF6DE6</string>
+						<string>9202EF9315543DAB00EF6DE6</string>
 						<key>history</key>
 						<array>
 							<string>9202EF8B15543D3600EF6DE6</string>
@@ -297,7 +337,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9202EF8E15543D3600EF6DE6</string>
+						<string>9202EF9415543DAB00EF6DE6</string>
 						<key>history</key>
 						<array>
 							<string>9202EF6B15543BAE00EF6DE6</string>
@@ -317,46 +357,6 @@
 				<false/>
 				<key>RubberWindowFrame</key>
 				<string>687 120 647 928 0 0 1920 1058 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>9202EF6D15543BAE00EF6DE6</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>Layout.xml</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>9202EF6E15543BAE00EF6DE6</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>Layout.xml</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>9202EF8F15543D3600EF6DE6</string>
-						<key>history</key>
-						<array>
-							<string>9202EF6415543A1A00EF6DE6</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {647, 887}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>987 73 647 928 0 0 1920 1058 </string>
 			</dict>
 		</dict>
 	</array>
@@ -650,12 +650,12 @@
 		<string>9202EE9F1554282200EF6DE6</string>
 		<string>9202EEA01554282200EF6DE6</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>9202EF6D15543BAE00EF6DE6</string>
 		<string>9202EF6915543BAE00EF6DE6</string>
 		<string>9202EF8915543D3600EF6DE6</string>
-		<string>1C530D5B069F1CE1000CFCEE</string>
 		<string>1C530D54069F1CE1000CFCEE</string>
 		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
+		<string>9202EF6D15543BAE00EF6DE6</string>
+		<string>1C530D5B069F1CE1000CFCEE</string>
 		<string>9202EF7015543BAE00EF6DE6</string>
 	</array>
 	<key>WindowString</key>
