@@ -202,24 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>9202EF2E1554362100EF6DE6</string>
+				<string>9202EF45155437BB00EF6DE6</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>CSXXMLParser.m</string>
+				<string>TMain.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>9202EF2F1554362100EF6DE6</string>
+						<string>9202EF46155437BB00EF6DE6</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>CSXXMLParser.m</string>
+						<string>TMain.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9202EF301554362100EF6DE6</string>
+						<string>9202EF541554382700EF6DE6</string>
 						<key>history</key>
 						<array>
-							<string>9202EF29155435EB00EF6DE6</string>
+							<string>9202EF381554370800EF6DE6</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -235,7 +235,48 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>687 120 647 928 0 0 1920 1058 </string>
+				<string>1032 130 647 928 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>9202EF48155437BB00EF6DE6</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>CSXDocumentLayout.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>9202EF49155437BB00EF6DE6</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>CSXDocumentLayout.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>9202EF551554382700EF6DE6</string>
+						<key>history</key>
+						<array>
+							<string>9202EF4A155437BB00EF6DE6</string>
+							<string>9202EF4B155437BB00EF6DE6</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {647, 887}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>949 91 647 928 0 0 1920 1058 </string>
 			</dict>
 		</dict>
 	</array>
@@ -318,9 +359,9 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>26</integer>
-											<integer>24</integer>
-											<integer>1</integer>
+											<integer>39</integer>
+											<integer>38</integer>
+											<integer>37</integer>
 											<integer>0</integer>
 										</array>
 									</array>
@@ -525,14 +566,15 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>9202EF271554357C00EF6DE6</string>
+		<string>9202EF561554382700EF6DE6</string>
 		<string>9202EE9F1554282200EF6DE6</string>
 		<string>9202EEA01554282200EF6DE6</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>1C530D54069F1CE1000CFCEE</string>
-		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
-		<string>9202EF2E1554362100EF6DE6</string>
+		<string>9202EF48155437BB00EF6DE6</string>
 		<string>1C530D5B069F1CE1000CFCEE</string>
+		<string>9202EF45155437BB00EF6DE6</string>
+		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 505 372 517 0 0 1920 1058 </string>
@@ -1018,7 +1060,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {969, 342}}</string>
 								<key>RubberWindowFrame</key>
-								<string>2386 304 969 383 1920 116 1680 1050 </string>
+								<string>2357 651 969 383 1920 116 1680 1050 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -1047,7 +1089,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>2386 304 969 383 1920 116 1680 1050 </string>
+			<string>2357 651 969 383 1920 116 1680 1050 </string>
 			<key>WindowToolGUID</key>
 			<string>1C530D5B069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>

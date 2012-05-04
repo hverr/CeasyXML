@@ -48,6 +48,8 @@ int main(int argc, const char **argv) {
     }
     
     NSLog(@"Layout:\n%@", layout);
+    NSLog(@"Subelements:\n%@", layout.subelements);
+    [layout release];
     
     [pool release];
     return 0;
