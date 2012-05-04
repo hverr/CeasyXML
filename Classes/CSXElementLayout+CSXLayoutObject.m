@@ -107,6 +107,9 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
                           [self attributeElementLayout],
                           [CSXElementLayoutPlacebo placebo],
                           [CSXNodeContentLayout contentElementLayout],
+                          [self emptyElementLayout],
+                          [self requiredElementLayout],
+                          [self uniqueElementLayout],
                           nil];
     return [layout autorelease];
 }
