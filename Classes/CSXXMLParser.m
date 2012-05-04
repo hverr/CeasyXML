@@ -37,7 +37,8 @@ NSString * const CSXXMLParserElementClassNullException =
     @"CSXXMLParserElementClassNullException";
 
 NSString * const CSXXMLParserNoDataException = @"CSXXMLParserNoDataException";
-
+NSString * const CSXXMLParserInvalidArgumentContentTypeException = 
+    @"CSXXMLParserInvalidArgumentContentTypeException";
 
 NSString * const CSXXMLParserElementNameStackKey =
     @"CSXXMLParserElementNameStackKey";
@@ -74,14 +75,17 @@ void CSXXMLParserError(void *ctx, const char *msg, ...);
 - (id)instanceOfElementClass:(CSXElementLayout *)layout;
 
 /* MARK: Setting Properties */
+- (NSError *)setAttributes:(const xmlChar **)attrs
+                    layout:(CSXElementLayout *)l
+                  instance:(id)i;
 - (NSError *)setNumber:(NSString *)s 
-                layout:(CSXElementLayout *)l 
+                layout:(CSXNodeLayout *)l 
               instance:(id)i;
 - (NSError *)setString:(NSString *)s
-                layout:(CSXElementLayout *)l
+                layout:(CSXNodeLayout *)l
               instance:(id)i;
 - (NSError *)setBoolean:(NSString *)s
-                 layout:(CSXElementLayout *)l
+                 layout:(CSXNodeLayout *)l
                instance:(id)i;
 - (NSError *)setUniqueInstance:(id)obj
                         layout:(CSXElementLayout *)l
@@ -125,9 +129,9 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
 /* MARK: Errors */
 - (NSError *)unkownDocumentTypeError:(const xmlChar *)docElem;
 - (NSError *)elementValueNoNumberError:(NSString *)val 
-                                layout:(CSXElementLayout *)l;
+                                layout:(CSXNodeLayout *)l;
 - (NSError *)elementValueNoBooleanError:(NSString *)val
-                                 layout:(CSXElementLayout *)l;
+                                 layout:(CSXNodeLayout *)l;
 @end
 
 /* =========================================================================== 
@@ -252,6 +256,7 @@ void CSXXMLParserStartElement(void *ctx,
 {
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
     CSXXMLParser *parser;
+    NSError *err;
     
     parser = (CSXXMLParser *)ctx;
     
@@ -276,6 +281,15 @@ void CSXXMLParserStartElement(void *ctx,
             [e raise];
         }
         @finally {}
+        
+        /* set attributes */
+        err = [parser setAttributes:atts 
+                             layout:(CSXElementLayout *)layout 
+                           instance:documentInstance];
+        if(err != nil) {
+            parser.error = err;
+            parser->_state.errorOccurred = YES;
+        }
         
         [parser pushStateElement:name layout:layout instance:documentInstance];
         parser->_state.parsingDocument = YES;
@@ -319,6 +333,16 @@ void CSXXMLParserStartElement(void *ctx,
                 [e raise];
             }
             @finally {}
+            
+            /* set attributes */
+            err = [parser setAttributes:atts 
+                                 layout:subelement 
+                               instance:elementInstance];
+            if(err != nil) {
+                parser.error = err;
+                parser->_state.errorOccurred = YES;
+                goto drainAndReturn;
+            }
             
             [parser pushStateElement:name 
                               layout:subelement 
@@ -688,8 +712,86 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
 }
 
 /* MARK: Setting Properties */
+- (NSError *)setAttributes:(const xmlChar **)attrs
+               layout:(CSXElementLayout *)l
+             instance:(id)i
+{
+    CSXNodeLayout *attributeLayout;
+    const xmlChar *cattrName, *cattrValue;
+    NSString *attrName, *attrValue;
+    NSString *excName, *excReason;
+    NSError *err;
+    int c;
+    
+    if(attrs == NULL) {
+        return nil;
+    }
+    
+    c = 0;
+    err = nil;
+    while(1) {
+        NSAutoreleasePool *pool = [NSAutoreleasePool new];
+        
+        cattrName = attrs[c];
+        if(cattrName == NULL) {
+            [pool release];
+            break;
+        }
+        
+        cattrValue = attrs[c+1];
+        
+        attrName = [NSString stringWithUTF8String:(const char *)cattrName];
+        attrValue = [NSString stringWithUTF8String:(const char *)cattrValue];
+        
+        attributeLayout = [l attributeWithName:attrName];
+        if(attributeLayout != nil) {
+            switch(attributeLayout.contentLayout.contentType) {
+                case CSXNodeContentTypeString:
+                    err = [self setString:attrValue 
+                                   layout:attributeLayout 
+                                 instance:i];
+                    break;
+                    
+                case CSXNodeContentTypeNumber:
+                    err = [self setNumber:attrValue 
+                                   layout:attributeLayout 
+                                 instance:i];
+                    break;
+                    
+                case CSXNodeContentTypeBoolean:
+                    err = [self setBoolean:attrValue 
+                                    layout:attributeLayout 
+                                  instance:i];
+                    break;
+                    
+                default:
+                    excName = CSXXMLParserInvalidArgumentContentTypeException;
+                    excReason = [NSString stringWithFormat:
+                                 @"The content type '%@' is not allowed for "
+                                 @"an attribute.", 
+                                 l.contentLayout.contentTypeIdentifier];
+                    [[NSException exceptionWithName:excName 
+                                             reason:excReason 
+                                           userInfo:nil] raise];
+                    break;
+            }
+        }
+        
+        if(err != nil) {
+            [pool release];
+            break;
+        }
+        
+        c += 2;
+        
+        [pool release];
+    }
+    
+    return err;
+}
+
 - (NSError *)setNumber:(NSString *)s 
-                layout:(CSXElementLayout *)l 
+                layout:(CSXNodeLayout *)l 
               instance:(id)i 
 {
     NSScanner *scanner;
@@ -708,7 +810,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
 }
 
 - (NSError *)setString:(NSString *)s
-                layout:(CSXElementLayout *)l
+                layout:(CSXNodeLayout *)l
               instance:(id)i 
 {
     objc_msgSend(i, l.contentLayout.setter, s);
@@ -716,7 +818,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
 }
 
 - (NSError *)setBoolean:(NSString *)s
-                 layout:(CSXElementLayout *)l
+                 layout:(CSXNodeLayout *)l
                instance:(id)i
 {
     BOOL boolVal;
@@ -798,7 +900,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
 }
 
 - (NSError *)elementValueNoNumberError:(NSString *)val 
-                                layout:(CSXElementLayout *)l 
+                                layout:(CSXNodeLayout *)l 
 {
     NSString *descr, *reco;
     NSArray *stack;
@@ -825,7 +927,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
 }
 
 - (NSError *)elementValueNoBooleanError:(NSString *)val
-                                 layout:(CSXElementLayout *)l
+                                 layout:(CSXNodeLayout *)l
 {
     NSString *descr, *reco;
     NSArray *stack;

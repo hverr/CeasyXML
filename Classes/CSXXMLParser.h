@@ -42,6 +42,7 @@ extern NSString * const CSXXMLParserDocumentClassNullException;
 extern NSString * const CSXXMLParserElementClassNullException;
 
 extern NSString * const CSXXMLParserNoDataException;
+extern NSString * const CSXXMLParserInvalidArgumentContentTypeException;
 
 extern NSString * const CSXXMLParserElementNameStackKey;
 
