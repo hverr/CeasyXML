@@ -361,25 +361,35 @@ void CSXXMLParserStartElement(void *ctx,
                 }
             }
             
-            /* create string of the type is string, or set the instance
-             property if we have a list or a non-unique element type */
-            switch(subelement.contentLayout.contentType) {
-                case CSXNodeContentTypeString: /* fallthrough */
-                case CSXNodeContentTypeNumber: /* fallthrough */
-                case CSXNodeContentTypeBoolean: 
-                    parser->_state.stringContent = [NSMutableString new];
-                    break;
-                    
-                case CSXNodeContentTypeList:
-                    objc_msgSend(parentInstance, 
-                                 subelement.contentLayout.setter,
-                                 elementInstance);
-                    parser->_state.stringContent = nil;
-                    break;
-                    
-                default:
-                    parser->_state.stringContent = nil;
-                    break;
+            /* set to yes if the subelement is empty */
+            if(subelement.empty == YES) {
+                objc_msgSend(parentInstance,
+                             subelement.contentLayout.setter,
+                             YES);
+            }
+            
+            /* create string if not empty and the type is string, or set the 
+             instance  property if we have a list or a non-unique element 
+             type */
+            else {
+                switch(subelement.contentLayout.contentType) {
+                    case CSXNodeContentTypeString: /* fallthrough */
+                    case CSXNodeContentTypeNumber: /* fallthrough */
+                    case CSXNodeContentTypeBoolean: 
+                        parser->_state.stringContent = [NSMutableString new];
+                        break;
+                        
+                    case CSXNodeContentTypeList:
+                        objc_msgSend(parentInstance, 
+                                     subelement.contentLayout.setter,
+                                     elementInstance);
+                        parser->_state.stringContent = nil;
+                        break;
+                        
+                    default:
+                        parser->_state.stringContent = nil;
+                        break;
+                }
             }
         }
     }
@@ -416,6 +426,12 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     
     /* if their is no layout element, we are not interested in this element */
     if((NSNull *)layout == [NSNull null]) {
+        goto drainAndReturn;
+    }
+    
+    /* if its an empty object, the property has already been set in the
+     start element call back */
+    if(layout.empty == YES) {
         goto drainAndReturn;
     }
     
