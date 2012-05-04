@@ -49,5 +49,6 @@ extern NSString * const CSXDocumentLayoutInvalidClassException;
 @property (nonatomic, retain) NSString *documentClassString;
 
 - (CSXElementLayout *)subelementWithName:(NSString *)nam;
+- (CSXNodeLayout *)attributeWithName:(NSString *)nam;
 @end
 

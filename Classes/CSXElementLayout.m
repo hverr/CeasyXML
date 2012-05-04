@@ -55,5 +55,16 @@
     }
     return nil;
 }
+
+- (CSXNodeLayout *)attributeWithName:(NSString *)nam {
+    CSXNodeLayout *layout;
+    
+    for(layout in self.attributes) {
+        if([layout.name isEqualToString:nam]) {
+            return layout;
+        }
+    }
+    return nil;
+}
 @end
 

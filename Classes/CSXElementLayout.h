@@ -41,5 +41,6 @@
 @property (nonatomic, retain) NSArray *subelements;
 
 - (CSXElementLayout *)subelementWithName:(NSString *)nam;
+- (CSXNodeLayout *)attributeWithName:(NSString *)nam;
 @end
 

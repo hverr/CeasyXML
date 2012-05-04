@@ -124,6 +124,17 @@ NSString * const CSXDocumentLayoutInvalidClassException =
     return nil;
 }
 
+- (CSXNodeLayout *)attributeWithName:(NSString *)nam {
+    CSXNodeLayout *layout;
+    
+    for(layout in self.attributes) {
+        if([layout.name isEqualToString:nam]) {
+            return layout;
+        }
+    }
+    return nil;
+}
+
 /* MARK: Description */
 - (NSString *)description {
     return [NSString stringWithFormat:
