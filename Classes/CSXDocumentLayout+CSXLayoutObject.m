@@ -90,6 +90,8 @@ static NSString * const CSXDocumentLayoutDocumentElementName = @"document";
     layout.unique = NO;
     
     content.contentType = CSXNodeContentTypeCustom;
+    content.getter = @selector(layouts);
+    content.setter = @selector(setLayouts:);
     content.customClass = [CSXDocumentLayout class];
     
     layout.contentLayout = content;
