@@ -37,18 +37,17 @@ int main(int argc, const char **argv) {
     file = [file stringByDeletingLastPathComponent];
     file = [file stringByAppendingPathComponent:@"Layout.xml"];
     
-    CSXDocumentLayout *layout;
+    CSXLayoutList *layouts;
     NSError *error;
     
-    layout = [[CSXDocumentLayout alloc] initWithLayoutDocument:file 
-                                                         error:&error];
-    if(layout == nil) {
+    layouts = [[CSXLayoutList alloc] initWithDocument:file error:error];
+    if(layouts == nil) {
         NSLog(@"Could not create layout: %@", error);
         exit(0);
     }
     
-    NSLog(@"Layout:\n%@", layout);
-    [layout release];
+    NSLog(@"Layout:\n%@", layouts);
+    [layouts release];
     
     [pool release];
     return 0;
