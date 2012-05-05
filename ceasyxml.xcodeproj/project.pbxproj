@@ -13,7 +13,6 @@
 		920EB98C154D94C50007D7DA /* CSXElementList.m in Sources */ = {isa = PBXBuildFile; fileRef = 920EB98A154D94C50007D7DA /* CSXElementList.m */; };
 		9227B94C1541E8C500FA9EA6 /* CSXElementLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */; };
 		9227B94F1541E8E000FA9EA6 /* CSXNodeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */; };
-		9227B9581541EB9E00FA9EA6 /* CSXDocumentLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */; };
 		9227B9591541EB9E00FA9EA6 /* CSXDocumentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */; };
 		922CDB2915446CD1003B1B6F /* CSXXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 922CDB2715446CD1003B1B6F /* CSXXMLParser.h */; };
 		922CDB2A15446CD1003B1B6F /* CSXXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */; };
@@ -28,9 +27,10 @@
 		925FE9191542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */; };
 		925FE9431542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 925FE9411542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h */; };
 		925FE9441542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */; };
+		9286A1841555640000EC7F08 /* CSXLayoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286A1771555628200EC7F08 /* CSXLayoutList.m */; };
+		9286A1861555640E00EC7F08 /* CSXLayoutList+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286A180155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.m */; };
 		92F82AAB154078540009E770 /* libceasyxml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libceasyxml.a */; };
 		92F82AC6154078C10009E770 /* TMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F82AC5154078C10009E770 /* TMain.m */; };
-		92FBB7C11543E9E800366B07 /* CSXElementLayoutPlacebo.h in Headers */ = {isa = PBXBuildFile; fileRef = 92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */; };
 		92FBB7C21543E9E800366B07 /* CSXElementLayoutPlacebo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */; };
 		92FBB7E61544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 92FBB7E41544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h */; };
 		92FBB7E71544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */; };
@@ -73,6 +73,10 @@
 		925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXNodeContentLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
 		925FE9411542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXElementLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
 		925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXElementLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
+		9286A1761555628200EC7F08 /* CSXLayoutList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXLayoutList.h; sourceTree = "<group>"; };
+		9286A1771555628200EC7F08 /* CSXLayoutList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXLayoutList.m; sourceTree = "<group>"; };
+		9286A17F155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXLayoutList+CSXLayoutObject.h"; sourceTree = "<group>"; };
+		9286A180155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXLayoutList+CSXLayoutObject.m"; sourceTree = "<group>"; };
 		92F82A9B154075960009E770 /* newcopy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = newcopy; sourceTree = "<group>"; };
 		92F82A9D154076170009E770 /* template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = template.h; sourceTree = "<group>"; };
 		92F82A9E154076170009E770 /* template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = template.m; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */,
 				9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */,
 				9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */,
+				9286A1761555628200EC7F08 /* CSXLayoutList.h */,
+				9286A1771555628200EC7F08 /* CSXLayoutList.m */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -212,6 +218,8 @@
 				925FE8E11542F13200AA875E /* CSXNodeContentLayout.h */,
 				92FBB7E41544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h */,
 				92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */,
+				9286A17F155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.h */,
+				9286A180155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.m */,
 			);
 			name = "Layout Objects";
 			sourceTree = "<group>";
@@ -236,12 +244,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9227B9581541EB9E00FA9EA6 /* CSXDocumentLayout.h in Headers */,
 				925FE8A81542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h in Headers */,
 				925FE8E31542F13200AA875E /* CSXNodeContentLayout.h in Headers */,
 				925FE9181542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h in Headers */,
 				925FE9431542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h in Headers */,
-				92FBB7C11543E9E800366B07 /* CSXElementLayoutPlacebo.h in Headers */,
 				92FBB7E61544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h in Headers */,
 				922CDB2915446CD1003B1B6F /* CSXXMLParser.h in Headers */,
 				920EB98B154D94C50007D7DA /* CSXElementList.h in Headers */,
@@ -338,6 +344,8 @@
 				92FBB7E71544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m in Sources */,
 				922CDB2A15446CD1003B1B6F /* CSXXMLParser.m in Sources */,
 				920EB98C154D94C50007D7DA /* CSXElementList.m in Sources */,
+				9286A1841555640000EC7F08 /* CSXLayoutList.m in Sources */,
+				9286A1861555640E00EC7F08 /* CSXLayoutList+CSXLayoutObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -129,18 +129,4 @@ static NSString * const CSXDocumentLayoutDocumentElementName = @"document";
     return [layout autorelease];
 }
 
-+ (CSXDocumentLayout *)documentElementLayout {
-    CSXDocumentLayout *layout;
-    
-    layout = [CSXDocumentLayout new];
-    
-    layout.name = CSXDocumentLayoutDocumentElementName;
-    layout.documentClass = [CSXDocumentLayout class];
-    
-    layout.subelements = [NSArray arrayWithObjects:
-                       [self layoutElementLayout],
-                       nil];
-    
-    return [layout autorelease];
-}
 @end

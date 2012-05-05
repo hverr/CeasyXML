@@ -1,5 +1,5 @@
 /*
- *  CSXDocumentLayout+CSXLayoutObject.h
+ *  CSXLayoutList+CSXLayoutObject.m
  *  ceasyxml
  *  http://code.google.com/p/ceasyxml/
  *
@@ -26,25 +26,30 @@
  *
  */
 
+#import "CSXLayoutList+CSXLayoutObject.h"
 
-#import <Foundation/Foundation.h>
 
-#import "CSXDocumentLayout.h"
+static NSString * const CSXLayoutListDocumentElementName = @"document";
 
-#import "CSXNodeContentLayout.h"
-#import "CSXNodeLayout.h"
-#import "CSXElementLayout.h"
-
-#import "CSXNodeLayout+CSXLayoutObject.h"
-#import "CSXElementLayout+CSXLayoutObject.h"
-
-@interface CSXDocumentLayout (CSXLayoutObject)
-/* MARK: Various Attributes */
-+ (CSXNodeLayout *)nameAttributeLayout;
-+ (CSXNodeLayout *)classAttributeLayout;
-
-/* MARK: Layout and Document */
-+ (CSXElementLayout *)layoutElementLayout;
-+ (CSXDocumentLayout *)layoutDocumentLayout;
+/* =========================================================================== 
+ MARK: -
+ MARK: Public Implementation
+ =========================================================================== */
+@implementation CSXLayoutList (CSXLayoutObject)
+/* MARK: Layout List Element */
+- (CSXDocumentLayout *)layoutListDocumentLayout {
+    CSXDocumentLayout *layout;
+    
+    layout = [CSXDocumentLayout new];
+    
+    layout.name = CSXLayoutListDocumentElementName;
+    layout.documentClass = [CSXLayoutList class];
+    
+    layout.subelements = [NSArray arrayWithObjects:
+                          [CSXDocumentLayout layoutElementLayout],
+                          nil];
+    
+    return [layout autorelease];
+}
 @end
 

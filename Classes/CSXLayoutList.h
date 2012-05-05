@@ -1,5 +1,5 @@
 /*
- *  CSXDocumentLayout+CSXLayoutObject.h
+ *  CSXLayoutList.h
  *  ceasyxml
  *  http://code.google.com/p/ceasyxml/
  *
@@ -29,22 +29,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "CSXDocumentLayout.h"
-
-#import "CSXNodeContentLayout.h"
-#import "CSXNodeLayout.h"
-#import "CSXElementLayout.h"
-
-#import "CSXNodeLayout+CSXLayoutObject.h"
-#import "CSXElementLayout+CSXLayoutObject.h"
-
-@interface CSXDocumentLayout (CSXLayoutObject)
-/* MARK: Various Attributes */
-+ (CSXNodeLayout *)nameAttributeLayout;
-+ (CSXNodeLayout *)classAttributeLayout;
-
-/* MARK: Layout and Document */
-+ (CSXElementLayout *)layoutElementLayout;
-+ (CSXDocumentLayout *)layoutDocumentLayout;
+@interface CSXLayoutList : NSObject {
+}
+@property (nonatomic, retain) NSMutableArray *layouts;
 @end
 
