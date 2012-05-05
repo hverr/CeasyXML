@@ -29,8 +29,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CSXDocumentLayout.h"
+#import "CSXXMLParser.h"
+
 @interface CSXLayoutList : NSObject {
 }
+/* MARK: Init */
+- (id)initWithDocument:(NSString *)doc error:(NSError **)err;
++ (id)layoutListWithDocument:(NSString *)doc error:(NSError **)err;
+
+/* MARK: Properties */
 @property (nonatomic, retain) NSMutableArray *layouts;
 @end
 

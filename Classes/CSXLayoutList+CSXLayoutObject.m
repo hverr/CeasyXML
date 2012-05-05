@@ -37,7 +37,7 @@ static NSString * const CSXLayoutListDocumentElementName = @"document";
  =========================================================================== */
 @implementation CSXLayoutList (CSXLayoutObject)
 /* MARK: Layout List Element */
-- (CSXDocumentLayout *)layoutListDocumentLayout {
++ (CSXDocumentLayout *)layoutListDocumentLayout {
     CSXDocumentLayout *layout;
     
     layout = [CSXDocumentLayout new];

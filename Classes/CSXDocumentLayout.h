@@ -38,8 +38,6 @@ extern NSString * const CSXDocumentLayoutInvalidClassException;
 - (id)initWithLayoutDocument:(NSString *)doc error:(NSError **)err;
 + (id)documentLayoutWithLayoutDocument:(NSString *)doc error:(NSError **)err;
 
-+ (NSArray *)documentLayoutsWithDocumentDocument:(NSString *)doc;
-
 /* MARK: Properties */
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSArray *attributes;

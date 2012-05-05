@@ -27,6 +27,16 @@
  */
 
 #import "CSXLayoutList.h"
+#import "CSXLayoutList+CSXLayoutObject.h"
+
+/* =========================================================================== 
+ MARK: -
+ MARK: Private Interface
+ =========================================================================== */
+@interface CSXLayoutList (Private)
+/* MARK: Reading in Layouts */
+- (NSError *)readLayoutDocument:(NSString *)fpath;
+@end
 
 
 /* =========================================================================== 
@@ -34,6 +44,74 @@
  MARK: Public Implementation
  =========================================================================== */
 @implementation CSXLayoutList
+/* MARK: Init */
+- (id)initWithDocument:(NSString *)doc error:(NSError **)errptr {
+    self = [super init];
+    
+    if(self != nil) {
+        NSError *err;
+        
+        err = [self readLayoutDocument:doc];
+        if(err != nil) {
+            if(errptr) *errptr = err;
+            
+            [self release];
+            return nil;
+        }
+    }
+    
+    return self;
+}
+
++ (id)layoutListWithDocument:(NSString *)doc error:(NSError **)err {
+    id inst;
+    inst = [[self alloc] initWithDocument:doc error:err];
+    return [inst autorelease];
+}
+
+- (void)dealloc {
+    self.layouts = nil;
+    
+    [super dealloc];
+}
+
+/* MARK: Properties */
 @synthesize layouts;
+@end
+               
+/* =========================================================================== 
+ MARK: -
+ MARK: Private Implementation
+ =========================================================================== */
+@implementation CSXLayoutList (Private)
+/* MARK: Reading in Layouts */
+- (NSError *)readLayoutDocument:(NSString *)fpath {
+    CSXDocumentLayout *layout;
+    CSXLayoutList *result;
+    CSXXMLParser *parser;
+    BOOL state;
+    
+    layout = [CSXLayoutList layoutListDocumentLayout];
+    
+    parser = [[CSXXMLParser alloc] initWithDocumentLayouts:
+              [NSArray arrayWithObject:layout]];
+    parser.file = fpath;
+    
+    state = [parser parse];
+    
+    if(state == NO || parser.error != nil) {
+        NSError *err;
+        err = [parser.error retain];
+        [parser release];
+        return [err autorelease];
+    }
+    
+    result = (CSXLayoutList *)parser.result;
+    
+    self.layouts = result.layouts;
+    
+    [parser release];
+    return nil;
+}
 @end
 

@@ -35,6 +35,6 @@
 
 @interface CSXLayoutList (CSXLayoutObject)
 /* MARK: Layout List Element */
-- (CSXDocumentLayout *)layoutListDocumentLayout;
++ (CSXDocumentLayout *)layoutListDocumentLayout;
 @end
 
