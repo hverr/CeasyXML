@@ -32,6 +32,7 @@
 #import <CSXNodeLayout.h>
 #import <CSXElementLayout.h>
 #import <CSXDocumentLayout.h>
+#import <CSXLayoutList.h>
 
 /* Containers */
 #import <CSXElementList.h>
