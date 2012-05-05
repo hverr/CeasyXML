@@ -40,7 +40,7 @@ int main(int argc, const char **argv) {
     CSXLayoutList *layouts;
     NSError *error;
     
-    layouts = [[CSXLayoutList alloc] initWithDocument:file error:error];
+    layouts = [[CSXLayoutList alloc] initWithDocument:file error:&error];
     if(layouts == nil) {
         NSLog(@"Could not create layout: %@", error);
         exit(0);
