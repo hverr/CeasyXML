@@ -49,7 +49,8 @@ extern NSString * const CSXXMLParserElementNameStackKey;
 enum {
     kCSXXMLParserUnkownDocumentTypeError = 1,
     kCSXXMLParserElementValueNoNumberError,
-    kCSXXMLParserElementValueNoBooleanError
+    kCSXXMLParserElementValueNoBooleanError,
+    kCSXXMLParserRequiredPropertyNotSetError
 };
 
 enum {

@@ -73,6 +73,8 @@ void CSXXMLParserError(void *ctx, const char *msg, ...);
 - (CSXDocumentLayout *)documentLayoutForType:(const xmlChar *)docElem;
 - (id)instanceOfDocumentClass:(CSXDocumentLayout *)layout;
 - (id)instanceOfElementClass:(CSXElementLayout *)layout;
+- (NSError *)assertRequiredElements:(CSXElementLayout *)layout 
+                        forInstance:(id)i;
 
 /* MARK: Setting Properties */
 - (NSError *)setAttributes:(const xmlChar **)attrs
@@ -132,6 +134,8 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
                                 layout:(CSXNodeLayout *)l;
 - (NSError *)elementValueNoBooleanError:(NSString *)val
                                  layout:(CSXNodeLayout *)l;
+- (NSError *)requiredPropertyNotSetError:(id)instance
+                                  layout:(CSXNodeLayout *)l;
 @end
 
 /* =========================================================================== 
@@ -727,6 +731,22 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     return inst;
 }
 
+- (NSError *)assertRequiredElements:(CSXElementLayout *)layout forInstance:(id)i {
+    CSXElementLayout *sublayout;
+    id property;
+    
+    for(sublayout in layout.subelements) {
+        if(sublayout.required == YES) {
+            property = objc_msgSend(i, sublayout.contentLayout.getter);
+            if(property == nil) {
+                return [self requiredPropertyNotSetError:i layout:layout];
+            }
+        }
+    }
+    
+    return nil;
+}
+
 /* MARK: Setting Properties */
 - (NSError *)setAttributes:(const xmlChar **)attrs
                layout:(CSXElementLayout *)l
@@ -965,6 +985,33 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     
     err = [NSError errorWithDomain:CSXXMLParserErrorDomain 
                               code:kCSXXMLParserElementValueNoBooleanError 
+                          userInfo:userInfo];
+    return err;
+}
+
+- (NSError *)requiredPropertyNotSetError:(id)instance
+                                  layout:(CSXNodeLayout *)l
+{
+    NSString *descr, *reco;
+    NSArray *stack;
+    NSDictionary *userInfo;
+    NSError *err;
+    
+    descr = [NSString stringWithFormat:
+             @"A required property is missing."];
+    reco = [NSString stringWithFormat:
+            @"The property %@ is not set for instance %@, though "
+            @"it is required.", l.name, [instance description]];
+    stack = [_state.elementNameStack copy];
+    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                descr, NSLocalizedDescriptionKey,
+                reco, NSLocalizedRecoverySuggestionErrorKey,
+                stack, CSXXMLParserElementNameStackKey,
+                nil];
+    [stack release];
+    
+    err = [NSError errorWithDomain:CSXXMLParserErrorDomain 
+                              code:kCSXXMLParserRequiredPropertyNotSetError 
                           userInfo:userInfo];
     return err;
 }
