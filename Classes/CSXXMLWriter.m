@@ -227,8 +227,6 @@ handleErrorAndReturn:
         return myError;
     }
     
-    /* Close and free document */
-    [self freeDocument];
     return nil;
 }
 
