@@ -250,6 +250,8 @@ handleErrorAndReturn:
                 return myErr;
             }
         }
+        
+        return nil;
     }
     
     switch(lay.contentLayout.contentType) {
