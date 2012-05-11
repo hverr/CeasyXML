@@ -6,6 +6,7 @@
 		activeExecutable = 92F82AA8154078500009E770 /* TestApp */;
 		activeTarget = 92F82AA6154078500009E770 /* TestApp */;
 		addToTargets = (
+			D2AAC07D0554694100DB518D /* ceasyxml */,
 		);
 		breakpoints = (
 			9202EF60155439D000EF6DE6 /* TMain.m:63 */,
@@ -131,6 +132,17 @@
 			923FCB68155D801F00B9D71D /* PBXTextBookmark */ = 923FCB68155D801F00B9D71D /* PBXTextBookmark */;
 			923FCB69155D801F00B9D71D /* PBXTextBookmark */ = 923FCB69155D801F00B9D71D /* PBXTextBookmark */;
 			923FCB6A155D801F00B9D71D /* PBXTextBookmark */ = 923FCB6A155D801F00B9D71D /* PBXTextBookmark */;
+			923FCB76155D80ED00B9D71D /* PBXTextBookmark */ = 923FCB76155D80ED00B9D71D /* PBXTextBookmark */;
+			923FCB77155D80ED00B9D71D /* PBXTextBookmark */ = 923FCB77155D80ED00B9D71D /* PBXTextBookmark */;
+			923FCB78155D80ED00B9D71D /* PBXTextBookmark */ = 923FCB78155D80ED00B9D71D /* PBXTextBookmark */;
+			923FCB9C155D83AA00B9D71D /* PBXTextBookmark */ = 923FCB9C155D83AA00B9D71D /* PBXTextBookmark */;
+			923FCB9D155D83AA00B9D71D /* PBXTextBookmark */ = 923FCB9D155D83AA00B9D71D /* PBXTextBookmark */;
+			923FCB9E155D83AA00B9D71D /* PBXTextBookmark */ = 923FCB9E155D83AA00B9D71D /* PBXTextBookmark */;
+			923FCB9F155D83AA00B9D71D /* PBXTextBookmark */ = 923FCB9F155D83AA00B9D71D /* PBXTextBookmark */;
+			923FCBA0155D83AA00B9D71D /* PBXTextBookmark */ = 923FCBA0155D83AA00B9D71D /* PBXTextBookmark */;
+			923FCBA1155D83AA00B9D71D /* PBXTextBookmark */ = 923FCBA1155D83AA00B9D71D /* PBXTextBookmark */;
+			923FCBA2155D83AA00B9D71D /* PBXTextBookmark */ = 923FCBA2155D83AA00B9D71D /* PBXTextBookmark */;
+			923FCBA3155D83AA00B9D71D /* PBXTextBookmark */ = 923FCBA3155D83AA00B9D71D /* PBXTextBookmark */;
 			9286A1A015556BE500EC7F08 = 9286A1A015556BE500EC7F08 /* PBXBookmark */;
 			9286A1AA15556CA300EC7F08 = 9286A1AA15556CA300EC7F08 /* PBXTextBookmark */;
 			9286A1AD15556CA300EC7F08 = 9286A1AD15556CA300EC7F08 /* PBXTextBookmark */;
@@ -1060,15 +1072,15 @@
 	922CDB2715446CD1003B1B6F /* CSXXMLParser.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 1365}}";
-			sepNavSelRange = "{1339, 0}";
-			sepNavVisRange = "{1227, 2039}";
+			sepNavSelRange = "{1287, 25}";
+			sepNavVisRange = "{332, 2335}";
 			sepNavWindowFrame = "{{38, 48}, {647, 984}}";
 		};
 	};
 	922CDB2815446CD1003B1B6F /* CSXXMLParser.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 14950}}";
-			sepNavSelRange = "{28840, 0}";
+			sepNavSelRange = "{1454, 0}";
 			sepNavVisRange = "{0, 2811}";
 			sepNavWindowFrame = "{{687, 64}, {647, 984}}";
 		};
@@ -1124,6 +1136,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
 			sepNavSelRange = "{1308, 0}";
 			sepNavVisRange = "{0, 1308}";
+			sepNavWindowFrame = "{{843, 74}, {647, 984}}";
 		};
 	};
 	923FCB70155D806B00B9D71D /* CSXXMLWriter.m */ = {
@@ -1133,6 +1146,127 @@
 			sepNavVisRange = "{0, 1964}";
 			sepNavWindowFrame = "{{38, 48}, {647, 984}}";
 		};
+	};
+	923FCB76155D80ED00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
+		name = "CSXXMLParser.m: 872";
+		rLen = 0;
+		rLoc = 28840;
+		rType = 0;
+		vrLen = 2811;
+		vrLoc = 0;
+	};
+	923FCB77155D80ED00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 920D1175155D6D5C0055B563 /* Library.xml */;
+		name = "Library.xml: 12";
+		rLen = 0;
+		rLoc = 287;
+		rType = 0;
+		vrLen = 556;
+		vrLoc = 0;
+	};
+	923FCB78155D80ED00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 92F82AC5154078C10009E770 /* TMain.m */;
+		name = "TMain.m: 58";
+		rLen = 0;
+		rLoc = 2272;
+		rType = 0;
+		vrLen = 2435;
+		vrLoc = 0;
+	};
+	923FCB79155D810900B9D71D /* NSString+CSXLibXMLConversion.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {563, 859}}";
+			sepNavSelRange = "{407, 0}";
+			sepNavVisRange = "{0, 1576}";
+		};
+	};
+	923FCB7A155D810900B9D71D /* NSString+CSXLibXMLConversion.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {565, 1014}}";
+			sepNavSelRange = "{2474, 0}";
+			sepNavVisRange = "{348, 2154}";
+		};
+	};
+	923FCB9C155D83AA00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 923FCB7A155D810900B9D71D /* NSString+CSXLibXMLConversion.m */;
+		name = "NSString+CSXLibXMLConversion.m: 74";
+		rLen = 0;
+		rLoc = 2474;
+		rType = 0;
+		vrLen = 2154;
+		vrLoc = 348;
+	};
+	923FCB9D155D83AA00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 923FCB79155D810900B9D71D /* NSString+CSXLibXMLConversion.h */;
+		name = "NSString+CSXLibXMLConversion.h: 32";
+		rLen = 0;
+		rLoc = 1307;
+		rType = 0;
+		vrLen = 1573;
+		vrLoc = 0;
+	};
+	923FCB9E155D83AA00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 923FCB79155D810900B9D71D /* NSString+CSXLibXMLConversion.h */;
+		name = "NSString+CSXLibXMLConversion.h: 11";
+		rLen = 0;
+		rLoc = 407;
+		rType = 0;
+		vrLen = 1576;
+		vrLoc = 0;
+	};
+	923FCB9F155D83AA00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
+		name = "CSXXMLParser.m: 34";
+		rLen = 0;
+		rLoc = 1454;
+		rType = 0;
+		vrLen = 2811;
+		vrLoc = 0;
+	};
+	923FCBA0155D83AA00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 922CDB2715446CD1003B1B6F /* CSXXMLParser.h */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	923FCBA1155D83AA00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 922CDB2715446CD1003B1B6F /* CSXXMLParser.h */;
+		name = "CSXXMLParser.h: 32";
+		rLen = 25;
+		rLoc = 1287;
+		rType = 0;
+		vrLen = 2335;
+		vrLoc = 332;
+	};
+	923FCBA2155D83AA00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 920D1175155D6D5C0055B563 /* Library.xml */;
+		name = "Library.xml: 12";
+		rLen = 0;
+		rLoc = 287;
+		rType = 0;
+		vrLen = 556;
+		vrLoc = 0;
+	};
+	923FCBA3155D83AA00B9D71D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 92F82AC5154078C10009E770 /* TMain.m */;
+		name = "TMain.m: 58";
+		rLen = 0;
+		rLoc = 2272;
+		rType = 0;
+		vrLen = 2435;
+		vrLoc = 0;
 	};
 	925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */ = {
 		uiCtxt = {
