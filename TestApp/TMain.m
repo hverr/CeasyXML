@@ -54,7 +54,8 @@ int main(int argc, const char **argv) {
     
     BOOL success = [parser parse];
     if(!success) {
-        NSLog(@"Parser error: %@", parser.error);
+        NSLog(@"Parser error: %@ (%@)", parser.error,
+              [parser.error localizedRecoverySuggestion]);
         return 1;
     }
     
