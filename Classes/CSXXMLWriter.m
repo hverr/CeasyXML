@@ -30,6 +30,13 @@
 
 NSString * const CSXXMLWriterErrorDomain = @"CSXXMLWriterErrorDomain";
 
+NSString * const CSXXMLWriterNoRootInstanceException =
+    @"CSXXMLWriterNoRootInstanceException";
+NSString * const CSXXMLWriterNoDocumentLayoutException =
+    @"CSXXMLWriterNoDocumentLayoutException";
+NSString * const CSXXMLWriterInvalidAttributeTypeException =
+    @"CSXXMLWriterInvalidAttributeTypeException";
+
 /* =========================================================================== 
  MARK: -
  MARK: Private Interface
@@ -39,6 +46,15 @@ NSString * const CSXXMLWriterErrorDomain = @"CSXXMLWriterErrorDomain";
 - (NSError *)flushDocument;
 - (NSError *)startDocument;
 - (void)freeDocument;
+- (NSError *)writeRootElement;
+- (NSError *)writeElement:(CSXElementLayout *)lay instance:(id)inst;
+- (NSError *)writeCustomElement:(CSXElementLayout *)lay instance:(id)inst;
+- (NSError *)writeStringElement:(CSXElementLayout *)lay instance:(id)inst;
+- (NSError *)writeBooleanElement:(CSXElementLayout *)lay instance:(id)inst;
+- (NSError *)writeNumberElement:(CSXElementLayout *)lay instance:(id)inst;
+- (NSError *)writeListElement:(CSXElementLayout *)lay instance:(id)inst;
+- (NSError *)writeAttributesOfLayout:(CSXElementLayout *)lay instance:(id)inst;
+
 
 /* MARK: Errors */
 - (NSError *)textWriterForFileError:(NSString *)outFile;
@@ -174,6 +190,214 @@ handleErrorAndReturn:
 
 - (void)freeDocument {
     xmlFreeTextWriter(_state.textWriter);
+}
+
+- (NSError *)writeRootElement {
+    NSString *excName, *excReason;
+    NSError *myError;
+    
+    /* Check necessary instance variables */
+    if(self.rootInstance == nil) {
+        excName = CSXXMLWriterNoRootInstanceException;
+        excReason = [NSString stringWithFormat:
+                     @"%@ has no root instance set.",
+                     [self description]];
+        [[NSException exceptionWithName:excName reason:excReason userInfo:nil]
+         raise];
+    
+    } else if(self.documentLayout == nil) {
+        excName = CSXXMLWriterNoDocumentLayoutException;
+        excReason = [NSString stringWithFormat:
+                     @"%@ has no document layout set.",
+                     [self description]];
+        [[NSException exceptionWithName:excName reason:excReason userInfo:nil]
+         raise];
+        
+    }
+    
+    /* Write root element */
+    myError = [self writeCustomElement:(CSXElementLayout *)self.documentLayout 
+                              instance:self.rootInstance];
+    if(myError != nil) {
+        return myError;
+    }
+    
+    /* Close and free document */
+    [self freeDocument];
+    return nil;
+}
+
+- (NSError *)writeElement:(CSXElementLayout *)lay instance:(id)inst {
+    NSError *myErr;
+    
+    switch(lay.contentLayout.contentType) {
+        case CSXNodeContentTypeCustom:
+            myErr = [self writeCustomElement:lay instance:inst];
+            break;
+            
+        case CSXNodeContentTypeString:
+            myErr = [self writeStringElement:lay instance:inst];
+            break;
+            
+        case CSXNodeContentTypeBoolean:
+            myErr = [self writeBooleanElement:lay instance:inst];
+            break;
+            
+        case CSXNodeContentTypeNumber:
+            myErr = [self writeNumberElement:lay instance:inst];
+            break;
+            
+        case CSXNodeContentTypeList:
+            myErr = [self writeListElement:lay instance:inst];
+            break;
+            
+        default:
+            myErr = nil;
+            break;
+    }
+    
+    return myErr;
+}
+
+- (NSError *)writeCustomElement:(CSXElementLayout *)lay instance:(id)inst {
+    int status;
+    NSError *myError;
+    xmlChar *indentation, *elemName;
+    CSXElementLayout *subLayout;
+    id subInst;
+    
+    /* Indent */
+    indentation = NSStringCSXXMLCharIndentation(1, _state.indentationLevel);
+    status = xmlTextWriterWriteRaw(_state.textWriter, indentation);
+    free(indentation);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    /* Start element */
+    elemName = [lay.name copyXMLCharacters];
+    status = xmlTextWriterStartElement(_state.textWriter, elemName);
+    free(elemName);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    /* Write attributes */
+    myError = [self writeAttributesOfLayout:lay instance:inst];
+    if(myError != nil) {
+        return myError;
+    }
+    
+    /* Write subelements */
+    for(subLayout in lay.subelements) {
+        NSAutoreleasePool *pool = [NSAutoreleasePool new];
+        
+        myError = nil;
+        subInst = objc_msgSend(inst, subLayout.contentLayout.getter);
+        if(subInst != nil || subLayout.required == YES) {
+            myError = [self writeElement:subLayout instance:subInst];
+        }
+        
+        [myError retain];
+        [pool release];
+        [myError autorelease];
+        
+        if(myError != nil) {
+            return myError;
+        }
+    }
+    
+    /* Indent */
+    indentation = NSStringCSXXMLCharIndentation(1, _state.indentationLevel);
+    status = xmlTextWriterWriteRaw(_state.textWriter, indentation);
+    free(indentation);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    /* Close element */
+    status = xmlTextWriterEndElement(_state.textWriter);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+        
+    return [self flushDocument];
+}
+
+- (NSError *)writeStringElement:(CSXElementLayout *)lay instance:(id)inst {
+    return nil;
+}
+
+- (NSError *)writeBooleanElement:(CSXElementLayout *)lay instance:(id)inst {
+    return nil;
+}
+
+- (NSError *)writeNumberElement:(CSXElementLayout *)lay instance:(id)inst {
+    return nil;
+}
+
+- (NSError *)writeListElement:(CSXElementLayout *)lay instance:(id)inst {
+    return nil;
+}
+
+- (NSError *)writeAttributesOfLayout:(CSXElementLayout *)lay instance:(id)inst {
+    int status;
+    CSXNodeLayout *attrLayout;
+    NSString *strValue;
+    BOOL boolVal;
+    NSInteger intVal;
+    xmlChar *attrName, *attrValue;
+    NSString *excName, *excReason;
+    
+    for(attrLayout in lay.attributes) {
+        NSAutoreleasePool *pool = [NSAutoreleasePool new];
+        
+        switch(attrLayout.contentLayout.contentType) {
+            case CSXNodeContentTypeString:
+                strValue = objc_msgSend(inst, attrLayout.contentLayout.getter);
+                break;
+                
+            case CSXNodeContentTypeBoolean:
+                *(id *)&boolVal = 
+                    objc_msgSend(inst, attrLayout.contentLayout.getter);
+                strValue = boolVal ? @"1" : @"0";
+                break;
+                
+            case CSXNodeContentTypeNumber:
+                intVal = (NSInteger)
+                    objc_msgSend(inst, attrLayout.contentLayout.getter);
+                strValue = [[NSNumber numberWithInteger:intVal] stringValue];
+                break;
+            
+            case CSXNodeContentTypeCustom:
+            case CSXNodeContentTypeList:
+            default:
+                excName = CSXXMLWriterInvalidAttributeTypeException;
+                excReason = [NSString stringWithFormat:
+                             @"The attribute %@ with layout %@ has an invalid "
+                             @"content type.",
+                             attrLayout.name, attrLayout];
+                [[NSException exceptionWithName:excName 
+                                         reason:excReason 
+                                       userInfo:nil] raise];
+                break;
+        }
+        
+        attrName = [attrLayout.name copyXMLCharacters];
+        attrValue = [strValue copyXMLCharacters];
+        
+        [pool release];
+        
+        status = xmlTextWriterWriteAttribute(_state.textWriter, 
+                                             attrName, attrValue);
+        free(attrName);
+        free(attrValue);
+        if(status < 0) {
+            return [self xmlWriteError];
+        }
+    }
+    
+    return nil;
 }
 
 /* MARK: Errors */

@@ -36,7 +36,13 @@
 #import "CSXElementLayout.h"
 #import "CSXElementList.h"
 
+#import "NSString+CSXLibXMLConversion.h"
+
 extern NSString * const CSXXMLWriterErrorDomain;
+
+extern NSString * const CSXXMLWriterNoRootInstanceException;
+extern NSString * const CSXXMLWriterNoDocumentLayoutException;
+extern NSString * const CSXXMLWriterInvalidAttributeTypeException;
 
 enum {
     kCSXXMLWriterTextWriterCreationError = 1,
@@ -48,6 +54,7 @@ enum {
     struct {
         BOOL isWritingToFile;
         xmlTextWriterPtr textWriter;
+        NSInteger indentationLevel;
     } _state;
 }
 /* MARK: Init */
