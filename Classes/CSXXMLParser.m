@@ -249,7 +249,11 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
                                        [self.data length]);
     }
     
-    return (status == 0);
+    if(status != 0) {
+        return NO;
+    }
+    
+    return (self.error == nil);
 }
 @end
 
