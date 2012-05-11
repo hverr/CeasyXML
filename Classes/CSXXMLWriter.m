@@ -136,6 +136,10 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
         goto handleErrorAndReturn;
     }
     
+    /* Write root element */
+    if((myError = [self writeRootElement])) {
+        goto handleErrorAndReturn;
+    }
     
     /* Free document and return */
     [self freeDocument];
@@ -216,6 +220,7 @@ handleErrorAndReturn:
     }
     
     /* Write root element */
+    _state.indentationLevel = 0;
     myError = [self writeCustomElement:(CSXElementLayout *)self.documentLayout 
                               instance:self.rootInstance];
     if(myError != nil) {
@@ -295,7 +300,9 @@ handleErrorAndReturn:
         myError = nil;
         subInst = objc_msgSend(inst, subLayout.contentLayout.getter);
         if(subInst != nil || subLayout.required == YES) {
+            _state.indentationLevel++;
             myError = [self writeElement:subLayout instance:subInst];
+            _state.indentationLevel--;
         }
         
         [myError retain];
