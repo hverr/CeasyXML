@@ -436,7 +436,7 @@ handleErrorAndReturn:
     *(id *)&intVal = inst;
     stringVal = [[NSNumber numberWithInteger:intVal] stringValue];
     
-    return [self writeStringElement:lay instance:inst];
+    return [self writeStringElement:lay instance:stringVal];
 }
 
 - (NSError *)writeAttributesOfLayout:(CSXElementLayout *)lay instance:(id)inst {
