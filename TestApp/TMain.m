@@ -28,10 +28,13 @@
 #import <Foundation/Foundation.h>
 #import <CeasyXML.h>
 
+#define DESTINATION ([@"~/Desktop/dest.xml" stringByExpandingTildeInPath])
+
 int main(int argc, const char **argv) {
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
     
-    NSString *layoutFile, *libraryFile;
+    NSString *layoutFile, *libraryFile, *destFile;
+    NSError *err;
     
     layoutFile = [NSString stringWithUTF8String:__FILE__];
     layoutFile = [layoutFile stringByDeletingLastPathComponent];
@@ -40,6 +43,8 @@ int main(int argc, const char **argv) {
     libraryFile = [NSString stringWithUTF8String:__FILE__];
     libraryFile = [libraryFile stringByDeletingLastPathComponent];
     libraryFile = [libraryFile stringByAppendingPathComponent:@"Library.xml"];
+    
+    destFile = DESTINATION;
     
     CSXXMLParser *parser;
     
@@ -60,7 +65,22 @@ int main(int argc, const char **argv) {
     }
     
     NSLog(@"Result: %@", parser.result);
-    [parser release];
+    
+    
+    CSXXMLWriter *writer;
+    
+    writer = [[CSXXMLWriter alloc] initWithDocumentLayout:
+              [parser.documentLayouts objectAtIndex:0]];
+    assert(writer != nil);
+    
+    writer.rootInstance = parser.result;
+    writer.XMLVersion = @"1.0";
+    writer.encoding = @"UTF-8";
+    
+    
+    if(![writer writeToFile:destFile error:&err]) {
+        NSLog(@"Write error %@", err);
+    }
     
     [pool release];
     return 0;

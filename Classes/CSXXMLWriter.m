@@ -234,12 +234,10 @@ handleErrorAndReturn:
 
 - (NSError *)writeElement:(CSXElementLayout *)lay instance:(id)inst {
     NSError *myErr;
-    NSArray *allSubs;
     id subElement;
     
     if(lay.unique == NO) {
-        allSubs = objc_msgSend(inst, lay.contentLayout.getter);
-        for(subElement in allSubs) {
+        for(subElement in (NSArray *)inst) {
             NSAutoreleasePool *pool = [NSAutoreleasePool new];
             
             myErr = [self writeNonUniqueElement:lay instance:subElement];
