@@ -39,3 +39,4 @@
 
 /* Parsing and Writing */
 #import <CSXXMLParser.h>
+#import <CSXXMLWriter.h>
