@@ -202,6 +202,86 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>920D11BF155D738D0055B563</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>CSXXMLParser.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>920D11C0155D738D0055B563</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>CSXXMLParser.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>920D11DA155D755B0055B563</string>
+						<key>history</key>
+						<array>
+							<string>920D11CA155D74AC0055B563</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {647, 887}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>687 120 647 928 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>920D11C3155D738D0055B563</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Library.xml</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>920D11C4155D738D0055B563</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Library.xml</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>920D11DB155D755B0055B563</string>
+						<key>history</key>
+						<array>
+							<string>920D11A9155D72A70055B563</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {647, 887}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>448 121 647 928 0 0 1920 1058 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>920D118C155D71870055B563</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>TMain.m</string>
@@ -216,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>920D11A7155D724F0055B563</string>
+						<string>920D11DC155D755B0055B563</string>
 						<key>history</key>
 						<array>
 							<string>920D1180155D713C0055B563</string>
@@ -318,13 +398,14 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>48</integer>
-											<integer>41</integer>
+											<integer>30</integer>
+											<integer>28</integer>
+											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 419}, {355, 431}}</string>
+									<string>{{0, 203}, {355, 431}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -524,14 +605,16 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>920D11A8155D724F0055B563</string>
+		<string>920D11DD155D755B0055B563</string>
 		<string>920D1198155D71870055B563</string>
 		<string>920D1199155D71870055B563</string>
 		<string>1C530D54069F1CE1000CFCEE</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>1C530D5B069F1CE1000CFCEE</string>
 		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
 		<string>920D118C155D71870055B563</string>
+		<string>1C530D5B069F1CE1000CFCEE</string>
+		<string>920D11C3155D738D0055B563</string>
+		<string>920D11BF155D738D0055B563</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 505 372 517 0 0 1920 1058 </string>

@@ -75,6 +75,8 @@ void CSXXMLParserError(void *ctx, const char *msg, ...);
 - (id)instanceOfElementClass:(CSXElementLayout *)layout;
 - (NSError *)assertRequiredElements:(CSXElementLayout *)layout 
                         forInstance:(id)i;
+- (NSError *)assertRequiredAttributes:(CSXElementLayout *)layout 
+                          forInstance:(id)i;
 
 /* MARK: Setting Properties */
 - (NSError *)setAttributes:(const xmlChar **)attrs
@@ -135,7 +137,8 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
 - (NSError *)elementValueNoBooleanError:(NSString *)val
                                  layout:(CSXNodeLayout *)l;
 - (NSError *)requiredPropertyNotSetError:(id)instance
-                                  layout:(CSXNodeLayout *)l;
+                                  layout:(CSXNodeLayout *)l
+                               sublayout:(CSXNodeLayout *)subl;
 @end
 
 /* =========================================================================== 
@@ -482,6 +485,14 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
         if(err != nil) {
             parser.error = err;
             parser->_state.errorOccurred = YES;
+            goto drainAndReturn;
+        }
+        
+        err = [parser assertRequiredAttributes:layout forInstance:instance];
+        if(err != nil) {
+            parser.error = err;
+            parser->_state.errorOccurred = YES;
+            goto drainAndReturn;
         }
         
         goto drainAndReturn;
@@ -506,6 +517,13 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     
     /* check if we hve all required properties set */
     err = [parser assertRequiredElements:layout forInstance:instance];
+    if(err != nil) {
+        parser.error = err;
+        parser->_state.errorOccurred = YES;
+        goto drainAndReturn;
+    }
+    
+    err = [parser assertRequiredAttributes:layout forInstance:instance];
     if(err != nil) {
         parser.error = err;
         parser->_state.errorOccurred = YES;
@@ -798,7 +816,9 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     return inst;
 }
 
-- (NSError *)assertRequiredElements:(CSXElementLayout *)layout forInstance:(id)i {
+- (NSError *)assertRequiredElements:(CSXElementLayout *)layout 
+                        forInstance:(id)i 
+{
     CSXElementLayout *sublayout;
     id property;
     
@@ -809,7 +829,8 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
                     property = objc_msgSend(i, sublayout.contentLayout.getter);
                     if([(NSMutableArray *)property count] == 0) {
                         return [self requiredPropertyNotSetError:i 
-                                                          layout:layout];
+                                                          layout:layout
+                                                       sublayout:sublayout];
                     }
                     break;
                     
@@ -818,12 +839,42 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
                     property = objc_msgSend(i, sublayout.contentLayout.getter);
                     if(property == nil) {
                         return [self requiredPropertyNotSetError:i 
-                                                          layout:layout];
+                                                          layout:layout
+                                                       sublayout:sublayout];
                     }
                     break;
                     
                 case CSXNodeContentTypeNumber: /* fallthrough */
                 case CSXNodeContentTypeBoolean: /* fallthrough */
+                default:
+                    break;
+            }
+        }
+    }
+    
+    return nil;
+}
+
+- (NSError *)assertRequiredAttributes:(CSXElementLayout *)layout 
+                          forInstance:(id)i 
+{
+    CSXNodeLayout *sublayout;
+    id property;
+    
+    for(sublayout in layout.attributes) {
+        if(sublayout.required == YES) {
+            switch(sublayout.contentLayout.contentType) {
+                case CSXNodeContentTypeString:
+                    property = objc_msgSend(i, sublayout.contentLayout.getter);
+                    if(property == nil) {
+                        return [self requiredPropertyNotSetError:i 
+                                                          layout:layout
+                                                       sublayout:sublayout];
+                    }
+                    break;
+                    
+                case CSXNodeContentTypeBoolean: /* fallthrough */
+                case CSXNodeContentTypeNumber: /* fallthrough */
                 default:
                     break;
             }
@@ -1077,6 +1128,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
 
 - (NSError *)requiredPropertyNotSetError:(id)instance
                                   layout:(CSXNodeLayout *)l
+                               sublayout:(CSXNodeLayout *)subl
 {
     NSString *descr, *reco;
     NSArray *stack;
@@ -1087,7 +1139,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
              @"A required property is missing."];
     reco = [NSString stringWithFormat:
             @"The property %@ is not set for instance %@, though "
-            @"it is required.", l.name, [instance description]];
+            @"it is required.", subl.name, [instance description]];
     stack = [_state.elementNameStack copy];
     userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
                 descr, NSLocalizedDescriptionKey,
