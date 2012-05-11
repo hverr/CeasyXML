@@ -756,9 +756,28 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     
     for(sublayout in layout.subelements) {
         if(sublayout.required == YES) {
-            property = objc_msgSend(i, sublayout.contentLayout.getter);
-            if(property == nil) {
-                return [self requiredPropertyNotSetError:i layout:layout];
+            switch(sublayout.contentLayout.contentType) {
+                case CSXNodeContentTypeList:
+                    property = objc_msgSend(i, sublayout.contentLayout.getter);
+                    if([(NSMutableArray *)property count] == 0) {
+                        return [self requiredPropertyNotSetError:i 
+                                                          layout:layout];
+                    }
+                    break;
+                    
+                case CSXNodeContentTypeCustom: /* fallthrough */
+                case CSXNodeContentTypeString:
+                    property = objc_msgSend(i, sublayout.contentLayout.getter);
+                    if(property == nil) {
+                        return [self requiredPropertyNotSetError:i 
+                                                          layout:layout];
+                    }
+                    break;
+                    
+                case CSXNodeContentTypeNumber: /* fallthrough */
+                case CSXNodeContentTypeBoolean: /* fallthrough */
+                default:
+                    break;
             }
         }
     }
