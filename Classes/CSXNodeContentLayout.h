@@ -36,14 +36,12 @@ extern NSString * const CSXNodeLayoutSelectorNotFoundException;
 extern NSString * const CSXNodeContentTypeStringIdentifier;
 extern NSString * const CSXNodeContentTypeNumberIdentifier;
 extern NSString * const CSXNodeContentTypeBooleanIdentifier;
-extern NSString * const CSXNodeContentTypeListIdentifier;
 extern NSString * const CSXNodeContentTypeCustomIdentifier;
 
 typedef enum {
     CSXNodeContentTypeString,
     CSXNodeContentTypeNumber,
     CSXNodeContentTypeBoolean,
-    CSXNodeContentTypeList,
     CSXNodeContentTypeCustom
 } CSXNodeContentType;
 

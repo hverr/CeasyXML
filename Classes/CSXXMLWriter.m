@@ -469,7 +469,6 @@ handleErrorAndReturn:
                 break;
             
             case CSXNodeContentTypeCustom:
-            case CSXNodeContentTypeList:
             default:
                 excName = CSXXMLWriterInvalidAttributeTypeException;
                 excReason = [NSString stringWithFormat:

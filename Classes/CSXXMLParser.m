@@ -427,21 +427,13 @@ void CSXXMLParserStartElement(void *ctx,
             }
             
             /* create string if not empty and the type is string, or set the 
-             instance  property if we have a list or a non-unique element 
-             type */
+             instance  property if a non-unique element type */
             else {
                 switch(subelement.contentLayout.contentType) {
                     case CSXNodeContentTypeString: /* fallthrough */
                     case CSXNodeContentTypeNumber: /* fallthrough */
                     case CSXNodeContentTypeBoolean: 
                         parser->_state.stringContent = [NSMutableString new];
-                        break;
-                        
-                    case CSXNodeContentTypeList:
-                        objc_msgSend(parentInstance, 
-                                     subelement.contentLayout.setter,
-                                     elementInstance);
-                        parser->_state.stringContent = nil;
                         break;
                         
                     default:
@@ -565,12 +557,7 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
                                layout:layout 
                              instance:parentInstance];
             break;
-            
-        case CSXNodeContentTypeList:
-            [((CSXElementList *)parentInstance).elements addObject:instance];
-            err = nil;
-            break;
-            
+
         default:
             err = nil;
             break;
@@ -770,8 +757,7 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
 - (id)instanceOfElementClass:(CSXElementLayout *)layout {
     /* Returns +[NSNull null] if content type is string, number or boolean. If
      the type is custom, an instance of the setup class is returned. If the 
-     element is non-unique an NSMutableArray is returned. If the type is a 
-     list an instance of the CSXElementList class is returned. */
+     element is non-unique an NSMutableArray is returned. */
     
     id inst;
     
@@ -802,10 +788,6 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
             [inst autorelease];
             break;
             
-        case CSXNodeContentTypeList:
-            inst = [CSXElementList elementList];
-            break;
-            
         default:
             inst = nil;
             break;
@@ -825,15 +807,6 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     for(sublayout in layout.subelements) {
         if(sublayout.required == YES) {
             switch(sublayout.contentLayout.contentType) {
-                case CSXNodeContentTypeList:
-                    property = objc_msgSend(i, sublayout.contentLayout.getter);
-                    if([(NSMutableArray *)property count] == 0) {
-                        return [self requiredPropertyNotSetError:i 
-                                                          layout:layout
-                                                       sublayout:sublayout];
-                    }
-                    break;
-                    
                 case CSXNodeContentTypeCustom: /* fallthrough */
                 case CSXNodeContentTypeString:
                     property = objc_msgSend(i, sublayout.contentLayout.getter);
