@@ -29,14 +29,26 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
-#import <libxml/parser.h>
+#import <libxml/xmlwriter.h>
 
 #import "CSXDocumentLayout.h"
 #import "CSXElementLayout.h"
 #import "CSXElementLayout.h"
 #import "CSXElementList.h"
 
+extern NSString * const CSXXMLWriterErrorDomain;
+
+enum {
+    kCSXXMLWriterTextWriterCreationError = 1,
+    kCSXXMLWriterTextWriterWriteError
+};
+
 @interface CSXXMLWriter : NSObject {
+    
+    struct {
+        BOOL isWritingToFile;
+        xmlTextWriterPtr textWriter;
+    } _state;
 }
 /* MARK: Init */
 - (id)initWithDocumentLayout:(CSXDocumentLayout *)layout;
@@ -48,5 +60,12 @@
 /* MARK: Properties */
 @property (nonatomic, retain) CSXDocumentLayout *documentLayout;
 @property (nonatomic, retain) id rootInstance;
+
+@property (nonatomic, retain) NSString *XMLVersion;
+@property (nonatomic, retain) NSString *encoding;
+@property (nonatomic, assign) int compression;
+
+/* MARK: Writing */
+- (BOOL)writeToFile:(NSString *)file error:(NSError **)errptr;
 @end
 

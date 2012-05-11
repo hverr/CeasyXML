@@ -28,11 +28,21 @@
 
 #import "CSXXMLWriter.h"
 
+NSString * const CSXXMLWriterErrorDomain = @"CSXXMLWriterErrorDomain";
+
 /* =========================================================================== 
  MARK: -
  MARK: Private Interface
  =========================================================================== */
 @interface CSXXMLWriter (Private)
+/* MARK: XML Writing */
+- (NSError *)flushDocument;
+- (NSError *)startDocument;
+- (void)freeDocument;
+
+/* MARK: Errors */
+- (NSError *)textWriterForFileError:(NSString *)outFile;
+- (NSError *)xmlWriteError;
 @end
 
 /* =========================================================================== 
@@ -80,11 +90,49 @@
     self.documentLayout = nil;
     self.rootInstance = nil;
     
+    self.XMLVersion = nil;
+    self.encoding = nil;
+    
     [super dealloc];
 }
 
 /* MARK: Properties */
 @synthesize documentLayout, rootInstance;
+@synthesize XMLVersion, encoding, compression;
+
+
+/* MARK: Writing */
+- (BOOL)writeToFile:(NSString *)file error:(NSError **)errptr {
+    NSError *myError;
+    
+    /* Create the text writer */
+    _state.textWriter = xmlNewTextWriterFilename([file UTF8String], 
+                                                 self.compression);
+    if(_state.textWriter == NULL) {
+        myError = [self textWriterForFileError:file];
+        goto handleErrorAndReturn;
+    }
+    
+    _state.isWritingToFile = YES;
+    
+    /* Start document */
+    if((myError = [self startDocument])) {
+        goto handleErrorAndReturn;
+    }
+    
+    
+    /* Free document and return */
+    [self freeDocument];
+    return YES;
+    
+handleErrorAndReturn:
+    [self freeDocument];
+    
+    if(errptr) {
+        *errptr = myError;
+    }
+    return NO;
+}
 @end
 
 
@@ -93,4 +141,80 @@
  MARK: Private Implementation
  =========================================================================== */
 @implementation CSXXMLWriter (Private)
+/* MARK: XML Writing */
+- (NSError *)flushDocument {
+    int status;
+    
+    if(_state.isWritingToFile == NO) {
+        return nil;
+    }
+    
+    status = xmlTextWriterFlush(_state.textWriter);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    return nil;
+}
+
+- (NSError *)startDocument {
+    int status;
+    
+    status = xmlTextWriterStartDocument(_state.textWriter, 
+                                        [self.XMLVersion UTF8String], 
+                                        [self.encoding UTF8String], 
+                                        NULL);
+    
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    return [self flushDocument];
+}
+
+- (void)freeDocument {
+    xmlFreeTextWriter(_state.textWriter);
+}
+
+/* MARK: Errors */
+- (NSError *)textWriterForFileError:(NSString *)outFile {
+    NSString *descr, *reco;
+    NSDictionary *userInfo;
+    NSError *err;
+    
+    descr = [NSString stringWithFormat:
+             @"Failed to write the XML document."];
+    reco = [NSString stringWithFormat:
+            @"Could not create an XML writer for the file at %@.",
+            outFile];
+    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                descr, NSLocalizedDescriptionKey,
+                reco, NSLocalizedRecoverySuggestionErrorKey,
+                nil];
+    
+    err = [NSError errorWithDomain:CSXXMLWriterErrorDomain 
+                              code:kCSXXMLWriterTextWriterCreationError 
+                          userInfo:userInfo];
+    return err;
+}
+
+- (NSError *)xmlWriteError {
+    NSString *descr, *reco;
+    NSDictionary *userInfo;
+    NSError *err;
+    
+    descr = [NSString stringWithFormat:
+             @"Failed to write the XML document."];
+    reco = [NSString stringWithFormat:
+            @"Could not write the characters to the file."];
+    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                descr, NSLocalizedDescriptionKey,
+                reco, NSLocalizedRecoverySuggestionErrorKey,
+                nil];
+    
+    err = [NSError errorWithDomain:CSXXMLWriterErrorDomain 
+                              code:kCSXXMLWriterTextWriterWriteError 
+                          userInfo:userInfo];
+    return err;
+}
 @end
