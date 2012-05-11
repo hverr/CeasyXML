@@ -31,6 +31,7 @@
 #import <objc/runtime.h>
 #import <libxml/parser.h>
 
+#import "CSXLayoutList.h"
 #import "CSXDocumentLayout.h"
 #import "CSXElementLayout.h"
 #import "CSXElementList.h"
@@ -83,6 +84,12 @@ enum {
 /* MARK: Init */
 - (id)initWithDocumentLayouts:(NSArray *)docLayouts;
 + (id)XMLParserWithDocumentLayouts:(NSArray *)docLayouts;
+
+- (id)initWithLayoutListDocument:(NSString *)f error:(NSError **)err;
++ (id)XMLParserWithLayoutListDocument:(NSString *)f error:(NSError **)err;
+
+- (id)initWithLayoutDocument:(NSString *)f error:(NSError **)err;
++ (id)XMLParserWithLayoutDocument:(NSString *)f error: (NSError **)err;
 
 /* MARK: Properties */
 @property (nonatomic, retain) NSArray *documentLayouts;

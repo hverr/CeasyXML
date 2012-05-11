@@ -158,6 +158,50 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
     return [inst autorelease];
 }
 
+- (id)initWithLayoutListDocument:(NSString *)f error:(NSError **)err {
+    self = [super init];
+    if(self != nil) {
+        CSXLayoutList *list;
+        
+        list = [[CSXLayoutList alloc] initWithDocument:f error:err];
+        if(list == nil) {
+            [self release];
+            return nil;
+        }
+        
+        self.documentLayouts = list.layouts;
+    }
+    return self;
+}
+
++ (id)XMLParserWithLayoutListDocument:(NSString *)f error:(NSError **)err {
+    id inst;
+    inst = [[self alloc] initWithLayoutListDocument:f error:err];
+    return [inst autorelease];
+}
+
+- (id)initWithLayoutDocument:(NSString *)f error:(NSError **)err {
+    self = [super init];
+    if(self != nil) {
+        CSXDocumentLayout *layout;
+        
+        layout = [[CSXDocumentLayout alloc] initWithLayoutDocument:f error:err];
+        if(layout == nil) {
+            [self release];
+            return nil;
+        }
+        
+        self.documentLayouts = [NSArray arrayWithObject:layout];
+    }
+    return self;
+}
+
++ (id)XMLParserWithLayoutDocument:(NSString *)f error: (NSError **)err {
+    id inst;
+    inst = [[self alloc] initWithLayoutDocument:f error:err];
+    return [inst autorelease];
+}
+
 - (void)dealloc {
     self.documentLayouts = nil;
     self.file = nil;
