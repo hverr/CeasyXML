@@ -52,6 +52,7 @@
 		9202EEA8155428F300EF6DE6 /* TEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEntry.m; sourceTree = "<group>"; };
 		9202EEAD1554295200EF6DE6 /* TLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLibrary.h; sourceTree = "<group>"; };
 		9202EEAE1554295200EF6DE6 /* TLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLibrary.m; sourceTree = "<group>"; };
+		920D1175155D6D5C0055B563 /* Library.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Library.xml; sourceTree = "<group>"; };
 		920EB989154D94C50007D7DA /* CSXElementList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXElementList.h; sourceTree = "<group>"; };
 		920EB98A154D94C50007D7DA /* CSXElementList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXElementList.m; sourceTree = "<group>"; };
 		9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeLayout.h; sourceTree = "<group>"; };
@@ -202,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				92305FCF1551716800A60884 /* Layout.xml */,
+				920D1175155D6D5C0055B563 /* Library.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

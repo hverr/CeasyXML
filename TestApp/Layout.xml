@@ -3,6 +3,23 @@
 <document>
     <layout name="library" class="TLibrary">
         <!-- library: elements -->
+        <element name="name">
+            <unique />
+            <required />
+            <content type="string">
+                <getter>name</getter>
+                <setter>setName:</setter>
+            </content
+        </element>
+        
+        <element name="content">
+            <unique />
+            <content type="string">
+                <getter>content</getter>
+                <setter>setContent:</setter>
+            </content>
+        </element>
+        
         <element name="entry">
             <!-- entry: content -->
             <content type="custom">

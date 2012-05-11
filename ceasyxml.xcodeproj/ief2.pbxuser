@@ -6,7 +6,6 @@
 		activeExecutable = 92F82AA8154078500009E770 /* TestApp */;
 		activeTarget = 92F82AA6154078500009E770 /* TestApp */;
 		addToTargets = (
-			92F82AA6154078500009E770 /* TestApp */,
 		);
 		breakpoints = (
 			9202EF60155439D000EF6DE6 /* TMain.m:50 */,
@@ -162,7 +161,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 386";
 		rLen = 0;
-		rLoc = 15042;
+		rLoc = 15403;
 		rType = 0;
 		vrLen = 1976;
 		vrLoc = 12275;
@@ -199,9 +198,9 @@
 		fRef = 92305FCF1551716800A60884 /* Layout.xml */;
 		name = "Layout.xml: 43";
 		rLen = 0;
-		rLoc = 1511;
+		rLoc = 1913;
 		rType = 0;
-		vrLen = 1730;
+		vrLen = 1716;
 		vrLoc = 0;
 	};
 	9202EEC415542A8F00EF6DE6 /* PBXTextBookmark */ = {
@@ -209,9 +208,9 @@
 		fRef = 92305FCF1551716800A60884 /* Layout.xml */;
 		name = "Layout.xml: 16";
 		rLen = 8;
-		rLoc = 593;
+		rLoc = 995;
 		rType = 0;
-		vrLen = 1730;
+		vrLen = 1716;
 		vrLoc = 0;
 	};
 	9202EEC515542A8F00EF6DE6 /* PBXTextBookmark */ = {
@@ -219,9 +218,9 @@
 		fRef = 92305FCF1551716800A60884 /* Layout.xml */;
 		name = "Layout.xml: 43";
 		rLen = 0;
-		rLoc = 1511;
+		rLoc = 1913;
 		rType = 0;
-		vrLen = 1730;
+		vrLen = 1716;
 		vrLoc = 0;
 	};
 	9202EEC615542A8F00EF6DE6 /* PBXTextBookmark */ = {
@@ -229,7 +228,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 386";
 		rLen = 0;
-		rLoc = 15042;
+		rLoc = 15403;
 		rType = 0;
 		vrLen = 2056;
 		vrLoc = 12388;
@@ -273,7 +272,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 261";
 		rLen = 0;
-		rLoc = 8710;
+		rLoc = 8805;
 		rType = 0;
 		vrLen = 1429;
 		vrLoc = 7427;
@@ -307,9 +306,9 @@
 		fRef = 92305FCF1551716800A60884 /* Layout.xml */;
 		name = "Layout.xml: 43";
 		rLen = 0;
-		rLoc = 1511;
+		rLoc = 1913;
 		rType = 0;
-		vrLen = 1730;
+		vrLen = 1716;
 		vrLoc = 0;
 	};
 	9202EF05155432B300EF6DE6 /* PBXTextBookmark */ = {
@@ -351,9 +350,9 @@
 		fRef = 92305FCF1551716800A60884 /* Layout.xml */;
 		name = "Layout.xml: 43";
 		rLen = 0;
-		rLoc = 1511;
+		rLoc = 1913;
 		rType = 0;
-		vrLen = 1730;
+		vrLen = 1716;
 		vrLoc = 0;
 	};
 	9202EF251554357C00EF6DE6 /* PBXTextBookmark */ = {
@@ -385,7 +384,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 787";
 		rLen = 0;
-		rLoc = 26384;
+		rLoc = 27003;
 		rType = 0;
 		vrLen = 2197;
 		vrLoc = 23620;
@@ -481,7 +480,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 436";
 		rLen = 0;
-		rLoc = 14918;
+		rLoc = 15279;
 		rType = 0;
 		vrLen = 1912;
 		vrLoc = 8085;
@@ -491,7 +490,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 436";
 		rLen = 0;
-		rLoc = 14918;
+		rLoc = 15279;
 		rType = 0;
 		vrLen = 1748;
 		vrLoc = 7776;
@@ -501,9 +500,9 @@
 		fRef = 92305FCF1551716800A60884 /* Layout.xml */;
 		name = "Layout.xml: 25";
 		rLen = 0;
-		rLoc = 802;
+		rLoc = 1204;
 		rType = 0;
-		vrLen = 1730;
+		vrLen = 1716;
 		vrLoc = 0;
 	};
 	9202EF7215543BAE00EF6DE6 /* PBXTextBookmark */ = {
@@ -581,7 +580,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 436";
 		rLen = 0;
-		rLoc = 14918;
+		rLoc = 15279;
 		rType = 0;
 		vrLen = 2381;
 		vrLoc = 8701;
@@ -591,9 +590,9 @@
 		fRef = 92305FCF1551716800A60884 /* Layout.xml */;
 		name = "Layout.xml: 25";
 		rLen = 0;
-		rLoc = 802;
+		rLoc = 1204;
 		rType = 0;
-		vrLen = 1730;
+		vrLen = 1716;
 		vrLoc = 0;
 	};
 	9202EF9115543DAB00EF6DE6 /* PBXTextBookmark */ = {
@@ -611,9 +610,9 @@
 		fRef = 92305FCF1551716800A60884 /* Layout.xml */;
 		name = "Layout.xml: 25";
 		rLen = 0;
-		rLoc = 802;
+		rLoc = 1204;
 		rType = 0;
-		vrLen = 1730;
+		vrLen = 1716;
 		vrLoc = 0;
 	};
 	9202EF9315543DAB00EF6DE6 /* PBXTextBookmark */ = {
@@ -631,7 +630,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 436";
 		rLen = 0;
-		rLoc = 14918;
+		rLoc = 15279;
 		rType = 0;
 		vrLen = 2381;
 		vrLoc = 8701;
@@ -641,7 +640,7 @@
 		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
 		name = "CSXXMLParser.m: 388";
 		rLen = 0;
-		rLoc = 15304;
+		rLoc = 15665;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 8406;
@@ -852,23 +851,23 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 1287}}";
 			sepNavSelRange = "{1705, 47}";
-			sepNavVisRange = "{1287, 1976}";
+			sepNavVisRange = "{1227, 2041}";
 			sepNavWindowFrame = "{{38, 48}, {647, 984}}";
 		};
 	};
 	922CDB2815446CD1003B1B6F /* CSXXMLParser.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 12818}}";
-			sepNavSelRange = "{14918, 0}";
-			sepNavVisRange = "{8666, 2430}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 13637}}";
+			sepNavSelRange = "{19371, 50}";
+			sepNavVisRange = "{17900, 1957}";
 			sepNavWindowFrame = "{{687, 64}, {647, 984}}";
 		};
 	};
 	92305FCF1551716800A60884 /* Layout.xml */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
-			sepNavSelRange = "{809, 0}";
-			sepNavVisRange = "{0, 1730}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 897}}";
+			sepNavSelRange = "{482, 0}";
+			sepNavVisRange = "{0, 2105}";
 			sepNavWindowFrame = "{{987, 17}, {647, 984}}";
 		};
 	};
