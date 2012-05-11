@@ -31,23 +31,35 @@
 int main(int argc, const char **argv) {
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
     
-    NSString *file;
+    NSString *layoutFile, *libraryFile;
     
-    file = [NSString stringWithUTF8String:__FILE__];
-    file = [file stringByDeletingLastPathComponent];
-    file = [file stringByAppendingPathComponent:@"Layout.xml"];
+    layoutFile = [NSString stringWithUTF8String:__FILE__];
+    layoutFile = [layoutFile stringByDeletingLastPathComponent];
+    layoutFile = [layoutFile stringByAppendingPathComponent:@"Layout.xml"];
     
-    CSXLayoutList *layouts;
-    NSError *error;
+    libraryFile = [NSString stringWithUTF8String:__FILE__];
+    libraryFile = [libraryFile stringByDeletingLastPathComponent];
+    libraryFile = [libraryFile stringByAppendingPathComponent:@"Library.xml"];
     
-    layouts = [[CSXLayoutList alloc] initWithDocument:file error:&error];
-    if(layouts == nil) {
-        NSLog(@"Could not create layout: %@", error);
-        exit(0);
+    CSXXMLParser *parser;
+    
+    parser = [[CSXXMLParser alloc] initWithLayoutListDocument:layoutFile 
+                                                        error:NULL];
+    if(parser == nil) {
+        NSLog(@"Failed to create XML parser.");
+        return 1;
     }
     
-    NSLog(@"Layout:\n%@", layouts);
-    [layouts release];
+    parser.file = libraryFile;
+    
+    BOOL success = [parser parse];
+    if(!success) {
+        NSLog(@"Parser error: %@", parser.error);
+        return 1;
+    }
+    
+    NSLog(@"Result: %@", parser.result);
+    [parser release];
     
     [pool release];
     return 0;
