@@ -48,6 +48,7 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
 - (void)freeDocument;
 - (NSError *)writeRootElement;
 - (NSError *)writeElement:(CSXElementLayout *)lay instance:(id)inst;
+- (NSError *)writeNonUniqueElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeCustomElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeStringElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeBooleanElement:(CSXElementLayout *)lay instance:(id)inst;
@@ -232,6 +233,53 @@ handleErrorAndReturn:
 }
 
 - (NSError *)writeElement:(CSXElementLayout *)lay instance:(id)inst {
+    NSError *myErr;
+    NSArray *allSubs;
+    id subElement;
+    
+    if(lay.unique == NO) {
+        allSubs = objc_msgSend(inst, lay.contentLayout.getter);
+        for(subElement in allSubs) {
+            NSAutoreleasePool *pool = [NSAutoreleasePool new];
+            
+            myErr = [self writeNonUniqueElement:lay instance:subElement];
+            
+            [myErr retain];
+            [pool release];
+            [myErr autorelease];
+            
+            if(myErr != nil) {
+                return myErr;
+            }
+        }
+    }
+    
+    switch(lay.contentLayout.contentType) {
+        case CSXNodeContentTypeCustom:
+            myErr = [self writeCustomElement:lay instance:inst];
+            break;
+            
+        case CSXNodeContentTypeString:
+            myErr = [self writeStringElement:lay instance:inst];
+            break;
+            
+        case CSXNodeContentTypeBoolean:
+            myErr = [self writeBooleanElement:lay instance:inst];
+            break;
+            
+        case CSXNodeContentTypeNumber:
+            myErr = [self writeNumberElement:lay instance:inst];
+            break;
+            
+        default:
+            myErr = nil;
+            break;
+    }
+    
+    return myErr;
+}
+
+- (NSError *)writeNonUniqueElement:(CSXElementLayout *)lay instance:(id)inst {
     NSError *myErr;
     
     switch(lay.contentLayout.contentType) {
