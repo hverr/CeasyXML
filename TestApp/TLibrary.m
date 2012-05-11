@@ -33,5 +33,5 @@
  MARK: Public Implementation
  =========================================================================== */
 @implementation TLibrary
-@synthesize entries;
+@synthesize name, content, entries;
 @end
