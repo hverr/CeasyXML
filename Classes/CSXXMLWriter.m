@@ -52,7 +52,6 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
 - (NSError *)writeStringElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeBooleanElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeNumberElement:(CSXElementLayout *)lay instance:(id)inst;
-- (NSError *)writeListElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeAttributesOfLayout:(CSXElementLayout *)lay instance:(id)inst;
 
 
@@ -252,10 +251,6 @@ handleErrorAndReturn:
             myErr = [self writeNumberElement:lay instance:inst];
             break;
             
-        case CSXNodeContentTypeList:
-            myErr = [self writeListElement:lay instance:inst];
-            break;
-            
         default:
             myErr = nil;
             break;
@@ -332,19 +327,70 @@ handleErrorAndReturn:
 }
 
 - (NSError *)writeStringElement:(CSXElementLayout *)lay instance:(id)inst {
-    return nil;
+    int status;
+    NSError *myError;
+    xmlChar *indentation, *elemName, *elemValue;
+    
+    /* Indent */
+    indentation = NSStringCSXXMLCharIndentation(1, _state.indentationLevel);
+    status = xmlTextWriterWriteRaw(_state.textWriter, indentation);
+    free(indentation);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    /* Start element */
+    elemName = [lay.name copyXMLCharacters];
+    status = xmlTextWriterStartElement(_state.textWriter, elemName);
+    free(elemName);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    /* Write attributes */
+    myError = [self writeAttributesOfLayout:lay instance:inst];
+    if(myError != nil) {
+        return myError;
+    }
+    
+    /* Write content */
+    elemValue = [(NSString *)inst copyXMLCharacters];
+    if(elemValue == NULL) {
+        elemValue = calloc(1, 1);
+    }
+    status = xmlTextWriterWriteString(_state.textWriter, elemValue);
+    free(elemValue);
+    if(status < 0) {
+        return myError;
+    }
+    
+    /* End element */
+    status = xmlTextWriterEndElement(_state.textWriter);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    return [self flushDocument];
 }
 
 - (NSError *)writeBooleanElement:(CSXElementLayout *)lay instance:(id)inst {
-    return nil;
+    BOOL boolVal;
+    NSString *stringVal;
+    
+    *(id *)&boolVal = inst;
+    stringVal = boolVal ? @"1" : @"0";
+    
+    return [self writeStringElement:lay instance:stringVal];
 }
 
 - (NSError *)writeNumberElement:(CSXElementLayout *)lay instance:(id)inst {
-    return nil;
-}
-
-- (NSError *)writeListElement:(CSXElementLayout *)lay instance:(id)inst {
-    return nil;
+    NSInteger intVal;
+    NSString *stringVal;
+    
+    *(id *)&intVal = inst;
+    stringVal = [[NSNumber numberWithInteger:intVal] stringValue];
+    
+    return [self writeStringElement:lay instance:inst];
 }
 
 - (NSError *)writeAttributesOfLayout:(CSXElementLayout *)lay instance:(id)inst {
