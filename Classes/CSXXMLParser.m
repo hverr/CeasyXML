@@ -239,6 +239,9 @@ void CSXXMLParserStartDocument(void *ctx) {
     CSXXMLParser *parser;
     
     parser = (CSXXMLParser *)ctx;
+    parser.error = nil;
+    parser.result = nil;
+    parser.warnings = [NSMutableArray array];
     [parser initializeState];
     
     [pool release];
@@ -417,7 +420,7 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     }
     
     [parser popStateElement:&elementName 
-                     layout:(id *)&layout 
+                     layout:&layout 
                    instance:&instance];
     assert([[NSString stringWithUTF8String:(const char *)name]
             isEqualToString:elementName]);
@@ -425,6 +428,14 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     /* if this is the last element, the document is ended */
     if([parser->_state.elementNameStack count] == 0) {
         parser.result = instance;
+        
+        /* check if the required document properties are set */
+        err = [parser assertRequiredElements:layout forInstance:instance];
+        if(err != nil) {
+            parser.error = err;
+            parser->_state.errorOccurred = YES;
+        }
+        
         goto drainAndReturn;
     }
     
@@ -443,6 +454,14 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
         assert(parser->_state.stringContent != nil);
         instance = [parser->_state.stringContent autorelease];
         parser->_state.stringContent = nil;
+    }
+    
+    /* check if we hve all required properties set */
+    err = [parser assertRequiredElements:layout forInstance:instance];
+    if(err != nil) {
+        parser.error = err;
+        parser->_state.errorOccurred = YES;
+        goto drainAndReturn;
     }
 
     /* get the parent element, we have to set its properties */
