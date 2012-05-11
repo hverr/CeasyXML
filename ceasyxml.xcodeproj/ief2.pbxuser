@@ -1072,9 +1072,9 @@
 	922CDB2715446CD1003B1B6F /* CSXXMLParser.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 1365}}";
-			sepNavSelRange = "{1287, 25}";
+			sepNavSelRange = "{1339, 0}";
 			sepNavVisRange = "{332, 2335}";
-			sepNavWindowFrame = "{{38, 48}, {647, 984}}";
+			sepNavWindowFrame = "{{687, 64}, {647, 984}}";
 		};
 	};
 	922CDB2815446CD1003B1B6F /* CSXXMLParser.m */ = {
@@ -1134,7 +1134,7 @@
 	923FCB6F155D806B00B9D71D /* CSXXMLWriter.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
-			sepNavSelRange = "{1308, 0}";
+			sepNavSelRange = "{1307, 0}";
 			sepNavVisRange = "{0, 1308}";
 			sepNavWindowFrame = "{{843, 74}, {647, 984}}";
 		};
@@ -1142,7 +1142,7 @@
 	923FCB70155D806B00B9D71D /* CSXXMLWriter.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
-			sepNavSelRange = "{848, 0}";
+			sepNavSelRange = "{823, 0}";
 			sepNavVisRange = "{0, 1964}";
 			sepNavWindowFrame = "{{38, 48}, {647, 984}}";
 		};
@@ -1182,6 +1182,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {563, 859}}";
 			sepNavSelRange = "{407, 0}";
 			sepNavVisRange = "{0, 1576}";
+			sepNavWindowFrame = "{{420, 50}, {622, 987}}";
 		};
 	};
 	923FCB7A155D810900B9D71D /* NSString+CSXLibXMLConversion.m */ = {

@@ -28,8 +28,25 @@
 
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
+#import <libxml/parser.h>
+
+#import "CSXDocumentLayout.h"
+#import "CSXElementLayout.h"
+#import "CSXElementLayout.h"
+#import "CSXElementList.h"
 
 @interface CSXXMLWriter : NSObject {
 }
+/* MARK: Init */
+- (id)initWithDocumentLayout:(CSXDocumentLayout *)layout;
++ (id)XMLWriterWithDocumentLayout:(CSXDocumentLayout *)layout;
+
+- (id)initWithLayoutDocument:(NSString *)f error:(NSError **)err;
++ (id)XMLWriterWithLayoutDocument:(NSString *)f error:(NSError **)err;
+
+/* MARK: Properties */
+@property (nonatomic, retain) CSXDocumentLayout *documentLayout;
+@property (nonatomic, retain) id rootInstance;
 @end
 

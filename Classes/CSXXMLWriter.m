@@ -40,6 +40,51 @@
  MARK: Public Implementation
  =========================================================================== */
 @implementation CSXXMLWriter
+/* MARK: Init and Dealloc */
+- (id)initWithDocumentLayout:(CSXDocumentLayout *)layout {
+    self = [super init];
+    if(self != nil) {
+        self.documentLayout = layout;
+    }
+    return self;
+}
+
++ (id)XMLWriterWithDocumentLayout:(CSXDocumentLayout *)layout {
+    id inst;
+    inst = [[self alloc] initWithDocumentLayout:layout];
+    return [inst autorelease];
+}
+
+- (id)initWithLayoutDocument:(NSString *)f error:(NSError **)err {
+    self = [super init];
+    if(self != nil) {
+        CSXDocumentLayout *layout;
+        
+        layout = [[CSXDocumentLayout alloc] initWithLayoutDocument:f error:err];
+        if(layout == nil) {
+            [self release];
+            return nil;
+        }
+        self.documentLayout = layout;
+    }
+    return self;
+}
+
++ (id)XMLWriterWithLayoutDocument:(NSString *)f error:(NSError **)err {
+    id inst;
+    inst = [[self alloc] initWithLayoutDocument:f error:err];
+    return [inst autorelease];
+}
+
+- (void)dealloc {
+    self.documentLayout = nil;
+    self.rootInstance = nil;
+    
+    [super dealloc];
+}
+
+/* MARK: Properties */
+@synthesize documentLayout, rootInstance;
 @end
 
 
