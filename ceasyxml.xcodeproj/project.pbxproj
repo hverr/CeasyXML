@@ -19,6 +19,7 @@
 		922CDB3215447054003B1B6F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 922CDB3115447054003B1B6F /* libxml2.dylib */; };
 		922CDB3315447075003B1B6F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 922CDB3115447054003B1B6F /* libxml2.dylib */; };
 		92305FF51551784F00A60884 /* CeasyXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 92305FF41551784F00A60884 /* CeasyXML.h */; };
+		923FCB72155D807000B9D71D /* CSXXMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 923FCB70155D806B00B9D71D /* CSXXMLWriter.m */; };
 		925FE8A81542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */; };
 		925FE8A91542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */; };
 		925FE8E31542F13200AA875E /* CSXNodeContentLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 925FE8E11542F13200AA875E /* CSXNodeContentLayout.h */; };
@@ -66,6 +67,8 @@
 		922CDB3115447054003B1B6F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		92305FCF1551716800A60884 /* Layout.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Layout.xml; sourceTree = "<group>"; };
 		92305FF41551784F00A60884 /* CeasyXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CeasyXML.h; sourceTree = "<group>"; };
+		923FCB6F155D806B00B9D71D /* CSXXMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXXMLWriter.h; sourceTree = "<group>"; };
+		923FCB70155D806B00B9D71D /* CSXXMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXXMLWriter.m; sourceTree = "<group>"; };
 		925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXNodeLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
 		925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXNodeLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
 		925FE8E11542F13200AA875E /* CSXNodeContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeContentLayout.h; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 			children = (
 				922CDB2715446CD1003B1B6F /* CSXXMLParser.h */,
 				922CDB2815446CD1003B1B6F /* CSXXMLParser.m */,
+				923FCB6F155D806B00B9D71D /* CSXXMLWriter.h */,
+				923FCB70155D806B00B9D71D /* CSXXMLWriter.m */,
 			);
 			name = "Parsing and Writing";
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				920EB98C154D94C50007D7DA /* CSXElementList.m in Sources */,
 				9286A1841555640000EC7F08 /* CSXLayoutList.m in Sources */,
 				9286A1861555640E00EC7F08 /* CSXLayoutList+CSXLayoutObject.m in Sources */,
+				923FCB72155D807000B9D71D /* CSXXMLWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

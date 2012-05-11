@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>920D11DA155D755B0055B563</string>
+						<string>923FCB68155D801F00B9D71D</string>
 						<key>history</key>
 						<array>
-							<string>920D11CA155D74AC0055B563</string>
+							<string>920D11DA155D755B0055B563</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -256,10 +256,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>920D11DB155D755B0055B563</string>
+						<string>923FCB69155D801F00B9D71D</string>
 						<key>history</key>
 						<array>
-							<string>920D11A9155D72A70055B563</string>
+							<string>920D11DB155D755B0055B563</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -296,10 +296,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>920D11DC155D755B0055B563</string>
+						<string>923FCB6A155D801F00B9D71D</string>
 						<key>history</key>
 						<array>
-							<string>920D1180155D713C0055B563</string>
+							<string>920D11DC155D755B0055B563</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -567,8 +567,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>920D1187155D71870055B563</string>
-				<string>920D1188155D71870055B563</string>
+				<string>923FCB66155D801F00B9D71D</string>
+				<string>923FCB67155D801F00B9D71D</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -605,16 +605,11 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>920D11DD155D755B0055B563</string>
-		<string>920D1198155D71870055B563</string>
-		<string>920D1199155D71870055B563</string>
-		<string>1C530D54069F1CE1000CFCEE</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
 		<string>920D118C155D71870055B563</string>
-		<string>1C530D5B069F1CE1000CFCEE</string>
 		<string>920D11C3155D738D0055B563</string>
 		<string>920D11BF155D738D0055B563</string>
+		<string>/Users/ief2/Desktop/ceasyxml/trunk/ceasyxml.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 505 372 517 0 0 1920 1058 </string>
@@ -831,7 +826,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>920D118F155D71870055B563</string>
+				<string>923FCB6B155D801F00B9D71D</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
