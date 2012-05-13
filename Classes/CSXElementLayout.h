@@ -31,16 +31,85 @@
 
 #import "CSXNodeLayout.h"
 
+/*!
+ `CSXElementLayout` represents an XML element.
+ */
+
 @interface CSXElementLayout : CSXNodeLayout {
     
 }
 /* MARK: Properties */
+/*! @name Properties */
+/*!
+ Specifies wether the element is an empty element or not.
+ 
+ If this is set to `YES`, the element should look like this:
+     
+     <element />
+
+ If this is not true, the element should look like this:
+ 
+    <element>SOME_CONTENT</element>
+
+*/
 @property (nonatomic, assign) BOOL empty;
+
+
+/*!
+ Specifies wether the element is unique or not.
+ 
+ If this is set to `NO`, the instance variable of the parent should be an
+ `NSMutableArray`, as the parser will set the instance variable to an instance 
+ of `NSMutableArray` containing all the elements.
+ 
+ If this is set to `YES`, the parser will just set the instance variable to 
+ an instance of the content type.
+ */
+ 
 @property (nonatomic, assign) BOOL unique;
+
+/*!
+ The attributes this element has.
+ 
+ The array should contain instances of `CSXNodeLayout`.
+ 
+ @see CSXNodeLayout
+ */
 @property (nonatomic, retain) NSArray *attributes;
+
+/*!
+ The subelements of this element.
+ 
+ This property is only used when the `contentLayout` is of type 
+ `CSXNodeContentTypeCustom`.
+ 
+ @see CSXNodeLayout
+ */
 @property (nonatomic, retain) NSArray *subelements;
 
+/*! @name Finding Subnodes */
+/*!
+ Linear search for a subelement with a known name.
+ 
+ @param nam The name of the subelement.
+ 
+ @return The found element or `nil` if no element could be found with the
+ given name.
+ 
+ @see CSXNodeLayout, subelements
+ */
 - (CSXElementLayout *)subelementWithName:(NSString *)nam;
+
+/*!
+ Linear search for the attribute with a known name.
+ 
+ @param nam The name of the attribute.
+ 
+ @return The found attribute or `nil` if no attribute could be found with the
+ given name.
+ 
+ @see CSXNodeLayout, attributes
+ */
 - (CSXNodeLayout *)attributeWithName:(NSString *)nam;
 @end
 

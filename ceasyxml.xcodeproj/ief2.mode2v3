@@ -268,6 +268,7 @@
 										<string>923FCB75155D80DB00B9D71D</string>
 										<string>920EB981154D94850007D7DA</string>
 										<string>9227B9661541ECBD00FA9EA6</string>
+										<string>925FE8961542E76C00AA875E</string>
 										<string>922CDB2515446CBA003B1B6F</string>
 										<string>32C88DFF0371C24200C91783</string>
 										<string>0867D69AFE84028FC02AAC07</string>
@@ -278,14 +279,15 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>11</integer>
+											<integer>17</integer>
+											<integer>10</integer>
 											<integer>9</integer>
 											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 50}, {355, 431}}</string>
+									<string>{{0, 0}, {355, 431}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -447,8 +449,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>923FCB66155D801F00B9D71D</string>
-				<string>923FCB67155D801F00B9D71D</string>
+				<string>923122B3155FD0D800D6B532</string>
+				<string>923122B4155FD0D800D6B532</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -485,12 +487,9 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>923FCC18155DA0D400B9D71D</string>
-		<string>923FCC19155DA0D400B9D71D</string>
-		<string>1C530D54069F1CE1000CFCEE</string>
+		<string>923122DB155FDEFF00D6B532</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>1C530D5B069F1CE1000CFCEE</string>
-		<string>/Users/ief2/Desktop/ceasyxml/trunk/ceasyxml.xcodeproj</string>
+		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 505 372 517 0 0 1920 1058 </string>
@@ -651,7 +650,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CSXXMLWriter.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -668,8 +667,6 @@
 							<string>680pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -709,7 +706,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>923FCB6B155D801F00B9D71D</string>
+				<string>923122B5155FD0D800D6B532</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

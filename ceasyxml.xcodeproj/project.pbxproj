@@ -23,7 +23,6 @@
 		923FCB7C155D810900B9D71D /* NSString+CSXLibXMLConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 923FCB7A155D810900B9D71D /* NSString+CSXLibXMLConversion.m */; };
 		925FE8A81542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */; };
 		925FE8A91542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */; };
-		925FE8E31542F13200AA875E /* CSXNodeContentLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 925FE8E11542F13200AA875E /* CSXNodeContentLayout.h */; };
 		925FE8E41542F13200AA875E /* CSXNodeContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE8E21542F13200AA875E /* CSXNodeContentLayout.m */; };
 		925FE9181542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 925FE9161542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h */; };
 		925FE9191542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */; };
@@ -68,13 +67,13 @@
 		922CDB3115447054003B1B6F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		92305FCF1551716800A60884 /* Layout.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Layout.xml; sourceTree = "<group>"; };
 		92305FF41551784F00A60884 /* CeasyXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CeasyXML.h; sourceTree = "<group>"; };
+		923122BA155FD54100D6B532 /* CSXNodeContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeContentLayout.h; sourceTree = "<group>"; };
 		923FCB6F155D806B00B9D71D /* CSXXMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXXMLWriter.h; sourceTree = "<group>"; };
 		923FCB70155D806B00B9D71D /* CSXXMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXXMLWriter.m; sourceTree = "<group>"; };
 		923FCB79155D810900B9D71D /* NSString+CSXLibXMLConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CSXLibXMLConversion.h"; sourceTree = "<group>"; };
 		923FCB7A155D810900B9D71D /* NSString+CSXLibXMLConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSXLibXMLConversion.m"; sourceTree = "<group>"; };
 		925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXNodeLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
 		925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXNodeLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
-		925FE8E11542F13200AA875E /* CSXNodeContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeContentLayout.h; sourceTree = "<group>"; };
 		925FE8E21542F13200AA875E /* CSXNodeContentLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXNodeContentLayout.m; sourceTree = "<group>"; };
 		925FE9161542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXNodeContentLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
 		925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXNodeContentLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
@@ -182,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				925FE8961542E76C00AA875E /* Layout Objects */,
+				923122BA155FD54100D6B532 /* CSXNodeContentLayout.h */,
 				925FE8E21542F13200AA875E /* CSXNodeContentLayout.m */,
 				9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */,
 				9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */,
@@ -235,7 +235,6 @@
 				925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */,
 				925FE9411542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h */,
 				925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */,
-				925FE8E11542F13200AA875E /* CSXNodeContentLayout.h */,
 				92FBB7E41544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h */,
 				92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */,
 				9286A17F155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.h */,
@@ -265,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				925FE8A81542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h in Headers */,
-				925FE8E31542F13200AA875E /* CSXNodeContentLayout.h in Headers */,
 				925FE9181542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h in Headers */,
 				925FE9431542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h in Headers */,
 				92FBB7E61544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h in Headers */,

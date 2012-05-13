@@ -1,0 +1,185 @@
+Parsing XML documents
+=====================
+
+In this document we explain how to use CeasyXML to parse an XML document. We
+will explain which classes to use and how to use them.
+
+## Defining the Layout
+We define the layout of our XML document as explained in [How to define the
+layout of your XML document][1].
+
+    <!-- Layout.xml -->
+    <?xml version="1.0" encoding="utf-8" ?>
+
+    <document>
+        <layout name="library" class="TLibrary">
+            <!-- library: elements -->
+            <element name="name">
+                <unique />
+                <required />
+                <content type="string">
+                    <getter>name</getter>
+                    <setter>setName:</setter>
+                </content>
+            </element>
+            
+            <element name="content">
+                <unique />
+                <content type="string">
+                    <getter>content</getter>
+                    <setter>setContent:</setter>
+                </content>
+            </element>
+            
+            <element name="entry">
+                <!-- entry: content -->
+                <content type="custom">
+                    <getter>entries</getter>
+                    <setter>setEntries:</setter>
+                    <class>TEntry</class>
+                </content>
+                
+                <!-- entry: attributes -->
+                <attribute name="type">
+                    <required />
+                    <content type="string">
+                        <getter>type</getter>
+                        <setter>setType:</setter>
+                    </content>
+                </attribute><!-- type -->
+                
+                <!-- entry: elements -->
+                <element name="title">
+                    <required />
+                    <unique />
+                    <content type="string">
+                        <getter>title</getter>
+                        <setter>setTitle:</setter>
+                    </content>
+                </element><!-- title -->
+                
+                <element name="creator">
+                    <required />
+                    <unique />
+                    <content type="string">
+                        <getter>creator</getter>
+                        <setter>setCreator:</setter>
+                    </content>
+                </element><!-- creator -->
+                
+                <element name="year">
+                    <required />
+                    <unique />
+                    <content type="number">
+                        <getter>year</getter>
+                        <setter>setYear:</setter>
+                    </content>
+                </element><!-- year -->
+                
+            </element><!-- entry -->
+        </layout><!-- library -->
+    </document>
+
+## Our XML Document
+We also have a document that uses the layout.
+
+    <!-- Library.xml -->
+    <?xml version="1.0" encoding="utf-8" ?>
+    <library>
+        <name>The CeasyXML Test Library</name>
+        <content>Some entries for testing.</content>
+        
+        <entry type="book">
+            <title>Of Mice and Men</title>
+            <creator>John Steinbeck</creator>
+            <year>1937</year>
+        </entry>
+        
+        <entry type="book">
+            <title>Sopie's World</title>
+            <creator>Jostein Gaarder</creator>
+            <year>1991</year>
+        </entry>
+        
+        <entry type="movie">
+            <title>The Truman Show</title>
+            <creator>Peter Weir</creator>
+            <year>1998</year>
+        </entry>
+    </library>
+
+## Custom Classes
+Finally we have the classes to use when parsing the document.
+
+- TEntry
+    - property type (NSString)
+    - property title (NSString)
+    - property creator (NSString)
+    - property year (NSInteger)
+
+- TLibrary
+    - property name (NSString)
+    - property content (NSString)
+    - property entries (NSMutableArray)
+
+Note that the initialization method should not set any of these instance
+variables, as they will be overwritten when parsing the XML document with
+`CSXXMLParser`.
+
+## Parsing the XML Document
+Now we are going to use `CSXXMLParser` to parse our XML document. We firstly
+create our XML parser with the layout document. Then we give it the document to
+parse. Finally we query the result.
+
+    CSXXMLParser *parser;
+    NSString *layoutFile;
+    NSString *xmlFile;
+    BOOL success;
+    NSError *error;
+
+    // We use the two documents defined above
+    layoutFile = @"Layout.xml";
+    xmlFile = @"Library.xml";
+
+    // Now we create the XML parser with the layout document
+    // Notice that we use -initWithLayoutListDocument:error: and not
+    // -initWithLayoutDocument:error: since our layout document has the
+    // root element 'document' and not 'layout'.
+    parser = [[CSXXMLParser alloc] initWithLayoutListDocument:layoutFile
+                                                        error:&error];
+    if(parser == nil) {
+        // An error occurred while parsing the layout document
+        NSLog(@"Failed to parse the layout document: %@", error);
+        return;
+    }
+
+    // Parse the file we want to parse
+    parser.file = xmlFile;
+
+    // Parse the file
+    success = [parser parse];
+
+    // Check for errors or print the return value
+    if(success == NO) {
+        NSLog(@"Failed to parse the XML document: %@", parser.error);
+        [parser release];
+        return;
+    }
+
+    if([parser.warnings count]) {
+        NSLog(@"Warnings while parsing the XML document:\n%@", 
+              parser.warnings);
+    }
+
+    NSLog(@"Library %@ with %d entries.", parser.result, 
+          ((TLibrary *)parser.result entries] count]);
+
+    [parser release];
+
+The `TLibrary` instance is held in `parser.result` after parsing the XML
+document.
+
+
+ [1]: How%20to%20define%20the%20layout%20of%20your%20XML%20document.html
+
+

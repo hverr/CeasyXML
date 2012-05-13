@@ -32,6 +32,11 @@
 #import "CSXElementLayout.h"
 #import "CSXElementLayout+CSXLayoutObject.h"
 
+/*!
+ This private class is used to enable XML recursion. It enables a 
+ `CSXElementLayout` to contain itself.
+ */
+
 @interface CSXElementLayoutPlacebo : CSXElementLayout {
     BOOL _setup;
 }
