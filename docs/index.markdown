@@ -1,8 +1,8 @@
-#What is CeasyXML?
+## What is CeasyXML?
 CeaysXML is a library that allows you to automate the connection between your
 XML documents and your objective-c classes.
 
-#How do I use CeasyXML?
+## How do I use CeasyXML?
 By using an XML document to define the layout of your own XML document, the
 parser and writer know exactly how to handle your documents and how to 
 use your classes.
@@ -17,10 +17,22 @@ These provide a direct interface to the library.
 - See [Writing XML documents][3] for a tutorial on how to write your own XML
   documents with your custom class.
 
+## How do I link to CeasyXML? (Important)
+CeasyXML is a static Objective-C library. Unix libraries have a certain way of
+being loaded, which generates some problems when using Objective-C categories.
+
+This library does use categories, so that you must specify special linker flags
+to your own project. This is very easy to do.
+
+See [this question][4] on stackoverflow and [this article][5] from Apple for
+more information.
+
 
 
    [1]: docs/How%20to%20define%20the%20layout%20of%20your%20XML%20document.html
    [2]: docs/Parsing%20XML%20documents.html
    [3]: docs/Writing%20XML%20documents.html
+   [4]: http://stackoverflow.com/q/10416779/262660
+   [5]: https://developer.apple.com/library/mac/#qa/qa2006/qa1490.html
 
 
