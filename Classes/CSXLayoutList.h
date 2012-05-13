@@ -32,13 +32,61 @@
 #import "CSXDocumentLayout.h"
 #import "CSXXMLParser.h"
 
+/*!
+ `CSXLayoutList` represents a collection of possible layouts for one document.
+ 
+ The XML document root element tagname is `document`. This root element
+ contains element with the tagname `layout`, which represent instances of
+ `CSXDocumentLayout`.
+ */
+
 @interface CSXLayoutList : NSObject {
 }
 /* MARK: Init */
+/* @name Creating and Initializing */
+/*!
+ Creates an instance from an XML document.
+ 
+ The document must have a root element with tagname `document`. This element
+ must contain one or more elements with tag name `layout`.
+ 
+     <?xml version="1.0" ?>
+     <document>
+         <layout name="first-layout">
+             ...
+         </layout>
+ 
+         <layout name="second-layout">
+         </layout>
+        
+         ...
+     </document>
+ 
+ @param doc The path to the XML document.
+ 
+ @param err A variable capable of holding an `NSError` if an error occurs.
+ Pass `NULL` if you are not interested in the error.
+ 
+ @return A new instance or `nil` if an error occurred.
+ */
 - (id)initWithDocument:(NSString *)doc error:(NSError **)err;
+
+/*!
+ Returns the autoreleased result of initWithDocument:error:
+ 
+ @see initWithDocument:error:
+ */
 + (id)layoutListWithDocument:(NSString *)doc error:(NSError **)err;
 
 /* MARK: Properties */
+/*! @name Properties */
+/*!
+ The possible layouts of a document.
+ 
+ The array contains instances of `CSXDocumentLayout`.
+ 
+ @see CSXDocumentLayout
+ */
 @property (nonatomic, retain) NSMutableArray *layouts;
 @end
 
