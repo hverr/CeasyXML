@@ -268,6 +268,7 @@
 										<string>923FCB75155D80DB00B9D71D</string>
 										<string>920EB981154D94850007D7DA</string>
 										<string>9227B9661541ECBD00FA9EA6</string>
+										<string>925FE8961542E76C00AA875E</string>
 										<string>922CDB2515446CBA003B1B6F</string>
 										<string>32C88DFF0371C24200C91783</string>
 										<string>0867D69AFE84028FC02AAC07</string>
@@ -278,14 +279,15 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>11</integer>
+											<integer>17</integer>
+											<integer>10</integer>
 											<integer>9</integer>
 											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 50}, {355, 431}}</string>
+									<string>{{0, 0}, {355, 431}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -485,6 +487,7 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>923122DB155FDEFF00D6B532</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
 	</array>
