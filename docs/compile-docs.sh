@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd "`dirname "$0"`"
+
 appledoc \
     --create-html \
     --verbose 6\
@@ -7,7 +9,7 @@ appledoc \
     --project-name "CeasyXML" \
     --project-company "Henri Verroken" \
     --company-id be-henriverroken \
-    --output ../build/Documentation \
+    --output ../build\
     --logformat xcode \
     --keep-undocumented-objects \
     --keep-undocumented-members \
