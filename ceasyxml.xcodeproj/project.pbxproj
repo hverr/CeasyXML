@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		9202EEA9155428F300EF6DE6 /* TEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9202EEA8155428F300EF6DE6 /* TEntry.m */; };
 		9202EEAF1554295200EF6DE6 /* TLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9202EEAE1554295200EF6DE6 /* TLibrary.m */; };
-		920EB98B154D94C50007D7DA /* CSXElementList.h in Headers */ = {isa = PBXBuildFile; fileRef = 920EB989154D94C50007D7DA /* CSXElementList.h */; };
-		920EB98C154D94C50007D7DA /* CSXElementList.m in Sources */ = {isa = PBXBuildFile; fileRef = 920EB98A154D94C50007D7DA /* CSXElementList.m */; };
 		9227B94C1541E8C500FA9EA6 /* CSXElementLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */; };
 		9227B94F1541E8E000FA9EA6 /* CSXNodeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */; };
 		9227B9591541EB9E00FA9EA6 /* CSXDocumentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */; };
@@ -54,8 +52,6 @@
 		9202EEAD1554295200EF6DE6 /* TLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLibrary.h; sourceTree = "<group>"; };
 		9202EEAE1554295200EF6DE6 /* TLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLibrary.m; sourceTree = "<group>"; };
 		920D1175155D6D5C0055B563 /* Library.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Library.xml; sourceTree = "<group>"; };
-		920EB989154D94C50007D7DA /* CSXElementList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXElementList.h; sourceTree = "<group>"; };
-		920EB98A154D94C50007D7DA /* CSXElementList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXElementList.m; sourceTree = "<group>"; };
 		9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeLayout.h; sourceTree = "<group>"; };
 		9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXNodeLayout.m; sourceTree = "<group>"; };
 		9227B9491541E8C500FA9EA6 /* CSXElementLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXElementLayout.h; sourceTree = "<group>"; };
@@ -151,7 +147,6 @@
 			children = (
 				92305FF41551784F00A60884 /* CeasyXML.h */,
 				923FCB75155D80DB00B9D71D /* Helpers */,
-				920EB981154D94850007D7DA /* Containers */,
 				9227B9661541ECBD00FA9EA6 /* Layout */,
 				922CDB2515446CBA003B1B6F /* Parsing and Writing */,
 			);
@@ -166,15 +161,6 @@
 				92F82A9B154075960009E770 /* newcopy */,
 			);
 			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		920EB981154D94850007D7DA /* Containers */ = {
-			isa = PBXGroup;
-			children = (
-				920EB989154D94C50007D7DA /* CSXElementList.h */,
-				920EB98A154D94C50007D7DA /* CSXElementList.m */,
-			);
-			name = Containers;
 			sourceTree = "<group>";
 		};
 		9227B9661541ECBD00FA9EA6 /* Layout */ = {
@@ -268,7 +254,6 @@
 				925FE9431542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h in Headers */,
 				92FBB7E61544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h in Headers */,
 				922CDB2915446CD1003B1B6F /* CSXXMLParser.h in Headers */,
-				920EB98B154D94C50007D7DA /* CSXElementList.h in Headers */,
 				92305FF51551784F00A60884 /* CeasyXML.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,7 +346,6 @@
 				92FBB7C21543E9E800366B07 /* CSXElementLayoutPlacebo.m in Sources */,
 				92FBB7E71544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m in Sources */,
 				922CDB2A15446CD1003B1B6F /* CSXXMLParser.m in Sources */,
-				920EB98C154D94C50007D7DA /* CSXElementList.m in Sources */,
 				9286A1841555640000EC7F08 /* CSXLayoutList.m in Sources */,
 				9286A1861555640E00EC7F08 /* CSXLayoutList+CSXLayoutObject.m in Sources */,
 				923FCB72155D807000B9D71D /* CSXXMLWriter.m in Sources */,
