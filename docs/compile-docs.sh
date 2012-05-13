@@ -16,6 +16,7 @@ appledoc \
     --exit-threshold 2 \
     --index-desc index.markdown \
     --include "How to define the layout of your XML document-template.html" \
+    --include "Parsing XML documents-template.html" \
     --ignore .m \
     --ignore ../Classes/CSXElementLayoutPlacebo.h \
     --ignore ../Classes/CSXNodeContentLayout+CSXLayoutObject.h \
