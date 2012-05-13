@@ -1,0 +1,195 @@
+Writing XML documents
+=====================
+
+In this document we explain how to use CeasyXML to write an XML document using
+your custom classes. We will explain which classes to use and how to use them.
+
+## Defining the Layout
+We define the layout of our XML document as explained in [How to define the
+layout of your XML document][1].
+
+    <!-- Layout.xml -->
+    <?xml version="1.0" encoding="utf-8" ?>
+
+    <layout name="library" class="TLibrary">
+        <!-- library: elements -->
+        <element name="name">
+            <unique />
+            <required />
+            <content type="string">
+                <getter>name</getter>
+                <setter>setName:</setter>
+            </content>
+        </element>
+        
+        <element name="content">
+            <unique />
+            <content type="string">
+                <getter>content</getter>
+                <setter>setContent:</setter>
+            </content>
+        </element>
+        
+        <element name="entry">
+            <!-- entry: content -->
+            <content type="custom">
+                <getter>entries</getter>
+                <setter>setEntries:</setter>
+                <class>TEntry</class>
+            </content>
+            
+            <!-- entry: attributes -->
+            <attribute name="type">
+                <required />
+                <content type="string">
+                    <getter>type</getter>
+                    <setter>setType:</setter>
+                </content>
+            </attribute><!-- type -->
+            
+            <!-- entry: elements -->
+            <element name="title">
+                <required />
+                <unique />
+                <content type="string">
+                    <getter>title</getter>
+                    <setter>setTitle:</setter>
+                </content>
+            </element><!-- title -->
+            
+            <element name="creator">
+                <required />
+                <unique />
+                <content type="string">
+                    <getter>creator</getter>
+                    <setter>setCreator:</setter>
+                </content>
+            </element><!-- creator -->
+            
+            <element name="year">
+                <required />
+                <unique />
+                <content type="number">
+                    <getter>year</getter>
+                    <setter>setYear:</setter>
+                </content>
+            </element><!-- year -->
+            
+        </element><!-- entry -->
+    </layout><!-- library -->
+
+## Custom Classes
+We have the following classes to use when parsing the document.
+
+- TEntry
+    - property type (NSString)
+    - property title (NSString)
+    - property creator (NSString)
+    - property year (NSInteger)
+
+- TLibrary
+    - property name (NSString)
+    - property content (NSString)
+    - property entries (NSMutableArray)
+
+## Our instances that we want to write
+Of course we need data to store in an XML document.
+
+    TLibrary *library;
+    TEntry *entry1, *entry2, *entry3;
+
+    // Create the entries
+    entry1 = [[TEntry new] autorelease];
+    entry1.type = @"book";
+    entry1.title = @"Of Mice and Men";
+    entry1.creator = @"John Steinbeck";
+    entry1.year = 1937;
+
+    entry2 = [[TEntry new] autorelease];
+    entry2.type = @"book";
+    entry2.title = @"Sopie's World";
+    entry2.creator = @"Jostein Gaarder";
+    entry2.year = 1991;
+
+    entry3 = [[TEntry new] autorelease];
+    entry3.type = @"movie";
+    entry3.title = @"The Truman Show";
+    entry3.creator = @"Peter Weir";
+    entry3.year = 1998;
+
+    // Create the library
+    library = [[TLibrary new] autorelease];
+
+    library.entries = [NSMutableArray arrayWithObjects:
+                       entry1, entry2, entry3, nil];
+
+
+## Parsing the XML Document
+Now we are going to use `CSXXMLWriter` to write our XML document. We firstly
+create our XML writer with the layout document. Then we give it the data.
+Finally we tell it to start writing.
+
+    CSXXMLWriter *writer;
+    NSString *layoutFile;
+    NSString *xmlFile;
+    TLibrary *library; /* This is assumed to be set, see above */
+    BOOL success;
+    NSError *error;
+
+    // We use the layout document defined above and Layout.xml as output file
+    layoutFile = @"Layout.xml";
+    xmlFile = @"Library.xml";
+
+    // Now we create the XML writer with the layout document
+    // Notice that the root element of our file is 'layout', since we can only
+    // write with one layout.
+    writer = [[CSXXMLWriter alloc] initWithLayoutDocument:layoutFile
+                                                    error:&error];
+    if(writer == nil) {
+        // An error occurred while parsing the layout document
+        NSLog(@"Failed to parse the layout document: %@", error);
+        return;
+    }
+
+    // Set the instance
+    writer.rootInstance = library;
+
+    // Write the file
+    success = [writer writeToFile:xmlFile error:&error];
+    [writer release];
+
+    // Check for errors 
+    if(success == NO) {
+        NSLog(@"Failed to write the XML document: %@", error);
+        return;
+    }
+
+## Resulting XML Document
+This is what we should get
+
+    <!-- Library.xml -->
+    <?xml version="1.0" encoding="utf-8" ?>
+    <library>
+        <name>The CeasyXML Test Library</name>
+        <content>Some entries for testing.</content>
+        <entry type="book">
+            <title>Of Mice and Men</title>
+            <creator>John Steinbeck</creator>
+            <year>1937</year>
+        </entry>
+        <entry type="book">
+            <title>Sopie's World</title>
+            <creator>Jostein Gaarder</creator>
+            <year>1991</year>
+        </entry>
+        <entry type="movie">
+            <title>The Truman Show</title>
+            <creator>Peter Weir</creator>
+            <year>1998</year>
+        </entry>
+    </library>
+
+
+ [1]: How%20to%20define%20the%20layout%20of%20your%20XML%20document.html
+
+
