@@ -32,6 +32,11 @@
 
 #import "CSXNodeContentLayout.h"
 
+/*!
+ `CSXNodeLayout` represents an XML node. When the instance is not of the class
+ `CSXElementLayout`, it probably represents an XML attribute of an element.
+*/
+
 @interface CSXNodeLayout : NSObject {
 }
 
