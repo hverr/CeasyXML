@@ -30,12 +30,43 @@
 #import <Foundation/Foundation.h>
 #import <libxml/xmlstring.h>
 
+/*!
+ This category extends the functionallity of NSString with several methods to
+ easily convert an NSString to an xmlChar* buffer and to create strings used
+ when working with LibXML.
+ */
+
 @interface NSString (CSXLibXMLConversion)
 /* MARK: Conversion */
+/*!
+ Copies the content of an NSString to an allocated buffer of xmlChar's.
+ 
+ When you are done with the buffer you should use free(3) to
+ free the allocated memory.
+ */
 - (xmlChar *)copyXMLCharacters;
 
 /* MARK: Indentation */
-+ (id)indentationWithNewlines:(NSInteger)n level:(NSInteger)l;
-xmlChar *NSStringCSXXMLCharIndentation(NSInteger newlines, NSInteger level);
+/*!
+ Creates a new string with the specified amount of new lines and the specified
+ amount of tabs.
+ 
+ Note that one tab is printed out as four spaces by default. By editing the
+ source code and recompiling the project, you can change this behaviour.
+ 
+ @param newlines The amount of newlines to append at the beginning of the
+ string.
+ 
+ @param level The number of tabs to append to the string.
+ */
++ (id)indentationWithNewlines:(NSInteger)newlines level:(NSInteger)level;
 @end
+
+/*!
+ Creates a new buffer by first calling indentationWithNewLines:level and then
+ using -copyXMLCharacters to convert the string to an xmlChar* buffer.
+ 
+ You must use free(3) to free the allocated memory returned by the function.
+ */
+xmlChar *NSStringCSXXMLCharIndentation(NSInteger newlines, NSInteger level);
 
