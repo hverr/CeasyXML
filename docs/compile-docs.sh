@@ -16,7 +16,7 @@ appledoc \
     --exit-threshold 2 \
     --ignore .m \
     --ignore ../Classes/CSXNodeContentLayout+CSXLayoutObject.h \
-    --ignore ../Classes/CSNodeLayout+CSXLayoutObject.h \
+    --ignore ../Classes/CSXNodeLayout+CSXLayoutObject.h \
     --ignore ../Classes/CSXElementLayout+CSXLayoutObject.h \
     --ignore ../Classes/CSXDocumentLayout+CSXLayoutObject.h \
     --ignore ../Classes/CSXLayoutList+CSXLayoutObject.h \

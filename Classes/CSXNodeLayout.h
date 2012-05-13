@@ -41,8 +41,24 @@
 }
 
 /* MARK: Properties */
+/*!
+ The tag name or the attribute name.
+ */
 @property (nonatomic, retain) NSString *name;
+
+/*!
+ Specifies wether the node is required or not.
+ 
+ If this node is required, but is not present while parsing, an exception will
+ be thrown by `CSXXMLParser`.
+ */
 @property (nonatomic, assign) BOOL required;
+
+/*!
+ The layout type of the node.
+ 
+ @see CSXNodeContentLayout
+ */
 @property (nonatomic, retain) CSXNodeContentLayout *contentLayout;
 @end
 
