@@ -19,7 +19,7 @@ These provide a direct interface to the library.
 
 
 
-   [1]: http://google.com/
+   [1]: docs/How%20to%20define%20the%20layout%20of%20your%20XML%20document.html
    [2]: http://google.com/
    [3]: http://google.com/
 

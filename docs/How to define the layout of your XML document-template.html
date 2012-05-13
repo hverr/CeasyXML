@@ -1,0 +1,157 @@
+#How to define the layout of your XML document
+
+Using an XML document you can define the layout of your own XML document. The
+library will parse the layout document and setup the parser or writer with this
+layout. So this library uses itself to parse your documents.
+
+## Two types of layout documents
+We have to types of layout documents. A type that specifies only one layout, and
+a type that specifies multiple layouts.
+
+### The layout document
+The layout document is the document type that specifies one document layout. It
+is the XML representation of the class `CSXDocumentLayout`.
+
+The root element uses `layout` as tagname. With the attribute named `name` you
+can specify the root element of your own XML document. The second attribute is
+named `class`. With this attribute you specify the name of your class that
+represents the whole document.
+
+For example, if we have a root element like below, 
+
+    <layout name="store" class="MyShop">
+
+CeasyXML knows your document has a root element named `library`,
+
+    <library>
+
+and that this element's contents should be stored in an instance of you class
+`MyLibrary`.
+
+### The layout list document
+This type of document contains several layouts. These layouts are all possible
+layouts of one XML document. This type of document is represented by the class
+`CSXLayoutList`.
+
+The root element uses `document` as tagname. It has no attributes, but it must
+have at least one subelement. This subelement must be a `layout` element as
+defined above.
+
+For example, if we have a document like below,
+
+    <document>
+        <layout name="store" class="MyShop">
+            _content_
+        </layout>
+
+        <layout name="bank" class="MyBank">
+            _content_
+        </layout>
+    </document>
+
+CeasyXML knows your document may have a root element named `store` or `bank`. It
+will parse your document using the according layout.
+
+## Content of the 'layout' element.
+Of course your root `layout` element contains subelements. It may even contain some
+attributes. By using the non-unique `element` element and the non-unique
+`attribute` element, you can specify these.
+
+To let the library know wether these attributes represent a number, string,
+boolean or even a custom class, we use the `content` element.
+
+For example, if we have a root element like this,
+
+    <layout name="store" class="MyStore">
+        <attribute name="location">
+            <content type="string">
+                <getter>location</getter>
+                <setter>setLocation:</setter>
+            </content>
+        </attribute>
+
+        <element name="item">
+            <content type="custom">
+                <getter>items</getter>
+                <setter>setItems:</setter>
+                <class>MyItem</class>
+            </content>
+        </element>
+    </layout>
+
+the library knows to expect a document like this.
+
+    <store location="Brussels">
+        <item></item>
+        <item></item>
+        <item></item>
+        etc.
+    </store>
+
+It also knows that your class `MyStore` has the methods `setLocation:` and
+`location`, which respectively accept and return an `NSString`.
+
+Besides these two methods, `MyStore` also has the two methods `setItems:`
+and `items`, which respectively accept and return an `NSMutableArray`. The 
+library pushes or pop instances of your class `MyItem` to this array.
+
+Of course we can add new `element` and `attribute` elements
+to the `<element name="item">` element to define new fields of this element, and
+so on.
+
+## Element reference for 'document'
+### Attributes
+None
+
+### Subelements
+- At least one `layout` element.
+
+## Element reference for 'layout'
+### Attributes
+- `name` (required): Specifies the root element name of your document.
+- `class` (required): Specifies the class that your document represents.
+
+### Subelements
+- `attribute` (non-unique): Specifes the attributes the root element can or must
+  have.
+- `element` (non-unique): Specifies the elements the root element can or must
+  contain.
+
+## Element reference for 'attribute'
+### Attributes
+- `name` (required): The name of the attribute in your XML document.
+
+### Subelements
+- `content` (required, unique): The content type and handling for this
+  attribute's value.
+- `required` (empty): Wether or not this attribute is required to be present in
+  your document.
+
+## Element reference for 'element'
+### Attributes
+- `name` (required): The name of the element in your XML document.
+
+### Subelements
+- `content` (required, unique): The content type and handling for this element's
+  content.
+- `requierd` (empty): Wether or not this element is required to be present in
+  your document.
+- `empty` (empty): Wether or not this is an empty element.
+- `unique` (empty): Wether or not this element is unique.
+- `attribute` (non-unique): The attributes this element can have.
+- `element` (non-unique): The subelements this element can have. This can only
+  be used when the content type is a custom class.
+
+## Element reference for 'content'
+### Attributes
+- `type` (required): The content type. It must be one of the following values:
+    - 'string', which represents an `NSString`.
+    - 'number', which represents an `NSInteger`.
+    - 'boolean', which represents a `BOOL`.
+    - 'custom', which represents a custom user-defined class.
+
+### Subelements
+- `getter` (required, string): The name of the selector to get the value.
+- `setter` (required, string): The name of the selector to set the value.
+- `class` (string): The name of the user-defined, custom class. This 
+  element must only be present when the type 'custom' is specified.
