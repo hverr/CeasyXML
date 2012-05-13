@@ -15,6 +15,7 @@ appledoc \
     --keep-undocumented-members \
     --exit-threshold 2 \
     --ignore .m \
+    --ignore ../Classes/CSXElementLayoutPlacebo.h \
     --ignore ../Classes/CSXNodeContentLayout+CSXLayoutObject.h \
     --ignore ../Classes/CSXNodeLayout+CSXLayoutObject.h \
     --ignore ../Classes/CSXElementLayout+CSXLayoutObject.h \
