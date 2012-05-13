@@ -15,6 +15,7 @@ appledoc \
     --keep-undocumented-members \
     --exit-threshold 2 \
     --ignore .m \
+    --ignore ../Classes/CSXLayoutObject.h \
     --docsetutil-path "/Applications/Xcode 3.2.6/usr/bin/docsetutil"\
     ../Classes
 
