@@ -8,21 +8,42 @@
 		addToTargets = (
 		);
 		breakpoints = (
-			9202EF60155439D000EF6DE6 /* TMain.m:83 */,
-			9286A1B215556CCB00EC7F08 /* TMain.m:83 */,
-			920D11AD155D72C10055B563 /* CSXXMLParser.m:473 */,
 		);
 		codeSenseManager = 92F82A8E154075440009E770 /* Code sense */;
 		executables = (
 			92F82AA8154078500009E770 /* TestApp */,
 		);
 		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					198,
+					20,
+					99,
+					99,
+					29,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					690,
+					315,
 					20,
 					48,
 					43,
@@ -39,8 +60,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 358861814;
-			PBXWorkspaceStateSaveDate = 358861814;
+			PBXPerProjectTemplateStateSaveDate = 358864854;
+			PBXWorkspaceStateSaveDate = 358864854;
 		};
 		sourceControlManager = 92F82A8D154075440009E770 /* Source Control */;
 		userBuildSettings = {
@@ -76,24 +97,6 @@
 			sepNavWindowFrame = "{{38, 48}, {647, 984}}";
 		};
 	};
-	9202EF60155439D000EF6DE6 /* TMain.m:83 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = 92F82AC5154078C10009E770 /* TMain.m */;
-		functionName = "main()";
-		hitCount = 1;
-		ignoreCount = 0;
-		lineNumber = 83;
-		location = TestApp;
-		modificationTime = 358445813.173312;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
 	920D1175155D6D5C0055B563 /* Library.xml */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
@@ -101,24 +104,6 @@
 			sepNavVisRange = "{0, 556}";
 			sepNavWindowFrame = "{{448, 65}, {647, 984}}";
 		};
-	};
-	920D11AD155D72C10055B563 /* CSXXMLParser.m:473 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
-		functionName = "CSXXMLParserEndElement()";
-		hitCount = 2;
-		ignoreCount = 0;
-		lineNumber = 473;
-		location = TestApp;
-		modificationTime = 358445768.608835;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
 	};
 	9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */ = {
 		uiCtxt = {
@@ -325,24 +310,6 @@
 			sepNavSelRange = "{1640, 0}";
 			sepNavVisRange = "{0, 2072}";
 		};
-	};
-	9286A1B215556CCB00EC7F08 /* TMain.m:83 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = 92F82AC5154078C10009E770 /* TMain.m */;
-		functionName = "main()";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 83;
-		location = TestApp;
-		modificationTime = 358445763.6104271;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
 	};
 	92F82A8D154075440009E770 /* Source Control */ = {
 		isa = PBXSourceControlManager;
