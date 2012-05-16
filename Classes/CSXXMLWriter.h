@@ -34,7 +34,6 @@
 #import "CSXDocumentLayout.h"
 #import "CSXElementLayout.h"
 #import "CSXElementLayout.h"
-#import "CSXElementList.h"
 
 #import "NSString+CSXLibXMLConversion.h"
 

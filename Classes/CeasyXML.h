@@ -34,9 +34,6 @@
 #import <CSXDocumentLayout.h>
 #import <CSXLayoutList.h>
 
-/* Containers */
-#import <CSXElementList.h>
-
 /* Parsing and Writing */
 #import <CSXXMLParser.h>
 #import <CSXXMLWriter.h>

@@ -266,7 +266,6 @@
 										<string>0867D691FE84028FC02AAC07</string>
 										<string>08FB77AEFE84172EC02AAC07</string>
 										<string>923FCB75155D80DB00B9D71D</string>
-										<string>920EB981154D94850007D7DA</string>
 										<string>9227B9661541ECBD00FA9EA6</string>
 										<string>925FE8961542E76C00AA875E</string>
 										<string>922CDB2515446CBA003B1B6F</string>
@@ -280,8 +279,8 @@
 									<array>
 										<array>
 											<integer>17</integer>
-											<integer>10</integer>
-											<integer>9</integer>
+											<integer>7</integer>
+											<integer>6</integer>
 											<integer>1</integer>
 											<integer>0</integer>
 										</array>
@@ -449,8 +448,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>923123011560358B00D6B532</string>
-				<string>923123021560358B00D6B532</string>
+				<string>92F174001563CC1D00F73A65</string>
+				<string>92F174011563CC1D00F73A65</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -487,8 +486,9 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>92F174031563CC1D00F73A65</string>
+		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>/Users/ief2/Desktop/ceaysxml-trunk/ceasyxml.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 505 372 517 0 0 1920 1058 </string>
@@ -649,7 +649,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>CSXXMLParser.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -666,6 +666,8 @@
 							<string>680pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -705,7 +707,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>923123031560358B00D6B532</string>
+				<string>92F174021563CC1D00F73A65</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -718,7 +720,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D52069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

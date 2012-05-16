@@ -34,7 +34,6 @@
 #import "CSXLayoutList.h"
 #import "CSXDocumentLayout.h"
 #import "CSXElementLayout.h"
-#import "CSXElementList.h"
 
 /*!
  The class `CSXXMLParser` is used to parse an XML document with a predefined
