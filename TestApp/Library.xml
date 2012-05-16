@@ -17,6 +17,7 @@
     </entry>
     
     <entry type="movie">
+        <in-stock />
         <title>The Truman Show</title>
         <creator name="Peter Weir" />
         <year>1998</year>

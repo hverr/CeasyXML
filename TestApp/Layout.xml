@@ -38,6 +38,15 @@
             </attribute><!-- type -->
             
             <!-- entry: elements -->
+            <element name="in-stock">
+                <unique />
+                <empty />
+                <content type="boolean">
+                    <getter>isInStock</getter>
+                    <setter>setInStock:</setter>
+                </content>
+            </element>
+            
             <element name="title">
                 <required />
                 <unique />

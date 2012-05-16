@@ -52,6 +52,7 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
 - (NSError *)writeCustomElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeStringElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeBooleanElement:(CSXElementLayout *)lay instance:(id)inst;
+- (NSError *)writeEmptyElement:(CSXElementLayout *)l instance:(id)inst;
 - (NSError *)writeNumberElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeAttributesOfLayout:(CSXElementLayout *)lay instance:(id)inst;
 
@@ -252,26 +253,43 @@ handleErrorAndReturn:
         return nil;
     }
     
-    switch(lay.contentLayout.contentType) {
-        case CSXNodeContentTypeCustom:
-            myErr = [self writeCustomElement:lay instance:inst];
-            break;
-            
-        case CSXNodeContentTypeString:
-            myErr = [self writeStringElement:lay instance:inst];
-            break;
-            
-        case CSXNodeContentTypeBoolean:
-            myErr = [self writeBooleanElement:lay instance:inst];
-            break;
-            
-        case CSXNodeContentTypeNumber:
-            myErr = [self writeNumberElement:lay instance:inst];
-            break;
-            
-        default:
-            myErr = nil;
-            break;
+    if(lay.empty == YES) {
+        switch(lay.contentLayout.contentType) {
+            case CSXNodeContentTypeBoolean:
+                myErr = [self writeEmptyElement:lay instance:nil];
+                break;
+                
+            case CSXNodeContentTypeCustom:
+                myErr = [self writeEmptyElement:lay instance:inst];
+                break;
+                
+            default:
+                myErr = nil;
+                break;
+        }
+        
+    } else {
+        switch(lay.contentLayout.contentType) {
+            case CSXNodeContentTypeCustom:
+                myErr = [self writeCustomElement:lay instance:inst];
+                break;
+                
+            case CSXNodeContentTypeString:
+                myErr = [self writeStringElement:lay instance:inst];
+                break;
+                
+            case CSXNodeContentTypeBoolean:
+                myErr = [self writeBooleanElement:lay instance:inst];
+                break;
+                
+            case CSXNodeContentTypeNumber:
+                myErr = [self writeNumberElement:lay instance:inst];
+                break;
+                
+            default:
+                myErr = nil;
+                break;
+        }
     }
     
     return myErr;
@@ -411,7 +429,7 @@ handleErrorAndReturn:
     }
     
     /* End element */
-    status = xmlTextWriterEndElement(_state.textWriter);
+    status = xmlTextWriterFullEndElement(_state.textWriter);
     if(status < 0) {
         return [self xmlWriteError];
     }
@@ -437,6 +455,42 @@ handleErrorAndReturn:
     stringVal = [[NSNumber numberWithInteger:intVal] stringValue];
     
     return [self writeStringElement:lay instance:stringVal];
+}
+
+- (NSError *)writeEmptyElement:(CSXElementLayout *)l instance:(id)inst {
+    int status;
+    NSError *myError;
+    xmlChar *indentation, *elemName;
+    
+    /* Indent */
+    indentation = NSStringCSXXMLCharIndentation(1, _state.indentationLevel);
+    status = xmlTextWriterWriteRaw(_state.textWriter, indentation);
+    free(indentation);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    /* Start element */
+    elemName = [l.name copyXMLCharacters];
+    status = xmlTextWriterStartElement(_state.textWriter, elemName);
+    free(elemName);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    /* Write attributes */
+    myError = [self writeAttributesOfLayout:l instance:inst];
+    if(myError != nil) {
+        return myError;
+    }
+    
+    /* End element */
+    status = xmlTextWriterEndElement(_state.textWriter);
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    return [self flushDocument];
 }
 
 - (NSError *)writeAttributesOfLayout:(CSXElementLayout *)lay instance:(id)inst {

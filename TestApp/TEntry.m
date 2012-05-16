@@ -34,6 +34,6 @@
  MARK: Public Implementation
  =========================================================================== */
 @implementation TEntry
-@synthesize type, title, creator, year;
+@synthesize type, title, creator, year, inStock;
 @end
 

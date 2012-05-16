@@ -35,5 +35,6 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *creator;
 @property (nonatomic, assign) NSInteger year;
+@property (nonatomic, assign, getter=isInStock) BOOL inStock;
 @end
 
