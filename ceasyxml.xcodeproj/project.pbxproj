@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9202EEA9155428F300EF6DE6 /* TEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9202EEA8155428F300EF6DE6 /* TEntry.m */; };
 		9202EEAF1554295200EF6DE6 /* TLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9202EEAE1554295200EF6DE6 /* TLibrary.m */; };
+		9208DB72156422060019CB71 /* TCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9208DB71156422060019CB71 /* TCreator.m */; };
 		9227B94C1541E8C500FA9EA6 /* CSXElementLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */; };
 		9227B94F1541E8E000FA9EA6 /* CSXNodeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */; };
 		9227B9591541EB9E00FA9EA6 /* CSXDocumentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */; };
@@ -51,6 +52,8 @@
 		9202EEA8155428F300EF6DE6 /* TEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEntry.m; sourceTree = "<group>"; };
 		9202EEAD1554295200EF6DE6 /* TLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLibrary.h; sourceTree = "<group>"; };
 		9202EEAE1554295200EF6DE6 /* TLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLibrary.m; sourceTree = "<group>"; };
+		9208DB70156422060019CB71 /* TCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCreator.h; sourceTree = "<group>"; };
+		9208DB71156422060019CB71 /* TCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCreator.m; sourceTree = "<group>"; };
 		920D1175155D6D5C0055B563 /* Library.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Library.xml; sourceTree = "<group>"; };
 		9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeLayout.h; sourceTree = "<group>"; };
 		9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXNodeLayout.m; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 				92F82AC5154078C10009E770 /* TMain.m */,
 				9202EEA7155428F300EF6DE6 /* TEntry.h */,
 				9202EEA8155428F300EF6DE6 /* TEntry.m */,
+				9208DB70156422060019CB71 /* TCreator.h */,
+				9208DB71156422060019CB71 /* TCreator.m */,
 				9202EEAD1554295200EF6DE6 /* TLibrary.h */,
 				9202EEAE1554295200EF6DE6 /* TLibrary.m */,
 			);
@@ -329,6 +334,7 @@
 				92F82AC6154078C10009E770 /* TMain.m in Sources */,
 				9202EEA9155428F300EF6DE6 /* TEntry.m in Sources */,
 				9202EEAF1554295200EF6DE6 /* TLibrary.m in Sources */,
+				9208DB72156422060019CB71 /* TCreator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

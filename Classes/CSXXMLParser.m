@@ -419,11 +419,26 @@ void CSXXMLParserStartElement(void *ctx,
                 }
             }
             
-            /* set to yes if the subelement is empty */
+            /* if the subelement is empty, we can already set the property */
             if(subelement.empty == YES) {
-                objc_msgSend(parentInstance,
-                             subelement.contentLayout.setter,
-                             YES);
+                if((subelement.contentLayout.contentType == 
+                    CSXNodeContentTypeBoolean))
+                {
+                    objc_msgSend(parentInstance,
+                                 subelement.contentLayout.setter,
+                                 YES);
+                
+                } else if(subelement.unique == NO) {
+                    NSMutableArray *array;
+                    array = objc_msgSend(parentInstance,
+                                         subelement.contentLayout.getter);
+                    [array addObject:elementInstance];
+                
+                } else if(subelement.unique == YES) {
+                    objc_msgSend(parentInstance,
+                                 subelement.contentLayout.setter,
+                                 elementInstance);
+                }
             }
             
             /* create string if not empty and the type is string, or set the 

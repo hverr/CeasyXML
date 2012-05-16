@@ -1,22 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
 <library>
     <name>The CeasyXML Test Library</name>
     <content>Some entries for testing.</content>
     
     <entry type="book">
         <title>Of Mice and Men</title>
-        <creator>John Steinbeck</creator>
+        <creator name="John Steinbeck" />
         <year>1937</year>
     </entry>
     
     <entry type="book">
         <title>Sopie's World</title>
-        <creator>Jostein Gaarder</creator>
+        <creator name="Jostein Gaarder" />
         <year>1991</year>
     </entry>
     
     <entry type="movie">
         <title>The Truman Show</title>
-        <creator>Peter Weir</creator>
+        <creator name="Peter Weir" />
         <year>1998</year>
     </entry>
 </library>

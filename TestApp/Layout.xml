@@ -50,10 +50,20 @@
             <element name="creator">
                 <required />
                 <unique />
-                <content type="string">
+                <empty />
+                <content type="custom">
                     <getter>creator</getter>
                     <setter>setCreator:</setter>
+                    <class>TCreator</class>
                 </content>
+                
+                <attribute name="name">
+                    <required />
+                    <content type="string">
+                        <getter>name</getter>
+                        <setter>setName:</setter>
+                    </content>
+                </attribute>
             </element><!-- creator -->
             
             <element name="year">
