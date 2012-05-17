@@ -30,6 +30,11 @@
 #import <Foundation/Foundation.h>
 
 @interface TEntry : NSObject {
+    NSString *type;
+    NSString *title;
+    NSString *creator;
+    NSInteger year;
+    BOOL inStock;
 }
 @property (nonatomic, retain) NSString *type;
 @property (nonatomic, retain) NSString *title;

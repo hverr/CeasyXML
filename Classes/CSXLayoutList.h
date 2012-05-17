@@ -41,6 +41,7 @@
  */
 
 @interface CSXLayoutList : NSObject {
+    NSMutableArray *layouts;
 }
 /* MARK: Init */
 /* @name Creating and Initializing */

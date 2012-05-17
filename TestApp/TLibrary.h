@@ -30,6 +30,9 @@
 #import <Foundation/Foundation.h>
 
 @interface TLibrary : NSObject {
+    NSString *name;
+    NSString *content;
+    NSMutableArray *entries;
 }
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *content;

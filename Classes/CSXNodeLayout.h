@@ -38,6 +38,9 @@
 */
 
 @interface CSXNodeLayout : NSObject {
+    NSString *name;
+    BOOL required;
+    CSXNodeContentLayout *contentLayout;
 }
 
 /* MARK: Properties */

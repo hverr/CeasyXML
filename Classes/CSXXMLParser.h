@@ -185,6 +185,10 @@ enum {
     NSMutableArray *_warnings;
     id _result;
     
+    NSArray *documentLayouts;
+    NSString *file;
+    NSData *data;
+    
     struct {
         BOOL errorOccurred;
         BOOL parsing;

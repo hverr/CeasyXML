@@ -36,7 +36,10 @@
  */
 
 @interface CSXElementLayout : CSXNodeLayout {
-    
+    BOOL empty;
+    BOOL unique;
+    NSArray *attributes;
+    NSArray *subelements;
 }
 /* MARK: Properties */
 /*! @name Properties */

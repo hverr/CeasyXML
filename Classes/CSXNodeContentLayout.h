@@ -112,6 +112,10 @@ typedef enum {
 } CSXNodeContentType;
 
 @interface CSXNodeContentLayout : NSObject {
+    CSXNodeContentType contentType;
+    SEL setter;
+    SEL getter;
+    Class customClass;
 }
 /* MARK: Properties */
 /*! @name Properties */

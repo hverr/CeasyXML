@@ -93,6 +93,11 @@ enum {
 };
 
 @interface CSXXMLWriter : NSObject {
+    CSXDocumentLayout *documentLayout;
+    id rootInstance;
+    NSString *XMLVersion;
+    NSString *encoding;
+    int compression;
     
     struct {
         BOOL isWritingToFile;

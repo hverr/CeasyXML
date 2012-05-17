@@ -47,6 +47,10 @@ extern NSString * const CSXDocumentLayoutInvalidClassException;
  */
 
 @interface CSXDocumentLayout : NSObject {
+    NSString *name;
+    NSArray *attributes;
+    NSArray *subelements;
+    Class documentClass;
 }
 /* MARK: Init */
 /*! @name Creating and Initializing */

@@ -30,6 +30,7 @@
 #import <Foundation/Foundation.h>
 
 @interface TCreator : NSObject {
+    NSString *name;
 }
 @property (nonatomic, retain) NSString *name;
 @end
