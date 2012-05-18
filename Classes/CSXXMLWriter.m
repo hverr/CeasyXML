@@ -298,26 +298,43 @@ handleErrorAndReturn:
 - (NSError *)writeNonUniqueElement:(CSXElementLayout *)lay instance:(id)inst {
     NSError *myErr;
     
-    switch(lay.contentLayout.contentType) {
-        case CSXNodeContentTypeCustom:
-            myErr = [self writeCustomElement:lay instance:inst];
-            break;
-            
-        case CSXNodeContentTypeString:
-            myErr = [self writeStringElement:lay instance:inst];
-            break;
-            
-        case CSXNodeContentTypeBoolean:
-            myErr = [self writeBooleanElement:lay instance:inst];
-            break;
-            
-        case CSXNodeContentTypeNumber:
-            myErr = [self writeNumberElement:lay instance:inst];
-            break;
-            
-        default:
-            myErr = nil;
-            break;
+    if(lay.empty == YES) {
+        switch(lay.contentLayout.contentType) {
+            case CSXNodeContentTypeBoolean:
+                myErr = [self writeEmptyElement:lay instance:nil];
+                break;
+                
+            case CSXNodeContentTypeCustom:
+                myErr = [self writeEmptyElement:lay instance:inst];
+                break;
+                
+            default:
+                myErr = nil;
+                break;
+        }
+        
+    } else {
+        switch(lay.contentLayout.contentType) {
+            case CSXNodeContentTypeCustom:
+                myErr = [self writeCustomElement:lay instance:inst];
+                break;
+                
+            case CSXNodeContentTypeString:
+                myErr = [self writeStringElement:lay instance:inst];
+                break;
+                
+            case CSXNodeContentTypeBoolean:
+                myErr = [self writeBooleanElement:lay instance:inst];
+                break;
+                
+            case CSXNodeContentTypeNumber:
+                myErr = [self writeNumberElement:lay instance:inst];
+                break;
+                
+            default:
+                myErr = nil;
+                break;
+        }
     }
     
     return myErr;
