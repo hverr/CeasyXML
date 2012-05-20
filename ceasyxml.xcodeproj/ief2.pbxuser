@@ -4,7 +4,7 @@
 		activeArchitecturePreference = x86_64;
 		activeBuildConfigurationName = Release;
 		activeExecutable = 92F82AA8154078500009E770 /* TestApp */;
-		activeTarget = 92F82AA6154078500009E770 /* TestApp */;
+		activeTarget = D2AAC07D0554694100DB518D /* ceasyxml */;
 		addToTargets = (
 			92F82AA6154078500009E770 /* TestApp */,
 		);
@@ -62,8 +62,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 359026171;
-			PBXWorkspaceStateSaveDate = 359026171;
+			PBXPerProjectTemplateStateSaveDate = 359209313;
+			PBXWorkspaceStateSaveDate = 359209313;
 		};
 		perUserProjectItems = {
 			9208DB6715641F8D0019CB71 = 9208DB6715641F8D0019CB71 /* PBXBookmark */;
@@ -562,9 +562,9 @@
 	};
 	923FCB6F155D806B00B9D71D /* CSXXMLWriter.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 2600}}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 2522}}";
 			sepNavSelRange = "{3170, 0}";
-			sepNavVisRange = "{1923, 1830}";
+			sepNavVisRange = "{1968, 1786}";
 			sepNavWindowFrame = "{{843, 74}, {647, 984}}";
 		};
 	};
