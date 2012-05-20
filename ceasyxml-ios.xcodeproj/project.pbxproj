@@ -1,0 +1,347 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9291350B1569202E000E3212 /* NSString+CSXLibXMLConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 923FCB7A155D810900B9D71D /* NSString+CSXLibXMLConversion.m */; };
+		9291350C1569202E000E3212 /* CSXNodeContentLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */; };
+		9291350D1569202E000E3212 /* CSXNodeLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */; };
+		9291350E1569202E000E3212 /* CSXElementLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */; };
+		9291350F1569202E000E3212 /* CSXDocumentLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */; };
+		929135101569202E000E3212 /* CSXLayoutList+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286A180155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.m */; };
+		929135111569202E000E3212 /* CSXNodeContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE8E21542F13200AA875E /* CSXNodeContentLayout.m */; };
+		929135121569202E000E3212 /* CSXNodeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */; };
+		929135131569202E000E3212 /* CSXElementLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */; };
+		929135141569202E000E3212 /* CSXElementLayoutPlacebo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */; };
+		929135151569202E000E3212 /* CSXDocumentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */; };
+		929135161569202E000E3212 /* CSXLayoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286A1771555628200EC7F08 /* CSXLayoutList.m */; };
+		929135171569202E000E3212 /* CSXXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */; };
+		929135181569202E000E3212 /* CSXXMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 923FCB70155D806B00B9D71D /* CSXXMLWriter.m */; };
+		9291351A1569203A000E3212 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929135191569203A000E3212 /* Foundation.framework */; };
+		9291351D15692044000E3212 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9291351C15692044000E3212 /* libxml2.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeLayout.h; sourceTree = "<group>"; };
+		9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXNodeLayout.m; sourceTree = "<group>"; };
+		9227B9491541E8C500FA9EA6 /* CSXElementLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXElementLayout.h; sourceTree = "<group>"; };
+		9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXElementLayout.m; sourceTree = "<group>"; };
+		9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXDocumentLayout.h; sourceTree = "<group>"; };
+		9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXDocumentLayout.m; sourceTree = "<group>"; };
+		922CDB2715446CD1003B1B6F /* CSXXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXXMLParser.h; sourceTree = "<group>"; };
+		922CDB2815446CD1003B1B6F /* CSXXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXXMLParser.m; sourceTree = "<group>"; };
+		92305FF41551784F00A60884 /* CeasyXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CeasyXML.h; sourceTree = "<group>"; };
+		923122BA155FD54100D6B532 /* CSXNodeContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXNodeContentLayout.h; sourceTree = "<group>"; };
+		923FCB6F155D806B00B9D71D /* CSXXMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXXMLWriter.h; sourceTree = "<group>"; };
+		923FCB70155D806B00B9D71D /* CSXXMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXXMLWriter.m; sourceTree = "<group>"; };
+		923FCB79155D810900B9D71D /* NSString+CSXLibXMLConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CSXLibXMLConversion.h"; sourceTree = "<group>"; };
+		923FCB7A155D810900B9D71D /* NSString+CSXLibXMLConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSXLibXMLConversion.m"; sourceTree = "<group>"; };
+		925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXNodeLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
+		925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXNodeLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
+		925FE8E21542F13200AA875E /* CSXNodeContentLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXNodeContentLayout.m; sourceTree = "<group>"; };
+		925FE9161542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXNodeContentLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
+		925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXNodeContentLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
+		925FE9411542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXElementLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
+		925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXElementLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
+		9286A1761555628200EC7F08 /* CSXLayoutList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXLayoutList.h; sourceTree = "<group>"; };
+		9286A1771555628200EC7F08 /* CSXLayoutList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXLayoutList.m; sourceTree = "<group>"; };
+		9286A17F155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXLayoutList+CSXLayoutObject.h"; sourceTree = "<group>"; };
+		9286A180155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXLayoutList+CSXLayoutObject.m"; sourceTree = "<group>"; };
+		929135081569200C000E3212 /* libceasyxml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libceasyxml.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		929135191569203A000E3212 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9291351C15692044000E3212 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		92F82A9B154075960009E770 /* newcopy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = newcopy; sourceTree = "<group>"; };
+		92F82A9D154076170009E770 /* template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = template.h; sourceTree = "<group>"; };
+		92F82A9E154076170009E770 /* template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = template.m; sourceTree = "<group>"; };
+		92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXElementLayoutPlacebo.h; sourceTree = "<group>"; };
+		92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXElementLayoutPlacebo.m; sourceTree = "<group>"; };
+		92FBB7E41544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXDocumentLayout+CSXLayoutObject.h"; sourceTree = "<group>"; };
+		92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXDocumentLayout+CSXLayoutObject.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		929135061569200C000E3212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9291351A1569203A000E3212 /* Foundation.framework in Frameworks */,
+				9291351D15692044000E3212 /* libxml2.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				929135081569200C000E3212 /* libceasyxml.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* ceasyxml */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+				929135191569203A000E3212 /* Foundation.framework */,
+				9291351C15692044000E3212 /* libxml2.dylib */,
+			);
+			name = ceasyxml;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				92305FF41551784F00A60884 /* CeasyXML.h */,
+				923FCB75155D80DB00B9D71D /* Helpers */,
+				9227B9661541ECBD00FA9EA6 /* Layout */,
+				922CDB2515446CBA003B1B6F /* Parsing and Writing */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				92F82A9D154076170009E770 /* template.h */,
+				92F82A9E154076170009E770 /* template.m */,
+				92F82A9B154075960009E770 /* newcopy */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		9227B9661541ECBD00FA9EA6 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				925FE8961542E76C00AA875E /* Layout Objects */,
+				923122BA155FD54100D6B532 /* CSXNodeContentLayout.h */,
+				925FE8E21542F13200AA875E /* CSXNodeContentLayout.m */,
+				9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */,
+				9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */,
+				9227B9491541E8C500FA9EA6 /* CSXElementLayout.h */,
+				9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */,
+				92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */,
+				92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */,
+				9227B9561541EB9E00FA9EA6 /* CSXDocumentLayout.h */,
+				9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */,
+				9286A1761555628200EC7F08 /* CSXLayoutList.h */,
+				9286A1771555628200EC7F08 /* CSXLayoutList.m */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		922CDB2515446CBA003B1B6F /* Parsing and Writing */ = {
+			isa = PBXGroup;
+			children = (
+				922CDB2715446CD1003B1B6F /* CSXXMLParser.h */,
+				922CDB2815446CD1003B1B6F /* CSXXMLParser.m */,
+				923FCB6F155D806B00B9D71D /* CSXXMLWriter.h */,
+				923FCB70155D806B00B9D71D /* CSXXMLWriter.m */,
+			);
+			name = "Parsing and Writing";
+			sourceTree = "<group>";
+		};
+		923FCB75155D80DB00B9D71D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				923FCB79155D810900B9D71D /* NSString+CSXLibXMLConversion.h */,
+				923FCB7A155D810900B9D71D /* NSString+CSXLibXMLConversion.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		925FE8961542E76C00AA875E /* Layout Objects */ = {
+			isa = PBXGroup;
+			children = (
+				925FE9161542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.h */,
+				925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */,
+				925FE8A61542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.h */,
+				925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */,
+				925FE9411542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.h */,
+				925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */,
+				92FBB7E41544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.h */,
+				92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */,
+				9286A17F155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.h */,
+				9286A180155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.m */,
+			);
+			name = "Layout Objects";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		929135041569200C000E3212 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		929135071569200C000E3212 /* ceasyxml */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9291351B1569203B000E3212 /* Build configuration list for PBXNativeTarget "ceasyxml" */;
+			buildPhases = (
+				929135041569200C000E3212 /* Headers */,
+				929135051569200C000E3212 /* Sources */,
+				929135061569200C000E3212 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ceasyxml;
+			productName = ceasyxml;
+			productReference = 929135081569200C000E3212 /* libceasyxml.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ceasyxml-ios" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* ceasyxml */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				929135071569200C000E3212 /* ceasyxml */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		929135051569200C000E3212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9291350B1569202E000E3212 /* NSString+CSXLibXMLConversion.m in Sources */,
+				9291350C1569202E000E3212 /* CSXNodeContentLayout+CSXLayoutObject.m in Sources */,
+				9291350D1569202E000E3212 /* CSXNodeLayout+CSXLayoutObject.m in Sources */,
+				9291350E1569202E000E3212 /* CSXElementLayout+CSXLayoutObject.m in Sources */,
+				9291350F1569202E000E3212 /* CSXDocumentLayout+CSXLayoutObject.m in Sources */,
+				929135101569202E000E3212 /* CSXLayoutList+CSXLayoutObject.m in Sources */,
+				929135111569202E000E3212 /* CSXNodeContentLayout.m in Sources */,
+				929135121569202E000E3212 /* CSXNodeLayout.m in Sources */,
+				929135131569202E000E3212 /* CSXElementLayout.m in Sources */,
+				929135141569202E000E3212 /* CSXElementLayoutPlacebo.m in Sources */,
+				929135151569202E000E3212 /* CSXDocumentLayout.m in Sources */,
+				929135161569202E000E3212 /* CSXLayoutList.m in Sources */,
+				929135171569202E000E3212 /* CSXXMLParser.m in Sources */,
+				929135181569202E000E3212 /* CSXXMLWriter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		929135091569200D000E3212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				PRODUCT_NAME = ceasyxml;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9291350A1569200D000E3212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = ceasyxml;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ceasyxml-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9291351B1569203B000E3212 /* Build configuration list for PBXNativeTarget "ceasyxml" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				929135091569200D000E3212 /* Debug */,
+				9291350A1569200D000E3212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
