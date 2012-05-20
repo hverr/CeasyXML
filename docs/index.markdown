@@ -44,7 +44,8 @@ LibXLM2 library on your machine.
    [1]: docs/How%20to%20define%20the%20layout%20of%20your%20XML%20document.html
    [2]: docs/Parsing%20XML%20documents.html
    [3]: docs/Writing%20XML%20documents.html
-   [4]: http://www.stackoverflow.com/q/10416779/262660
+   
    [5]: http://developer.apple.com/library/mac/#qa/qa2006/qa1490.html
+   [4]: http://www.stackoverflow.com/q/10416779/262660
 
 
