@@ -444,8 +444,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>929134E915691EE3000E3212</string>
-				<string>929134EA15691EE3000E3212</string>
+				<string>929134F715691F93000E3212</string>
+				<string>929134F815691F93000E3212</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -483,7 +483,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>/Users/ief2/Desktop/ceasyxml/trunk/ceasyxml.xcodeproj</string>
+		<string>/Users/ief2/Desktop/ceasyxml/trunk/ceasyxml-macosx.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>22 492 372 517 0 0 1920 1058 </string>
@@ -700,7 +700,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>929134EB15691EE3000E3212</string>
+				<string>929134F915691F93000E3212</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
