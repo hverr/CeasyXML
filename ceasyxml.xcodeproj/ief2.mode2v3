@@ -244,7 +244,7 @@
 								<dict>
 									<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 									<array>
-										<real>249</real>
+										<real>461</real>
 										<real>20</real>
 										<real>43</real>
 										<real>43</real>
@@ -276,12 +276,11 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>42</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 392}, {355, 431}}</string>
+									<string>{{0, 0}, {567, 314}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -291,11 +290,11 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{10, 27}, {372, 449}}</string>
+								<string>{{10, 27}, {584, 332}}</string>
 								<key>GroupTreeTableConfiguration</key>
 								<array>
 									<string>MainColumn</string>
-									<real>249</real>
+									<real>461</real>
 									<string>FileBuiltColumn</string>
 									<real>20</real>
 									<string>ErrorsColumn</string>
@@ -339,10 +338,6 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 									<array>
 										<string>1C37FBAC04509CD000000102</string>
-										<string>929134AC15691BC2000E3212</string>
-										<string>929134AD15691BC2000E3212</string>
-										<string>929134AE15691BC2000E3212</string>
-										<string>1C37FAAC04509CD000000102</string>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
@@ -449,8 +444,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>929134AF15691BC2000E3212</string>
-				<string>929134B015691BC2000E3212</string>
+				<string>929134E915691EE3000E3212</string>
+				<string>929134EA15691EE3000E3212</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -488,7 +483,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>/Users/ief2/Desktop/ceasyxml/ceasyxml.xcodeproj</string>
+		<string>/Users/ief2/Desktop/ceasyxml/trunk/ceasyxml.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>22 492 372 517 0 0 1920 1058 </string>
@@ -705,7 +700,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>929134B115691BC2000E3212</string>
+				<string>929134EB15691EE3000E3212</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
