@@ -4,7 +4,8 @@
 		activeArchitecturePreference = x86_64;
 		activeBuildConfigurationName = Release;
 		activeExecutable = 92F82AA8154078500009E770 /* TestApp */;
-		activeTarget = D2AAC07D0554694100DB518D /* ceasyxml */;
+		activeSDKPreference = iphoneos4.3;
+		activeTarget = D2AAC07D0554694100DB518D /* ceasyxml Mac OS X */;
 		addToTargets = (
 			92F82AA6154078500009E770 /* TestApp */,
 		);
@@ -62,8 +63,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 359209313;
-			PBXWorkspaceStateSaveDate = 359209313;
+			PBXPerProjectTemplateStateSaveDate = 359209787;
+			PBXWorkspaceStateSaveDate = 359209787;
 		};
 		perUserProjectItems = {
 			9208DB6715641F8D0019CB71 = 9208DB6715641F8D0019CB71 /* PBXBookmark */;
@@ -678,6 +679,9 @@
 			sepNavVisRange = "{0, 2072}";
 		};
 	};
+	9291349115691B54000E3212 /* ceasyxml iOS */ = {
+		activeExec = 0;
+	};
 	92F82A8D154075440009E770 /* Source Control */ = {
 		isa = PBXSourceControlManager;
 		fallbackIsa = XCSourceControlManager;
@@ -797,7 +801,7 @@
 			sepNavWindowFrame = "{{656, 25}, {647, 984}}";
 		};
 	};
-	D2AAC07D0554694100DB518D /* ceasyxml */ = {
+	D2AAC07D0554694100DB518D /* ceasyxml Mac OS X */ = {
 		activeExec = 0;
 	};
 }

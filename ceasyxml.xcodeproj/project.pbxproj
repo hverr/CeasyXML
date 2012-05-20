@@ -29,6 +29,21 @@
 		925FE9441542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */; };
 		9286A1841555640000EC7F08 /* CSXLayoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286A1771555628200EC7F08 /* CSXLayoutList.m */; };
 		9286A1861555640E00EC7F08 /* CSXLayoutList+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286A180155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.m */; };
+		9291349715691B7E000E3212 /* NSString+CSXLibXMLConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 923FCB7A155D810900B9D71D /* NSString+CSXLibXMLConversion.m */; };
+		9291349815691B7E000E3212 /* CSXNodeContentLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9171542F83100AA875E /* CSXNodeContentLayout+CSXLayoutObject.m */; };
+		9291349915691B7E000E3212 /* CSXNodeLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE8A71542E7B900AA875E /* CSXNodeLayout+CSXLayoutObject.m */; };
+		9291349A15691B7E000E3212 /* CSXElementLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE9421542F95C00AA875E /* CSXElementLayout+CSXLayoutObject.m */; };
+		9291349B15691B7E000E3212 /* CSXDocumentLayout+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBB7E51544088C00366B07 /* CSXDocumentLayout+CSXLayoutObject.m */; };
+		9291349C15691B7E000E3212 /* CSXLayoutList+CSXLayoutObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286A180155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.m */; };
+		9291349D15691B7E000E3212 /* CSXNodeContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 925FE8E21542F13200AA875E /* CSXNodeContentLayout.m */; };
+		9291349E15691B7E000E3212 /* CSXNodeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9401541E73900FA9EA6 /* CSXNodeLayout.m */; };
+		9291349F15691B7E000E3212 /* CSXElementLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */; };
+		929134A015691B7E000E3212 /* CSXElementLayoutPlacebo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */; };
+		929134A115691B7E000E3212 /* CSXDocumentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */; };
+		929134A215691B7E000E3212 /* CSXLayoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286A1771555628200EC7F08 /* CSXLayoutList.m */; };
+		929134A315691B7E000E3212 /* CSXXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */; };
+		929134A415691B7E000E3212 /* CSXXMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 923FCB70155D806B00B9D71D /* CSXXMLWriter.m */; };
+		929134A615691BA4000E3212 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 929134A515691BA4000E3212 /* libxml2.dylib */; };
 		92F82AAB154078540009E770 /* libceasyxml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libceasyxml.a */; };
 		92F82AC6154078C10009E770 /* TMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F82AC5154078C10009E770 /* TMain.m */; };
 		92FBB7C21543E9E800366B07 /* CSXElementLayoutPlacebo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */; };
@@ -82,10 +97,12 @@
 		9286A1771555628200EC7F08 /* CSXLayoutList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXLayoutList.m; sourceTree = "<group>"; };
 		9286A17F155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSXLayoutList+CSXLayoutObject.h"; sourceTree = "<group>"; };
 		9286A180155563EF00EC7F08 /* CSXLayoutList+CSXLayoutObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSXLayoutList+CSXLayoutObject.m"; sourceTree = "<group>"; };
+		9291349215691B54000E3212 /* liblibceasyxml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibceasyxml.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		929134A515691BA4000E3212 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		92F82A9B154075960009E770 /* newcopy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = newcopy; sourceTree = "<group>"; };
 		92F82A9D154076170009E770 /* template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = template.h; sourceTree = "<group>"; };
 		92F82A9E154076170009E770 /* template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = template.m; sourceTree = "<group>"; };
-		92F82AA7154078500009E770 /* TestApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestApp; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F82AA7154078500009E770 /* TestApp */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = TestApp; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F82AC5154078C10009E770 /* TMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMain.m; sourceTree = "<group>"; };
 		92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXElementLayoutPlacebo.h; sourceTree = "<group>"; };
 		92FBB7C01543E9E800366B07 /* CSXElementLayoutPlacebo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXElementLayoutPlacebo.m; sourceTree = "<group>"; };
@@ -95,6 +112,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9291349015691B54000E3212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				929134A615691BA4000E3212 /* libxml2.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92F82AA5154078500009E770 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -120,6 +145,7 @@
 			children = (
 				D2AAC07E0554694100DB518D /* libceasyxml.a */,
 				92F82AA7154078500009E770 /* TestApp */,
+				9291349215691B54000E3212 /* liblibceasyxml.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +158,7 @@
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				92F82A97154075530009E770 /* TestApp */,
+				929134A515691BA4000E3212 /* libxml2.dylib */,
 			);
 			name = ceasyxml;
 			sourceTree = "<group>";
@@ -250,6 +277,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		9291348E15691B54000E3212 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC07A0554694100DB518D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,6 +300,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9291349115691B54000E3212 /* ceasyxml iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 929134A715691BA5000E3212 /* Build configuration list for PBXNativeTarget "ceasyxml iOS" */;
+			buildPhases = (
+				9291348E15691B54000E3212 /* Headers */,
+				9291348F15691B54000E3212 /* Sources */,
+				9291349015691B54000E3212 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ceasyxml iOS";
+			productName = "ceasyxml iOS";
+			productReference = 9291349215691B54000E3212 /* liblibceasyxml.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		92F82AA6154078500009E770 /* TestApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92F82ABB1540786C0009E770 /* Build configuration list for PBXNativeTarget "TestApp" */;
@@ -283,9 +334,9 @@
 			productReference = 92F82AA7154078500009E770 /* TestApp */;
 			productType = "com.apple.product-type.tool";
 		};
-		D2AAC07D0554694100DB518D /* ceasyxml */ = {
+		D2AAC07D0554694100DB518D /* ceasyxml Mac OS X */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "ceasyxml" */;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "ceasyxml Mac OS X" */;
 			buildPhases = (
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
@@ -295,7 +346,7 @@
 			);
 			dependencies = (
 			);
-			name = ceasyxml;
+			name = "ceasyxml Mac OS X";
 			productName = ceasyxml;
 			productReference = D2AAC07E0554694100DB518D /* libceasyxml.a */;
 			productType = "com.apple.product-type.library.static";
@@ -320,13 +371,35 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2AAC07D0554694100DB518D /* ceasyxml */,
+				D2AAC07D0554694100DB518D /* ceasyxml Mac OS X */,
+				9291349115691B54000E3212 /* ceasyxml iOS */,
 				92F82AA6154078500009E770 /* TestApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9291348F15691B54000E3212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9291349715691B7E000E3212 /* NSString+CSXLibXMLConversion.m in Sources */,
+				9291349815691B7E000E3212 /* CSXNodeContentLayout+CSXLayoutObject.m in Sources */,
+				9291349915691B7E000E3212 /* CSXNodeLayout+CSXLayoutObject.m in Sources */,
+				9291349A15691B7E000E3212 /* CSXElementLayout+CSXLayoutObject.m in Sources */,
+				9291349B15691B7E000E3212 /* CSXDocumentLayout+CSXLayoutObject.m in Sources */,
+				9291349C15691B7E000E3212 /* CSXLayoutList+CSXLayoutObject.m in Sources */,
+				9291349D15691B7E000E3212 /* CSXNodeContentLayout.m in Sources */,
+				9291349E15691B7E000E3212 /* CSXNodeLayout.m in Sources */,
+				9291349F15691B7E000E3212 /* CSXElementLayout.m in Sources */,
+				929134A015691B7E000E3212 /* CSXElementLayoutPlacebo.m in Sources */,
+				929134A115691B7E000E3212 /* CSXDocumentLayout.m in Sources */,
+				929134A215691B7E000E3212 /* CSXLayoutList.m in Sources */,
+				929134A315691B7E000E3212 /* CSXXMLParser.m in Sources */,
+				929134A415691B7E000E3212 /* CSXXMLWriter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92F82AA4154078500009E770 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,7 +437,7 @@
 /* Begin PBXTargetDependency section */
 		92F82AAD154078570009E770 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D2AAC07D0554694100DB518D /* ceasyxml */;
+			target = D2AAC07D0554694100DB518D /* ceasyxml Mac OS X */;
 			targetProxy = 92F82AAC154078570009E770 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -432,6 +505,35 @@
 			};
 			name = Release;
 		};
+		9291349315691B54000E3212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				PRODUCT_NAME = libceasyxml;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9291349415691B54000E3212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = libceasyxml;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		92F82AA9154078500009E770 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -489,7 +591,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "ceasyxml" */ = {
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "ceasyxml Mac OS X" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB921F08733DC00010E9CD /* Debug */,
@@ -503,6 +605,15 @@
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
 				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		929134A715691BA5000E3212 /* Build configuration list for PBXNativeTarget "ceasyxml iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9291349315691B54000E3212 /* Debug */,
+				9291349415691B54000E3212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
