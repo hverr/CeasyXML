@@ -58,8 +58,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 359210989;
-			PBXWorkspaceStateSaveDate = 359210989;
+			PBXPerProjectTemplateStateSaveDate = 362506191;
+			PBXWorkspaceStateSaveDate = 362506191;
 		};
 		perUserProjectItems = {
 			9208DB6715641F8D0019CB71 = 9208DB6715641F8D0019CB71 /* PBXBookmark */;
@@ -94,6 +94,9 @@
 			92386E5715644930002C1A28 = 92386E5715644930002C1A28 /* PBXTextBookmark */;
 			92386E5A15644940002C1A28 = 92386E5A15644940002C1A28 /* PBXTextBookmark */;
 			92386E5B15644940002C1A28 = 92386E5B15644940002C1A28 /* PBXTextBookmark */;
+			92CA1252159B67FB00A516F9 /* PBXTextBookmark */ = 92CA1252159B67FB00A516F9 /* PBXTextBookmark */;
+			92CA1253159B67FB00A516F9 /* XCBuildMessageTextBookmark */ = 92CA1253159B67FB00A516F9 /* XCBuildMessageTextBookmark */;
+			92CA1254159B67FB00A516F9 /* PBXTextBookmark */ = 92CA1254159B67FB00A516F9 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 92F82A8D154075440009E770 /* Source Control */;
 		userBuildSettings = {
@@ -106,12 +109,6 @@
 		name = TEntry.h;
 		path = /Users/ief2/Desktop/ceasyxml/trunk/TestApp/TEntry.h;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {651, 859}}";
-			sepNavSelRange = "{1389, 0}";
-			sepNavVisRange = "{0, 1648}";
-			sepNavWindowFrame = "{{61, 24}, {710, 987}}";
-		};
 	};
 	9202EEA8155428F300EF6DE6 /* TEntry.m */ = {
 		isa = PBXFileReference;
@@ -120,12 +117,6 @@
 		name = TEntry.m;
 		path = /Users/ief2/Desktop/ceasyxml/trunk/TestApp/TEntry.m;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1859, 648}}";
-			sepNavSelRange = "{70, 0}";
-			sepNavVisRange = "{0, 1518}";
-			sepNavWindowFrame = "{{345, 74}, {647, 984}}";
-		};
 	};
 	9208DB6715641F8D0019CB71 /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -311,12 +302,6 @@
 		name = Library.xml;
 		path = /Users/ief2/Desktop/ceasyxml/trunk/TestApp/Library.xml;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 856}}";
-			sepNavSelRange = "{566, 0}";
-			sepNavVisRange = "{0, 618}";
-			sepNavWindowFrame = "{{448, 65}, {647, 984}}";
-		};
 	};
 	9227B93F1541E73900FA9EA6 /* CSXNodeLayout.h */ = {
 		uiCtxt = {
@@ -360,9 +345,9 @@
 	};
 	9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 2392}}";
-			sepNavSelRange = "{4409, 0}";
-			sepNavVisRange = "{3594, 1682}";
+			sepNavIntBoundsRect = "{{0, 0}, {1859, 2301}}";
+			sepNavSelRange = "{2535, 0}";
+			sepNavVisRange = "{2274, 443}";
 			sepNavWindowFrame = "{{949, 35}, {647, 984}}";
 		};
 	};
@@ -376,9 +361,9 @@
 	};
 	922CDB2815446CD1003B1B6F /* CSXXMLParser.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 14924}}";
-			sepNavSelRange = "{13803, 0}";
-			sepNavVisRange = "{13138, 2719}";
+			sepNavIntBoundsRect = "{{0, 0}, {1859, 14898}}";
+			sepNavSelRange = "{37097, 0}";
+			sepNavVisRange = "{36309, 788}";
 			sepNavWindowFrame = "{{276, 64}, {647, 984}}";
 		};
 	};
@@ -389,12 +374,6 @@
 		name = Layout.xml;
 		path = /Users/ief2/Desktop/ceasyxml/trunk/TestApp/Layout.xml;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 1183}}";
-			sepNavSelRange = "{0, 40}";
-			sepNavVisRange = "{52, 2134}";
-			sepNavWindowFrame = "{{1033, 69}, {647, 984}}";
-		};
 	};
 	92305FF41551784F00A60884 /* CeasyXML.h */ = {
 		uiCtxt = {
@@ -670,6 +649,35 @@
 	929135071569200C000E3212 /* ceasyxml */ = {
 		activeExec = 0;
 	};
+	92CA1252159B67FB00A516F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9227B9571541EB9E00FA9EA6 /* CSXDocumentLayout.m */;
+		name = "CSXDocumentLayout.m: 72";
+		rLen = 0;
+		rLoc = 2535;
+		rType = 0;
+		vrLen = 443;
+		vrLoc = 2274;
+	};
+	92CA1253159B67FB00A516F9 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Analyzer skipped this file due to parse errors";
+		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 0;
+		rLoc = 0;
+		rType = 1;
+	};
+	92CA1254159B67FB00A516F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 922CDB2815446CD1003B1B6F /* CSXXMLParser.m */;
+		name = "CSXXMLParser.m: 1145";
+		rLen = 0;
+		rLoc = 37097;
+		rType = 0;
+		vrLen = 788;
+		vrLoc = 36309;
+	};
 	92F82A8D154075440009E770 /* Source Control */ = {
 		isa = PBXSourceControlManager;
 		fallbackIsa = XCSourceControlManager;
@@ -718,12 +726,6 @@
 		name = TMain.m;
 		path = /Users/ief2/Desktop/ceasyxml/trunk/TestApp/TMain.m;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {588, 1144}}";
-			sepNavSelRange = "{2912, 0}";
-			sepNavVisRange = "{1055, 1899}";
-			sepNavWindowFrame = "{{1032, 74}, {647, 984}}";
-		};
 	};
 	92FBB7BF1543E9E800366B07 /* CSXElementLayoutPlacebo.h */ = {
 		uiCtxt = {

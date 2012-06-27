@@ -69,7 +69,7 @@ NSString * const CSXDocumentLayoutInvalidClassException =
 + (id)documentLayoutWithLayoutDocument:(NSString *)doc error:(NSError **)err {
     id inst;
     inst = [[self alloc] initWithLayoutDocument:doc error:err];
-    return [self autorelease];
+    return [inst autorelease];
 }
 
 + (NSArray *)documentLayoutsWithDocumentDocument:(NSString *)doc {
