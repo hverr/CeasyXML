@@ -78,9 +78,16 @@ int main(int argc, const char **argv) {
     writer.encoding = @"UTF-8";
     
     
-    if(![writer writeToFile:destFile error:&err]) {
-        NSLog(@"Write error %@", err);
+    NSData *myData;
+    
+    myData = [writer XMLDataWithError:&err];
+    if(!myData) {
+        NSLog(@"Write error: %@", err);
     }
+    NSLog(@"Data: %@", myData);
+    [myData writeToFile:destFile 
+                options:0 
+                  error:NULL];
     
     [pool release];
     return 0;

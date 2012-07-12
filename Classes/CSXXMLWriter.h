@@ -215,5 +215,30 @@ enum {
  attribute type is met while writing out the document.
  */
 - (NSData *)XMLDataWithError:(NSError **)errptr;
+
+/*!
+ Use this method to write the root element to a self created LibXML writer.
+ 
+ @param theWriter A valid initialized instance of `xmlTextWriter` to which you
+ want to add the root element.
+ 
+ @param indentation The indentation of the root element.
+ 
+ @param errptr A variable capable of holding the error if one occurs.
+ 
+ @return `YES` if the writing was successful and `NO` otherwise.
+ 
+ @exception CSXXMLWriterNoRootInstanceException Thrown when the property
+ `rootInstance` is not set.
+ 
+ @exception CSXXMLWriterNoDocumentLayoutException Thrown when the property
+ `documentLayout` is not set.
+ 
+ @exception CSXXMLWriterInvalidAttributeTypeException Thrown when an invalid
+ attribute type is met while writing out the document.
+ */
+- (BOOL)writeRootElementToTextWriter:(xmlTextWriterPtr)theWriter
+                         indentation:(NSInteger)indentation
+                               error:(NSError **)errptr;
 @end
 

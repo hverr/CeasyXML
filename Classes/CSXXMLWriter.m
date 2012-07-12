@@ -48,6 +48,7 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
 - (NSError *)endDocument;
 - (void)freeDocument;
 - (NSError *)writeRootElement;
+- (NSError *)writeRootElementWithIndentation:(NSInteger)i;
 - (NSError *)writeElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeNonUniqueElement:(CSXElementLayout *)lay instance:(id)inst;
 - (NSError *)writeCustomElement:(CSXElementLayout *)lay instance:(id)inst;
@@ -226,6 +227,29 @@ handleErrorAndReturn:
     }
     return nil;
 }
+
+- (BOOL)writeRootElementToTextWriter:(xmlTextWriterPtr)theWriter
+                         indentation:(NSInteger)indentation
+                               error:(NSError **)errptr
+{
+    NSError *myError;
+    
+    _state.textWriter = theWriter;
+    _state.isWritingToFile = NO;
+    
+    /* Write root element */
+    if((myError = [self writeRootElementWithIndentation:indentation])) {
+        goto handleErrorAndReturn;
+    }
+
+    return YES;
+    
+handleErrorAndReturn:    
+    if(errptr) {
+        *errptr = myError;
+    }
+    return NO;
+}
 @end
 
 
@@ -282,6 +306,10 @@ handleErrorAndReturn:
 }
 
 - (NSError *)writeRootElement {
+    return [self writeRootElementWithIndentation:0];
+}
+
+- (NSError *)writeRootElementWithIndentation:(NSInteger)i {
     NSString *excName, *excReason;
     NSError *myError;
     
@@ -293,7 +321,7 @@ handleErrorAndReturn:
                      [self description]];
         [[NSException exceptionWithName:excName reason:excReason userInfo:nil]
          raise];
-    
+        
     } else if(self.documentLayout == nil) {
         excName = CSXXMLWriterNoDocumentLayoutException;
         excReason = [NSString stringWithFormat:
@@ -305,7 +333,7 @@ handleErrorAndReturn:
     }
     
     /* Write root element */
-    _state.indentationLevel = 0;
+    _state.indentationLevel = i;
     myError = [self writeCustomElement:(CSXElementLayout *)self.documentLayout 
                               instance:self.rootInstance];
     if(myError != nil) {
