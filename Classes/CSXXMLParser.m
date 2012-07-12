@@ -542,40 +542,68 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     
     if(layout.unique == NO) {
         NSMutableArray *arr;
+        NSScanner *scanner;
+        NSInteger myIntVal;
+        NSNumber *numb;
+        BOOL scanState;
+        
         arr = objc_msgSend(parentInstance, layout.contentLayout.getter);
         assert(arr != nil);
-        [arr addObject:instance];
-        goto drainAndReturn;
-    }
-    
-    switch(layout.contentLayout.contentType) {
-        case CSXNodeContentTypeString:
-            err = [parser setString:instance
-                       layout:layout 
-                     instance:parentInstance];
-            break;
-            
-        case CSXNodeContentTypeNumber:
-            err = [parser setNumber:instance 
-                       layout:layout 
-                     instance:parentInstance];
-            break;
-            
-        case CSXNodeContentTypeBoolean:
-            err = [parser setBoolean:instance 
-                        layout:layout 
-                      instance:parentInstance];
-            break;
-            
-        case CSXNodeContentTypeCustom:
-            err = [parser setUniqueInstance:instance 
-                               layout:layout 
-                             instance:parentInstance];
-            break;
+        switch(layout.contentLayout.contentType) {
+            case CSXNodeContentTypeBoolean:
+                numb = [NSNumber numberWithBool:
+                        [(NSString *)instance boolValue]];
+                [arr addObject:numb];
+                break;
+                
+            case CSXNodeContentTypeNumber:
+                scanner = [NSScanner scannerWithString:instance];
+                scanState = [scanner scanInteger:&myIntVal];
+                if(!scanState) {
+                    err = [parser elementValueNoNumberError:instance 
+                                                     layout:layout];
+                } else {
+                    numb = [NSNumber numberWithInteger:myIntVal];
+                    [arr addObject:numb];
+                }
+                break;
+                
+            case CSXNodeContentTypeString: /* fallthrough */
+            case CSXNodeContentTypeCustom: /* fallthrough */
+            default:
+                [arr addObject:instance];
+                break;
+        }
+    } else {
+        switch(layout.contentLayout.contentType) {
+            case CSXNodeContentTypeString:
+                err = [parser setString:instance
+                           layout:layout 
+                         instance:parentInstance];
+                break;
+                
+            case CSXNodeContentTypeNumber:
+                err = [parser setNumber:instance 
+                           layout:layout 
+                         instance:parentInstance];
+                break;
+                
+            case CSXNodeContentTypeBoolean:
+                err = [parser setBoolean:instance 
+                            layout:layout 
+                          instance:parentInstance];
+                break;
+                
+            case CSXNodeContentTypeCustom:
+                err = [parser setUniqueInstance:instance 
+                                   layout:layout 
+                                 instance:parentInstance];
+                break;
 
-        default:
-            err = nil;
-            break;
+            default:
+                err = nil;
+                break;
+        }
     }
     
     if(err != nil) {
