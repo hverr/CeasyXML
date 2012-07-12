@@ -165,6 +165,9 @@ handleErrorAndReturn:
 - (NSData *)XMLDataWithError:(NSError **)errptr {
     NSError *myError;
     xmlBufferPtr myBuffer;
+    NSData *myData;
+    const xmlChar *bufData;
+    int bufLen;
     
     _state.textWriter = NULL;
     
@@ -198,12 +201,25 @@ handleErrorAndReturn:
         goto handleErrorAndReturn;
     }
     
+    /* Convert data */
+    bufLen = xmlBufferLength(myBuffer);
+    bufData = xmlBufferContent(myBuffer);
+    myData = [[NSData alloc] initWithBytes:bufData
+                                    length:(sizeof(*bufData) * bufLen)];
+    
+    /* Free buffer */
+    xmlBufferFree(myBuffer);
+    
     /* Free document and return */
     [self freeDocument];
-    return nil;
+    [myData autorelease];
     
 handleErrorAndReturn:
     [self freeDocument];
+    
+    if(myBuffer) {
+        xmlBufferFree(myBuffer);
+    }
     
     if(errptr) {
         *errptr = myError;

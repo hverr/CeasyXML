@@ -72,6 +72,10 @@
 			92EC8AC015AEE49C003C83C4 /* PBXTextBookmark */ = 92EC8AC015AEE49C003C83C4 /* PBXTextBookmark */;
 			92EC8AC115AEE49C003C83C4 /* PBXBookmark */ = 92EC8AC115AEE49C003C83C4 /* PBXBookmark */;
 			92EC8AC215AEE49C003C83C4 /* PBXTextBookmark */ = 92EC8AC215AEE49C003C83C4 /* PBXTextBookmark */;
+			92EC8ACA15AEE562003C83C4 /* PBXTextBookmark */ = 92EC8ACA15AEE562003C83C4 /* PBXTextBookmark */;
+			92EC8ACB15AEE562003C83C4 /* PBXTextBookmark */ = 92EC8ACB15AEE562003C83C4 /* PBXTextBookmark */;
+			92EC8ACD15AEE562003C83C4 /* PBXTextBookmark */ = 92EC8ACD15AEE562003C83C4 /* PBXTextBookmark */;
+			92EC8ACE15AEE562003C83C4 /* PBXTextBookmark */ = 92EC8ACE15AEE562003C83C4 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 92F82A8D154075440009E770 /* Source Control */;
 		userBuildSettings = {
@@ -247,9 +251,9 @@
 	};
 	923FCB70155D806B00B9D71D /* CSXXMLWriter.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 10815}}";
-			sepNavSelRange = "{6128, 0}";
-			sepNavVisRange = "{5508, 702}";
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 11025}}";
+			sepNavSelRange = "{6573, 0}";
+			sepNavVisRange = "{6083, 628}";
 			sepNavWindowFrame = "{{922, 62}, {647, 984}}";
 		};
 	};
@@ -360,7 +364,7 @@
 		fRef = 923FCB70155D806B00B9D71D /* CSXXMLWriter.m */;
 		name = "CSXXMLWriter.m: 199";
 		rLen = 0;
-		rLoc = 6128;
+		rLoc = 6482;
 		rType = 0;
 		vrLen = 702;
 		vrLoc = 5508;
@@ -408,6 +412,52 @@
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 653;
+	};
+	92EC8ACA15AEE562003C83C4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9227B94A1541E8C500FA9EA6 /* CSXElementLayout.m */;
+		name = "CSXElementLayout.m: 23";
+		rLen = 0;
+		rLoc = 1073;
+		rType = 0;
+		vrLen = 971;
+		vrLoc = 653;
+	};
+	92EC8ACB15AEE562003C83C4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 92EC8ACC15AEE562003C83C4 /* tree.h */;
+		name = "tree.h: 701";
+		rLen = 45;
+		rLoc = 20840;
+		rType = 0;
+		vrLen = 792;
+		vrLoc = 20474;
+	};
+	92EC8ACC15AEE562003C83C4 /* tree.h */ = {
+		isa = PBXFileReference;
+		name = tree.h;
+		path = "/Applications/Xcode Development/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/tree.h";
+		sourceTree = "<absolute>";
+	};
+	92EC8ACD15AEE562003C83C4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 923FCB70155D806B00B9D71D /* CSXXMLWriter.m */;
+		name = "CSXXMLWriter.m: 204";
+		rLen = 0;
+		rLoc = 6482;
+		rType = 0;
+		vrLen = 554;
+		vrLoc = 5782;
+	};
+	92EC8ACE15AEE562003C83C4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 923FCB70155D806B00B9D71D /* CSXXMLWriter.m */;
+		name = "CSXXMLWriter.m: 215";
+		rLen = 0;
+		rLoc = 6573;
+		rType = 0;
+		vrLen = 628;
+		vrLoc = 6083;
 	};
 	92F82A8D154075440009E770 /* Source Control */ = {
 		isa = PBXSourceControlManager;
