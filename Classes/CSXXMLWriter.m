@@ -45,6 +45,7 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
 /* MARK: XML Writing */
 - (NSError *)flushDocument;
 - (NSError *)startDocument;
+- (NSError *)endDocument;
 - (void)freeDocument;
 - (NSError *)writeRootElement;
 - (NSError *)writeElement:(CSXElementLayout *)lay instance:(id)inst;
@@ -143,6 +144,11 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
         goto handleErrorAndReturn;
     }
     
+    /* End document */
+    if((myError = [self endDocument])) {
+        goto handleErrorAndReturn;
+    }
+    
     /* Free document and return */
     [self freeDocument];
     return YES;
@@ -171,7 +177,7 @@ handleErrorAndReturn:
     /* Create the text writer */
     _state.textWriter = xmlNewTextWriterMemory(myBuffer, 0);
     if(_state.textWriter == NULL) {
-        myError = [self textWriterForFileError:file];
+        myError = [self textWriterForFileError:[NSString string]];
         goto handleErrorAndReturn;
     }
     
@@ -187,9 +193,14 @@ handleErrorAndReturn:
         goto handleErrorAndReturn;
     }
     
+    /* End document */
+    if((myError = [self endDocument])) {
+        goto handleErrorAndReturn;
+    }
+    
     /* Free document and return */
     [self freeDocument];
-    return YES;
+    return nil;
     
 handleErrorAndReturn:
     [self freeDocument];
@@ -197,7 +208,7 @@ handleErrorAndReturn:
     if(errptr) {
         *errptr = myError;
     }
-    return NO;
+    return nil;
 }
 @end
 
@@ -230,6 +241,18 @@ handleErrorAndReturn:
                                         [self.XMLVersion UTF8String], 
                                         [self.encoding UTF8String], 
                                         NULL);
+    
+    if(status < 0) {
+        return [self xmlWriteError];
+    }
+    
+    return [self flushDocument];
+}
+
+- (NSError *)endDocument {
+    int status;
+    
+    status = xmlTextWriterEndDocument(_state.textWriter);
     
     if(status < 0) {
         return [self xmlWriteError];
