@@ -59,6 +59,7 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
 
 /* MARK: Errors */
 - (NSError *)textWriterForFileError:(NSString *)outFile;
+- (NSError *)bufferCreateError;
 - (NSError *)xmlWriteError;
 @end
 
@@ -131,6 +132,50 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
     }
     
     _state.isWritingToFile = YES;
+    
+    /* Start document */
+    if((myError = [self startDocument])) {
+        goto handleErrorAndReturn;
+    }
+    
+    /* Write root element */
+    if((myError = [self writeRootElement])) {
+        goto handleErrorAndReturn;
+    }
+    
+    /* Free document and return */
+    [self freeDocument];
+    return YES;
+    
+handleErrorAndReturn:
+    [self freeDocument];
+    
+    if(errptr) {
+        *errptr = myError;
+    }
+    return NO;
+}
+
+- (NSData *)XMLDataWithError:(NSError **)errptr {
+    NSError *myError;
+    xmlBufferPtr myBuffer;
+    
+    _state.textWriter = NULL;
+    
+    myBuffer = xmlBufferCreate();
+    if(myBuffer == NULL) {
+        myError = [self bufferCreateError];
+        goto handleErrorAndReturn;
+    }
+    
+    /* Create the text writer */
+    _state.textWriter = xmlNewTextWriterMemory(myBuffer, 0);
+    if(_state.textWriter == NULL) {
+        myError = [self textWriterForFileError:file];
+        goto handleErrorAndReturn;
+    }
+    
+    _state.isWritingToFile = NO;
     
     /* Start document */
     if((myError = [self startDocument])) {
@@ -587,6 +632,26 @@ handleErrorAndReturn:
     
     err = [NSError errorWithDomain:CSXXMLWriterErrorDomain 
                               code:kCSXXMLWriterTextWriterCreationError 
+                          userInfo:userInfo];
+    return err;
+}
+
+- (NSError *)bufferCreateError {
+    NSString *descr, *reco;
+    NSDictionary *userInfo;
+    NSError *err;
+    
+    descr = [NSString stringWithFormat:
+             @"Failed to write the XML document."];
+    reco = [NSString stringWithFormat:
+            @"Could not create a buffer to write the XML data."];
+    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                descr, NSLocalizedDescriptionKey,
+                reco, NSLocalizedRecoverySuggestionErrorKey,
+                nil];
+    
+    err = [NSError errorWithDomain:CSXXMLWriterErrorDomain 
+                              code:kCSXXMLWriterBufferCreateError
                           userInfo:userInfo];
     return err;
 }

@@ -89,7 +89,8 @@ extern NSString * const CSXXMLWriterInvalidAttributeTypeException;
 
 enum {
     kCSXXMLWriterTextWriterCreationError = 1,
-    kCSXXMLWriterTextWriterWriteError
+    kCSXXMLWriterTextWriterWriteError,
+    kCSXXMLWriterBufferCreateError
 };
 
 @interface CSXXMLWriter : NSObject {
@@ -195,5 +196,24 @@ enum {
  attribute type is met while writing out the document.
  */
 - (BOOL)writeToFile:(NSString *)file error:(NSError **)errptr;
+
+/*!
+ Use this method to write the XML document to an `NSData` buffer.
+ 
+ @param errptr A variable capable of holding the error if one occurs.
+ 
+ @return An autoreleased instance of `NSData` if the write was successful or
+ nil if an error occurred.
+ 
+ @exception CSXXMLWriterNoRootInstanceException Thrown when the property
+ `rootInstance` is not set.
+ 
+ @exception CSXXMLWriterNoDocumentLayoutException Thrown when the property
+ `documentLayout` is not set.
+ 
+ @exception CSXXMLWriterInvalidAttributeTypeException Thrown when an invalid
+ attribute type is met while writing out the document.
+ */
+- (NSData *)XMLDataWithError:(NSError **)errptr;
 @end
 
