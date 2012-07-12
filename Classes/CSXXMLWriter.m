@@ -212,7 +212,7 @@ handleErrorAndReturn:
     
     /* Free document and return */
     [self freeDocument];
-    [myData autorelease];
+    return [myData autorelease];
     
 handleErrorAndReturn:
     [self freeDocument];
