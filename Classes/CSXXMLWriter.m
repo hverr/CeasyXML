@@ -409,6 +409,9 @@ handleErrorAndReturn:
 
 - (NSError *)writeNonUniqueElement:(CSXElementLayout *)lay instance:(id)inst {
     NSError *myErr;
+    NSNumber *nCast;
+    
+    nCast = (NSNumber *)inst;
     
     if(lay.empty == YES) {
         switch(lay.contentLayout.contentType) {
@@ -436,11 +439,13 @@ handleErrorAndReturn:
                 break;
                 
             case CSXNodeContentTypeBoolean:
-                myErr = [self writeBooleanElement:lay instance:inst];
+                myErr = [self writeBooleanElement:lay
+                                         instance:(id)[nCast integerValue]];
                 break;
                 
             case CSXNodeContentTypeNumber:
-                myErr = [self writeNumberElement:lay instance:inst];
+                myErr = [self writeNumberElement:lay
+                                        instance:(id)[nCast integerValue]];
                 break;
                 
             default:
