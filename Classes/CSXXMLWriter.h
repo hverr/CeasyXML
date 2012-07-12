@@ -63,6 +63,10 @@
         An error occurred while trying to write with the LibXLM text writer
         instance.
  
+    - `kCSXXMLWriterBufferCreateError`
+
+        An error occurred while trying to create the LibXML buffer.
+ 
  #Exceptions
  
  - `CSXXMLWriterNoRootInstanceException`
