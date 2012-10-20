@@ -47,22 +47,55 @@ NSString * const CSXXMLParserElementNameStackKey =
  MARK: -
  MARK: Private Interface
  =========================================================================== */
-@interface CSXXMLParser (Private)
-/* MARK: Private Properties */
-@property (nonatomic, retain) NSError *error;
-@property (nonatomic, retain) NSMutableArray *warnings;
-@property (nonatomic, retain) id result;
 
 /* MARK: LibXLM Functions */
 void CSXXMLParserStartDocument(void *ctx);
 void CSXXMLParserEndDocument(void *ctx);
-void CSXXMLParserStartElement(void *ctx, 
-                              const xmlChar *name, 
+void CSXXMLParserStartElement(void *ctx,
+                              const xmlChar *name,
                               const xmlChar **atts);
 void CSXXMLParserEndElement(void *ctx, const xmlChar *name);
 void CSXXMLParserCharacters(void *ctx, const xmlChar *ch, int len);
 void CSXXMLParserWarning(void *ctx, const char *msg, ...);
 void CSXXMLParserError(void *ctx, const char *msg, ...);
+
+/* MARK: LibXML Function Stucture */
+static xmlSAXHandler CSXXMLParserSAXHandler = {
+    NULL, /* internalSubset */
+    NULL, /* isStandalone */
+    NULL, /* hasInternalSubset */
+    NULL, /* hasExternalSubset */
+    NULL, /* resolveEntity */
+    NULL, /* getEntity */
+    NULL, /* entityDecl */
+    NULL, /* notationDecl */
+    NULL, /* attributeDecl */
+    NULL, /* elementDecl */
+    NULL, /* unparsedEntityDecl */
+    NULL, /* setDocumentLocator */
+    &CSXXMLParserStartDocument, /* startDocument */
+    &CSXXMLParserEndDocument, /* endDocument */
+    &CSXXMLParserStartElement, /* startElement */
+    &CSXXMLParserEndElement, /* endElement */
+    NULL, /* reference */
+    &CSXXMLParserCharacters, /* characters */
+    NULL, /* ignorableWhitespace */
+    NULL, /* processingInstruction */
+    NULL, /* comment */
+    &CSXXMLParserWarning, /* warning */
+    &CSXXMLParserError, /* error */
+    NULL, /* fatalError */ /* unused error() get all the errors */
+    NULL, /* getParameterEntity */
+    NULL, /* cdataBlock */
+    NULL, /* externalSubset */
+    0 /* initialized */
+};
+
+@interface CSXXMLParser (Private)
+/* MARK: Private Properties */
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) NSMutableArray *warnings;
+@property (nonatomic, retain) id result;
 
 - (void)initializeState;
 - (void)emptyState;
@@ -97,38 +130,6 @@ void CSXXMLParserError(void *ctx, const char *msg, ...);
 - (NSString *)setNonUniqueInstance:(id)obj
                             layout:(CSXElementLayout *)l
                           instance:(id)i;
-
-/* MARK: LibXML Function Stucture */
-static xmlSAXHandler CSXXMLParserSAXHandler = {
-    NULL, /* internalSubset */
-    NULL, /* isStandalone */
-    NULL, /* hasInternalSubset */
-    NULL, /* hasExternalSubset */
-    NULL, /* resolveEntity */
-    NULL, /* getEntity */
-    NULL, /* entityDecl */
-    NULL, /* notationDecl */
-    NULL, /* attributeDecl */
-    NULL, /* elementDecl */
-    NULL, /* unparsedEntityDecl */
-    NULL, /* setDocumentLocator */
-    &CSXXMLParserStartDocument, /* startDocument */
-    &CSXXMLParserEndDocument, /* endDocument */
-    &CSXXMLParserStartElement, /* startElement */
-    &CSXXMLParserEndElement, /* endElement */
-    NULL, /* reference */
-    &CSXXMLParserCharacters, /* characters */
-    NULL, /* ignorableWhitespace */
-    NULL, /* processingInstruction */
-    NULL, /* comment */
-    &CSXXMLParserWarning, /* warning */
-    &CSXXMLParserError, /* error */
-    NULL, /* fatalError */ /* unused error() get all the errors */
-    NULL, /* getParameterEntity */
-    NULL, /* cdataBlock */
-    NULL, /* externalSubset */
-    0 /* initialized */ 
-};
 
 /* MARK: Errors */
 - (NSError *)unkownDocumentTypeError:(const xmlChar *)docElem;
@@ -266,6 +267,7 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
  MARK: Private Implementation
  =========================================================================== */
 @implementation CSXXMLParser (Private)
+@dynamic result, error;
 - (void)setError:(NSError *)e {
     [e retain];
     [_parseError release];

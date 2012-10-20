@@ -103,7 +103,7 @@ NSString * const CSXDocumentLayoutInvalidClassException =
         
         excName = CSXDocumentLayoutInvalidClassException;
         excReason = [NSString stringWithFormat:
-                     @"Class not found: %s", s];
+                     @"Class not found: %@", s];
         [[NSException exceptionWithName:excName reason:excReason userInfo:nil]
          raise];
         return;

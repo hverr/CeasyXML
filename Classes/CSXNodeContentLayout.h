@@ -28,6 +28,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
 
 /*!
  `CSXNodeContentLayout` represents the content type of an XML element.

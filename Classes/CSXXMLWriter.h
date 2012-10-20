@@ -29,6 +29,7 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+#import <objc/message.h>objc_msgSend
 #import <libxml/xmlwriter.h>
 
 #import "CSXDocumentLayout.h"
