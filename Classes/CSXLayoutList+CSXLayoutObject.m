@@ -49,7 +49,11 @@ static NSString * const CSXLayoutListDocumentElementName = @"document";
                           [CSXDocumentLayout layoutElementLayout],
                           nil];
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 @end
 

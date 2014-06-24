@@ -54,7 +54,11 @@
 + (id)placebo {
     id inst;
     inst = [[self alloc] init];
+#if !__has_feature(objc_arc)
     return [inst autorelease];
+#else
+    return inst;
+#endif
 }
 
 /* MARK: Properties */

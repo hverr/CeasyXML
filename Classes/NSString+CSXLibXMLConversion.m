@@ -66,7 +66,11 @@
         [s appendString:INDENT_CHAR];
     }
     
+#if !__has_feature(objc_arc)
     return [s autorelease];
+#else
+    return s;
+#endif
 }
 
 xmlChar *NSStringCSXXMLCharIndentation(NSInteger newlines, NSInteger level) {

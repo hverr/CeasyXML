@@ -43,6 +43,15 @@ NSString * const CSXXMLParserInvalidArgumentContentTypeException =
 NSString * const CSXXMLParserElementNameStackKey =
     @"CSXXMLParserElementNameStackKey";
 
+
+#if __has_feature(objc_arc)
+@implementation CSXXMLParserState
+@synthesize errorOccurred, parsing, parsingDocument;
+@synthesize elementNameStack, elementLayoutStack, elementInstanceStack;
+@synthesize stringContent;
+@end
+#endif /* OBJC_ARC */
+
 /* =========================================================================== 
  MARK: -
  MARK: Private Interface
@@ -159,7 +168,11 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
 + (id)XMLParserWithDocumentLayouts:(NSArray *)docLayouts {
     id inst;
     inst = [[self alloc] initWithDocumentLayouts:docLayouts];
+#if !__has_feature(objc_arc)
     return [inst autorelease];
+#else
+    return inst;
+#endif
 }
 
 - (id)initWithLayoutListDocument:(NSString *)f error:(NSError **)err {
@@ -169,7 +182,9 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
         
         list = [[CSXLayoutList alloc] initWithDocument:f error:err];
         if(list == nil) {
+#if !__has_feature(objc_arc)
             [self release];
+#endif
             return nil;
         }
         
@@ -181,7 +196,11 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
 + (id)XMLParserWithLayoutListDocument:(NSString *)f error:(NSError **)err {
     id inst;
     inst = [[self alloc] initWithLayoutListDocument:f error:err];
+#if !__has_feature(objc_arc)
     return [inst autorelease];
+#else
+    return inst;
+#endif
 }
 
 - (id)initWithLayoutDocument:(NSString *)f error:(NSError **)err {
@@ -191,7 +210,9 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
         
         layout = [[CSXDocumentLayout alloc] initWithLayoutDocument:f error:err];
         if(layout == nil) {
+#if !__has_feature(objc_arc)
             [self release];
+#endif
             return nil;
         }
         
@@ -203,7 +224,11 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
 + (id)XMLParserWithLayoutDocument:(NSString *)f error: (NSError **)err {
     id inst;
     inst = [[self alloc] initWithLayoutDocument:f error:err];
+#if !__has_feature(objc_arc)
     return [inst autorelease];
+#else
+    return inst;
+#endif
 }
 
 - (void)dealloc {
@@ -215,7 +240,9 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
     self.warnings = nil;
     self.result = nil;
     
+#if !__has_feature(objc_arc)
     [super dealloc];
+#endif
 }
 
 /* MARK: Properties */
@@ -244,13 +271,24 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
     
     /* Parse file if set */
     if(self.file != nil) {
-        status = xmlSAXUserParseFile(&CSXXMLParserSAXHandler, 
+#if !__has_feature(objc_arc)
+        status = xmlSAXUserParseFile(&CSXXMLParserSAXHandler,
                                      self, [self.file UTF8String]);
+#else
+        status = xmlSAXUserParseFile(&CSXXMLParserSAXHandler,
+                                     (__bridge void *)(self), [self.file UTF8String]);
+#endif
         
     } else {
-        status = xmlSAXUserParseMemory(&CSXXMLParserSAXHandler, 
-                                       self, [self.data bytes], 
-                                       [self.data length]);
+#if !__has_feature(objc_arc)
+        status = xmlSAXUserParseMemory(&CSXXMLParserSAXHandler,
+                                       (void *)self, [self.data bytes],
+                                       (int)[self.data length]);
+#else
+        status = xmlSAXUserParseMemory(&CSXXMLParserSAXHandler,
+                                       (__bridge void *)self, [self.data bytes],
+                                       (int)[self.data length]);
+#endif
     }
     
     if(status != 0) {
@@ -269,56 +307,84 @@ static xmlSAXHandler CSXXMLParserSAXHandler = {
 @implementation CSXXMLParser (Private)
 @dynamic result, error;
 - (void)setError:(NSError *)e {
+#if !__has_feature(objc_arc)
     [e retain];
     [_parseError release];
+#endif
     _parseError = e;
 }
 
 - (void)setWarnings:(NSMutableArray *)a {
+#if !__has_feature(objc_arc)
     [a retain];
     [_warnings release];
+#endif
     _warnings = a;
 }
 
 - (void)setResult:(id)r {
+#if !__has_feature(objc_arc)
     [r retain];
     [_result release];
+#endif
     _result = r;
 }
 
 /* MARK: LibXLM Functions */
 void CSXXMLParserStartDocument(void *ctx) {
+#if !__has_feature(objc_arc)
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
     CSXXMLParser *parser;
-    
+
+#if !__has_feature(objc_arc)
     parser = (CSXXMLParser *)ctx;
+#else
+    parser = (__bridge CSXXMLParser *)ctx;
+#endif
     parser.error = nil;
     parser.result = nil;
     parser.warnings = [NSMutableArray array];
     [parser initializeState];
-    
+
+#if !__has_feature(objc_arc)
     [pool release];
+#endif
 }
 
 void CSXXMLParserEndDocument(void *ctx) {
+#if !__has_feature(objc_arc)
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
     CSXXMLParser *parser;
     
+#if !__has_feature(objc_arc)
     parser = (CSXXMLParser *)ctx;
+#else
+    parser = (__bridge CSXXMLParser *)ctx;
+#endif
     [parser emptyState];
     
+#if !__has_feature(objc_arc)
     [pool release];
+#endif
 }
 
-void CSXXMLParserStartElement(void *ctx, 
+void CSXXMLParserStartElement(void *ctx,
                               const xmlChar *name, 
                               const xmlChar **atts)
 {
+#if !__has_feature(objc_arc)
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
     CSXXMLParser *parser;
     NSError *err;
     
+#if !__has_feature(objc_arc)
     parser = (CSXXMLParser *)ctx;
+#else
+    parser = (__bridge CSXXMLParser *)ctx;
+#endif
     
     if(parser->_state.parsingDocument == NO) {
         CSXDocumentLayout *layout;
@@ -462,11 +528,17 @@ void CSXXMLParserStartElement(void *ctx,
     }
     
 drainAndReturn:
+#if !__has_feature(objc_arc)
     [pool release];
+#else
+    return;
+#endif
 }
 
 void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
+#if !__has_feature(objc_arc)
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
     CSXXMLParser *parser;
     NSString *elementName;
     CSXElementLayout *layout;
@@ -474,7 +546,12 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     id parentInstance;
     NSError *err;
     
+#if !__has_feature(objc_arc)
     parser = (CSXXMLParser *)ctx;
+#else
+    parser = (__bridge CSXXMLParser *)ctx;
+#endif
+    
     if(parser->_state.errorOccurred == YES) {
         goto drainAndReturn;
     }
@@ -520,7 +597,11 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     
     if((NSNull *)instance == [NSNull null]) {
         assert(parser->_state.stringContent != nil);
+#if !__has_feature(objc_arc)
         instance = [parser->_state.stringContent autorelease];
+#else
+        instance = parser->_state.stringContent;
+#endif
         parser->_state.stringContent = nil;
     }
     
@@ -614,15 +695,26 @@ void CSXXMLParserEndElement(void *ctx, const xmlChar *name) {
     }
     
 drainAndReturn:
+#if !__has_feature(objc_arc)
     [pool release];
+#else
+    return;
+#endif
 }
 
 void CSXXMLParserCharacters(void *ctx, const xmlChar *ch, int len) {
+#if !__has_feature(objc_arc)
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
     CSXXMLParser *parser;
     NSString *str;
     
+#if !__has_feature(objc_arc)
     parser = (CSXXMLParser *)ctx;
+#else
+    parser = (__bridge CSXXMLParser *)ctx;
+#endif
+    
     if(parser->_state.errorOccurred == YES) {
         goto drainAndReturn;
     }
@@ -631,14 +723,22 @@ void CSXXMLParserCharacters(void *ctx, const xmlChar *ch, int len) {
                                    length:len 
                                  encoding:NSUTF8StringEncoding];
     [parser->_state.stringContent appendString:str];
+#if !__has_feature(objc_arc)
     [str release];
+#endif
     
 drainAndReturn:
+#if !__has_feature(objc_arc)
     [pool release];
+#else
+    return;
+#endif
 }
 
 void CSXXMLParserWarning(void *ctx, const char *msg, ...) {
+#if !__has_feature(objc_arc)
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
     NSError *err;
     NSString *descr, *reco, *format;
     NSDictionary *userInfo;
@@ -646,7 +746,11 @@ void CSXXMLParserWarning(void *ctx, const char *msg, ...) {
     CSXXMLParser *parser;
     NSArray *stack;
     
+#if !__has_feature(objc_arc)
     parser = (CSXXMLParser *)ctx;
+#else
+    parser = (__bridge CSXXMLParser *)ctx;
+#endif
     
     va_start(argList, msg);
     
@@ -663,19 +767,25 @@ void CSXXMLParserWarning(void *ctx, const char *msg, ...) {
                 reco, NSLocalizedRecoverySuggestionErrorKey,
                 stack, CSXXMLParserElementNameStackKey,
                 nil];
+#if !__has_feature(objc_arc)
     [stack release];
     [reco release];
+#endif
     
     err = [NSError errorWithDomain:CSXXMLLibXMLErrorDomain 
                               code:CSXXMLLibXMLWarning 
                           userInfo:userInfo];
     
     [(NSMutableArray *)parser.warnings addObject:err];
+#if !__has_feature(objc_arc)
     [pool release];
+#endif
 }
 
 void CSXXMLParserError(void *ctx, const char *msg, ...) {
+#if !__has_feature(objc_arc)
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
     NSError *err;
     NSString *descr, *reco, *format;
     NSDictionary *userInfo;
@@ -683,7 +793,11 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     CSXXMLParser *parser;
     NSArray *stack;
     
+#if !__has_feature(objc_arc)
     parser = (CSXXMLParser *)ctx;
+#else
+    parser = (__bridge CSXXMLParser *)ctx;
+#endif
     
     va_start(argList, msg);
     
@@ -700,8 +814,10 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
                 reco, NSLocalizedRecoverySuggestionErrorKey,
                 stack, CSXXMLParserElementNameStackKey,
                 nil];
+#if !__has_feature(objc_arc)
     [stack release];
     [reco release];
+#endif
     
     err = [NSError errorWithDomain:CSXXMLLibXMLErrorDomain 
                               code:CSXXMLLibXMLError
@@ -709,7 +825,9 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     
     parser.error = err;
     parser->_state.errorOccurred = YES;
+#if !__has_feature(objc_arc)
     [pool release];
+#endif
 }
 
 - (void)initializeState {
@@ -723,9 +841,11 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
 }
 
 - (void)emptyState {
+#if !__has_feature(objc_arc)
     [_state.elementNameStack release];
     [_state.elementLayoutStack release];
     [_state.elementInstanceStack release];
+#endif
     
     memset(&_state, 0, sizeof(_state));
 }
@@ -744,24 +864,38 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
                instance:(id *)instptr 
 {
     NSString *name;
-    id layout, inst;
+    id inst;
     
     assert(nameptr != NULL);
     assert(lptr != NULL);
     assert(instptr != NULL);
     
+#if !__has_feature(objc_arc)
     name = [[_state.elementNameStack lastObject] retain];
+#else
+    name = [_state.elementNameStack lastObject];
+#endif
     [_state.elementNameStack removeLastObject];
     
+#if !__has_feature(objc_arc)
     layout = [[_state.elementLayoutStack lastObject] retain];
+#else
+    name = [_state.elementLayoutStack lastObject];
+#endif
     [_state.elementLayoutStack removeLastObject];
     
+#if !__has_feature(objc_arc)
     inst = [[_state.elementInstanceStack lastObject] retain];
+#else
+    inst = [_state.elementInstanceStack lastObject];
+#endif
     [_state.elementInstanceStack removeLastObject];
     
+#if !__has_feature(objc_arc)
     *nameptr = [name autorelease];
     *lptr = [layout autorelease];
     *instptr = [inst autorelease];
+#endif
 }
 
 /* MARK: XML Processing Methods */
@@ -796,7 +930,11 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     }
     
     inst = [[layout.documentClass alloc] init];
+#if !__has_feature(objc_arc)
     return [inst autorelease];
+#else
+    return inst;
+#endif
 }
 
 - (id)instanceOfElementClass:(CSXElementLayout *)layout {
@@ -830,7 +968,9 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
             }
             
             inst = [[layout.contentLayout.customClass alloc] init];
+#if !__has_feature(objc_arc)
             [inst autorelease];
+#endif
             break;
             
         default:
@@ -921,11 +1061,15 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
     c = 0;
     err = nil;
     while(1) {
+#if !__has_feature(objc_arc)
         NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
         
         cattrName = attrs[c];
         if(cattrName == NULL) {
+#if !__has_feature(objc_arc)
             [pool release];
+#endif
             break;
         }
         
@@ -969,13 +1113,17 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
         }
         
         if(err != nil) {
+#if !__has_feature(objc_arc)
             [pool release];
+#endif
             break;
         }
         
         c += 2;
         
+#if !__has_feature(objc_arc)
         [pool release];
+#endif
     }
     
     return err;
@@ -1082,7 +1230,9 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
                 reco, NSLocalizedRecoverySuggestionErrorKey,
                 stack, CSXXMLParserElementNameStackKey,
                 nil];
+#if !__has_feature(objc_arc)
     [stack release];
+#endif
     
     err = [NSError errorWithDomain:CSXXMLParserErrorDomain 
                               code:kCSXXMLParserUnkownDocumentTypeError 
@@ -1109,7 +1259,9 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
                 reco, NSLocalizedRecoverySuggestionErrorKey,
                 stack, CSXXMLParserElementNameStackKey,
                 nil];
+#if !__has_feature(objc_arc)
     [stack release];
+#endif
     
     err = [NSError errorWithDomain:CSXXMLParserErrorDomain 
                               code:kCSXXMLParserElementValueNoNumberError 
@@ -1136,7 +1288,9 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
                 reco, NSLocalizedRecoverySuggestionErrorKey,
                 stack, CSXXMLParserElementNameStackKey,
                 nil];
+#if !__has_feature(objc_arc)
     [stack release];
+#endif
     
     err = [NSError errorWithDomain:CSXXMLParserErrorDomain 
                               code:kCSXXMLParserElementValueNoBooleanError 
@@ -1164,7 +1318,9 @@ void CSXXMLParserError(void *ctx, const char *msg, ...) {
                 reco, NSLocalizedRecoverySuggestionErrorKey,
                 stack, CSXXMLParserElementNameStackKey,
                 nil];
+#if !__has_feature(objc_arc)
     [stack release];
+#endif
     
     err = [NSError errorWithDomain:CSXXMLParserErrorDomain 
                               code:kCSXXMLParserRequiredPropertyNotSetError 

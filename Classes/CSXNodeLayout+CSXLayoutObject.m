@@ -49,9 +49,15 @@ static NSString * const CSXNodeLayoutRequiredElementName = @"required";
     content.setter = @selector(setName:);
 
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 /* MARK: Node/Attribute Element */
@@ -72,9 +78,15 @@ static NSString * const CSXNodeLayoutRequiredElementName = @"required";
     content.setter = @selector(setRequired:);
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 + (CSXElementLayout *)attributeElementLayout {
@@ -95,7 +107,9 @@ static NSString * const CSXNodeLayoutRequiredElementName = @"required";
     content.customClass = [CSXNodeLayout class];
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
     layout.attributes = [NSArray arrayWithObjects:
                          [self nameAttributeLayout],
@@ -106,7 +120,11 @@ static NSString * const CSXNodeLayoutRequiredElementName = @"required";
                           [CSXNodeContentLayout contentElementLayout],
                           nil];
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 @end
 

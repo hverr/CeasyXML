@@ -181,6 +181,16 @@ enum {
     CSXXMLLibXMLError
 };
 
+#if __has_feature(objc_arc)
+@interface CSXXMLParserState : NSObject
+@property (nonatomic, assign) BOOL errorOccurred, parsing, parsingDocument;
+@property (nonatomic, retain) NSMutableArray *elementNameStack;
+@property (nonatomic, retain) NSMutableArray *elementLayoutStack;
+@property (nonatomic, retain) NSMutableArray *elementInstanceStack;
+@property (nonatomic, retain) NSMutableString *stringContent;
+@end
+#endif /* OBJC_ARC */
+
 @interface CSXXMLParser : NSObject {
     NSError *_parseError;
     NSMutableArray *_warnings;
@@ -190,6 +200,7 @@ enum {
     NSString *file;
     NSData *data;
     
+#if !__has_feature(objc_arc)
     struct {
         BOOL errorOccurred;
         BOOL parsing;
@@ -206,6 +217,9 @@ enum {
         
         NSMutableString *stringContent;
     } _state;
+#else
+    CSXXMLParserState *_state;
+#endif /* ! OBJC_ARGC */
 }
 /* MARK: Init */
 /*! @name Creating and Initializing */

@@ -52,9 +52,15 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
     content.setter = @selector(setUnique:);
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 + (CSXElementLayout *)emptyElementLayout {
@@ -74,9 +80,15 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
     content.setter = @selector(setEmpty:);
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 + (CSXElementLayout *)elementElementLayout {
@@ -97,7 +109,9 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
     content.customClass = [CSXElementLayout class];
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
     layout.attributes = [NSArray arrayWithObjects:
                          [self nameAttributeLayout],
@@ -111,6 +125,10 @@ static NSString * const CSXElementLayoutElementElementName = @"element";
                           [self requiredElementLayout],
                           [self uniqueElementLayout],
                           nil];
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 @end

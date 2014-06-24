@@ -34,6 +34,7 @@
 #import "CSXNodeContentLayout.h"
 #import "CSXNodeLayout.h"
 #import "CSXElementLayout.h"
+#import "CSXLayoutList.h"
 
 #import "CSXNodeLayout+CSXLayoutObject.h"
 #import "CSXElementLayout+CSXLayoutObject.h"

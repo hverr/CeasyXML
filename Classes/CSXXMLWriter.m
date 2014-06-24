@@ -82,7 +82,11 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
 + (id)XMLWriterWithDocumentLayout:(CSXDocumentLayout *)layout {
     id inst;
     inst = [[self alloc] initWithDocumentLayout:layout];
+#if !__has_feature(objc_arc)
     return [inst autorelease];
+#else
+    return inst;
+#endif
 }
 
 - (id)initWithLayoutDocument:(NSString *)f error:(NSError **)err {
@@ -92,7 +96,9 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
         
         layout = [[CSXDocumentLayout alloc] initWithLayoutDocument:f error:err];
         if(layout == nil) {
+#if !__has_feature(objc_arc)
             [self release];
+#endif
             return nil;
         }
         self.documentLayout = layout;
@@ -103,7 +109,11 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
 + (id)XMLWriterWithLayoutDocument:(NSString *)f error:(NSError **)err {
     id inst;
     inst = [[self alloc] initWithLayoutDocument:f error:err];
+#if !__has_feature(objc_arc)
     return [inst autorelease];
+#else
+    return inst;
+#endif
 }
 
 - (void)dealloc {
@@ -113,7 +123,9 @@ NSString * const CSXXMLWriterInvalidAttributeTypeException =
     self.XMLVersion = nil;
     self.encoding = nil;
     
+#if !__has_feature(objc_arc)
     [super dealloc];
+#endif
 }
 
 /* MARK: Properties */
@@ -213,7 +225,11 @@ handleErrorAndReturn:
     
     /* Free document and return */
     [self freeDocument];
+#if !__has_feature(objc_arc)
     return [myData autorelease];
+#else
+    return myData;
+#endif
     
 handleErrorAndReturn:
     [self freeDocument];
@@ -349,13 +365,17 @@ handleErrorAndReturn:
     
     if(lay.unique == NO) {
         for(subElement in (NSArray *)inst) {
+#if !__has_feature(objc_arc)
             NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
             
             myErr = [self writeNonUniqueElement:lay instance:subElement];
             
+#if !__has_feature(objc_arc)
             [myErr retain];
             [pool release];
             [myErr autorelease];
+#endif
             
             if(myErr != nil) {
                 return myErr;
@@ -440,12 +460,12 @@ handleErrorAndReturn:
                 
             case CSXNodeContentTypeBoolean:
                 myErr = [self writeBooleanElement:lay
-                                         instance:(id)[nCast integerValue]];
+                                         instance:(id)[nCast pointerValue]];
                 break;
                 
             case CSXNodeContentTypeNumber:
                 myErr = [self writeNumberElement:lay
-                                        instance:(id)[nCast integerValue]];
+                                        instance:(id)[nCast pointerValue]];
                 break;
                 
             default:
@@ -488,7 +508,9 @@ handleErrorAndReturn:
     
     /* Write subelements */
     for(subLayout in lay.subelements) {
+#if !__has_feature(objc_arc)
         NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
         
         myError = nil;
         subInst = objc_msgSend(inst, subLayout.contentLayout.getter);
@@ -498,9 +520,11 @@ handleErrorAndReturn:
             _state.indentationLevel--;
         }
         
+#if !__has_feature(objc_arc)
         [myError retain];
         [pool release];
         [myError autorelease];
+#endif
         
         if(myError != nil) {
             return myError;
@@ -575,7 +599,8 @@ handleErrorAndReturn:
     BOOL boolVal;
     NSString *stringVal;
     
-    *(id *)&boolVal = inst;
+    //*(id *)&boolVal = inst;
+    boolVal = (BOOL)inst;
     stringVal = boolVal ? @"1" : @"0";
     
     return [self writeStringElement:lay instance:stringVal];
@@ -585,7 +610,7 @@ handleErrorAndReturn:
     NSInteger intVal;
     NSString *stringVal;
     
-    *(id *)&intVal = inst;
+    intVal = (NSInteger)inst;
     stringVal = [[NSNumber numberWithInteger:intVal] stringValue];
     
     return [self writeStringElement:lay instance:stringVal];
@@ -637,7 +662,9 @@ handleErrorAndReturn:
     NSString *excName, *excReason;
     
     for(attrLayout in lay.attributes) {
+#if !__has_feature(objc_arc)
         NSAutoreleasePool *pool = [NSAutoreleasePool new];
+#endif
         
         switch(attrLayout.contentLayout.contentType) {
             case CSXNodeContentTypeString:
@@ -645,8 +672,8 @@ handleErrorAndReturn:
                 break;
                 
             case CSXNodeContentTypeBoolean:
-                *(id *)&boolVal = 
-                    objc_msgSend(inst, attrLayout.contentLayout.getter);
+                boolVal =
+                    (BOOL)objc_msgSend(inst, attrLayout.contentLayout.getter);
                 strValue = boolVal ? @"1" : @"0";
                 break;
                 
@@ -672,7 +699,9 @@ handleErrorAndReturn:
         attrName = [attrLayout.name copyXMLCharacters];
         attrValue = [strValue copyXMLCharacters];
         
+#if !__has_feature(objc_arc)
         [pool release];
+#endif
         
         status = xmlTextWriterWriteAttribute(_state.textWriter, 
                                              attrName, attrValue);

@@ -53,9 +53,15 @@ static NSString * const CSXNodeContentLayoutClassElementName = @"class";
     content.setter = @selector(setContentTypeIdentifier:);
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 /* MARK: Content Element */
@@ -76,9 +82,15 @@ static NSString * const CSXNodeContentLayoutClassElementName = @"class";
     content.setter = @selector(setGetterString:);
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 + (CSXElementLayout *)setterElementLayout {
@@ -98,9 +110,15 @@ static NSString * const CSXNodeContentLayoutClassElementName = @"class";
     content.setter = @selector(setSetterString:);
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 + (CSXElementLayout *)classElementLayout {
@@ -120,9 +138,15 @@ static NSString * const CSXNodeContentLayoutClassElementName = @"class";
     content.setter = @selector(setCustomClassString:);
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 + (CSXElementLayout *)contentElementLayout {
@@ -143,7 +167,9 @@ static NSString * const CSXNodeContentLayoutClassElementName = @"class";
     content.customClass = [CSXNodeContentLayout class];
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
     layout.attributes = [NSArray arrayWithObjects:
                          [self typeAttributeLayout],
@@ -154,7 +180,11 @@ static NSString * const CSXNodeContentLayoutClassElementName = @"class";
                           [self classElementLayout],
                           nil];
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 @end
 

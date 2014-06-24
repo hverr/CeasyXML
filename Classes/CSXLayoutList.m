@@ -55,7 +55,9 @@
         if(err != nil) {
             if(errptr) *errptr = err;
             
+#if !__has_feature(objc_arc)
             [self release];
+#endif
             return nil;
         }
     }
@@ -66,13 +68,19 @@
 + (id)layoutListWithDocument:(NSString *)doc error:(NSError **)err {
     id inst;
     inst = [[self alloc] initWithDocument:doc error:err];
+#if !__has_feature(objc_arc)
     return [inst autorelease];
+#else
+    return inst;
+#endif
 }
 
 - (void)dealloc {
     self.layouts = nil;
     
+#if !__has_feature(objc_arc)
     [super dealloc];
+#endif
 }
 
 /* MARK: Properties */
@@ -101,16 +109,25 @@
     
     if(state == NO || parser.error != nil) {
         NSError *err;
+#if !__has_feature(objc_arc)
         err = [parser.error retain];
         [parser release];
+#endif
+        
+#if !__has_feature(objc_arc)
         return [err autorelease];
+#else
+        return err;
+#endif
     }
     
     result = (CSXLayoutList *)parser.result;
     
     self.layouts = result.layouts;
     
+#if !__has_feature(objc_arc)
     [parser release];
+#endif
     return nil;
 }
 @end

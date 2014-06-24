@@ -59,7 +59,9 @@ NSString * const CSXDocumentLayoutInvalidClassException =
         if(err != nil) {
             if(errptr) *errptr = err;
             
+#if !__has_feature(objc_arc)
             [self release];
+#endif
             return nil;
         }
     }
@@ -69,7 +71,11 @@ NSString * const CSXDocumentLayoutInvalidClassException =
 + (id)documentLayoutWithLayoutDocument:(NSString *)doc error:(NSError **)err {
     id inst;
     inst = [[self alloc] initWithLayoutDocument:doc error:err];
+#if !__has_feature(objc_arc)
     return [inst autorelease];
+#else
+    return inst;
+#endif
 }
 
 + (NSArray *)documentLayoutsWithDocumentDocument:(NSString *)doc {
@@ -81,7 +87,9 @@ NSString * const CSXDocumentLayoutInvalidClassException =
     self.attributes = nil;
     self.subelements = nil;
     
+#if !__has_feature(objc_arc)
     [super dealloc];
+#endif
 }
 
 /* MARK: Properties */
@@ -165,9 +173,16 @@ NSString * const CSXDocumentLayoutInvalidClassException =
     
     if(state == NO || parser.error != nil) {
         NSError *err;
+#if !__has_feature(objc_arc)
         err = [parser.error retain];
         [parser release];
+#endif
+
+#if !__has_feature(objc_arc)
         return [err autorelease];
+#else
+        return err;
+#endif
     }
     
     result = (CSXDocumentLayout *)parser.result;
@@ -177,7 +192,9 @@ NSString * const CSXDocumentLayoutInvalidClassException =
     self.subelements = result.subelements;
     self.documentClass = result.documentClass;
     
+#if !__has_feature(objc_arc)
     [parser release];
+#endif
     return nil;
 }
 @end

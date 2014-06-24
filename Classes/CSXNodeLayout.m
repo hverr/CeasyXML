@@ -39,7 +39,9 @@
     self.name = nil;
     self.contentLayout = nil;
     
+#if !__has_feature(objc_arc)
     [super dealloc];
+#endif
 }
 
 /* MARK: Properties */

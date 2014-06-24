@@ -51,9 +51,15 @@ static NSString * const CSXDocumentLayoutDocumentElementName = @"document";
     content.setter = @selector(setName:);
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 + (CSXNodeLayout *)classAttributeLayout {
@@ -71,9 +77,15 @@ static NSString * const CSXDocumentLayoutDocumentElementName = @"document";
     content.setter = @selector(setDocumentClassString:);
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 /* MARK: Layout and Document */
@@ -95,7 +107,9 @@ static NSString * const CSXDocumentLayoutDocumentElementName = @"document";
     content.customClass = [CSXDocumentLayout class];
     
     layout.contentLayout = content;
+#if !__has_feature(objc_arc)
     [content release];
+#endif
     
     layout.attributes = [NSArray arrayWithObjects:
                          [self nameAttributeLayout],
@@ -107,7 +121,11 @@ static NSString * const CSXDocumentLayoutDocumentElementName = @"document";
                           [CSXElementLayout elementElementLayout],
                           nil];
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 + (CSXDocumentLayout *)layoutDocumentLayout {
@@ -128,7 +146,11 @@ static NSString * const CSXDocumentLayoutDocumentElementName = @"document";
                        [CSXElementLayout elementElementLayout],
                        nil];
     
+#if !__has_feature(objc_arc)
     return [layout autorelease];
+#else
+    return layout;
+#endif
 }
 
 @end
