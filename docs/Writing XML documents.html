@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>Writing XML documents Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />	
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">CeasyXML </a></h1>
+				<a id="developerHome" href="../index.html">Henri Verroken</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">Writing XML documents Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="Writing XML documents Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h1>Writing XML documents</h1>
+
+<p>In this document we explain how to use CeasyXML to write an XML document using
+your custom classes. We will explain which classes to use and how to use them.</p>
+
+<h2>Defining the Layout</h2>
+
+<p>We define the layout of our XML document as explained in <a href="How%20to%20define%20the%20layout%20of%20your%20XML%20document.html">How to define the
+layout of your XML document</a>.</p>
+
+<pre><code>&lt;!-- Layout.xml --&gt;
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+
+&lt;layout name="library" class="TLibrary"&gt;
+    &lt;!-- library: elements --&gt;
+    &lt;element name="name"&gt;
+        &lt;unique /&gt;
+        &lt;required /&gt;
+        &lt;content type="string"&gt;
+            &lt;getter&gt;name&lt;/getter&gt;
+            &lt;setter&gt;setName:&lt;/setter&gt;
+        &lt;/content&gt;
+    &lt;/element&gt;
+
+    &lt;element name="content"&gt;
+        &lt;unique /&gt;
+        &lt;content type="string"&gt;
+            &lt;getter&gt;content&lt;/getter&gt;
+            &lt;setter&gt;setContent:&lt;/setter&gt;
+        &lt;/content&gt;
+    &lt;/element&gt;
+
+    &lt;element name="entry"&gt;
+        &lt;!-- entry: content --&gt;
+        &lt;content type="custom"&gt;
+            &lt;getter&gt;entries&lt;/getter&gt;
+            &lt;setter&gt;setEntries:&lt;/setter&gt;
+            &lt;class&gt;TEntry&lt;/class&gt;
+        &lt;/content&gt;
+
+        &lt;!-- entry: attributes --&gt;
+        &lt;attribute name="type"&gt;
+            &lt;required /&gt;
+            &lt;content type="string"&gt;
+                &lt;getter&gt;type&lt;/getter&gt;
+                &lt;setter&gt;setType:&lt;/setter&gt;
+            &lt;/content&gt;
+        &lt;/attribute&gt;&lt;!-- type --&gt;
+
+        &lt;!-- entry: elements --&gt;
+        &lt;element name="title"&gt;
+            &lt;required /&gt;
+            &lt;unique /&gt;
+            &lt;content type="string"&gt;
+                &lt;getter&gt;title&lt;/getter&gt;
+                &lt;setter&gt;setTitle:&lt;/setter&gt;
+            &lt;/content&gt;
+        &lt;/element&gt;&lt;!-- title --&gt;
+
+        &lt;element name="creator"&gt;
+            &lt;required /&gt;
+            &lt;unique /&gt;
+            &lt;content type="string"&gt;
+                &lt;getter&gt;creator&lt;/getter&gt;
+                &lt;setter&gt;setCreator:&lt;/setter&gt;
+            &lt;/content&gt;
+        &lt;/element&gt;&lt;!-- creator --&gt;
+
+        &lt;element name="year"&gt;
+            &lt;required /&gt;
+            &lt;unique /&gt;
+            &lt;content type="number"&gt;
+                &lt;getter&gt;year&lt;/getter&gt;
+                &lt;setter&gt;setYear:&lt;/setter&gt;
+            &lt;/content&gt;
+        &lt;/element&gt;&lt;!-- year --&gt;
+
+    &lt;/element&gt;&lt;!-- entry --&gt;
+&lt;/layout&gt;&lt;!-- library --&gt;
+</code></pre>
+
+<h2>Custom Classes</h2>
+
+<p>We have the following classes to use when parsing the document.</p>
+
+<ul>
+<li><p>TEntry</p>
+
+<ul>
+<li>property type (NSString)</li>
+<li>property title (NSString)</li>
+<li>property creator (NSString)</li>
+<li>property year (NSInteger)</li>
+</ul>
+</li>
+<li><p>TLibrary</p>
+
+<ul>
+<li>property name (NSString)</li>
+<li>property content (NSString)</li>
+<li>property entries (NSMutableArray)</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Our instances that we want to write</h2>
+
+<p>Of course we need data to store in an XML document.</p>
+
+<pre><code>TLibrary *library;
+TEntry *entry1, *entry2, *entry3;
+
+// Create the entries
+entry1 = [[TEntry new] autorelease];
+entry1.type = @"book";
+entry1.title = @"Of Mice and Men";
+entry1.creator = @"John Steinbeck";
+entry1.year = 1937;
+
+entry2 = [[TEntry new] autorelease];
+entry2.type = @"book";
+entry2.title = @"Sopie's World";
+entry2.creator = @"Jostein Gaarder";
+entry2.year = 1991;
+
+entry3 = [[TEntry new] autorelease];
+entry3.type = @"movie";
+entry3.title = @"The Truman Show";
+entry3.creator = @"Peter Weir";
+entry3.year = 1998;
+
+// Create the library
+library = [[TLibrary new] autorelease];
+
+library.entries = [NSMutableArray arrayWithObjects:
+                   entry1, entry2, entry3, nil];
+</code></pre>
+
+<h2>Parsing the XML Document</h2>
+
+<p>Now we are going to use <a href="../Classes/CSXXMLWriter.html"><code>CSXXMLWriter</code></a> to write our XML document. We firstly
+create our XML writer with the layout document. Then we give it the data.
+Finally we tell it to start writing.</p>
+
+<pre><code>CSXXMLWriter *writer;
+NSString *layoutFile;
+NSString *xmlFile;
+TLibrary *library; /* This is assumed to be set, see above */
+BOOL success;
+NSError *error;
+
+// We use the layout document defined above and Layout.xml as output file
+layoutFile = @"Layout.xml";
+xmlFile = @"Library.xml";
+
+// Now we create the XML writer with the layout document
+// Notice that the root element of our file is 'layout', since we can only
+// write with one layout.
+writer = [[CSXXMLWriter alloc] initWithLayoutDocument:layoutFile
+                                                error:&amp;error];
+if(writer == nil) {
+    // An error occurred while parsing the layout document
+    NSLog(@"Failed to parse the layout document: %@", error);
+    return;
+}
+
+// Set the instance
+writer.rootInstance = library;
+
+// Write the file
+success = [writer writeToFile:xmlFile error:&amp;error];
+[writer release];
+
+// Check for errors 
+if(success == NO) {
+    NSLog(@"Failed to write the XML document: %@", error);
+    return;
+}
+</code></pre>
+
+<h2>Resulting XML Document</h2>
+
+<p>This is what we should get</p>
+
+<pre><code>&lt;!-- Library.xml --&gt;
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;library&gt;
+    &lt;name&gt;The CeasyXML Test Library&lt;/name&gt;
+    &lt;content&gt;Some entries for testing.&lt;/content&gt;
+    &lt;entry type="book"&gt;
+        &lt;title&gt;Of Mice and Men&lt;/title&gt;
+        &lt;creator&gt;John Steinbeck&lt;/creator&gt;
+        &lt;year&gt;1937&lt;/year&gt;
+    &lt;/entry&gt;
+    &lt;entry type="book"&gt;
+        &lt;title&gt;Sopie's World&lt;/title&gt;
+        &lt;creator&gt;Jostein Gaarder&lt;/creator&gt;
+        &lt;year&gt;1991&lt;/year&gt;
+    &lt;/entry&gt;
+    &lt;entry type="movie"&gt;
+        &lt;title&gt;The Truman Show&lt;/title&gt;
+        &lt;creator&gt;Peter Weir&lt;/creator&gt;
+        &lt;year&gt;1998&lt;/year&gt;
+    &lt;/entry&gt;
+&lt;/library&gt;
+</code></pre>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Henri Verroken. All rights reserved. (Last updated: 2012-07-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

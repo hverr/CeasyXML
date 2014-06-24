@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>CeasyXML Reference</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="index.html">CeasyXML </a></h1>
+				<a id="developerHome" href="index.html">Henri Verroken</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">CeasyXML Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<div id="overview_contents" role="main">
+				<div class="main-navigation navigation-top">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">CeasyXML Reference</h1>
+					</div>		
+				</div>
+				<div id="container">
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<h2>What is CeasyXML?</h2>
+
+<p>CeaysXML is a library that allows you to automate the connection between your
+XML documents and your objective-c classes.</p>
+
+<h2>How do I use CeasyXML?</h2>
+
+<p>By using an XML document to define the layout of your own XML document, the
+parser and writer know exactly how to handle your documents and how to
+use your classes.</p>
+
+<p><a href="Classes/CSXXMLParser.html"><code>CSXXMLParser</code></a> and <a href="Classes/CSXXMLWriter.html"><code>CSXXMLWriter</code></a> are the primary classes you will be using.
+These provide a direct interface to the library.</p>
+
+<ul>
+<li>See <a href="docs/How%20to%20define%20the%20layout%20of%20your%20XML%20document.html">How to define the layout of your XML document</a> to write your first
+document layout.</li>
+<li>See <a href="docs/Parsing%20XML%20documents.html">Parsing XML documents</a> for a tutorial on how to parse your own XML
+documents.</li>
+<li>See <a href="docs/Writing%20XML%20documents.html">Writing XML documents</a> for a tutorial on how to write your own XML
+documents with your custom class.</li>
+</ul>
+
+
+<h2>How do I link to CeasyXML? (Important)</h2>
+
+<h3>Known linking problem and its solution</h3>
+
+<p>CeasyXML is a static Objective-C library. Unix libraries have a certain way of
+being loaded, which generates some problems when using Objective-C categories.</p>
+
+<p>This library does use categories, so that you must specify special linker flags
+to your own project. This is very easy to do.</p>
+
+<p>See <a href="http://www.stackoverflow.com/q/10416779/262660">this question</a> on stackoverflow and <a href="[http://developer.apple.com/library/mac/](http://developer.apple.com/library/mac/)#qa/qa2006/qa1490.html">this article</a> from Apple for
+more information.</p>
+
+<h3>Including the Header Files</h3>
+
+<p>To include the header files of CeasyXML you&rsquo;ll want to use <code>#include
+&lt;CeasyXML.h&gt;</code>. To enable the use of the brackets, add the location of the header
+files to your header search paths.</p>
+
+<p>The header files of CeasyXML include <code>libxml/*</code>. In order to make them work,
+you&rsquo;ll want to add <code>/usr/include/libxml2</code> or an other directory to your header
+search paths, too.</p>
+
+<h3>Linking to LibXML2</h3>
+
+<p>Since your application loads the CeasyXML code, you&rsquo;ll have to also link to the
+LibXLM2 library on your machine.</p>
+						
+						
+					</div>
+					
+                        
+                    
+                        <div class="index-column">
+						<h2 class="index-title">Programming Guides</h2>
+						<ul>
+                        
+                        <li><a href="docs/How to define the layout of your XML document.html">How to define the layout of your XML document</a></li>
+                        
+                        <li><a href="docs/Parsing XML documents.html">Parsing XML documents</a></li>
+                        
+                        <li><a href="docs/Writing XML documents.html">Writing XML documents</a></li>
+                        
+						</ul>
+                        </div>
+                    
+					
+					
+					<div class="index-column">
+						<h2 class="index-title">Class References</h2>
+						<ul>
+							
+							<li><a href="Classes/CSXDocumentLayout.html">CSXDocumentLayout</a></li>
+							
+							<li><a href="Classes/CSXElementLayout.html">CSXElementLayout</a></li>
+							
+							<li><a href="Classes/CSXLayoutList.html">CSXLayoutList</a></li>
+							
+							<li><a href="Classes/CSXNodeContentLayout.html">CSXNodeContentLayout</a></li>
+							
+							<li><a href="Classes/CSXNodeLayout.html">CSXNodeLayout</a></li>
+							
+							<li><a href="Classes/CSXXMLParser.html">CSXXMLParser</a></li>
+							
+							<li><a href="Classes/CSXXMLWriter.html">CSXXMLWriter</a></li>
+							
+						</ul>
+					</div>
+					
+					
+						
+					<div class="index-column">
+						
+						
+						<h2 class="index-title">Category References</h2>
+						<ul>
+							
+							<li><a href="Categories/NSString+CSXLibXMLConversion.html">NSString(CSXLibXMLConversion)</a></li>
+							
+						</ul>
+						
+					</div>
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Henri Verroken. All rights reserved. (Last updated: 2012-07-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+	
+					</div>
+				</div>
+			</div>
+		</article>		
+	</body>
+</html>

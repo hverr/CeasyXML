@@ -1,0 +1,1165 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>CSXXMLWriter Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">CeasyXML </a></h1>
+				<a id="developerHome" href="../index.html">Henri Verroken</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">CSXXMLWriter Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/XMLVersion">&nbsp;&nbsp;&nbsp;&nbsp;XMLVersion</option>
+	
+	<option value="//api/name/compression">&nbsp;&nbsp;&nbsp;&nbsp;compression</option>
+	
+	<option value="//api/name/documentLayout">&nbsp;&nbsp;&nbsp;&nbsp;documentLayout</option>
+	
+	<option value="//api/name/encoding">&nbsp;&nbsp;&nbsp;&nbsp;encoding</option>
+	
+	<option value="//api/name/rootInstance">&nbsp;&nbsp;&nbsp;&nbsp;rootInstance</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/XMLWriterWithDocumentLayout:">&nbsp;&nbsp;&nbsp;&nbsp;+ XMLWriterWithDocumentLayout:</option>
+	
+	<option value="//api/name/XMLWriterWithLayoutDocument:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ XMLWriterWithLayoutDocument:error:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/XMLDataWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- XMLDataWithError:</option>
+	
+	<option value="//api/name/initWithDocumentLayout:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDocumentLayout:</option>
+	
+	<option value="//api/name/initWithLayoutDocument:error:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithLayoutDocument:error:</option>
+	
+	<option value="//api/name/writeRootElementToTextWriter:indentation:error:">&nbsp;&nbsp;&nbsp;&nbsp;- writeRootElementToTextWriter:indentation:error:</option>
+	
+	<option value="//api/name/writeToFile:error:">&nbsp;&nbsp;&nbsp;&nbsp;- writeToFile:error:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing">Creating and Initializing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Writing">Writing</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/XMLVersion">XMLVersion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/compression">compression</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentLayout">documentLayout</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/encoding">encoding</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rootInstance">rootInstance</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/XMLWriterWithDocumentLayout:">XMLWriterWithDocumentLayout:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/XMLWriterWithLayoutDocument:error:">XMLWriterWithLayoutDocument:error:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/XMLDataWithError:">XMLDataWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDocumentLayout:">initWithDocumentLayout:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithLayoutDocument:error:">initWithLayoutDocument:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/writeRootElementToTextWriter:indentation:error:">writeRootElementToTextWriter:indentation:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/writeToFile:error:">writeToFile:error:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="CSXXMLWriter Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">CSXXMLWriter Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">CSXXMLWriter.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The class <code>CSXXMLWriter</code> is used to write an XML document with a predefined
+layout.</p>
+
+<p>Using a <a href="../Classes/CSXDocumentLayout.html"><code>CSXDocumentLayout</code></a> and an instance of your document class, this class
+can write out an XML document to a file and to the memory.</p>
+
+<h1>Errors</h1>
+
+<p>Errors are instances of <code>NSError</code>. The localized description and localized
+recovery suggestion are set.</p>
+
+<ul>
+<li><p>Domains (<code>NSString</code>)</p>
+
+<ul>
+<li><code>CSXXMLWriterErrorDomain</code>
+  This class uses this custom error domain.</li>
+</ul>
+</li>
+<li><p>Error codes</p>
+
+<ul>
+<li><p><code>kCSXXMLWriterTextWriterCreationError</code></p>
+
+<p>  The writer can not create an instance of the LibXML text writer.</p></li>
+<li><p><code>kCSXXMLWriterTextWriterWriteError</code></p>
+
+<p>  An error occurred while trying to write with the LibXLM text writer
+  instance.</p></li>
+<li><p><code>kCSXXMLWriterBufferCreateError</code></p>
+
+<p>  An error occurred while trying to create the LibXML buffer.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h1>Exceptions</h1>
+
+<ul>
+<li><p><code>CSXXMLWriterNoRootInstanceException</code></p>
+
+<p>  Thrown when the property <a href="#//api/name/rootInstance"><code>rootInstance</code></a> is not set when a write method
+  is invoked.</p></li>
+<li><p><code>CSXXMLWriterNoDocumentLayoutException</code></p>
+
+<p>  Thrown when the property <a href="#//api/name/documentLayout"><code>documentLayout</code></a> is not set when a write method
+  is invoked.</p></li>
+<li><p><code>CSXXMLWriterInvalidAttributeTypeException</code></p>
+
+<p>  Thrown when trying to write an object&rsquo;s attribute which <a href="../Classes/CSXNodeContentLayout.html"><code>CSXNodeContentLayout</code></a>
+  specifies a type not available for an attribute.</p></li>
+</ul>
+
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Creating and Initializing" name="task_Creating and Initializing"></a>
+						<h3 class="subsubtitle task-title">Creating and Initializing</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithDocumentLayout:">&ndash;&nbsp;initWithDocumentLayout:</a></code>
+		<span class="tooltip"><p>Initialize an instance with a given document layout.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/XMLWriterWithDocumentLayout:">+&nbsp;XMLWriterWithDocumentLayout:</a></code>
+		<span class="tooltip"><p>Returns the autoreleased result of <a href="#//api/name/initWithDocumentLayout:">initWithDocumentLayout:</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithLayoutDocument:error:">&ndash;&nbsp;initWithLayoutDocument:error:</a></code>
+		<span class="tooltip"><p>Initialize an instance with the <a href="../Classes/CSXDocumentLayout.html"><code>CSXDocumentLayout</code></a> contained by the given
+layout document.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/XMLWriterWithLayoutDocument:error:">+&nbsp;XMLWriterWithLayoutDocument:error:</a></code>
+		<span class="tooltip"><p>Returns the autoreleased result of <a href="#//api/name/initWithLayoutDocument:error:">initWithLayoutDocument:error:</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Properties" name="task_Properties"></a>
+						<h3 class="subsubtitle task-title">Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentLayout">&nbsp;&nbsp;documentLayout</a></code>
+		<span class="tooltip"><p>The document layout of your XML document.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rootInstance">&nbsp;&nbsp;rootInstance</a></code>
+		<span class="tooltip"><p>An instance of your custom class containing the document content.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/XMLVersion">&nbsp;&nbsp;XMLVersion</a></code>
+		<span class="tooltip"><p>The XML version.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/encoding">&nbsp;&nbsp;encoding</a></code>
+		<span class="tooltip"><p>The encoding of the file.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/compression">&nbsp;&nbsp;compression</a></code>
+		<span class="tooltip"><p>The compression.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Writing" name="task_Writing"></a>
+						<h3 class="subsubtitle task-title">Writing</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/writeToFile:error:">&ndash;&nbsp;writeToFile:error:</a></code>
+		<span class="tooltip"><p>Use this method to write the XML document to a file.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/XMLDataWithError:">&ndash;&nbsp;XMLDataWithError:</a></code>
+		<span class="tooltip"><p>Use this method to write the XML document to an <code>NSData</code> buffer.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/writeRootElementToTextWriter:indentation:error:">&ndash;&nbsp;writeRootElementToTextWriter:indentation:error:</a></code>
+		<span class="tooltip"><p>Use this method to write the root element to a self created LibXML writer.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/XMLVersion" title="XMLVersion"></a>
+	<h3 class="subsubtitle method-title">XMLVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The XML version.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *XMLVersion</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The XML version.</p>
+
+<p>This defaults to the LibXML default.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/compression" title="compression"></a>
+	<h3 class="subsubtitle method-title">compression</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The compression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) int compression</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The compression.</p>
+
+<p>This defaults to 0. See the LibXLM manual for more information.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentLayout" title="documentLayout"></a>
+	<h3 class="subsubtitle method-title">documentLayout</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The document layout of your XML document.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) CSXDocumentLayout *documentLayout</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The document layout of your XML document.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/encoding" title="encoding"></a>
+	<h3 class="subsubtitle method-title">encoding</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The encoding of the file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *encoding</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The encoding of the file.</p>
+
+<p>This defaults to the LibXML default.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rootInstance" title="rootInstance"></a>
+	<h3 class="subsubtitle method-title">rootInstance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An instance of your custom class containing the document content.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) id rootInstance</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An instance of your custom class containing the document content.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/XMLWriterWithDocumentLayout:" title="XMLWriterWithDocumentLayout:"></a>
+	<h3 class="subsubtitle method-title">XMLWriterWithDocumentLayout:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the autoreleased result of <a href="#//api/name/initWithDocumentLayout:">initWithDocumentLayout:</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)XMLWriterWithDocumentLayout:(CSXDocumentLayout *)<em>layout</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the autoreleased result of <a href="#//api/name/initWithDocumentLayout:">initWithDocumentLayout:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/initWithDocumentLayout:">&ndash; initWithDocumentLayout:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/XMLWriterWithLayoutDocument:error:" title="XMLWriterWithLayoutDocument:error:"></a>
+	<h3 class="subsubtitle method-title">XMLWriterWithLayoutDocument:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the autoreleased result of <a href="#//api/name/initWithLayoutDocument:error:">initWithLayoutDocument:error:</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)XMLWriterWithLayoutDocument:(NSString *)<em>f</em> error:(NSError **)<em>err</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the autoreleased result of <a href="#//api/name/initWithLayoutDocument:error:">initWithLayoutDocument:error:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/initWithLayoutDocument:error:">&ndash; initWithLayoutDocument:error:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/XMLDataWithError:" title="XMLDataWithError:"></a>
+	<h3 class="subsubtitle method-title">XMLDataWithError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Use this method to write the XML document to an <code>NSData</code> buffer.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSData *)XMLDataWithError:(NSError **)<em>errptr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errptr</em></dt>
+			<dd><p>A variable capable of holding the error if one occurs.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An autoreleased instance of <code>NSData</code> if the write was successful or
+nil if an error occurred.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Use this method to write the XML document to an <code>NSData</code> buffer.</p>
+	</div>
+	
+	
+	
+	<div class="method-subsection arguments-section exceptions">
+		<h4 class="method-subtitle exception-title">Exceptions</h4>
+		
+		<dl class="argument-def exception-def">
+			<dt><em>CSXXMLWriterNoRootInstanceException</em></dt>
+			<dd><p>Thrown when the property
+<a href="#//api/name/rootInstance"><code>rootInstance</code></a> is not set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def exception-def">
+			<dt><em>CSXXMLWriterNoDocumentLayoutException</em></dt>
+			<dd><p>Thrown when the property
+<a href="#//api/name/documentLayout"><code>documentLayout</code></a> is not set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def exception-def">
+			<dt><em>CSXXMLWriterInvalidAttributeTypeException</em></dt>
+			<dd><p>Thrown when an invalid
+attribute type is met while writing out the document.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithDocumentLayout:" title="initWithDocumentLayout:"></a>
+	<h3 class="subsubtitle method-title">initWithDocumentLayout:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize an instance with a given document layout.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithDocumentLayout:(CSXDocumentLayout *)<em>layout</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>layout</em></dt>
+			<dd><p>A valid instance of <a href="../Classes/CSXDocumentLayout.html"><code>CSXDocumentLayout</code></a> representing the
+layout of your XML document.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initialize an instance with a given document layout.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithLayoutDocument:error:" title="initWithLayoutDocument:error:"></a>
+	<h3 class="subsubtitle method-title">initWithLayoutDocument:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize an instance with the <a href="../Classes/CSXDocumentLayout.html"><code>CSXDocumentLayout</code></a> contained by the given
+layout document.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithLayoutDocument:(NSString *)<em>f</em> error:(NSError **)<em>err</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initialize an instance with the <a href="../Classes/CSXDocumentLayout.html"><code>CSXDocumentLayout</code></a> contained by the given
+layout document.</p>
+
+<p>Using this function is equivalent to calling
+<a href="../Classes/CSXDocumentLayout.html#//api/name/initWithLayoutDocument:error:">[CSXDocumentLayout initWithLayoutDocument:error:]</a> and than calling
+<a href="#//api/name/initWithDocumentLayout:">initWithDocumentLayout:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Classes/CSXDocumentLayout.html#//api/name/initWithLayoutDocument:error:">[CSXDocumentLayout initWithLayoutDocument:error:]</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/writeRootElementToTextWriter:indentation:error:" title="writeRootElementToTextWriter:indentation:error:"></a>
+	<h3 class="subsubtitle method-title">writeRootElementToTextWriter:indentation:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Use this method to write the root element to a self created LibXML writer.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)writeRootElementToTextWriter:(xmlTextWriterPtr)<em>theWriter</em> indentation:(NSInteger)<em>indentation</em> error:(NSError **)<em>errptr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theWriter</em></dt>
+			<dd><p>A valid initialized instance of <code>xmlTextWriter</code> to which you
+want to add the root element.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>indentation</em></dt>
+			<dd><p>The indentation of the root element.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errptr</em></dt>
+			<dd><p>A variable capable of holding the error if one occurs.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the writing was successful and <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Use this method to write the root element to a self created LibXML writer.</p>
+	</div>
+	
+	
+	
+	<div class="method-subsection arguments-section exceptions">
+		<h4 class="method-subtitle exception-title">Exceptions</h4>
+		
+		<dl class="argument-def exception-def">
+			<dt><em>CSXXMLWriterNoRootInstanceException</em></dt>
+			<dd><p>Thrown when the property
+<a href="#//api/name/rootInstance"><code>rootInstance</code></a> is not set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def exception-def">
+			<dt><em>CSXXMLWriterNoDocumentLayoutException</em></dt>
+			<dd><p>Thrown when the property
+<a href="#//api/name/documentLayout"><code>documentLayout</code></a> is not set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def exception-def">
+			<dt><em>CSXXMLWriterInvalidAttributeTypeException</em></dt>
+			<dd><p>Thrown when an invalid
+attribute type is met while writing out the document.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/writeToFile:error:" title="writeToFile:error:"></a>
+	<h3 class="subsubtitle method-title">writeToFile:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Use this method to write the XML document to a file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)writeToFile:(NSString *)<em>file</em> error:(NSError **)<em>errptr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>file</em></dt>
+			<dd><p>The output file.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errptr</em></dt>
+			<dd><p>A variable capable of holding the error if one occurs.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the writing was successful or <code>NO</code> if an error occurred.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Use this method to write the XML document to a file.</p>
+	</div>
+	
+	
+	
+	<div class="method-subsection arguments-section exceptions">
+		<h4 class="method-subtitle exception-title">Exceptions</h4>
+		
+		<dl class="argument-def exception-def">
+			<dt><em>CSXXMLWriterNoRootInstanceException</em></dt>
+			<dd><p>Thrown when the property
+<a href="#//api/name/rootInstance"><code>rootInstance</code></a> is not set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def exception-def">
+			<dt><em>CSXXMLWriterNoDocumentLayoutException</em></dt>
+			<dd><p>Thrown when the property
+<a href="#//api/name/documentLayout"><code>documentLayout</code></a> is not set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def exception-def">
+			<dt><em>CSXXMLWriterInvalidAttributeTypeException</em></dt>
+			<dd><p>Thrown when an invalid
+attribute type is met while writing out the document.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CSXXMLWriter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Henri Verroken. All rights reserved. (Last updated: 2012-07-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

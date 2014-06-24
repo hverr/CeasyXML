@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>How to define the layout of your XML document Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />	
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">CeasyXML </a></h1>
+				<a id="developerHome" href="../index.html">Henri Verroken</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">How to define the layout of your XML document Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<a title="How to define the layout of your XML document Document" name="top"></a>
+			<div id="overview_contents" role="main">
+				<div id="container">	
+					<h1>How to define the layout of your XML document</h1>
+
+<p>Using an XML document you can define the layout of your own XML document. The
+library will parse the layout document and setup the parser or writer with this
+layout. So this library uses itself to parse your documents.</p>
+
+<h2>Two types of layout documents</h2>
+
+<p>We have to types of layout documents. A type that specifies only one layout, and
+a type that specifies multiple layouts.</p>
+
+<h3>The layout document</h3>
+
+<p>The layout document is the document type that specifies one document layout. It
+is the XML representation of the class <a href="../Classes/CSXDocumentLayout.html"><code>CSXDocumentLayout</code></a>.</p>
+
+<p>The root element uses <code>layout</code> as tagname. With the attribute named <code>name</code> you
+can specify the root element of your own XML document. The second attribute is
+named <code>class</code>. With this attribute you specify the name of your class that
+represents the whole document.</p>
+
+<p>For example, if we have a root element like below,</p>
+
+<pre><code>&lt;layout name="store" class="MyShop"&gt;
+</code></pre>
+
+<p>CeasyXML knows your document has a root element named <code>store</code>,</p>
+
+<pre><code>&lt;store&gt;
+</code></pre>
+
+<p>and that this element&rsquo;s contents should be stored in an instance of you class
+<code>MyShop</code>.</p>
+
+<h3>The layout list document</h3>
+
+<p>This type of document contains several layouts. These layouts are all possible
+layouts of one XML document. This type of document is represented by the class
+<a href="../Classes/CSXLayoutList.html"><code>CSXLayoutList</code></a>.</p>
+
+<p>The root element uses <code>document</code> as tagname. It has no attributes, but it must
+have at least one subelement. This subelement must be a <code>layout</code> element as
+defined above.</p>
+
+<p>For example, if we have a document like below,</p>
+
+<pre><code>&lt;document&gt;
+    &lt;layout name="store" class="MyShop"&gt;
+        _content_
+    &lt;/layout&gt;
+
+    &lt;layout name="bank" class="MyBank"&gt;
+        _content_
+    &lt;/layout&gt;
+&lt;/document&gt;
+</code></pre>
+
+<p>CeasyXML knows your document may have a root element named <code>store</code> or <code>bank</code>. It
+will parse your document using the according layout.</p>
+
+<h2>Content of the &lsquo;layout&rsquo; element.</h2>
+
+<p>Of course your root <code>layout</code> element contains subelements. It may even contain some
+attributes. By using the non-unique <code>element</code> element and the non-unique
+<code>attribute</code> element, you can specify these.</p>
+
+<p>To let the library know wether these attributes represent a number, string,
+boolean or even a custom class, we use the <code>content</code> element.</p>
+
+<p>For example, if we have a root element like this,</p>
+
+<pre><code>&lt;layout name="store" class="MyStore"&gt;
+    &lt;attribute name="location"&gt;
+        &lt;content type="string"&gt;
+            &lt;getter&gt;location&lt;/getter&gt;
+            &lt;setter&gt;setLocation:&lt;/setter&gt;
+        &lt;/content&gt;
+    &lt;/attribute&gt;
+
+    &lt;element name="item"&gt;
+        &lt;content type="custom"&gt;
+            &lt;getter&gt;items&lt;/getter&gt;
+            &lt;setter&gt;setItems:&lt;/setter&gt;
+            &lt;class&gt;MyItem&lt;/class&gt;
+        &lt;/content&gt;
+    &lt;/element&gt;
+&lt;/layout&gt;
+</code></pre>
+
+<p>the library knows to expect a document like this.</p>
+
+<pre><code>&lt;store location="Brussels"&gt;
+    &lt;item&gt;&lt;/item&gt;
+    &lt;item&gt;&lt;/item&gt;
+    &lt;item&gt;&lt;/item&gt;
+    etc.
+&lt;/store&gt;
+</code></pre>
+
+<p>It also knows that your class <code>MyStore</code> has the methods <code>setLocation:</code> and
+<code>location</code>, which respectively accept and return an <code>NSString</code>.</p>
+
+<p>Besides these two methods, <code>MyStore</code> also has the two methods <code>setItems:</code>
+and <code>items</code>, which respectively accept and return an <code>NSMutableArray</code>. The
+library pushes or pop instances of your class <code>MyItem</code> to this array.</p>
+
+<p>Of course we can add new <code>element</code> and <code>attribute</code> elements
+to the <code>&lt;element name="item"&gt;</code> element to define new fields of this element, and
+so on.</p>
+
+<h2>Element reference for &lsquo;document&rsquo;</h2>
+
+<h3>Attributes</h3>
+
+<p>None</p>
+
+<h3>Subelements</h3>
+
+<ul>
+<li>At least one <code>layout</code> element.</li>
+</ul>
+
+
+<h2>Element reference for &lsquo;layout&rsquo;</h2>
+
+<h3>Attributes</h3>
+
+<ul>
+<li><code>name</code> (required): Specifies the root element name of your document.</li>
+<li><code>class</code> (required): Specifies the class that your document represents.</li>
+</ul>
+
+
+<h3>Subelements</h3>
+
+<ul>
+<li><code>attribute</code> (non-unique): Specifes the attributes the root element can or must
+have.</li>
+<li><code>element</code> (non-unique): Specifies the elements the root element can or must
+contain.</li>
+</ul>
+
+
+<h2>Element reference for &lsquo;attribute&rsquo;</h2>
+
+<h3>Attributes</h3>
+
+<ul>
+<li><code>name</code> (required): The name of the attribute in your XML document.</li>
+</ul>
+
+
+<h3>Subelements</h3>
+
+<ul>
+<li><code>content</code> (required, unique): The content type and handling for this
+attribute&rsquo;s value.</li>
+<li><code>required</code> (empty): Wether or not this attribute is required to be present in
+your document.</li>
+</ul>
+
+
+<h2>Element reference for &lsquo;element&rsquo;</h2>
+
+<h3>Attributes</h3>
+
+<ul>
+<li><code>name</code> (required): The name of the element in your XML document.</li>
+</ul>
+
+
+<h3>Subelements</h3>
+
+<ul>
+<li><code>content</code> (required, unique): The content type and handling for this element&rsquo;s
+content.</li>
+<li><code>requierd</code> (empty): Wether or not this element is required to be present in
+your document.</li>
+<li><code>empty</code> (empty): Wether or not this is an empty element.</li>
+<li><code>unique</code> (empty): Wether or not this element is unique.</li>
+<li><code>attribute</code> (non-unique): The attributes this element can have.</li>
+<li><code>element</code> (non-unique): The subelements this element can have. This can only
+be used when the content type is a custom class.</li>
+</ul>
+
+
+<h2>Element reference for &lsquo;content&rsquo;</h2>
+
+<h3>Attributes</h3>
+
+<ul>
+<li><code>type</code> (required): The content type. It must be one of the following values:
+
+<ul>
+<li>&lsquo;string&rsquo;, which represents an <code>NSString</code>.</li>
+<li>&lsquo;number&rsquo;, which represents an <code>NSInteger</code>.</li>
+<li>&lsquo;boolean&rsquo;, which represents a <code>BOOL</code>.</li>
+<li>&lsquo;custom&rsquo;, which represents a custom user-defined class.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Subelements</h3>
+
+<ul>
+<li><code>getter</code> (required, string): The name of the selector to get the value.</li>
+<li><code>setter</code> (required, string): The name of the selector to set the value.</li>
+<li><code>class</code> (string): The name of the user-defined, custom class. This
+element must only be present when the type &lsquo;custom&rsquo; is specified.</li>
+</ul>
+
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Henri Verroken. All rights reserved. (Last updated: 2012-07-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>
